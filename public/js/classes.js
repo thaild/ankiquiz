@@ -216,7 +216,7 @@ class Question {
       <label class="my-2 custom_label">
           ${htmlRadioCheckbox}
           <span class="que-content ${queContentAwnswer}">
-              <span class="symbolAnswer">${SYMBOL_ANSWERS[index]}.</span>
+              <span class="symbolAnswer hidden">${SYMBOL_ANSWERS[index]}.</span>
               ${answer.choice}
           </span>
       </label>

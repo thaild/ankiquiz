@@ -648,3 +648,7 @@ body.white-mode {
         top: 5px;
     }
 }
+
+.hidden {
+    display: none;
+}
