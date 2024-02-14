@@ -115,6 +115,43 @@ var listExamGroup = [
     ]
   },
 
+  //GROUP 6.2
+  {
+    id: "DVA_C02",
+    name: "[DVA-C02] Developer - Associate",
+    list: [
+      {
+        id: "DVA_C02_Part1",
+        name: "[DVA-C02] Part1",
+        data: DVA_C02_Part1.data,
+      },
+      {
+        id: "DVA_C02_Part2",
+        name: "[DVA-C02] Part2",
+        data: DVA_C02_Part2.data,
+      },
+      {
+        id: "DVA_C02_Part3",
+        name: "[DVA-C02] Part3",
+        data: DVA_C02_Part3.data,
+      },
+      {
+        id: "DVA_C02_Part4",
+        name: "[DVA-C02] Part4",
+        data: DVA_C02_Part4.data,
+      },
+      {
+        id: "DVA_C02_Part5",
+        name: "[DVA-C02] Part5",
+        data: DVA_C02_Part5.data,
+      },
+      {
+        id: "DVA_C02_Part6",
+        name: "[DVA-C02] Part6",
+        data: DVA_C02_Part6.data,
+      },
+    ]
+  },
   // Professional ###############################################
   //GROUP 1
   {
