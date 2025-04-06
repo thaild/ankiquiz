@@ -1,5 +1,31 @@
 // CONFIG
 var listExamGroup = [
+  {
+    id: "ServiceNow_CAD",
+    name: "[SNC-CAD]",
+    list: [
+      {
+        id: "SNC-CAD_Part1",
+        name: "[SNC-CAD] Part1",
+        data: SNC_CAD_Part1.data,
+      },
+      {
+        id: "SNC-CAD_Part2",
+        name: "[SNC-CAD] Part2",
+        data: SNC_CAD_Part2.data,
+      },
+      {
+        id: "SNC-CAD_Part3",
+        name: "[SNC-CAD] Part3",
+        data: SNC_CAD_Part3.data,
+      },
+      {
+        id: "SNC-CAD_Part All",
+        name: "[SNC-CAD] Part All",
+        data: SNC_CAD_Part_All.data,
+      }
+    ]
+  },
   // Associate ###############################################
   //GROUP 2
   {
