@@ -3,6 +3,7 @@ var listExamGroup = [
   {
     id: "ServiceNow_CAD",
     name: "[SNC-CAD]",
+    active: false,
     list: [
       {
         id: "SNC-CAD_Part1",
@@ -31,6 +32,7 @@ var listExamGroup = [
   {
     id: "SOA_C02",
     name: "[SOA-C02] Sysops Administrator - Associate",
+    active: false,
     list: [
       {
         id: "SOA_C02_Part1",
@@ -69,6 +71,7 @@ var listExamGroup = [
   {
     id: "SAA_C03",
     name: "[SAA-C03] Solutions Architect - Associate",
+    active: false,
     list: [
       {
         id: "SAA_C03_Exam_001_100",
@@ -107,6 +110,7 @@ var listExamGroup = [
   {
     id: "DVA_C01",
     name: "[DVA-C01] Developer - Associate",
+    active: false,
     list: [
       {
         id: "DVA_C01_Part1",
@@ -145,6 +149,7 @@ var listExamGroup = [
   {
     id: "DVA_C02",
     name: "[DVA-C02] Developer - Associate",
+    active: false,
     list: [
       {
         id: "DVA_C02_Part1",
@@ -183,6 +188,7 @@ var listExamGroup = [
   {
     id: "SAP_C01",
     name: "[SAP-C01] Solutions Architect - Professional",
+    active: false,
     list: [
       {
         id: "ExamTopic_001_100",
@@ -241,6 +247,7 @@ var listExamGroup = [
   {
     id: "SAP_C02",
     name: "[SAP-C02] Solutions Architect - Professional",
+    active: false,
     list: [
       {
         id: "SAP_C02_Part1",
@@ -279,6 +286,7 @@ var listExamGroup = [
   {
     id: "DOP_C01",
     name: "[DOP-C01] DevOps Engineer - Professional",
+    active: false,
     list: [
       {
         id: "DOP_C01_Part1",
@@ -318,6 +326,7 @@ var listExamGroup = [
   {
     id: "DBS_C01",
     name: "[DBS-C01] Database - Specialty",
+    active: false,
     list: [
       {
         id: "DBS_C01_Part1",
@@ -340,7 +349,8 @@ var listExamGroup = [
   //GROUP 7
   {
     id: "PMI_PMP",
-    name: "[PMI-PMP] Project Management Professional",
+    name: "[PMI-PMP]",
+    active: true,
     list: [
       {
         id: "PMI_PMP_Part1",
@@ -382,7 +392,31 @@ var listExamGroup = [
         name: "[PMI-PMP] Part8",
         data: PMI_PMP_Part8.data,
       },
-    ]
+    ],
+  },
+
+  // Group PMA
+  {
+    id: "PMA_PMP",
+    name: "[PMA-PMP]",
+    active: true,
+    list: [
+      {
+        id: "PMA_PMP_FINAL_EXAM_Part1",
+        name: "[PMA-PMP] FINAL EXAM Part1",
+        data: PMA_PMP_FINAL_EXAM_Part1.data,
+      },
+      {
+        id: "PMA_PMP_FINAL_EXAM_Part2",
+        name: "[PMA-PMP] FINAL EXAM Part2",
+        data: PMA_PMP_FINAL_EXAM_Part2.data,
+      },
+      {
+        id: "PMA_PMP_FINAL_EXAM_Part3",
+        name: "[PMA-PMP] FINAL EXAM Part3",
+        data: PMA_PMP_FINAL_EXAM_Part3.data,
+      }
+    ],
   },
   
   // //GROUP 6

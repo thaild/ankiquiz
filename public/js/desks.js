@@ -2,7 +2,7 @@
 var examListHtml = "";
 var examGroupHtml = "";
 
-listExamGroup.forEach(function (item) {
+listExamGroup.filter((g) => g.active).forEach(function (item) {
   examGroupHtml += `<option value="${item.id}">${item.name}</option>`
 });
 
