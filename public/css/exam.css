@@ -176,7 +176,6 @@ body.white-mode .starMarkToReview.true {
 }
 
 .ExamQuestionsBlock .left .content {
-    /* max-width: 830px; */
     width: 100%;
     margin: 0;
     -webkit-flex: 1 1;
@@ -207,8 +206,9 @@ body.white-mode .starMarkToReview.true {
     margin-bottom: 5px;
 }
 
-.ExamQuestionsBlock .left .content p {
+.ExamQuestionsBlock .left .content {
     font-size: 20px;
+    color: darkblue;
     overflow-x: auto;
 }
 
