@@ -19,7 +19,7 @@
 
 <body class="white-mode">
     <!-- BANNER -->
-    <div class="container">
+    <div class="container-lg">
         <div class="settingBlock text-end">
             <span>Shared Anki Test</span>
             <span class="dropdown">
@@ -35,13 +35,13 @@
         </div>
     </div>
     <!-- MAIN -->
-    <div class="container">
+    <div class="container-lg">
         <div class="examBlock" style="user-select: auto;">
             <div class="notification">
                 <!-- This is message!!! -->
             </div>
             <div class="exam-header row">
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
                     <div class="input-group input-group mb-1">
                         <label class="input-group-text bg-secondary text-white" for="groupList">Group</label>
                         <select class="form-select text-black" id="groupList">
@@ -53,7 +53,7 @@
                     </div>
                     
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
                     <div class="input-group mb-1">
                         <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
                         <select class="form-select text-black" id="deskList">
@@ -64,10 +64,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 item2">
+                <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
                     <a href="javascript:void(0)" class="btn btn-common btn-createTest btn-warning">Test</a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 item3">
+                <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none d-md-block">
                     <a href="javascript:void(0)" class="btn btn-common btn-saveQuiz">Save</a>
                     <a href="javascript:void(0)" class="btn btn-common btn-clearQuiz">Clear Cache</a>
                 </div>
@@ -80,8 +80,8 @@
             <h4 class="pt-2 text-center fw-bold font-monospace text-uppercase" id="examName">Exam Name</h4>
             <div class="ExamQuestionsBlock">
                 <!-- LEFT BLOCK -->
-                <div class="left">
-                    <div class="block-head">
+                <div class="col-12 col-md-9 left">
+                    <div class="block-head fw-bold font-monospace text-uppercase">
                         <div class="top-head">
                             <span class="que-category"><strong>Exam No:</strong> <span id="queDomain"></span></span>
                         </div>
@@ -95,7 +95,7 @@
                         <!-- <label style="display: flex;"><input id="btnMarkToReview" class="ip-radio" type="checkbox">Mark to Review</label> -->
                     </div>
                     <div class="content">
-                        <div class="total-questions my-1">Question 1 of 15</div>
+                        <div class="total-questions my-1 fw-bold font-monospace text-uppercase">Question 1 of 15</div>
                         <!-- Show Question -->
                         <div class="que-text"></div>
 
@@ -146,7 +146,7 @@
                 <!-- ./LEFT BLOCK -->
 
                 <!-- RIGHT BLOCK -->
-                <div class="right">
+                <div class="col-12 col-md-3 right">
                     <a class="btn rounded-pill btn-review">Review</a>
                     <a class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse" href="#attempts-que" role="button" aria-expanded="false" aria-controls="attempts-que">
                         Hide/Show List Question

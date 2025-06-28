@@ -149,10 +149,8 @@ body.white-mode .starMarkToReview.true {
     flex-wrap: wrap;
     -webkit-align-items: stretch;
     align-items: stretch;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    min-height: 540px;
-    margin: 0;
+    /* -webkit-justify-content: space-between; */
+    /* justify-content: space-between; */
 }
 
 .ExamQuestionsBlock .left .block-head {
@@ -168,23 +166,17 @@ body.white-mode .starMarkToReview.true {
     justify-content: space-between;
     -webkit-flex-direction: column;
     flex-direction: column;
-    max-width: calc(100% - 375px);
-    width: 100%;
     padding: 15px 20px 0 15px;
-    margin: 0;
     border-right: 1px solid #ddd;
 }
 
 .ExamQuestionsBlock .right {
-    /* position: relative; */
-    max-width: 375px;
-    width: 100%;
     padding: 15px;
     margin: 0;
 }
 
 .ExamQuestionsBlock .left .content {
-    max-width: 830px;
+    /* max-width: 830px; */
     width: 100%;
     margin: 0;
     -webkit-flex: 1 1;
@@ -216,7 +208,7 @@ body.white-mode .starMarkToReview.true {
 }
 
 .ExamQuestionsBlock .left .content p {
-    /* font-size: 14px; */
+    font-size: 20px;
     overflow-x: auto;
 }
 
@@ -530,20 +522,9 @@ body.white-mode {
 
 /* CSS FOR IPAD DEVICES */
 @media only screen and (min-device-width: 500px)  and (max-device-width: 900px)  and (orientation: portrait)  {
-    .ExamQuestionsBlock .left {
-        max-width: calc(100% - 100px);
-    }
-
     .ExamQuestionsBlock .left .block-head {
         padding-top: 42px;
     }
-
-    .ExamQuestionsBlock .right {
-        max-width: 100px;
-        max-height: 768px;
-        overflow-y: scroll;
-    } 
-
     .ExamQuestionsBlock .right .attempts-que ul {
         grid-template-columns: repeat(2,1fr);
     }
@@ -564,17 +545,11 @@ body.white-mode {
 }
 
 @media only screen and (max-device-width: 1200px) and (orientation: landscape) {
-    .ExamQuestionsBlock .left {
-        max-width: calc(100% - 200px);
-    }
-
     .ExamQuestionsBlock .left .block-head {
         padding-top: 42px;
     }
 
     .ExamQuestionsBlock .right {
-        max-width: 200px;
-        max-height: 475px;
         overflow-y: scroll;
     }
 
@@ -583,16 +558,12 @@ body.white-mode {
     }
 
     body {
-        font-size: 14px !important;
+        font-size: 16px !important;
     }
 }
 
 /* CSS FOR IPHONES DEVICES */
 @media only screen and (max-device-width: 500px)  and (orientation: portrait)  {
-    .ExamQuestionsBlock {
-        flex-direction: column-reverse;
-    }
-
     .ExamQuestionsBlock .left .block-head {
         padding-top: 42px;
     }
