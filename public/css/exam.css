@@ -209,7 +209,6 @@ body.white-mode .starMarkToReview.true {
 .ExamQuestionsBlock .left .content {
     font-size: 20px;
     color: darkblue;
-    overflow-x: auto;
 }
 
 .que-content {
