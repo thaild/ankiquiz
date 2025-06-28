@@ -1254,7 +1254,7 @@ var PMA_PMP_FINAL_EXAM_Part2 = {
       "course_id": 1,
       "case_study_id": "null",
       "lab_id": 0,
-      "question_text": "Please refer to the following diagram: You know that current variances are atypical, i.e., similar variances will not occur in future. What is the cost performance index (CPI) for the project? Enter the correct number (only) in the following text box:<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/134.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250628%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250628T050347Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0be6b1c96182923cf4cf8897eb29d0bc06f8301f56ada7578cd42208015c04c6\" alt=\"Image for the question\" />",
+      "question_text": "Please refer to the following diagram: You know that current variances are atypical, i.e., similar variances will not occur in future. What is the cost performance index (CPI) for the project? Enter the correct number (only) in the following text box:<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/134.png\" alt=\"Image for the question\" />",
       "mark": 1,
       "is_partially_correct": false,
       "question_type": "1",
