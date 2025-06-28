@@ -286,8 +286,9 @@ $(".btn-return").on("click", function () {
 //SAVE QUIZ TO CACHE
 $(".btn-saveQuiz").on("click", function () {
   exam.saveToLocalCache();
-  $(".notification").text("Save to local successfully!!");
-  $(".notification").removeClass("dange").addClass("success");
+  // $(".notification").text("Save to local successfully!!");
+  console.info("Save to local successfully!!")
+  // $(".notification").removeClass("dange").addClass("success");
 });
 
 //CLEAR CACHE
