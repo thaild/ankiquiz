@@ -1,3 +1,7 @@
+body {
+    margin-bottom: 5rem;
+}
+
 .examBlock {
     background: #fff;
     /* margin: -50px 0 0; */
@@ -57,7 +61,7 @@
     min-width: 60px !important;
     font-size: 14px !important;
     border-radius: 8px !important;
-    margin: 0 5px;
+    margin: 0 4px;
 }
 
 body.white-mode .btn-clearQuiz {
@@ -87,7 +91,8 @@ body.white-mode .btnPrevQue, body.white-mode .btnNextQue {
     min-width: 60px !important;
     font-size: 14px !important;
     border-radius: 8px !important;
-    margin: 0 5px;
+    margin: 0 4px;
+    padding: 4px;
 }
 
 
@@ -105,7 +110,7 @@ body.white-mode .starMarkToReview.true {
 .starMarkToReview {
     display: inline;
     text-align: center;
-    padding: 7px 10px;
+    padding: 1px 4px;
     border-radius: 50%;
     position: absolute;
     right: 0;
@@ -114,7 +119,6 @@ body.white-mode .starMarkToReview.true {
     color: #fdf3ea;
     background-color: rgb(255 255 255 / 20%);
     border: 1px solid #fdf3ea;
-    font-size: 18px;
 }
 
 #testBlock .starMarkToReview {
@@ -207,7 +211,7 @@ body.white-mode .starMarkToReview.true {
 }
 
 .ExamQuestionsBlock .left .content {
-    font-size: 20px;
+    font-size: 22px;
     color: darkblue;
 }
 
@@ -255,8 +259,7 @@ body.white-mode .starMarkToReview.true {
     border: 0;
     border-top: none !important;
     position: absolute;
-    right: 55px;
-    top: 4px;
+    right: 32px;
 }
 
 /* btn reviewAttemts*/

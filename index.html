@@ -19,7 +19,7 @@
 
 <body class="white-mode">
     <!-- BANNER -->
-    <div class="container-lg">
+    <div class="container-lg d-none d-xl-block">
         <div class="settingBlock text-end">
             <span>Shared Anki Test</span>
             <span class="dropdown">
@@ -53,7 +53,7 @@
                     </div>
                     
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
+                <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-end">
                     <div class="input-group mb-1">
                         <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
                         <select class="form-select text-black" id="deskList">
@@ -67,7 +67,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
                     <a href="javascript:void(0)" class="btn btn-common btn-createTest btn-warning">Test</a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none d-md-block">
+                <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none d-xl-block">
                     <a href="javascript:void(0)" class="btn btn-common btn-saveQuiz">Save</a>
                     <a href="javascript:void(0)" class="btn btn-common btn-clearQuiz">Clear Cache</a>
                 </div>
@@ -77,14 +77,10 @@
                 <!-- <a href="javascript:void(0)" class="btn btn-starQuiz">Test Star</a> -->
                 <!-- <a href="javascript:void(0)" class="btn btn-success btn-exportQuiz">Export</a> -->
             </div>
-            <h4 class="d-none d-md-block pt-2 text-center fw-bold font-monospace text-uppercase" id="examName">Exam Name</h4>
             <div class="ExamQuestionsBlock">
                 <!-- LEFT BLOCK -->
                 <div class="col-12 col-md-9 left">
                     <div class="d-none d-md-block block-head fw-bold font-monospace text-uppercase">
-                        <div class="top-head">
-                            <span class="que-category"><strong>Exam No:</strong> <span id="queDomain"></span></span>
-                        </div>
                         <div class="exam-nav top">
                             <a class="btnPrevQue btn btn-success" href="javascript:void(0)">Prev</a>
                             <a class="btnNextQue btn btn-success" href="javascript:void(0)">Next</a>
@@ -97,7 +93,7 @@
                     <div class="content">
                         <div class="total-questions my-1 fw-bold font-monospace text-uppercase">Question 1 of 15</div>
                         <!-- Show Question -->
-                        <div class="que-text"></div>
+                        <div class="que-text mb-3"></div>
 
                         <!-- Show Answer Choices -->
                         <fieldset id="ques-list" class="que-list MuiFormControl-root Questions-list">
@@ -440,7 +436,9 @@
     <script src="./public/data/pma/final_exam/final_exam_part1.js"></script>
     <script src="./public/data/pma/final_exam/final_exam_part2.js"></script>
     <script src="./public/data/pma/final_exam/final_exam_part3.js"></script>
-    
+    <script src="./public/data/pma/mock_test/mock_test1.js"></script>
+    <script src="./public/data/pma/mock_test/mock_test2.js"></script>
+
     <!-- 1Z0-083 ExamTopics-->
     <!-- <script src="./public/data/examtopics/1Z0-083/1z0_083_part1.js"></script> -->
 

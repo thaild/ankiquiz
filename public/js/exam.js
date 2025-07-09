@@ -294,8 +294,10 @@ $(".btn-saveQuiz").on("click", function () {
 //CLEAR CACHE
 $(".btn-clearQuiz").on("click", function () {
   exam.clearLocalCache();
-  $(".notification").text("Clear local storage successfully!!");
-  $(".notification").removeClass("success").addClass("danger");
+  setTimeout(() => {
+    $(".notification").text("Clear local storage successfully!!");
+    $(".notification").removeClass("success").addClass("danger");
+  }, 100);
 });
 
 //CHOICE GROUP
@@ -342,7 +344,7 @@ function switchDesk(groupId, examId) {
   $("#deskList .deskItem").removeClass("active");
   $(`#deskList .deskItem[data-examid="${examId}"]`).addClass("active");
   $("#selectExam").text(listExam[examIndex].name);
-  $("#examName").text(listExam[examIndex].name);
+  // $("#examName").text(listExam[examIndex].name);
 
   //Set URL
   setSearchParam("group", groupId);

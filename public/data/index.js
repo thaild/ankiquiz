@@ -397,6 +397,24 @@ var listExamGroup = [
 
   // Group PMA
   {
+    id: "PMA_Mock_test",
+    name: "[PMA-PMP] Mock test",
+    active: true,
+    list: [
+      {
+        id: "Mock_test1",
+        name: "[PMA-PMP] MOCK TEST 1",
+        data: PMA_PMP_MOCK_TEST1.data,
+      },
+      {
+        id: "Mock_test2",
+        name: "[PMA-PMP] MOCK TEST 2",
+        data: PMA_PMP_MOCK_TEST2.data,
+      }
+    ],
+  },
+
+  {
     id: "PMA_PMP",
     name: "[PMA-PMP]",
     active: true,

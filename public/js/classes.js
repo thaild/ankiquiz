@@ -248,7 +248,7 @@ class Question {
   }
 
   showQueNumber(queNo = 0) {
-    $(".total-questions").text(`Question ${queNo + 1} of ${queDataCount}`);
+    $(".total-questions").text(`#${queNo + 1}/${queDataCount}`);
   }
 
   showQueAnswerHtml(choiceAnswer, isShowAnswer = false) {
