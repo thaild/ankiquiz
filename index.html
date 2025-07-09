@@ -7,14 +7,16 @@
     <title>Shared EXAM</title>
     <link rel="stylesheet" type="text/css" href="./public/css/main.css">
     <link rel="stylesheet" type="text/css" href="./public/css/exam.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
+
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="white-mode">
@@ -27,9 +29,14 @@
                     <i class="fa-solid fa-sliders"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" class="dropdown-item btnToogleDarkMode btn btn-common btn-info btn-sm">Toogle DarkMode</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-dark" href="./convert-html-to-json.html" target="_blank">Convert Html2Json</a></li>
+                    <li><a href="javascript:void(0)"
+                            class="dropdown-item btnToogleDarkMode btn btn-common btn-info btn-sm">Toogle DarkMode</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-dark" href="./convert-html-to-json.html" target="_blank">Convert
+                            Html2Json</a></li>
                 </ul>
             </span>
         </div>
@@ -45,22 +52,22 @@
                     <div class="input-group input-group mb-1">
                         <label class="input-group-text bg-secondary text-white" for="groupList">Group</label>
                         <select class="form-select text-black" id="groupList">
-                          <option selected>Choose...</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                     </div>
-                    
+
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-end">
                     <div class="input-group mb-1">
                         <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
                         <select class="form-select text-black" id="deskList">
-                          <option selected>Choose...</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                     </div>
                 </div>
@@ -80,30 +87,41 @@
             <div class="ExamQuestionsBlock">
                 <!-- LEFT BLOCK -->
                 <div class="col-12 col-md-9 left">
-                    <div class="d-none d-md-block block-head fw-bold font-monospace text-uppercase">
-                        <div class="exam-nav top">
-                            <a class="btnPrevQue btn btn-success" href="javascript:void(0)">Prev</a>
-                            <a class="btnNextQue btn btn-success" href="javascript:void(0)">Next</a>
-                        </div>
-                        <div id="starMarkToReview" class="starMarkToReview true">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <!-- <label style="display: flex;"><input id="btnMarkToReview" class="ip-radio" type="checkbox">Mark to Review</label> -->
-                    </div>
+
                     <div class="content">
-                        <div class="total-questions my-1 fw-bold font-monospace text-uppercase">Question 1 of 15</div>
+                        <div class="d-flex align-items-center justify-content-between fs-6">
+                            <div class="block-head fw-bold font-monospace text-uppercase">
+                                <div class="exam-nav top">
+                                    <a class="btnPrevQue btn btn-success" href="javascript:void(0)">Prev</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                <div class="total-questions my-1 fw-bold font-monospace text-uppercase">#1/15</div>
+                                 <div id="starMarkToReview" class="starMarkToReview true">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <!-- <label style="display: flex;"><input id="btnMarkToReview" class="ip-radio" type="checkbox">Mark to Review</label> -->
+                            </div>
+                            
+                            <div class="block-head fw-bold font-monospace text-uppercase">
+                                <div class="exam-nav top">
+                                    <a class="btnNextQue btn btn-success" href="javascript:void(0)">Next</a>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Show Question -->
                         <div class="que-text mb-3"></div>
 
                         <!-- Show Answer Choices -->
                         <fieldset id="ques-list" class="que-list MuiFormControl-root Questions-list">
                         </fieldset>
-                        
+
                         <div class="exam-nav">
                             <a class="btnPrevQue btn btn-success btn-saveQuiz" href="javascript:void(0)">Prev</a>
                             <a class="btnNextQue btn btn-success btn-saveQuiz" href="javascript:void(0)">Next</a>
                         </div>
-                        
+
                         <!-- Show Answer -->
                         <button class="btn-showAnswer btn btn-warning px-1">Show Answer</button>
 
@@ -112,25 +130,30 @@
 
                         <!-- Edit -->
                         <!-- <button class="btn-editQuestion btn btn-warning">Edit</button> -->
-                        
+
                         <!-- Show Edit -->
                         <div class="edit-ques-block">
                             <button class="btn btn-sm btn-warning d-none" id="btnEditQuestionModal">Edit Memo</button>
                             <!-- Modal -->
-                            <div class="modal fade" id="editQuestionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="editQuestionModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content" style="background-color: #6c757d;">
-                                    <div class="modal-header">
-                                        <div class="modal-title" id="exampleModalLongTitle" style="color: #fff">Seft Comment (E)</div>
+                                    <div class="modal-content" style="background-color: #6c757d;">
+                                        <div class="modal-header">
+                                            <div class="modal-title" id="exampleModalLongTitle" style="color: #fff">Seft
+                                                Comment (E)</div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <textarea class="txtContent form-control"
+                                                style="background: #282620; color: #ffffff;" aria-label="Enter comment"
+                                                rows="5"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btnSave btn btn-success">Save</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <textarea class="txtContent form-control" style="background: #282620; color: #ffffff;" aria-label="Enter comment" rows="5"></textarea>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btnSave btn btn-success">Save</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +167,8 @@
                 <!-- RIGHT BLOCK -->
                 <div class="col-12 col-md-3 right">
                     <a class="btn rounded-pill btn-review">Review</a>
-                    <a class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse" href="#attempts-que" role="button" aria-expanded="false" aria-controls="attempts-que">
+                    <a class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse"
+                        href="#attempts-que" role="button" aria-expanded="false" aria-controls="attempts-que">
                         Hide/Show List Question
                     </a>
                     <div id="attempts-que" class="attempts-que collapse hide">
@@ -163,9 +187,9 @@
                 <a class="btn btn-danger btn-return">Return</a>
             </div>
             <h3 class="text-center">Result</h6>
-            <div id="resultBlock">
-                This is result
-            </div>
+                <div id="resultBlock">
+                    This is result
+                </div>
         </div>
 
         <div class="mt-3 starBlock d-none">
@@ -173,143 +197,150 @@
                 <a class="btn btn-danger btn-return">Return</a>
             </div>
             <h3 class="text-center">Re-test Star Question</h6>
-            <h4>Options:</h4>
-            <div class="row mb-3">
-                <div class="col-sm-9 col-md-3 col-lg-3">
-                    <select id="filterOptionType" class="form-select" aria-label="Default select example">
-                        <option selected value="RETEST">RETEST</option>
-                        <option value="STAR">STAR</option>
-                        <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
+                <h4>Options:</h4>
+                <div class="row mb-3">
+                    <div class="col-sm-9 col-md-3 col-lg-3">
+                        <select id="filterOptionType" class="form-select" aria-label="Default select example">
+                            <option selected value="RETEST">RETEST</option>
+                            <option value="STAR">STAR</option>
+                            <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
                         <option value="NEVER_ANSWERS">NEVER_ANSWERS</option> -->
-                    </select>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <div class="row">
+                            <div class="col-3">
+                                <input id="filterOptionFromQuestion" type="number" class="form-control"
+                                    placeholder="From question" aria-label="From question" value="1">
+                            </div>
+                            <div class="col-3">
+                                <input id="filterOptionToQuestion" type="number" class="form-control"
+                                    placeholder="To question" aria-label="To question" value="100">
+                            </div>
+                            <div class="col-6">
+                                <select id="filterOptionMaxQuestion" class="form-select"
+                                    aria-label="Default select example">
+                                    <option value="5">5</option>
+                                    <option selected value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-12 col-md-9">
-                    <div class="row">
-                        <div class="col-3">
-                          <input id="filterOptionFromQuestion" type="number" class="form-control" placeholder="From question" aria-label="From question" value="1">
-                        </div>
-                        <div class="col-3">
-                          <input id="filterOptionToQuestion" type="number" class="form-control" placeholder="To question" aria-label="To question" value="100">
-                        </div>
-                        <div class="col-6">
-                            <select id="filterOptionMaxQuestion" class="form-select" aria-label="Default select example">
-                                <option value="5">5</option>
-                                <option selected  value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                      </div>
+                <div id="starBlock">
+                    This is Star Block
                 </div>
-            </div>
-            <div id="starBlock">
-                This is Star Block
-            </div>
-            <div class="text-center my-3">
-                <a class="btn btn-warning btnShowStarResult">Show Result</a>
-            </div>
+                <div class="text-center my-3">
+                    <a class="btn btn-warning btnShowStarResult">Show Result</a>
+                </div>
         </div>
 
         <div id="testBlock" class="mt-2 testBlock d-none">
             <h3 class="text-center">=== TEST ===</h6>
-            <div class="row mb-3">
-                <div class="col-sm-9 col-md-3 col-lg-3">
-                    Options:
-                    <select id="filterOptionType2" class="form-select" aria-label="Default select example">
-                        <option selected value="RETEST">RETEST</option>
-                        <option value="STAR">STAR</option>
-                        <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
+                <div class="row mb-3">
+                    <div class="col-sm-9 col-md-3 col-lg-3">
+                        Options:
+                        <select id="filterOptionType2" class="form-select" aria-label="Default select example">
+                            <option selected value="RETEST">RETEST</option>
+                            <option value="STAR">STAR</option>
+                            <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
                         <option value="NEVER_ANSWERS">NEVER_ANSWERS</option> -->
-                    </select>
-                </div>
-                <div class="col-sm-12 col-md-9">
-                    <div class="row">
-                        <div class="col">
-                            From:
-                            <input id="filterOptionFromQuestion2" type="number" class="form-control" placeholder="From question" aria-label="From question" value="1">
-                        </div>
-                        <div class="col">
-                            To:
-                            <input id="filterOptionToQuestion2" type="number" class="form-control" placeholder="To question" aria-label="To question" value="20">
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            Random:
-                            <select id="filterOptionRandom" class="form-select" aria-label="Default select example">
-                                <option value="RANDOM" selected>YES</option>
-                                <option value="NOT_RANDOM">NO</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            Max Question:
-                            <select id="filterOptionMaxQuestion2" class="form-select" aria-label="Default select example">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="65">65</option>
-                                <option value="75">75</option>
-                                <option value="15">100</option>
-                                <option value="ALL" selected>All</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-1">
-                    <div class="col-3">
-                        Show Question ID:
-                        <select id="show_question_title" class="form-select" aria-label="Default select example">
-                            <option value="1" selected>Show</option>
-                            <option value="0">Hide</option>
                         </select>
                     </div>
-                    <!-- <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div> -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button class="btnCreateTest btn btn-success btn-common">Create Test</button>
-                    <button class="btn-return btn btn-danger btn-common">Exit</button>
-                </div>
-            </div>
-            <form id="test_form">
-                <div class="testContent pt-3">
-                    This is test content
-                </div>
-            </form>
-            <div class="row pb-3">
-                <div class="col-12 text-center">
-                    <button class="btn btn-success btnShowAnswer d-none">Show All Answer</button>
-                </div>
-            </div>
-
-            <div class="quick-review">
-                <div class="text-center">
-                    <button class="btn btn-warning btnQuickReview text-center">RV</button>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="quickReviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Quick Review (R)</h5>
-                        </div>
-                        <div class="modal-body">
-                            <div id="quickReviewContent"></div>
-                            <hr>
-                            <div class="text-center">
-                                <a class="btnQuickReviewDetails" href="javascript:void(0)">Show Details</a>
-                                <div id="tableQuickReviewDetails"></div>    
+                    <div class="col-sm-12 col-md-9">
+                        <div class="row">
+                            <div class="col">
+                                From:
+                                <input id="filterOptionFromQuestion2" type="number" class="form-control"
+                                    placeholder="From question" aria-label="From question" value="1">
+                            </div>
+                            <div class="col">
+                                To:
+                                <input id="filterOptionToQuestion2" type="number" class="form-control"
+                                    placeholder="To question" aria-label="To question" value="20">
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                Random:
+                                <select id="filterOptionRandom" class="form-select" aria-label="Default select example">
+                                    <option value="RANDOM" selected>YES</option>
+                                    <option value="NOT_RANDOM">NO</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                Max Question:
+                                <select id="filterOptionMaxQuestion2" class="form-select"
+                                    aria-label="Default select example">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="65">65</option>
+                                    <option value="75">75</option>
+                                    <option value="15">100</option>
+                                    <option value="ALL" selected>All</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
                     </div>
+                    <div class="row pt-1">
+                        <div class="col-3">
+                            Show Question ID:
+                            <select id="show_question_title" class="form-select" aria-label="Default select example">
+                                <option value="1" selected>Show</option>
+                                <option value="0">Hide</option>
+                            </select>
+                        </div>
+                        <!-- <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div> -->
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button class="btnCreateTest btn btn-success btn-common">Create Test</button>
+                        <button class="btn-return btn btn-danger btn-common">Exit</button>
+                    </div>
+                </div>
+                <form id="test_form">
+                    <div class="testContent pt-3">
+                        This is test content
+                    </div>
+                </form>
+                <div class="row pb-3">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-success btnShowAnswer d-none">Show All Answer</button>
+                    </div>
+                </div>
+
+                <div class="quick-review">
+                    <div class="text-center">
+                        <button class="btn btn-warning btnQuickReview text-center">RV</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="quickReviewModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Quick Review (R)</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="quickReviewContent"></div>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="btnQuickReviewDetails" href="javascript:void(0)">Show Details</a>
+                                        <div id="tableQuickReviewDetails"></div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
@@ -326,9 +357,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" 
@@ -390,7 +421,7 @@
     <script src="./public/data/examtopics/DBS-C01/dbs_c01_part1.js"></script>
     <script src="./public/data/examtopics/DBS-C01/dbs_c01_part2.js"></script>
     <script src="./public/data/examtopics/DBS-C01/dbs_c01_part3.js"></script>
-    
+
     <!-- DOP-C01 ExamTopics-->
     <script src="./public/data/examtopics/DOP-C01/dop_c01_part1.js"></script>
     <script src="./public/data/examtopics/DOP-C01/dop_c01_part2.js"></script>

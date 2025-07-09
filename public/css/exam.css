@@ -1,5 +1,5 @@
 body {
-    margin-bottom: 5rem;
+    margin-bottom: 5rem !important;
 }
 
 .examBlock {
@@ -112,7 +112,6 @@ body.white-mode .starMarkToReview.true {
     text-align: center;
     padding: 1px 4px;
     border-radius: 50%;
-    position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
@@ -157,10 +156,6 @@ body.white-mode .starMarkToReview.true {
     /* justify-content: space-between; */
 }
 
-.ExamQuestionsBlock .left .block-head {
-    position: relative;
-}
-
 .ExamQuestionsBlock .left {
     display: -webkit-flex;
     display: flex;
@@ -180,6 +175,7 @@ body.white-mode .starMarkToReview.true {
 }
 
 .ExamQuestionsBlock .left .content {
+    position: relative;
     width: 100%;
     margin: 0;
     -webkit-flex: 1 1;
@@ -251,15 +247,10 @@ body.white-mode .starMarkToReview.true {
 }
 
 .exam-nav.top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0;
     margin: 0;
     border: 0;
     border-top: none !important;
-    position: absolute;
-    right: 32px;
 }
 
 /* btn reviewAttemts*/
@@ -524,9 +515,6 @@ body.white-mode {
 
 /* CSS FOR IPAD DEVICES */
 @media only screen and (min-device-width: 500px)  and (max-device-width: 900px)  and (orientation: portrait)  {
-    .ExamQuestionsBlock .left .block-head {
-        padding-top: 42px;
-    }
     .ExamQuestionsBlock .right .attempts-que ul {
         grid-template-columns: repeat(2,1fr);
     }
@@ -547,10 +535,6 @@ body.white-mode {
 }
 
 @media only screen and (max-device-width: 1200px) and (orientation: landscape) {
-    .ExamQuestionsBlock .left .block-head {
-        padding-top: 42px;
-    }
-
     .ExamQuestionsBlock .right {
         overflow-y: scroll;
     }
@@ -566,10 +550,6 @@ body.white-mode {
 
 /* CSS FOR IPHONES DEVICES */
 @media only screen and (max-device-width: 500px)  and (orientation: portrait)  {
-    .ExamQuestionsBlock .left .block-head {
-        padding-top: 42px;
-    }
-
     .ExamQuestionsBlock .left {
         width: 100%;
         padding: 0 20px 0 15px;
@@ -616,7 +596,6 @@ body.white-mode {
 
     #testBlock .starMarkToReview {
         padding: 1px 4px;
-        position: absolute;
         right: 5px;
         top: 5px;
     }
