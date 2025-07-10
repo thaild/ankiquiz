@@ -1,0 +1,16 @@
+{
+  "exam": "PMI-PMP",
+  "source": "examtopics",
+  "files": [
+    "pmi_pmp_part1.js",
+    "pmi_pmp_part2.js",
+    "pmi_pmp_part3.js",
+    "pmi_pmp_part4.js",
+    "pmi_pmp_part5.js",
+    "pmi_pmp_part6.js",
+    "pmi_pmp_part7.js",
+    "pmi_pmp_part8.js"
+  ],
+  "generated": "2025-07-10T01:01:04.828Z",
+  "totalFiles": 8
+}

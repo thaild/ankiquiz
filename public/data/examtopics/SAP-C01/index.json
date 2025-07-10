@@ -1,0 +1,18 @@
+{
+  "exam": "SAP-C01",
+  "source": "examtopics",
+  "files": [
+    "exam_001_100.js",
+    "exam_101_200.js",
+    "exam_201_300.js",
+    "exam_301_400.js",
+    "exam_400_499.js",
+    "exam_500_599.js",
+    "exam_600_699.js",
+    "exam_700_799.js",
+    "exam_800_899.js",
+    "exam_900_1027.js"
+  ],
+  "generated": "2025-07-10T01:01:04.822Z",
+  "totalFiles": 10
+}

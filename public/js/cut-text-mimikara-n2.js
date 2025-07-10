@@ -24,7 +24,7 @@ function getTuvung(html) {
 }
 
 $("#btn-submit-json").on("click", function () {
-    console.log("#btn-submit-json clicked");
+    // Button clicked
     $("#csv-result").text("");
     var htmlRaw = $("#html-source").val();
     $("#tempHtml").html(htmlRaw);

@@ -52,6 +52,19 @@ function setUserStorage(id, value) {
 
 function init() {
   loadDarkMode();
+  
+  // Check if listExamGroup is available before initializing
+  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+    setTimeout(init, 200); // Increased delay to ensure index.js is fully processed
+    return;
+  }
+  
+  // Check if Exam class is available
+  if (typeof window.Exam === 'undefined') {
+    setTimeout(init, 200);
+    return;
+  }
+  
   groupId = getUserStorage("group_id");
   $("#groupList").val(groupId);
   switchGroup(groupId);
@@ -60,7 +73,29 @@ function init() {
   $("#deskList").val(examId);
   switchDesk(groupId, examId);
 }
-init();
+
+// Listen for classes ready event
+document.addEventListener('classesReady', function(event) {
+  setTimeout(init, 100);
+});
+
+// Listen for listExamGroup ready event
+document.addEventListener('listExamGroupReady', function(event) {
+  setTimeout(init, 100); // Small delay to ensure everything is ready
+});
+
+// Listen for exam data loaded event
+document.addEventListener('examDataLoaded', function(event) {
+  setTimeout(init, 150); // Longer delay to ensure index.js is processed
+});
+
+// Listen for application ready event
+document.addEventListener('applicationReady', function(event) {
+  setTimeout(init, 200); // Even longer delay for this event
+});
+
+// Start initialization (fallback) with longer initial delay
+setTimeout(init, 500);
 
 // LOAD QUESTION
 $("#attempts-que").on("click", "ul > li", function () {
@@ -113,7 +148,7 @@ $("#editQuestionModal").on("click", ".btn-secondary", function() {
 });
 
 $(".btn-editQuestion").on("click", function () {
-  console.log("btn editques");
+  // Edit question functionality
 });
 
 // SHOW DISSUSTION
@@ -314,12 +349,17 @@ $("#deskList").on("change", function () {
 });
 
 function switchGroup(groupId) {
-  let groupIndex = listExamGroup.findIndex((group) => group.id == groupId);
+  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+    setTimeout(() => switchGroup(groupId), 100);
+    return;
+  }
+
+  let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
   if(groupIndex < 0) { 
     groupIndex = 0;
   }
 
-  let listItem = listExamGroup[groupIndex].list;
+  let listItem = window.listExamGroup[groupIndex].list;
   let itemHtml = "";
   listItem.forEach(function (item) {
     itemHtml += `<option value="${item.id}">${item.name}</option>`
@@ -331,10 +371,21 @@ function switchGroup(groupId) {
 }
 
 function switchDesk(groupId, examId) {
-  let groupIndex = listExamGroup.findIndex((group) => group.id == groupId);
+  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+    setTimeout(() => switchDesk(groupId, examId), 100);
+    return;
+  }
+
+  // Check if Exam class is available
+  if (typeof Exam === 'undefined') {
+    setTimeout(() => switchDesk(groupId, examId), 100);
+    return;
+  }
+
+  let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
   if(groupIndex < 0) return;
 
-  let listExam = listExamGroup[groupIndex].list;
+  let listExam = window.listExamGroup[groupIndex].list;
   let examIndex = listExam.findIndex((exam) => exam.id == examId);
   if(examIndex < 0) {
     examIndex = 0;
@@ -346,27 +397,44 @@ function switchDesk(groupId, examId) {
   $("#selectExam").text(listExam[examIndex].name);
   // $("#examName").text(listExam[examIndex].name);
 
-  //Set URL
-  setSearchParam("group", groupId);
-  setSearchParam("exam", examId);
+  //Set URL - check if setSearchParam is available
+  if (typeof setSearchParam === 'function') {
+    setSearchParam("group", groupId);
+    setSearchParam("exam", examId);
+  }
 
-  exam = new Exam(listExam[examIndex].data, `cache${listExam[examIndex].id}`);
-  queDataCount = exam.count;
+  // Check if exam data is available
+  if (!listExam[examIndex].data || listExam[examIndex].data.length === 0) {
+    console.warn('⚠️ Exam data not available for:', listExam[examIndex].id);
+    return;
+  }
 
-  que = new Question();
-  que.showQueNumber(exam.current);
-  que.showQueListNumber(exam.count);
+  try {
+    exam = new window.Exam(listExam[examIndex].data, `cache${listExam[examIndex].id}`);
+    window.exam = exam; // Make exam instance globally available
+    queDataCount = exam.count;
 
-  //Load from local cache
-  exam.loadFromLocalCache();
-  exam.loadQueListNumber();
+    que = new window.Question();
+    que.showQueNumber(exam.current, exam.count);
+    que.showQueListNumber(exam.count);
 
-  //Show first question or question is saved from local
-  let firstQuestion = exam.listQuestions[exam.current];
-  firstQuestion.getQuestion(
-    exam.getChoice(),
-    exam.getMarkToReview()
-  );
+    //Load from local cache
+    exam.loadFromLocalCache();
+    exam.loadQueListNumber();
+
+    //Show first question or question is saved from local
+    let firstQuestion = exam.currentQuestion();
+    if (firstQuestion && typeof firstQuestion.getQuestion === 'function') {
+      firstQuestion.getQuestion(
+        exam.getChoice(),
+        exam.getMarkToReview()
+      );
+    } else {
+      console.warn('⚠️ Question object not properly initialized');
+    }
+  } catch (error) {
+    console.error('❌ Error initializing exam:', error);
+  }
 }
 
 // CREATE TEST

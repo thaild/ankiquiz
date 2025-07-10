@@ -247,8 +247,16 @@ class Question {
     }
   }
 
-  showQueNumber(queNo = 0) {
-    $(".total-questions").text(`#${queNo + 1}/${queDataCount}`);
+  showQueNumber(queNo = 0, totalCount = null) {
+    // If totalCount is not provided, try to get it from the exam object
+    if (totalCount === null && window.exam) {
+      totalCount = window.exam.count;
+    }
+    // If still no totalCount, use a default value
+    if (totalCount === null) {
+      totalCount = "?";
+    }
+    $(".total-questions").text(`#${queNo + 1}/${totalCount}`);
   }
 
   showQueAnswerHtml(choiceAnswer, isShowAnswer = false) {
@@ -300,12 +308,10 @@ class Question {
   }
 
   editQuestionHtml() {
-    console.log("Edit Question");
-
+    // Edit question functionality
   }
   saveQuestion() {
-    console.log("save Question");
-
+    // Save question functionality
   }
 }
 
@@ -647,7 +653,6 @@ class Exam {
     }
 
     // SAVE OPTIONS
-    console.log(`Class Exam > saveToLocalCache > ${type}`);
     switch (type) {
       case "ONLY_STAR":
         exam.markedQuestion = this.markedQuestion;
@@ -683,7 +688,6 @@ class Exam {
   }
 
   clearLocalCache(type="ALL") {
-    console.log(`Class Exam > clearLocalCache > ${type}`);
     
     if(type == "ONLY_ANSWER") {
       this.choices=[];
@@ -1007,3 +1011,14 @@ class Exam {
 
   }
 }
+
+// Make classes available globally
+window.Question = Question;
+window.Exam = Exam;
+
+// Notify that classes are loaded and ready
+document.dispatchEvent(new CustomEvent('classesReady', {
+  detail: {
+    timestamp: new Date().toISOString()
+  }
+}));

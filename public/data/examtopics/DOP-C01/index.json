@@ -1,0 +1,16 @@
+{
+  "exam": "DOP-C01",
+  "source": "examtopics",
+  "files": [
+    "dop_c01_part1.js",
+    "dop_c01_part1_old.js",
+    "dop_c01_part2.js",
+    "dop_c01_part2_old.js",
+    "dop_c01_part3.js",
+    "dop_c01_part4.js",
+    "dop_c01_part5.js",
+    "dop_c01_part6.js"
+  ],
+  "generated": "2025-07-10T01:01:04.826Z",
+  "totalFiles": 8
+}

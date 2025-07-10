@@ -1,0 +1,11 @@
+{
+  "exam": "SAP-C02",
+  "source": "examtopics",
+  "files": [
+    "sap_c02_all.js",
+    "sap_c02_part1.js",
+    "sap_c02_part2.js"
+  ],
+  "generated": "2025-07-10T01:01:04.823Z",
+  "totalFiles": 3
+}
