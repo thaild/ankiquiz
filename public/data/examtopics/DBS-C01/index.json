@@ -1,0 +1,11 @@
+{
+  "exam": "DBS-C01",
+  "source": "examtopics",
+  "files": [
+    "dbs_c01_part1.js",
+    "dbs_c01_part2.js",
+    "dbs_c01_part3.js"
+  ],
+  "generated": "2025-07-10T01:01:04.825Z",
+  "totalFiles": 3
+}

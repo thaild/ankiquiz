@@ -1,0 +1,38 @@
+{
+  "name": "ankiquiz",
+  "version": "1.0.0",
+  "description": "Advanced AWS Certification Exam Preparation Tool",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "generate-indexes": "node tools/generate-exam-index.js generate",
+    "watch-indexes": "node tools/generate-exam-index.js watch",
+    "build": "npm run generate-indexes",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "echo \"No linter configured\" && exit 0"
+  },
+  "keywords": [
+    "aws",
+    "certification",
+    "exam",
+    "quiz",
+    "preparation",
+    "study"
+  ],
+  "author": "AnkiQuiz Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ankiquiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ankiquiz/issues"
+  },
+  "homepage": "https://github.com/your-username/ankiquiz#readme"
+} 

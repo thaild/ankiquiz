@@ -1,0 +1,14 @@
+{
+  "exam": "DVA-C02",
+  "source": "examtopics",
+  "files": [
+    "dva_c02_part1.js",
+    "dva_c02_part2.js",
+    "dva_c02_part3.js",
+    "dva_c02_part4.js",
+    "dva_c02_part5.js",
+    "dva_c02_part6.js"
+  ],
+  "generated": "2025-07-10T01:01:04.827Z",
+  "totalFiles": 6
+}

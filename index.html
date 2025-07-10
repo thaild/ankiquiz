@@ -4,66 +4,131 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shared Anki Test - AWS Certification Exam Preparation Tool">
+    <meta name="theme-color" content="#1f2430">
     <title>Shared EXAM</title>
-    <link rel="stylesheet" type="text/css" href="./public/css/main.css">
-    <link rel="stylesheet" type="text/css" href="./public/css/exam.css">
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://code.jquery.com">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        :root {
+            --primary-color: #1f2430;
+            --bg-primary-color: #f5f7fa;
+            --dark-primary-color: #c1c1c1;
+            --dark-bg-primary-color: #24262c;
+            --bs-body-color: #000000 !important;
+        }
+        
+        body {
+            color: var(--primary-color);
+            background: var(--bg-primary-color) !important;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif !important;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container, .container-small {
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        /* Loading state */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 1.2rem;
+        }
+        
+    </style>
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="./public/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="./public/css/exam.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="./public/css/main.css">
+        <link rel="stylesheet" href="./public/css/exam.css">
+    </noscript>
+    
+    <!-- External CSS with integrity -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome with preload -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" as="style" 
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+    </noscript>
 </head>
 
 <body class="white-mode">
+    <!-- Loading indicator -->
+    <div id="loading" class="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <span class="ms-2">Loading Exam Application...</span>
+    </div>
+
     <!-- BANNER -->
     <div class="container-lg d-none d-xl-block">
         <div class="settingBlock text-end">
             <span>Shared Anki Test</span>
             <span class="dropdown">
-                <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-sliders"></i>
+                <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings menu">
+                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="javascript:void(0)"
-                            class="dropdown-item btnToogleDarkMode btn btn-common btn-info btn-sm">Toogle DarkMode</a>
+                            class="dropdown-item btnToogleDarkMode btn btn-common btn-info btn-sm" role="button" tabindex="0">Toggle DarkMode</a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item text-dark" href="./convert-html-to-json.html" target="_blank">Convert
+                    <li><a class="dropdown-item text-dark" href="./convert-html-to-json.html" target="_blank" rel="noopener">Convert
                             Html2Json</a></li>
                 </ul>
             </span>
         </div>
     </div>
+    
     <!-- MAIN -->
-    <div class="container-lg">
+    <div class="container-lg" id="main-content" style="display: none;">
         <div class="examBlock" style="user-select: auto;">
-            <div class="notification">
+            <div class="notification" role="alert" aria-live="polite">
                 <!-- This is message!!! -->
             </div>
             <div class="exam-header row">
                 <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
                     <div class="input-group input-group mb-1">
                         <label class="input-group-text bg-secondary text-white" for="groupList">Group</label>
-                        <select class="form-select text-black" id="groupList">
+                        <select class="form-select text-black" id="groupList" aria-label="Select exam group">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
                     </div>
-
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-end">
                     <div class="input-group mb-1">
                         <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
-                        <select class="form-select text-black" id="deskList">
+                        <select class="form-select text-black" id="deskList" aria-label="Select exam">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -72,288 +137,266 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
-                    <a href="javascript:void(0)" class="btn btn-common btn-createTest btn-warning">Test</a>
+                    <button type="button" class="btn btn-common btn-createTest btn-warning" aria-label="Create test">Test</button>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none">
-                    <a href="javascript:void(0)" class="btn btn-common btn-saveQuiz">Save</a>
-                    <a href="javascript:void(0)" class="btn btn-common btn-clearQuiz">Clear Cache</a>
+                    <button type="button" class="btn btn-common btn-saveQuiz" aria-label="Save quiz">Save</button>
+                    <button type="button" class="btn btn-common btn-clearQuiz" aria-label="Clear cache">Clear Cache</button>
                 </div>
-                <!-- <div class="col-sm-12 col-md-6 col-lg-2 item4">
-                    <a href="javascript:void(0)" class="btn btn-common btn-clearQuiz">Clear Cache</a>
-                </div> -->
-                <!-- <a href="javascript:void(0)" class="btn btn-starQuiz">Test Star</a> -->
-                <!-- <a href="javascript:void(0)" class="btn btn-success btn-exportQuiz">Export</a> -->
             </div>
             <div class="ExamQuestionsBlock">
                 <!-- LEFT BLOCK -->
                 <div class="col-12 col-md-9 left">
-
                     <div class="content">
-                        <div class="d-flex align-items-center justify-content-between fs-6">
+                        <div class="d-flex align-items-center justify-content-between fs-6 mb-2">
                             <div class="block-head fw-bold font-monospace text-uppercase">
                                 <div class="exam-nav top">
-                                    <a class="btnPrevQue btn btn-success" href="javascript:void(0)">Prev</a>
+                                    <button type="button" class="btnPrevQue btn btn-success" aria-label="Previous question">Prev</button>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between gap-3">
-                                <div class="total-questions my-1 fw-bold font-monospace text-uppercase">#1/15</div>
-                                 <div id="starMarkToReview" class="starMarkToReview true">
-                                    <i class="fa-solid fa-star"></i>
+                                <div class="total-questions my-1 fw-bold font-monospace text-uppercase" aria-live="polite">#1/15</div>
+                                 <div id="starMarkToReview" class="starMarkToReview true" role="button" tabindex="0" aria-label="Mark question for review">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
                                 </div>
-                                <!-- <label style="display: flex;"><input id="btnMarkToReview" class="ip-radio" type="checkbox">Mark to Review</label> -->
                             </div>
                             
                             <div class="block-head fw-bold font-monospace text-uppercase">
                                 <div class="exam-nav top">
-                                    <a class="btnNextQue btn btn-success" href="javascript:void(0)">Next</a>
+                                    <button type="button" class="btnNextQue btn btn-success" aria-label="Next question">Next</button>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Show Question -->
-                        <div class="que-text mb-3"></div>
+                        <div class="que-text mb-3" role="main" aria-live="polite"></div>
 
                         <!-- Show Answer Choices -->
-                        <fieldset id="ques-list" class="que-list MuiFormControl-root Questions-list">
+                        <fieldset id="ques-list" class="que-list MuiFormControl-root Questions-list" role="group" aria-label="Answer choices">
                         </fieldset>
 
                         <div class="exam-nav">
-                            <a class="btnPrevQue btn btn-success btn-saveQuiz" href="javascript:void(0)">Prev</a>
-                            <a class="btnNextQue btn btn-success btn-saveQuiz" href="javascript:void(0)">Next</a>
+                            <button type="button" class="btnPrevQue btn btn-success btn-saveQuiz" aria-label="Previous question">Prev</button>
+                            <button type="button" class="btnNextQue btn btn-success btn-saveQuiz" aria-label="Next question">Next</button>
                         </div>
 
                         <!-- Show Answer -->
-                        <button class="btn-showAnswer btn btn-warning px-1">Show Answer</button>
+                        <button type="button" class="btn-showAnswer btn btn-warning px-1" aria-label="Show answer">Show Answer</button>
 
                         <!-- Discussion -->
-                        <button class="btn-showDiscussion btn btn-info px-1">Show Discussion</button>
-
-                        <!-- Edit -->
-                        <!-- <button class="btn-editQuestion btn btn-warning">Edit</button> -->
+                        <button type="button" class="btn-showDiscussion btn btn-info px-1" aria-label="Show discussion">Show Discussion</button>
 
                         <!-- Show Edit -->
                         <div class="edit-ques-block">
-                            <button class="btn btn-sm btn-warning d-none" id="btnEditQuestionModal">Edit Memo</button>
+                            <button type="button" class="btn btn-sm btn-warning d-none" id="btnEditQuestionModal" aria-label="Edit memo">Edit Memo</button>
                             <!-- Modal -->
                             <div class="modal fade" id="editQuestionModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                aria-labelledby="editQuestionModalTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content" style="background-color: #6c757d;">
                                         <div class="modal-header">
-                                            <div class="modal-title" id="exampleModalLongTitle" style="color: #fff">Seft
-                                                Comment (E)</div>
+                                            <h5 class="modal-title" id="editQuestionModalTitle" style="color: #fff">Self Comment (E)</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <textarea class="txtContent form-control"
                                                 style="background: #282620; color: #ffffff;" aria-label="Enter comment"
-                                                rows="5"></textarea>
+                                                rows="5" placeholder="Enter your comment here..."></textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btnSave btn btn-success">Save</button>
                                             <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
+                                                data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="my-3 comment-block"></div>
-                        <div class="my-3 explanation-block"></div>
-                        <div class="discussion-container"></div>
+                        <div class="my-3 comment-block" aria-live="polite"></div>
+                        <div class="my-3 explanation-block" aria-live="polite"></div>
+                        <div class="discussion-container" aria-live="polite"></div>
                     </div>
                 </div>
                 <!-- ./LEFT BLOCK -->
 
                 <!-- RIGHT BLOCK -->
                 <div class="col-12 col-md-3 right">
-                    <a class="btn rounded-pill btn-review">Review</a>
-                    <a class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse"
-                        href="#attempts-que" role="button" aria-expanded="false" aria-controls="attempts-que">
+                    <button type="button" class="btn btn-sm rounded-pill btn-review w-100 " aria-label="Review questions">Review</button>
+                    <button type="button" class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse"
+                        data-bs-target="#attempts-que" aria-expanded="false" aria-controls="attempts-que">
                         Hide/Show List Question
-                    </a>
+                    </button>
                     <div id="attempts-que" class="attempts-que collapse hide">
-                        <ul>
+                        <ul role="list" aria-label="Question list">
                         </ul>
-                        <a class="btnClearAllAnswer btn btn-sm btn-danger rounded-pill w-100 my-2">
+                        <button type="button" class="btnClearAllAnswer btn btn-sm btn-danger rounded-pill w-100 my-2" aria-label="Clear all answers">
                             Clear All Answer
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <!-- ./RIGHT BLOCK -->
             </div>
         </div>
-        <div class="mt-3 resultBlock d-none">
+        
+        <div class="mt-3 resultBlock d-none" role="region" aria-label="Exam results">
             <div class="text-end">
-                <a class="btn btn-danger btn-return">Return</a>
+                <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam">Return</button>
             </div>
-            <h3 class="text-center">Result</h6>
-                <div id="resultBlock">
-                    This is result
-                </div>
+            <h3 class="text-center">Result</h3>
+            <div id="resultBlock">
+                This is result
+            </div>
         </div>
 
-        <div class="mt-3 starBlock d-none">
+        <div class="mt-3 starBlock d-none" role="region" aria-label="Star questions">
             <div class="text-end">
-                <a class="btn btn-danger btn-return">Return</a>
+                <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam">Return</button>
             </div>
-            <h3 class="text-center">Re-test Star Question</h6>
-                <h4>Options:</h4>
-                <div class="row mb-3">
-                    <div class="col-sm-9 col-md-3 col-lg-3">
-                        <select id="filterOptionType" class="form-select" aria-label="Default select example">
-                            <option selected value="RETEST">RETEST</option>
-                            <option value="STAR">STAR</option>
-                            <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
-                        <option value="NEVER_ANSWERS">NEVER_ANSWERS</option> -->
-                        </select>
-                    </div>
-                    <div class="col-sm-12 col-md-9">
-                        <div class="row">
-                            <div class="col-3">
-                                <input id="filterOptionFromQuestion" type="number" class="form-control"
-                                    placeholder="From question" aria-label="From question" value="1">
-                            </div>
-                            <div class="col-3">
-                                <input id="filterOptionToQuestion" type="number" class="form-control"
-                                    placeholder="To question" aria-label="To question" value="100">
-                            </div>
-                            <div class="col-6">
-                                <select id="filterOptionMaxQuestion" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="5">5</option>
-                                    <option selected value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+            <h3 class="text-center">Re-test Star Question</h3>
+            <h4>Options:</h4>
+            <div class="row mb-3">
+                <div class="col-sm-9 col-md-3 col-lg-3">
+                    <select id="filterOptionType" class="form-select" aria-label="Filter option type">
+                        <option selected value="RETEST">RETEST</option>
+                        <option value="STAR">STAR</option>
+                    </select>
                 </div>
-                <div id="starBlock">
-                    This is Star Block
-                </div>
-                <div class="text-center my-3">
-                    <a class="btn btn-warning btnShowStarResult">Show Result</a>
-                </div>
-        </div>
-
-        <div id="testBlock" class="mt-2 testBlock d-none">
-            <h3 class="text-center">=== TEST ===</h6>
-                <div class="row mb-3">
-                    <div class="col-sm-9 col-md-3 col-lg-3">
-                        Options:
-                        <select id="filterOptionType2" class="form-select" aria-label="Default select example">
-                            <option selected value="RETEST">RETEST</option>
-                            <option value="STAR">STAR</option>
-                            <!-- <option value="MOST_WRONG_ANSWERS">MOST_WRONG_ANSWERS</option>
-                        <option value="NEVER_ANSWERS">NEVER_ANSWERS</option> -->
-                        </select>
-                    </div>
-                    <div class="col-sm-12 col-md-9">
-                        <div class="row">
-                            <div class="col">
-                                From:
-                                <input id="filterOptionFromQuestion2" type="number" class="form-control"
-                                    placeholder="From question" aria-label="From question" value="1">
-                            </div>
-                            <div class="col">
-                                To:
-                                <input id="filterOptionToQuestion2" type="number" class="form-control"
-                                    placeholder="To question" aria-label="To question" value="20">
-                            </div>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
-                                Random:
-                                <select id="filterOptionRandom" class="form-select" aria-label="Default select example">
-                                    <option value="RANDOM" selected>YES</option>
-                                    <option value="NOT_RANDOM">NO</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-12 col-md-4 col-lg-4">
-                                Max Question:
-                                <select id="filterOptionMaxQuestion2" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="65">65</option>
-                                    <option value="75">75</option>
-                                    <option value="15">100</option>
-                                    <option value="ALL" selected>All</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pt-1">
+                <div class="col-sm-12 col-md-9">
+                    <div class="row">
                         <div class="col-3">
-                            Show Question ID:
-                            <select id="show_question_title" class="form-select" aria-label="Default select example">
-                                <option value="1" selected>Show</option>
-                                <option value="0">Hide</option>
+                            <input id="filterOptionFromQuestion" type="number" class="form-control"
+                                placeholder="From question" aria-label="From question" value="1">
+                        </div>
+                        <div class="col-3">
+                            <input id="filterOptionToQuestion" type="number" class="form-control"
+                                placeholder="To question" aria-label="To question" value="100">
+                        </div>
+                        <div class="col-6">
+                            <select id="filterOptionMaxQuestion" class="form-select" aria-label="Maximum questions">
+                                <option value="5">5</option>
+                                <option selected value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
                             </select>
                         </div>
-                        <!-- <div class="col"></div>
-                    <div class="col"></div>
-                    <div class="col"></div> -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <button class="btnCreateTest btn btn-success btn-common">Create Test</button>
-                        <button class="btn-return btn btn-danger btn-common">Exit</button>
-                    </div>
-                </div>
-                <form id="test_form">
-                    <div class="testContent pt-3">
-                        This is test content
-                    </div>
-                </form>
-                <div class="row pb-3">
-                    <div class="col-12 text-center">
-                        <button class="btn btn-success btnShowAnswer d-none">Show All Answer</button>
-                    </div>
-                </div>
+            </div>
+            <div id="starBlock">
+                This is Star Block
+            </div>
+            <div class="text-center my-3">
+                <button type="button" class="btn btn-warning btnShowStarResult" aria-label="Show star result">Show Result</button>
+            </div>
+        </div>
 
-                <div class="quick-review">
-                    <div class="text-center">
-                        <button class="btn btn-warning btnQuickReview text-center">RV</button>
+        <div id="testBlock" class="mt-2 testBlock d-none" role="region" aria-label="Test section">
+            <h3 class="text-center">=== TEST ===</h3>
+            <div class="row mb-3">
+                <div class="col-sm-9 col-md-3 col-lg-3">
+                    <label for="filterOptionType2">Options:</label>
+                    <select id="filterOptionType2" class="form-select" aria-label="Filter option type">
+                        <option selected value="RETEST">RETEST</option>
+                        <option value="STAR">STAR</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-9">
+                    <div class="row">
+                        <div class="col">
+                            <label for="filterOptionFromQuestion2">From:</label>
+                            <input id="filterOptionFromQuestion2" type="number" class="form-control"
+                                placeholder="From question" aria-label="From question" value="1">
+                        </div>
+                        <div class="col">
+                            <label for="filterOptionToQuestion2">To:</label>
+                            <input id="filterOptionToQuestion2" type="number" class="form-control"
+                                placeholder="To question" aria-label="To question" value="20">
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <label for="filterOptionRandom">Random:</label>
+                            <select id="filterOptionRandom" class="form-select" aria-label="Random option">
+                                <option value="RANDOM" selected>YES</option>
+                                <option value="NOT_RANDOM">NO</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <label for="filterOptionMaxQuestion2">Max Question:</label>
+                            <select id="filterOptionMaxQuestion2" class="form-select" aria-label="Maximum questions">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="65">65</option>
+                                <option value="75">75</option>
+                                <option value="15">100</option>
+                                <option value="ALL" selected>All</option>
+                            </select>
+                        </div>
                     </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="quickReviewModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Quick Review (R)</h5>
+                </div>
+                <div class="row pt-1">
+                    <div class="col-3">
+                        <label for="show_question_title">Show Question ID:</label>
+                        <select id="show_question_title" class="form-select" aria-label="Show question title">
+                            <option value="1" selected>Show</option>
+                            <option value="0">Hide</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btnCreateTest btn btn-success btn-common" aria-label="Create test">Create Test</button>
+                    <button type="button" class="btn-return btn btn-danger btn-common" aria-label="Exit test">Exit</button>
+                </div>
+            </div>
+            <form id="test_form">
+                <div class="testContent pt-3">
+                    This is test content
+                </div>
+            </form>
+            <div class="row pb-3">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-success btnShowAnswer d-none" aria-label="Show all answers">Show All Answer</button>
+                </div>
+            </div>
+
+            <div class="quick-review">
+                <div class="text-center">
+                    <button type="button" class="btn btn-warning btnQuickReview text-center" aria-label="Quick review">RV</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="quickReviewModal" tabindex="-1" role="dialog"
+                    aria-labelledby="quickReviewModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="quickReviewModalTitle">Quick Review (R)</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="quickReviewContent"></div>
+                                <hr>
+                                <div class="text-center">
+                                    <button type="button" class="btnQuickReviewDetails" aria-label="Show details">Show Details</button>
+                                    <div id="tableQuickReviewDetails"></div>
                                 </div>
-                                <div class="modal-body">
-                                    <div id="quickReviewContent"></div>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="btnQuickReviewDetails" href="javascript:void(0)">Show Details</a>
-                                        <div id="tableQuickReviewDetails"></div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-
-    <!-- BANNER -->
-    <!-- <div class="banner-small py-4">
-        <h4 class="text-center">=== < ^_^ > ===</h4>
-    </div> -->
 
     <!-- MODALS -->
     <div id="modals"></div>
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    <!-- Optimized Script Loading -->
+    <!-- Critical scripts loaded first -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
@@ -361,128 +404,207 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" 
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" 
-    crossorigin="anonymous"></script> -->
+    <!-- Application initialization -->
+    <script>
+        // Hide loading and show main content when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        });
+        
+        // Preload critical data files
+        function preloadDataFiles() {
+            const criticalFiles = [
+                './public/data/index.js',
+                './public/js/classes.js',
+                './public/js/desks.js',
+                './public/js/exam.js',
+                './public/js/exam-loader.js'
+            ];
+            
+            criticalFiles.forEach(file => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'script';
+                link.href = file;
+                document.head.appendChild(link);
+            });
+        }
+        
+        // Initialize preloading
+        preloadDataFiles();
+    </script>
 
-    <!-- My scripts -->
-    <!-- DATA -->
-    <!-- SAP-C01 Whizlabs-->
-    <!-- <script src="./public/data/whizlabs/SAP-C01/FreeTest/01.FreeTest.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/PracticeTest/02.DiagnosticTest.js"></script> -->
-    <script src="./public/data/whizlabs/SAP-C02/PracticeTest/03.PracticeTest1.js"></script>
-    <script src="./public/data/whizlabs/SAP-C02/PracticeTest/04.PracticeTest2.js"></script>
-    <script src="./public/data/whizlabs/SAP-C02/PracticeTest/05.PracticeTest3.js"></script>
-    <!-- <script src="./public/data/whizlabs/SAP-C01/PracticeTest/06.PracticeTest4.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/SectionTest/07.Compute.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/SectionTest/08.AWSOrganizations.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/SectionTest/09.MigrationToAWSCloud.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/SectionTest/10.SecurityAndIdentity.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/SectionTest/11.AWSLambdaAndServerless.js"></script>
-    <script src="./public/data/whizlabs/SAP-C01/FinalTest/12.FinalTest.js"></script> -->
+    <!-- Advanced Exam Data Loading -->
+    <script type="module">
+        // Import the advanced exam loader
+        import('./public/js/exam-loader.js').then(() => {
+            // Initialize the exam loader
+            if (window.examLoader) {
+                console.log('🚀 Initializing advanced exam loader...');
+                
+                // Start auto-loading all exam data
+                window.examLoader.autoLoadAllExams().then(() => {
+                    console.log('✅ Exam data loading completed');
+                    
+                    // Load main application files after exam data is loaded
+                    return Promise.all([
+                        import('./public/data/index.js'),
+                        import('./public/js/classes.js'),
+                        import('./public/js/desks.js'),
+                        import('./public/js/exam.js')
+                    ]);
+                }).then(() => {
+                    console.log('🎉 Application fully loaded and ready!');
+                    
+                    // Dispatch custom event for application ready
+                    document.dispatchEvent(new CustomEvent('applicationReady', {
+                        detail: {
+                            timestamp: new Date().toISOString(),
+                            loadedExams: window.examLoader.getLoadingProgress()
+                        }
+                    }));
+                }).catch(error => {
+                    console.error('❌ Error during application loading:', error);
+                    // Fallback to traditional loading
+                    loadTraditionalScripts();
+                });
+            } else {
+                console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
+                loadTraditionalScripts();
+            }
+        }).catch(error => {
+            console.error('❌ Error loading advanced exam loader:', error);
+            loadTraditionalScripts();
+        });
+        
+        function loadTraditionalScripts() {
+            const scripts = [
+                './public/data/index.js',
+                './public/js/classes.js',
+                './public/js/desks.js',
+                './public/js/exam.js'
+            ];
+            
+            scripts.forEach(src => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                document.body.appendChild(script);
+            });
+        }
+    </script>
 
-    <!-- SAP-C01 ExamTopics-->
-    <script src="./public/data/examtopics/SAP-C01/exam_001_100.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_101_200.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_201_300.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_301_400.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_400_499.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_500_599.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_600_699.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_700_799.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_800_899.js"></script>
-    <script src="./public/data/examtopics/SAP-C01/exam_900_1027.js"></script>
+    <!-- Fallback for browsers that don't support modules -->
+    <script>
+        if (!window.importScripts) {
+            // Dynamic folder-based loading system
+            const examFolders = {
+                'whizlabs': {
+                    'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest']
+                },
+                'examtopics': {
+                    'SAP-C01': ['exam_001_100', 'exam_101_200', 'exam_201_300', 'exam_301_400', 'exam_400_499', 'exam_500_599', 'exam_600_699', 'exam_700_799', 'exam_800_899', 'exam_900_1027'],
+                    'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
+                    'SOA-C02': ['soa_c02_exam_001_050', 'soa_c02_exam_051_099', 'soa_c02_exam_extra_1', 'soa_c02_part1', 'soa_c02_part2', 'soa_c02_part3'],
+                    'SAA-C03': ['saa_c03_exam_001_100', 'saa_c03_exam_101_200', 'saa_c03_exam_201_300', 'saa_c03_exam_301_400', 'saa_c03_exam_401_500', 'saa_c03_exam_501_600'],
+                    'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
+                    'DOP-C01': ['dop_c01_part1', 'dop_c01_part2', 'dop_c01_part3', 'dop_c01_part4', 'dop_c01_part5', 'dop_c01_part6'],
+                    'DVA-C01': ['dva_c01_part1', 'dva_c01_part2', 'dva_c01_part3', 'dva_c01_part4', 'dva_c01_part5', 'dva_c01_part6'],
+                    'DVA-C02': ['dva_c02_part1', 'dva_c02_part2', 'dva_c02_part3', 'dva_c02_part4', 'dva_c02_part5', 'dva_c02_part6'],
+                    'PMI-PMP': ['pmi_pmp_part1', 'pmi_pmp_part2', 'pmi_pmp_part3', 'pmi_pmp_part4', 'pmi_pmp_part5', 'pmi_pmp_part6', 'pmi_pmp_part7', 'pmi_pmp_part8'],
+                    'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all']
+                },
+                'pma': {
+                    'final_exam': ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
+                    'mock_test': ['mock_test1', 'mock_test2']
+                }
+            };
 
-    <!-- SAP-C02 ExamTopics-->
-    <script src="./public/data/examtopics/SAP-C02/sap_c02_part1.js"></script>
-    <script src="./public/data/examtopics/SAP-C02/sap_c02_part2.js"></script>
-    <script src="./public/data/examtopics/SAP-C02/sap_c02_all.js"></script>
+            // Function to load all files from a folder
+            function loadFolderFiles(basePath, folderName, files) {
+                // console.log(`${basePath}/${folderName}/${files}.js`);
+                
+                files.forEach(file => {
+                    const script = document.createElement('script');
+                    script.src = `${basePath}/${folderName}/${file}.js`;
+                    script.async = true;
+                    script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                    document.body.appendChild(script);
+                });
+            }
 
-    <!-- SOA-C02 ExamTopics-->
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_exam_001_050.js"></script>
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_exam_051_099.js"></script>
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_exam_extra_1.js"></script>
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_part1.js"></script>
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_part2.js"></script>
-    <script src="./public/data/examtopics/SOA-C02/soa_c02_part3.js"></script>
+            // Function to load all exam data automatically
+            function loadAllExamData() {
+                console.log('Loading exam data automatically...');
+                
+                // Load whizlabs data
+                Object.keys(examFolders.whizlabs).forEach(examType => {
+                    examFolders.whizlabs[examType].forEach(folder => {                        
+                        // For whizlabs, we need to handle numbered files
+                        if (folder === 'PracticeTest') {
+                            ['03.PracticeTest1', '04.PracticeTest2', '05.PracticeTest3'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'FreeTest') {
+                            ['01.FreeTest'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'FinalTest') {
+                            ['12.FinalTest'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'SectionTest') {
+                            ['07.Compute', '08.AWSOrganizations', '09.MigrationToAWSCloud', '10.SecurityAndIdentity', '11.AWSLambdaAndServerless'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else {
+                            // Handle other whizlabs folders
+                            loadFolderFiles('./public/data/whizlabs', examType, [folder]);
+                        }
+                    });
+                });
 
-    <!-- SAA-C03 ExamTopics-->
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_001_100.js"></script>
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_101_200.js"></script>
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_201_300.js"></script>
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_301_400.js"></script>
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_401_500.js"></script>
-    <script src="./public/data/examtopics/SAA-C03/saa_c03_exam_501_600.js"></script>
+                // Load examtopics data
+                Object.keys(examFolders.examtopics).forEach(examType => {
+                    loadFolderFiles('./public/data/examtopics', examType, examFolders.examtopics[examType]);
+                });
 
-    <!-- DBS-C01 ExamTopics-->
-    <script src="./public/data/examtopics/DBS-C01/dbs_c01_part1.js"></script>
-    <script src="./public/data/examtopics/DBS-C01/dbs_c01_part2.js"></script>
-    <script src="./public/data/examtopics/DBS-C01/dbs_c01_part3.js"></script>
+                // Load pma data
+                Object.keys(examFolders.pma).forEach(folder => {
+                    loadFolderFiles('./public/data/pma', folder, examFolders.pma[folder]);
+                });
 
-    <!-- DOP-C01 ExamTopics-->
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part1.js"></script>
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part2.js"></script>
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part3.js"></script>
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part4.js"></script>
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part5.js"></script>
-    <script src="./public/data/examtopics/DOP-C01/dop_c01_part6.js"></script>
+                console.log('Exam data loading initiated...');
+            }
 
-    <!-- DVA-C01 ExamTopics-->
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part1.js"></script>
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part2.js"></script>
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part3.js"></script>
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part4.js"></script>
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part5.js"></script>
-    <script src="./public/data/examtopics/DVA-C01/dva_c01_part6.js"></script>
+            // Auto-detect and load new exam folders
+            function autoDetectAndLoadNewExams() {
+                // This function can be extended to automatically scan for new exam folders
+                // For now, we'll use the predefined structure
+                loadAllExamData();
+            }
 
-    <!-- DVA-C02 Github-->
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part1.js"></script>
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part2.js"></script>
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part3.js"></script>
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part4.js"></script>
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part5.js"></script>
-    <script src="./public/data/examtopics/DVA-C02/dva_c02_part6.js"></script>
-
-    <!-- PMI-PMP ExamTopics-->
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part1.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part2.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part3.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part4.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part5.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part6.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part7.js"></script>
-    <script src="./public/data/examtopics/PMI-PMP/pmi_pmp_part8.js"></script>
-
-
-    <!-- SNC-CAD ExamTopics-->
-    <script src="./public/data/examtopics/SNC-CAD/snc_cad_part1.js"></script>
-    <script src="./public/data/examtopics/SNC-CAD/snc_cad_part2.js"></script>
-    <script src="./public/data/examtopics/SNC-CAD/snc_cad_part3.js"></script>
-    <script src="./public/data/examtopics/SNC-CAD/snc_cad_part_all.js"></script>
-
-    <!-- PMA - PMP Exam-->
-    <script src="./public/data/pma/final_exam/final_exam_part1.js"></script>
-    <script src="./public/data/pma/final_exam/final_exam_part2.js"></script>
-    <script src="./public/data/pma/final_exam/final_exam_part3.js"></script>
-    <script src="./public/data/pma/mock_test/mock_test1.js"></script>
-    <script src="./public/data/pma/mock_test/mock_test2.js"></script>
-
-    <!-- 1Z0-083 ExamTopics-->
-    <!-- <script src="./public/data/examtopics/1Z0-083/1z0_083_part1.js"></script> -->
-
-    <!-- SAP-C01 Freecams-->
-    <!-- <script src="./public/data/freecams/SAP-C01/Amazon.SAP-C01.v2022-08-26.q100.js"></script> -->
-
-    <!-- MAIN -->
-    <script src="./public/data/index.js"></script>
-    <script src="./public/js/classes.js"></script>
-    <script src="./public/js/desks.js"></script>
-    <script src="./public/js/exam.js"></script>
-
-    <!-- /SCRIPTS -->
+            // Initialize automatic loading
+            autoDetectAndLoadNewExams();
+        }
+    </script>
 </body>
 
 </html>

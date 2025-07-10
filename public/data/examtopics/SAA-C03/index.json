@@ -1,0 +1,14 @@
+{
+  "exam": "SAA-C03",
+  "source": "examtopics",
+  "files": [
+    "saa_c03_exam_001_100.js",
+    "saa_c03_exam_101_200.js",
+    "saa_c03_exam_201_300.js",
+    "saa_c03_exam_301_400.js",
+    "saa_c03_exam_401_500.js",
+    "saa_c03_exam_501_600.js"
+  ],
+  "generated": "2025-07-10T01:01:04.824Z",
+  "totalFiles": 6
+}

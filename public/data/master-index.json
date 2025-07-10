@@ -1,0 +1,163 @@
+{
+  "generated": "2025-07-10T01:01:04.831Z",
+  "examTypes": {
+    "whizlabs": {
+      "SAP-C02": {
+        "files": [
+          "FinalTest/12.FinalTest.js",
+          "FreeTest/01.FreeTest.js",
+          "PracticeTest/03.PracticeTest1.js",
+          "PracticeTest/04.PracticeTest2.js",
+          "PracticeTest/05.PracticeTest3.js",
+          "SectionTest/07.Compute.js",
+          "SectionTest/08.AWSOrganizations.js",
+          "SectionTest/09.MigrationToAWSCloud.js",
+          "SectionTest/10.SecurityAndIdentity.js",
+          "SectionTest/11.AWSLambdaAndServerless.js"
+        ],
+        "totalFiles": 10
+      }
+    },
+    "examtopics": {
+      "SAP-C01": {
+        "files": [
+          "exam_001_100.js",
+          "exam_101_200.js",
+          "exam_201_300.js",
+          "exam_301_400.js",
+          "exam_400_499.js",
+          "exam_500_599.js",
+          "exam_600_699.js",
+          "exam_700_799.js",
+          "exam_800_899.js",
+          "exam_900_1027.js"
+        ],
+        "totalFiles": 10
+      },
+      "SAP-C02": {
+        "files": [
+          "sap_c02_all.js",
+          "sap_c02_part1.js",
+          "sap_c02_part2.js"
+        ],
+        "totalFiles": 3
+      },
+      "SOA-C02": {
+        "files": [
+          "soa_c02_exam_001_050.js",
+          "soa_c02_exam_051_099.js",
+          "soa_c02_exam_extra_1.js",
+          "soa_c02_part1.js",
+          "soa_c02_part2.js",
+          "soa_c02_part3.js"
+        ],
+        "totalFiles": 6
+      },
+      "SAA-C03": {
+        "files": [
+          "saa_c03_exam_001_100.js",
+          "saa_c03_exam_101_200.js",
+          "saa_c03_exam_201_300.js",
+          "saa_c03_exam_301_400.js",
+          "saa_c03_exam_401_500.js",
+          "saa_c03_exam_501_600.js"
+        ],
+        "totalFiles": 6
+      },
+      "DBS-C01": {
+        "files": [
+          "dbs_c01_part1.js",
+          "dbs_c01_part2.js",
+          "dbs_c01_part3.js"
+        ],
+        "totalFiles": 3
+      },
+      "DOP-C01": {
+        "files": [
+          "dop_c01_part1.js",
+          "dop_c01_part1_old.js",
+          "dop_c01_part2.js",
+          "dop_c01_part2_old.js",
+          "dop_c01_part3.js",
+          "dop_c01_part4.js",
+          "dop_c01_part5.js",
+          "dop_c01_part6.js"
+        ],
+        "totalFiles": 8
+      },
+      "DVA-C01": {
+        "files": [
+          "dva_c01_part1.js",
+          "dva_c01_part2.js",
+          "dva_c01_part3.js",
+          "dva_c01_part4.js",
+          "dva_c01_part5.js",
+          "dva_c01_part6.js"
+        ],
+        "totalFiles": 6
+      },
+      "DVA-C02": {
+        "files": [
+          "dva_c02_part1.js",
+          "dva_c02_part2.js",
+          "dva_c02_part3.js",
+          "dva_c02_part4.js",
+          "dva_c02_part5.js",
+          "dva_c02_part6.js"
+        ],
+        "totalFiles": 6
+      },
+      "PMI-PMP": {
+        "files": [
+          "pmi_pmp_part1.js",
+          "pmi_pmp_part2.js",
+          "pmi_pmp_part3.js",
+          "pmi_pmp_part4.js",
+          "pmi_pmp_part5.js",
+          "pmi_pmp_part6.js",
+          "pmi_pmp_part7.js",
+          "pmi_pmp_part8.js"
+        ],
+        "totalFiles": 8
+      },
+      "SNC-CAD": {
+        "files": [
+          "snc_cad_part1.js",
+          "snc_cad_part2.js",
+          "snc_cad_part3.js",
+          "snc_cad_part_all.js"
+        ],
+        "totalFiles": 4
+      }
+    },
+    "pma": {
+      "final_exam": {
+        "files": [
+          "final_exam_part1.js",
+          "final_exam_part2.js",
+          "final_exam_part3.js"
+        ],
+        "totalFiles": 3
+      },
+      "mock_test": {
+        "files": [
+          "mock_test1.js",
+          "mock_test2.js"
+        ],
+        "totalFiles": 2
+      }
+    },
+    "freecams": {
+      "SAP-C01": {
+        "files": [
+          "Amazon.SAP-C01.v2022-08-26.q100.js"
+        ],
+        "totalFiles": 1
+      }
+    }
+  },
+  "statistics": {
+    "totalExams": 14,
+    "totalFiles": 76
+  }
+}

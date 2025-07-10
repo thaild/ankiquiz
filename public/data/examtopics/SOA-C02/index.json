@@ -1,0 +1,14 @@
+{
+  "exam": "SOA-C02",
+  "source": "examtopics",
+  "files": [
+    "soa_c02_exam_001_050.js",
+    "soa_c02_exam_051_099.js",
+    "soa_c02_exam_extra_1.js",
+    "soa_c02_part1.js",
+    "soa_c02_part2.js",
+    "soa_c02_part3.js"
+  ],
+  "generated": "2025-07-10T01:01:04.823Z",
+  "totalFiles": 6
+}

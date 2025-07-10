@@ -1,4 +1,4 @@
-console.log("my scripts");
+// Script loaded
 const SPLIT_CARD = "#####";
 const SPLIT_QUESTION = "\n\n\n";
 $("#split_card").text(SPLIT_CARD);

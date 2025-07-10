@@ -1,0 +1,18 @@
+{
+  "exam": "SAP-C02",
+  "source": "whizlabs",
+  "files": [
+    "FinalTest/12.FinalTest.js",
+    "FreeTest/01.FreeTest.js",
+    "PracticeTest/03.PracticeTest1.js",
+    "PracticeTest/04.PracticeTest2.js",
+    "PracticeTest/05.PracticeTest3.js",
+    "SectionTest/07.Compute.js",
+    "SectionTest/08.AWSOrganizations.js",
+    "SectionTest/09.MigrationToAWSCloud.js",
+    "SectionTest/10.SecurityAndIdentity.js",
+    "SectionTest/11.AWSLambdaAndServerless.js"
+  ],
+  "generated": "2025-07-10T01:01:04.819Z",
+  "totalFiles": 10
+}
