@@ -13,22 +13,66 @@ class ExamDataLoader {
             pma: './public/data/pma',
             freecams: './public/data/freecams'
         };
+        this.activeExams = new Set(); // Track active exams
+    }
+
+    /**
+     * Get active exams from listExamGroup
+     */
+    getActiveExams() {
+        if (!window.listExamGroup) {
+            console.warn('⚠️ listExamGroup not available yet, will retry');
+            return new Set();
+        }
+
+        const activeExams = new Set();
+        
+        window.listExamGroup.forEach(group => {
+            if (group.active) {
+                // Map group IDs to folder names
+                const folderMapping = {
+                    'ServiceNow_CAD': 'SNC-CAD',
+                    'SOA_C02': 'SOA-C02',
+                    'SAA_C03': 'SAA-C03',
+                    'DVA_C01': 'DVA-C01',
+                    'DVA_C02': 'DVA-C02',
+                    'SAP_C01': 'SAP-C01',
+                    'SAP_C02': 'SAP-C02',
+                    'DOP_C01': 'DOP-C01',
+                    'DBS_C01': 'DBS-C01',
+                    'PMI_PMP': 'PMI-PMP',
+                    'PMA_Mock_test': 'mock_test',
+                    'PMA_PMP': 'final_exam'
+                };
+
+                const folderName = folderMapping[group.id];
+                if (folderName) {
+                    // Determine the source type based on group ID
+                    let sourceType = 'examtopics'; // default
+                    if (group.id.startsWith('PMA_')) {
+                        sourceType = 'pma';
+                    } else if (group.id.includes('Whiz_')) {
+                        sourceType = 'whizlabs';
+                    } else if (group.id.includes('Free_')) {
+                        sourceType = 'freecams';
+                    }
+
+                    activeExams.add(`${sourceType}/${folderName}`);
+                }
+            }
+        });
+
+        return activeExams;
     }
 
     /**
      * Auto-detect exam folders and load all data
      */
     async autoLoadAllExams() {
-      
-        
         try {
-            // Load all exam types automatically
-            await this.loadWhizlabsExams();
-            await this.loadExamTopicsExams();
-            await this.loadPMAExams();
-            await this.loadFreecamsExams();
+            // Load all active exam data files first
+            await this.loadAllActiveExamData();
             
-    
             this.notifyExamDataLoaded();
         } catch (error) {
             console.error('❌ Error loading exam data:', error);
@@ -36,51 +80,24 @@ class ExamDataLoader {
     }
 
     /**
-     * Load Whizlabs exam data
+     * Load all active exam data files
      */
-    async loadWhizlabsExams() {
-        const whizlabsExams = ['SAP-C02'];
-        
-        for (const exam of whizlabsExams) {
-            await this.loadExamFromPath(`${this.basePaths.whizlabs}/${exam}`);
-        }
-    }
-
-    /**
-     * Load ExamTopics exam data
-     */
-    async loadExamTopicsExams() {
-        const examTopicsExams = [
-            'SAP-C01', 'SAP-C02', 'SOA-C02', 'SAA-C03', 
-            'DBS-C01', 'DOP-C01', 'DVA-C01', 'DVA-C02',
-            'PMI-PMP', 'SNC-CAD'
+    async loadAllActiveExamData() {
+        // Define active exams based on the current configuration
+        const activeExams = [
+            'examtopics/PMI-PMP',
+            'pma/final_exam',
+            'pma/mock_test'
         ];
         
-        for (const exam of examTopicsExams) {
-            await this.loadExamFromPath(`${this.basePaths.examtopics}/${exam}`);
+        for (const examPath of activeExams) {
+            const [sourceType, examName] = examPath.split('/');
+            const fullPath = `${this.basePaths[sourceType]}/${examName}`;
+            
+            await this.loadExamFromPath(fullPath);
         }
-    }
-
-    /**
-     * Load PMA exam data
-     */
-    async loadPMAExams() {
-        const pmaFolders = ['final_exam', 'mock_test'];
         
-        for (const folder of pmaFolders) {
-            await this.loadExamFromPath(`${this.basePaths.pma}/${folder}`);
-        }
-    }
-
-    /**
-     * Load Freecams exam data
-     */
-    async loadFreecamsExams() {
-        const freecamsExams = ['SAP-C01'];
-        
-        for (const exam of freecamsExams) {
-            await this.loadExamFromPath(`${this.basePaths.freecams}/${exam}`);
-        }
+        this.activeExams = new Set(activeExams);
     }
 
     /**
@@ -107,7 +124,7 @@ class ExamDataLoader {
      * Load files from a predefined list
      */
     async loadFilesFromList(basePath, fileList) {
-        for (const file of fileList) {
+        for (const file of fileList.files || fileList) {
             if (file.endsWith('.js')) {
                 await this.loadScript(`${basePath}/${file}`);
             }
@@ -180,7 +197,6 @@ class ExamDataLoader {
             
             script.onload = () => {
                 this.loadedExams.add(src);
-        
                 resolve();
             };
             
@@ -201,6 +217,7 @@ class ExamDataLoader {
         const event = new CustomEvent('examDataLoaded', {
             detail: {
                 loadedExams: Array.from(this.loadedExams),
+                activeExams: Array.from(this.activeExams),
                 timestamp: new Date().toISOString()
             }
         });
@@ -214,7 +231,8 @@ class ExamDataLoader {
         return {
             total: this.loadedExams.size,
             loaded: this.loadedExams.size,
-            percentage: 100
+            percentage: 100,
+            activeExams: Array.from(this.activeExams)
         };
     }
 
@@ -223,6 +241,13 @@ class ExamDataLoader {
      */
     isExamLoaded(examPath) {
         return Array.from(this.loadedExams).some(path => path.includes(examPath));
+    }
+
+    /**
+     * Check if an exam is active
+     */
+    isExamActive(examPath) {
+        return this.activeExams.has(examPath);
     }
 }
 

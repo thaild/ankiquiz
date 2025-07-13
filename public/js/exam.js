@@ -51,6 +51,12 @@ function setUserStorage(id, value) {
 }
 
 function init() {
+  // Prevent multiple initializations
+  if (window.appInitialized) {
+    console.log('🚫 App already initialized, skipping');
+    return;
+  }
+  
   loadDarkMode();
   
   // Check if listExamGroup is available before initializing
@@ -65,6 +71,15 @@ function init() {
     return;
   }
   
+  // Mark as initialized to prevent duplicate calls
+  window.appInitialized = true;
+  
+  // Clear any existing locks
+  window.examCreationInProgress = false;
+  window.globalDatabaseLoadInProgress = false;
+  
+  console.log('🚀 Initializing application...');
+  
   groupId = getUserStorage("group_id");
   $("#groupList").val(groupId);
   switchGroup(groupId);
@@ -76,26 +91,38 @@ function init() {
 
 // Listen for classes ready event
 document.addEventListener('classesReady', function(event) {
-  setTimeout(init, 100);
+  if (!window.appInitialized) {
+    setTimeout(init, 100);
+  }
 });
 
 // Listen for listExamGroup ready event
 document.addEventListener('listExamGroupReady', function(event) {
-  setTimeout(init, 100); // Small delay to ensure everything is ready
+  if (!window.appInitialized) {
+    setTimeout(init, 100); // Small delay to ensure everything is ready
+  }
 });
 
 // Listen for exam data loaded event
 document.addEventListener('examDataLoaded', function(event) {
-  setTimeout(init, 150); // Longer delay to ensure index.js is processed
+  if (!window.appInitialized) {
+    setTimeout(init, 150); // Longer delay to ensure index.js is processed
+  }
 });
 
 // Listen for application ready event
 document.addEventListener('applicationReady', function(event) {
-  setTimeout(init, 200); // Even longer delay for this event
+  if (!window.appInitialized) {
+    setTimeout(init, 200); // Even longer delay for this event
+  }
 });
 
 // Start initialization (fallback) with longer initial delay
-setTimeout(init, 500);
+setTimeout(() => {
+  if (!window.appInitialized) {
+    init();
+  }
+}, 500);
 
 // LOAD QUESTION
 $("#attempts-que").on("click", "ul > li", function () {
@@ -107,6 +134,23 @@ $("#attempts-que").on("click", "ul > li", function () {
   );
   exam.saveToLocalCache("CURRENT_QUESTION");
   $(".explanation-block").html("");
+});
+
+// Update visual feedback when user changes answer
+$("#ques-list").on("change", "input[type='radio'], input[type='checkbox']", function() {
+  const queNo = exam.current;
+  const selectedAnswers = [];
+  
+  // Get all selected answers for current question
+  $(`input[name="input_select_${queNo}"]:checked`).each(function() {
+    selectedAnswers.push($(this).val());
+  });
+  
+  const userChoice = selectedAnswers.join(",");
+  
+  // Save choice and update visual feedback
+  exam.saveChoice(queNo, userChoice);
+  exam.saveToLocalCache("CURRENT_QUESTION");
 });
 
 // SHOW FEEDBACK
@@ -381,6 +425,17 @@ function switchDesk(groupId, examId) {
     setTimeout(() => switchDesk(groupId, examId), 100);
     return;
   }
+  
+  // Clear any existing loading flags for the new exam
+  sessionStorage.removeItem(`exam_loading_${examId}`);
+  sessionStorage.removeItem(`exam_loaded_${examId}`);
+  
+  // Clear all exam-related cache to prevent loading old data
+  Object.keys(sessionStorage).forEach(key => {
+    if (key.startsWith('exam_loading_') || key.startsWith('exam_loaded_')) {
+      sessionStorage.removeItem(key);
+    }
+  });
 
   let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
   if(groupIndex < 0) return;
@@ -406,21 +461,71 @@ function switchDesk(groupId, examId) {
   // Check if exam data is available
   if (!listExam[examIndex].data || listExam[examIndex].data.length === 0) {
     console.warn('⚠️ Exam data not available for:', listExam[examIndex].id);
+    console.log('📋 Available exam data:', listExam[examIndex]);
+    
+    // Try to validate if the data variable exists
+    const examDataVar = listExam[examIndex].id.replace(/[^a-zA-Z0-9]/g, '_');
+    if (typeof window[examDataVar] === 'undefined') {
+      console.error(`❌ Exam data variable ${examDataVar} is not defined`);
+    } else {
+      console.log(`✅ Exam data variable ${examDataVar} exists but data is empty`);
+    }
     return;
   }
-
+  
   try {
+    // Cleanup old exam instance if exists
+    if (window.exam && typeof window.exam.destroy === 'function') {
+      window.exam.destroy();
+    }
+    
+    // Clear any stuck creation locks
+    window.examCreationInProgress = false;
+    
     exam = new window.Exam(listExam[examIndex].data, `cache${listExam[examIndex].id}`);
     window.exam = exam; // Make exam instance globally available
+    
+    // Ensure exam was created properly
+    if (!exam || !exam.count) {
+      console.error('❌ Failed to create exam instance properly');
+      return;
+    }
+    
     queDataCount = exam.count;
 
-    que = new window.Question();
-    que.showQueNumber(exam.current, exam.count);
-    que.showQueListNumber(exam.count);
+    // Set exam metadata for database storage
+    exam.examId = listExam[examIndex].id;
+    exam.examName = listExam[examIndex].name;
+    exam.groupId = groupId;
+    exam.groupName = window.listExamGroup[groupIndex].name;
+    
+    // Clear any existing loading flags for this exam
+    sessionStorage.removeItem(`exam_loading_${exam.examId}`);
+    sessionStorage.removeItem(`exam_loaded_${exam.examId}`);
+    
+    // Reset database load time for new exam
+    exam._lastDatabaseLoadTime = 0;
 
-    //Load from local cache
-    exam.loadFromLocalCache();
+    que = new window.Question();
+    
+    // Ensure exam.count is properly set
+    if (exam && exam.count && exam.count > 0) {
+      que.showQueNumber(exam.current, exam.count);
+      que.showQueListNumber(exam.count);
+    } else {
+      console.warn('⚠️ Exam count not properly set, using fallback');
+      que.showQueNumber(exam.current, "?");
+      que.showQueListNumber(0);
+    }
+
+    //Load from cache synchronously to avoid multiple API calls
+    exam.loadFromCacheSync();
     exam.loadQueListNumber();
+    
+    // Clear loading flags after initialization to prevent multiple calls
+    if (exam.examId) {
+      sessionStorage.removeItem(`exam_loading_${exam.examId}`);
+    }
 
     //Show first question or question is saved from local
     let firstQuestion = exam.currentQuestion();

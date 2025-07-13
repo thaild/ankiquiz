@@ -193,14 +193,9 @@ body.white-mode .starMarkToReview.true {
     vertical-align: top;
 }
 
-.ExamQuestionsBlock .left .content .Questions-list {
-    margin: 0 0 30px;
-    width: 100%;
-}
-
 .custom_label {
     display: flex !important;
-    align-items: center;
+    /* align-items: center; */
     justify-content: flex-start !important;
     font-size: 1em !important;
     margin-bottom: 5px;
@@ -213,7 +208,8 @@ body.white-mode .starMarkToReview.true {
 
 .que-content {
     margin-left: 0px;
-    width: 85%;
+    padding: 4px 8px;
+    width: 95%;
     display: flex;
     align-items: center;
 }
@@ -264,7 +260,7 @@ body.white-mode .starMarkToReview.true {
 .ExamQuestionsBlock .right .attempts-que ul {
     display: grid;
     grid-gap: 8px;
-    grid-template-columns: repeat(8,1fr);
+    grid-template-columns: repeat(5,1fr);
     margin: 0;
     padding-left: 0 !important;
 }
@@ -299,7 +295,7 @@ body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.current,
 .ExamQuestionsBlock .right .attempts-que ul li.current {
     color: #007cff;
     background: #cce5ff;
-    border: 2px solid #007cff;
+    border: 3px solid #007cff !important;
 }
 
 body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.review,
@@ -312,6 +308,27 @@ body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.choice,
 .ExamQuestionsBlock .right .attempts-que ul li.choice {
     color: #00be7e;
     background: #e5f9f2;
+}
+
+/* Correct answer styling */
+body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.correct,
+.ExamQuestionsBlock .right .attempts-que ul li.correct {
+    color: #00be7e !important;
+    background: #e5f9f2 !important;
+    border: 2px solid #00be7e;
+}
+
+/* Incorrect answer styling */
+body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.incorrect,
+.ExamQuestionsBlock .right .attempts-que ul li.incorrect {
+    color: #ffffff !important;
+    background: #ff6b6b !important;
+}
+
+/* Dark mode adjustments for incorrect answers */
+body.dark-mode .ExamQuestionsBlock .right .attempts-que ul li.incorrect {
+    color: #ffffff !important;
+    background: #ff6b6b !important;
 }
 
 .symbolAnswer {

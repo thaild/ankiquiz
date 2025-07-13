@@ -253,9 +253,10 @@ class Question {
       totalCount = window.exam.count;
     }
     // If still no totalCount, use a default value
-    if (totalCount === null) {
+    if (totalCount === null || totalCount === 0) {
       totalCount = "?";
     }
+    
     $(".total-questions").text(`#${queNo + 1}/${totalCount}`);
   }
 
@@ -317,6 +318,14 @@ class Question {
 
 class Exam {
   constructor(listQuestions = [], cacheItemId = "default") {
+    // Clear any existing creation lock to prevent stuck locks
+    window.examCreationInProgress = false;
+    
+    this.initializeExam(listQuestions, cacheItemId);
+  }
+  
+  initializeExam(listQuestions, cacheItemId) {
+    
     this.listQuestions = this.loadQuestions(listQuestions);
     // this.listQuestions = listQuestions;
     this.count = listQuestions.length;
@@ -327,6 +336,33 @@ class Exam {
     this.comments = [];
     this.childExam = [];
     this.childExamChoice = [];
+    this._isLoadingFromDatabase = false; // Flag to prevent multiple database loads
+    this._lastDatabaseLoadTime = 0; // Track last database load time
+    this._databaseLoadDebounceMs = 2000; // Debounce database loads by 2 seconds
+    this._instanceId = Date.now() + Math.random(); // Unique instance ID
+    
+    // Database integration properties
+    this.examId = null;
+    this.examName = null;
+    this.groupId = null;
+    this.groupName = null;
+    this.pendingResult = null;
+    
+    // Track this instance globally
+    if (!window.examInstances) {
+      window.examInstances = new Map();
+    }
+    
+    // Cleanup old instances to prevent memory leaks
+    if (window.examInstances.size > 5) {
+      const firstKey = window.examInstances.keys().next().value;
+      window.examInstances.delete(firstKey);
+    }
+    
+    window.examInstances.set(this._instanceId, this);
+    
+    // Set this as the current active instance
+    window.currentExamInstance = this;
   }
 
   //Load all question from list
@@ -381,6 +417,28 @@ class Exam {
       this.choices = [...this.choices, newElement];
     } else {
       this.choices[elementIndex] = newElement;
+    }
+    
+    // Update visual feedback in attempts-que
+    this.updateAnswerVisualFeedback(queNo, aws);
+  }
+  
+  // Update visual feedback for answer correctness
+  updateAnswerVisualFeedback(queNo, userChoice) {
+    // Remove existing correct/incorrect classes
+    $(`#attempts-que li[data-queno="${queNo}"]`).removeClass("correct incorrect");
+    
+    // Add choice class
+    $(`#attempts-que li[data-queno="${queNo}"]`).addClass("choice");
+    
+    // Check if answer is correct
+    if (userChoice) {
+      const isCorrect = this.checkAnswerCorrectness(queNo, userChoice);
+      if (isCorrect) {
+        $(`#attempts-que li[data-queno="${queNo}"]`).addClass("correct");
+      } else {
+        $(`#attempts-que li[data-queno="${queNo}"]`).addClass("incorrect");
+      }
     }
   }
 
@@ -440,7 +498,7 @@ class Exam {
         <tr>
           <th scope="col">#</th>
           <th scope="col">Question</th>
-          <th scope="col">Commnet</th>
+          <th scope="col">Comment</th>
           <th scope="col">Point</th>
           <th scope="col">Correct</th>
           <th scope="col">Choice</th>
@@ -503,9 +561,183 @@ class Exam {
     } else {
       pointBlock = `<h2 class="pointBlock text-center not-pass">${total_point}/${self.count} (${percentPoint}%)</h2>`;
     }
-
+    
+    // Set the result content without the buttons
     resultBlock = `${pointBlock} ${resultBlock}`;
     $("#resultBlock").html(resultBlock);
+
+    // Store result data for later submission
+    this.pendingResult = {
+      totalPoints: total_point,
+      percentScore: percentPoint
+    };
+
+    // Bind submit button event
+    $("#submitExamResult").on("click", () => {
+      this.saveResultToDatabase(total_point, percentPoint);
+    });
+
+    // Bind delete button event
+    $("#deleteOldResults").on("click", () => {
+      this.deleteOldResults();
+    });
+  }
+
+  // Save exam result to database
+  async saveResultToDatabase(totalPoints, percentScore) {
+    try {
+      if (!window.databaseClient) {
+        console.warn('Database client not available');
+        return;
+      }
+
+      const examData = {
+        examId: this.examId || 'unknown',
+        examName: this.examName || 'Unknown Exam',
+        groupId: this.groupId || '',
+        groupName: this.groupName || '',
+        score: Math.round(percentScore), // Round to integer
+        totalQuestions: this.count,
+        correctAnswers: totalPoints,
+        incorrectAnswers: this.count - totalPoints,
+        unansweredQuestions: 0,
+        timeTaken: 0,
+        answersData: this.getAllChoices(),
+        reviewMarks: this.getAllReviewMarks(),
+        comments: this.getAllComments()
+      };
+
+      const result = await window.databaseClient.saveExamResult(examData);
+      console.log('Exam result saved to database:', result);
+
+      // Clear cache for this exam to ensure fresh data
+      window.databaseClient.clearExamCache(this.examId);
+      
+      // Clear session storage to allow reloading from database
+      if (this.examId) {
+        sessionStorage.removeItem(`exam_loaded_${this.examId}`);
+      }
+
+      // Show success message
+      this.showSaveSuccessMessage();
+    } catch (error) {
+      console.error('Failed to save exam result to database:', error);
+      this.showSaveErrorMessage(error.message);
+    }
+  }
+
+  // Show save success message
+  showSaveSuccessMessage() {
+    const message = `
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle"></i> Exam result saved to database successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    $("#resultBlock").prepend(message);
+  }
+
+  // Show save error message
+  showSaveErrorMessage(errorMsg) {
+    const message = `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-triangle"></i> Failed to save exam result: ${errorMsg}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    $("#resultBlock").prepend(message);
+  }
+
+  // Delete old exam results
+  async deleteOldResults() {
+    try {
+      if (!window.databaseClient) {
+        console.warn('Database client not available');
+        return;
+      }
+
+      // Show confirmation dialog
+      if (!confirm('Are you sure you want to delete all exam results? This will permanently delete your results from the database and clear all cached data. This action cannot be undone.')) {
+        return;
+      }
+
+      // Get current user ID
+      const userId = window.databaseClient.getCurrentUserId();
+      if (!userId) {
+        this.showDeleteErrorMessage('User not authenticated');
+        return;
+      }
+
+      let dbDeleted = false;
+      try {
+        // Try to delete from database first
+        const result = await window.databaseClient.deleteUserExamResults(userId);
+        console.log('Old exam results deleted from database:', result);
+        dbDeleted = true;
+      } catch (dbError) {
+        console.warn('Database delete not available, clearing local cache only:', dbError.message);
+      }
+
+      // Clear all local cache and session storage
+      this.clearLocalCache("ALL");
+      
+      // Clear all session storage for exam loading
+      try {
+        if (window.databaseClient && window.databaseClient.clearAllSessionStorage) {
+          window.databaseClient.clearAllSessionStorage();
+        } else {
+          // Fallback: clear session storage manually
+          const keys = Object.keys(sessionStorage);
+          keys.forEach(key => {
+            if (key.startsWith('exam_loaded_') || key.startsWith('exam_loading_')) {
+              sessionStorage.removeItem(key);
+            }
+          });
+        }
+      } catch (error) {
+        console.warn('Failed to clear session storage:', error);
+      }
+
+      // Clear cache for this exam to ensure fresh data
+      if (this.examId) {
+        try {
+          if (window.databaseClient && window.databaseClient.clearExamCache) {
+            window.databaseClient.clearExamCache(this.examId);
+          }
+          sessionStorage.removeItem(`exam_loaded_${this.examId}`);
+        } catch (error) {
+          console.warn('Failed to clear exam cache:', error);
+        }
+      }
+
+      // Show success message
+      this.showDeleteSuccessMessage(dbDeleted);
+    } catch (error) {
+      console.error('Failed to clear exam data:', error);
+      this.showDeleteErrorMessage(error.message);
+    }
+  }
+
+  // Show delete success message
+  showDeleteSuccessMessage(dbDeleted = false) {
+    const message = `
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle"></i> ${dbDeleted ? 'Exam results deleted from database and cache cleared!' : 'Exam cache cleared successfully!'} Your progress has been reset.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    $("#resultBlock").prepend(message);
+  }
+
+  // Show delete error message
+  showDeleteErrorMessage(errorMsg) {
+    const message = `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-triangle"></i> Failed to clear exam cache: ${errorMsg}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    $("#resultBlock").prepend(message);
   }
 
   calculateScore(listQuestion) {
@@ -675,6 +907,189 @@ class Exam {
 
   }
 
+  // Load from database first, then local cache as fallback
+  async loadFromCache() {
+    try {
+      // Try to load from database first
+      if (window.databaseClient && this.examId) {
+        const dbResult = await window.databaseClient.getExamResultForUser(this.examId);
+        if (dbResult) {
+          this.loadFromDatabaseResult(dbResult);
+          return;
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load from database, falling back to local storage:', error);
+    }
+
+    // Fallback to local storage
+    this.loadFromLocalCache();
+  }
+
+  // Load from cache synchronously (for backward compatibility)
+  loadFromCacheSync() {
+    // Only run on the current active instance
+    if (window.currentExamInstance && window.currentExamInstance._instanceId !== this._instanceId) {
+      return;
+    }
+    
+    // Check global database load lock
+    if (window.globalDatabaseLoadInProgress) {
+      return;
+    }
+    
+    // Try local storage first for immediate loading
+    this.loadFromLocalCache();
+    
+    // Then try database in background (only if not already loading for this exam)
+    if (window.databaseClient && this.examId && !this._isLoadingFromDatabase && this.examId !== 'undefined') {
+      // Check if we've already loaded this exam from database
+      const cacheKey = `exam_loaded_${this.examId}`;
+      const loadingKey = `exam_loading_${this.examId}`;
+      
+      if (sessionStorage.getItem(cacheKey)) {
+        return;
+      }
+      
+      // Check if we're already in the process of loading this exam
+      if (sessionStorage.getItem(loadingKey)) {
+        return;
+      }
+      
+      // Check debounce time to prevent rapid successive calls
+      const now = Date.now();
+      if (now - this._lastDatabaseLoadTime < this._databaseLoadDebounceMs) {
+        return;
+      }
+      
+      // Ensure exam is properly initialized
+      if (!this.examId || this.examId === 'undefined' || this.examId === 'null') {
+        return;
+      }
+      
+      // Set global database load lock
+      window.globalDatabaseLoadInProgress = true;
+      
+      // Mark as loading
+      sessionStorage.setItem(loadingKey, 'true');
+      this._isLoadingFromDatabase = true;
+      this._lastDatabaseLoadTime = now;
+      
+      window.databaseClient.getExamResultForUser(this.examId)
+        .then(dbResult => {
+          if (dbResult) {
+            this.loadFromDatabaseResult(dbResult);
+            // Refresh the current question display without triggering auto-select
+            this.refreshCurrentQuestionDisplay(false);
+            // Mark as loaded
+            sessionStorage.setItem(cacheKey, 'true');
+          }
+        })
+        .catch(error => {
+          console.warn('Failed to load from database:', error);
+        })
+        .finally(() => {
+          this._isLoadingFromDatabase = false;
+          // Remove loading flag
+          sessionStorage.removeItem(loadingKey);
+          // Release global database load lock
+          window.globalDatabaseLoadInProgress = false;
+        });
+    }
+  }
+
+  // Load from database result
+  loadFromDatabaseResult(dbResult) {
+    if (dbResult.answers_data) {
+      this.choices = [];
+      Object.keys(dbResult.answers_data).forEach(questionIndex => {
+        this.choices.push({
+          queNo: parseInt(questionIndex),
+          choice: dbResult.answers_data[questionIndex]
+        });
+      });
+    }
+
+    if (dbResult.review_marks) {
+      this.markedQuestion = [];
+      Object.keys(dbResult.review_marks).forEach(questionIndex => {
+        this.markedQuestion.push({
+          queNo: parseInt(questionIndex),
+          isMarked: dbResult.review_marks[questionIndex]
+        });
+      });
+    }
+
+    if (dbResult.comments) {
+      this.comments = [];
+      Object.keys(dbResult.comments).forEach(questionIndex => {
+        this.comments.push({
+          queNo: parseInt(questionIndex),
+          content: dbResult.comments[questionIndex]
+        });
+      });
+    }
+
+    // Set current question to first question
+    this.current = 0;
+    
+    // Update visual feedback for loaded answers
+    this.updateVisualFeedbackForAllAnswers();
+  }
+  
+  // Update visual feedback for all loaded answers
+  updateVisualFeedbackForAllAnswers() {
+    this.choices.forEach(choiceItem => {
+      this.updateAnswerVisualFeedback(choiceItem.queNo, choiceItem.choice);
+    });
+  }
+
+  // Refresh current question display with loaded data
+  refreshCurrentQuestionDisplay(enableAutoSelect = true) {
+    if (this.currentQuestion()) {
+      const currentQuestion = this.currentQuestion();
+      const currentChoice = this.getChoice(this.current);
+      const currentMarked = this.getMarkToReview(this.current);
+      
+      // Update question display
+      currentQuestion.getQuestion(currentChoice, currentMarked);
+      
+      // Update question list display
+      this.loadQueListNumber();
+      
+      // Auto-select answers based on loaded data (only if enabled)
+      if (enableAutoSelect) {
+        this.autoSelectAnswers();
+      }
+      
+
+    }
+  }
+
+  // Auto-select answers based on loaded choices
+  autoSelectAnswers() {
+    this.choices.forEach(choiceItem => {
+      const questionIndex = choiceItem.queNo;
+      const selectedAnswers = choiceItem.choice;
+      
+      if (selectedAnswers && selectedAnswers !== "") {
+        // Split multiple answers (e.g., "A,B" -> ["A", "B"])
+        const answers = selectedAnswers.split(",").map(a => a.trim());
+        
+        answers.forEach(answer => {
+          // Find and check the corresponding radio/checkbox
+          const selector = `input[name="que-${questionIndex}"][value="${answer}"]`;
+          const element = $(selector);
+          
+          if (element.length > 0) {
+            element.prop('checked', true);
+          }
+        });
+      }
+    });
+  }
+
+  // Load from local cache (original method)
   loadFromLocalCache() {
     let exam = localStorage.getItem(this.cacheItemId);
     if(!exam) return;
@@ -685,6 +1100,24 @@ class Exam {
     this.choices = exam.choices;
     this.markedQuestion = exam.markedQuestion;
     this.comments = exam.comments ?? [];
+    
+    // Auto-select answers after loading from local storage
+    setTimeout(() => {
+      this.autoSelectAnswers();
+    }, 100); // Small delay to ensure DOM is ready
+  }
+  
+  // Cleanup method to remove this instance from tracking
+  destroy() {
+    if (window.examInstances) {
+      window.examInstances.delete(this._instanceId);
+    }
+    if (window.currentExamInstance && window.currentExamInstance._instanceId === this._instanceId) {
+      window.currentExamInstance = null;
+    }
+    
+    // Clear any stuck creation locks
+    window.examCreationInProgress = false;
   }
 
   clearLocalCache(type="ALL") {
@@ -692,8 +1125,14 @@ class Exam {
     if(type == "ONLY_ANSWER") {
       this.choices=[];
       this.saveToLocalCache();
+      
+      // Clear visual feedback classes
+      $("#attempts-que li").removeClass("choice correct incorrect");
     } else {
       localStorage.removeItem(this.cacheItemId, exam);
+      
+      // Clear all visual feedback classes
+      $("#attempts-que li").removeClass("choice correct incorrect review");
     }
   }
 
@@ -701,6 +1140,17 @@ class Exam {
     let self = this;
     self.choices.forEach(function (choiceItem) {
       $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("choice");
+      
+      // Check if answer is correct or incorrect
+      const question = self.listQuestions[choiceItem.queNo];
+      if (question && choiceItem.choice) {
+        const isCorrect = self.checkAnswerCorrectness(choiceItem.queNo, choiceItem.choice);
+        if (!isCorrect) {
+          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("incorrect");
+        } else {
+          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("correct");
+        }
+      }
     });
     self.markedQuestion.forEach(function (markedItem) {
       if(markedItem.isMarked) {
@@ -709,6 +1159,19 @@ class Exam {
         $(`#attempts-que li[data-queno="${markedItem.queNo}"]`).removeClass("review");
       }
     });
+  }
+  
+  // Check if user's answer is correct
+  checkAnswerCorrectness(queNo, userChoice) {
+    const question = this.listQuestions[queNo];
+    if (!question || !userChoice) return false;
+    
+    // Get correct answers
+    const correctAnswers = this.getAnswer(question.answer_list);
+    const userAnswers = userChoice.split(",").map(a => a.trim()).sort();
+    
+    // Compare answers
+    return JSON.stringify(correctAnswers) === JSON.stringify(userAnswers);
   }
 
   renderQuestion(markedQue, index) {
@@ -1005,6 +1468,42 @@ class Exam {
     this.saveToLocalCache();
     
     return "Success"
+  }
+
+  // Get all choices for all questions
+  getAllChoices() {
+    const allChoices = {};
+    for (let i = 0; i < this.count; i++) {
+      const choice = this.getChoice(i);
+      if (choice && choice !== "") {
+        allChoices[i] = choice;
+      }
+    }
+    return allChoices;
+  }
+
+  // Get all review marks for all questions
+  getAllReviewMarks() {
+    const allReviewMarks = {};
+    for (let i = 0; i < this.count; i++) {
+      const isMarked = this.getMarkToReview(i);
+      if (isMarked) {
+        allReviewMarks[i] = true;
+      }
+    }
+    return allReviewMarks;
+  }
+
+  // Get all comments for all questions
+  getAllComments() {
+    const allComments = {};
+    for (let i = 0; i < this.count; i++) {
+      const comment = this.getComment(i);
+      if (comment && comment !== "") {
+        allComments[i] = comment;
+      }
+    }
+    return allComments;
   }
 
   createTestHtml() {
