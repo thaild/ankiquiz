@@ -1,49 +1,7 @@
-import express from "express";
-import serverless from "serverless-http";
-import cors from "cors";
-
-// Simple database wrapper for now - we'll implement the real DB later
-const db = {
-  async saveExamResult(resultData) {
-    console.log('Mock saveExamResult:', resultData);
-    return { id: Date.now().toString() };
-  },
-  async getExamResults(userId, limit = 50) {
-    console.log('Mock getExamResults:', userId, limit);
-    return [];
-  },
-  async getExamResultsByExamId(examId, limit = 50) {
-    console.log('Mock getExamResultsByExamId:', examId, limit);
-    return [];
-  },
-  async getExamResultForUser(userId, examId) {
-    console.log('Mock getExamResultForUser:', userId, examId);
-    return null;
-  },
-  async deleteUserExamResults(userId) {
-    console.log('Mock deleteUserExamResults:', userId);
-    return { message: 'Mock deleted', deletedCount: 0 };
-  },
-  async deleteExamResultForUser(userId, examId) {
-    console.log('Mock deleteExamResultForUser:', userId, examId);
-    return { message: 'Mock deleted', deletedCount: 0 };
-  },
-  async saveExamSession(sessionData) {
-    console.log('Mock saveExamSession:', sessionData);
-    return { id: sessionData.sessionId };
-  },
-  async getExamSession(sessionId) {
-    console.log('Mock getExamSession:', sessionId);
-    return null;
-  },
-  async completeExamSession(sessionId) {
-    console.log('Mock completeExamSession:', sessionId);
-  },
-  async getUserStats(userId) {
-    console.log('Mock getUserStats:', userId);
-    return { totalExams: 0, averageScore: 0 };
-  }
-};
+const express = require("express");
+const serverless = require("serverless-http");
+const cors = require("cors");
+const { db } = require("../server/database.js");
 
 const api = express();
 
@@ -57,7 +15,6 @@ api.use((req, res, next) => {
   console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
   console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
   console.log(`[DEBUG] Path: ${req.path}`);
-  
   // Fix the path by removing the function prefix
   if (req.url && req.url.startsWith('/.netlify/functions/api/')) {
     const newPath = req.url.replace('/.netlify/functions/api/', '/');
@@ -65,7 +22,6 @@ api.use((req, res, next) => {
     req.url = newPath;
     req.path = newPath;
   }
-  
   // Handle API routes - strip /api/ prefix
   if (req.url && req.url.startsWith('/api/')) {
     const newPath = req.url.replace('/api/', '/');
@@ -73,13 +29,11 @@ api.use((req, res, next) => {
     req.url = newPath;
     req.path = newPath;
   }
-  
   // Handle root path for SPA
   if (req.url === '/.netlify/functions/api' || req.url === '/.netlify/functions/api/') {
     req.url = '/';
     req.path = '/';
   }
-  
   next();
 });
 
@@ -161,40 +115,12 @@ router.get("/exams", (req, res) => {
 // Questions endpoint
 router.get("/questions", (req, res) => {
   const { exam, limit = 10, offset = 0 } = req.query;
-  
   res.json({
     message: "Questions endpoint",
     exam: exam || "all",
     limit: parseInt(limit),
     offset: parseInt(offset),
     total: 1401
-  });
-});
-
-// Exam results endpoint
-router.get("/exam-results/user/:userId/exam/:examId", (req, res) => {
-  const { userId, examId } = req.params;
-  
-  res.json({
-    message: "Exam results endpoint",
-    userId: userId,
-    examId: examId,
-    results: {
-      score: 85,
-      totalQuestions: 50,
-      correctAnswers: 42,
-      timeSpent: 3600,
-      completedAt: new Date().toISOString()
-    }
-  });
-});
-
-// Generic exam results endpoint
-router.get("/exam-results/*", (req, res) => {
-  res.json({
-    message: "Exam results endpoint (generic)",
-    path: req.path,
-    params: req.params
   });
 });
 
@@ -364,8 +290,6 @@ api.use((err, req, res, next) => {
   });
 });
 
-
-
 // Serve index.html for root and SPA routes
 router.get("/", (req, res) => {
   res.json({
@@ -412,4 +336,4 @@ api.use("/api/*", (req, res) => {
 
 api.use("/", router);
 
-export const handler = serverless(api); 
+module.exports.handler = serverless(api); 
