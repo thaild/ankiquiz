@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Shared Anki Test - AWS Certification Exam Preparation Tool">
     <meta name="theme-color" content="#1f2430">
+    
+    <!-- Environment Configuration -->
+    <meta name="api-base-url" content="/api">
+    <meta name="app-name" content="AnkiQuiz">
+    <meta name="app-version" content="1.0.0">
+    <meta name="enable-analytics" content="false">
+    <meta name="enable-debug" content="false">
+    <meta name="default-exam-time" content="180">
+    <meta name="max-questions-per-exam" content="100">
+    
     <title>Shared EXAM</title>
     
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="dns-prefetch" href="https://code.jquery.com">
     
     <!-- Critical CSS Inline -->
@@ -137,7 +147,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
-                    <button type="button" class="btn btn-common btn-createTest btn-warning" aria-label="Create test">Test</button>
+                    <button type="button" class="btn btn-common btn-createTest btn-warning" aria-label="Create test">Random Test</button>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none">
                     <button type="button" class="btn btn-common btn-saveQuiz" aria-label="Save quiz">Save</button>
@@ -180,11 +190,12 @@
                             <button type="button" class="btnNextQue btn btn-success btn-saveQuiz" aria-label="Next question">Next</button>
                         </div>
 
+                        <div class="mt-3">
                         <!-- Show Answer -->
-                        <button type="button" class="btn-showAnswer btn btn-warning px-1" aria-label="Show answer">Show Answer</button>
-
-                        <!-- Discussion -->
-                        <button type="button" class="btn-showDiscussion btn btn-info px-1" aria-label="Show discussion">Show Discussion</button>
+                            <button type="button" class="btn-showAnswer btn btn-warning px-1" aria-label="Show answer">Show Answer</button>
+                            <!-- Discussion -->
+                            <button type="button" class="btn-showDiscussion btn btn-info px-1" aria-label="Show discussion">Show Discussion</button>
+                        </div>
 
                         <!-- Show Edit -->
                         <div class="edit-ques-block">
@@ -239,7 +250,13 @@
         </div>
         
         <div class="mt-3 resultBlock d-none" role="region" aria-label="Exam results">
-            <div class="text-end">
+            <div id="resultBlockHeader" class="text-end">
+                <button type="button" class="btn btn-primary btn-md me-2" id="submitExamResult">
+                    <i class="fas fa-save"></i> Submit Result to Database
+                </button>
+                <button type="button" class="btn btn-danger btn-md me-2" id="deleteOldResults">
+                    <i class="fas fa-trash"></i> Delete Old Results
+                </button>
                 <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam">Return</button>
             </div>
             <h3 class="text-center">Result</h3>
@@ -419,7 +436,9 @@
                 './public/js/classes.js',
                 './public/js/desks.js',
                 './public/js/exam.js',
-                './public/js/exam-loader.js'
+                './public/js/exam-loader.js',
+                './public/js/database-client.js',
+                './public/js/results-dashboard.js'
             ];
             
             criticalFiles.forEach(file => {
@@ -435,27 +454,37 @@
         preloadDataFiles();
     </script>
 
+    <!-- Configuration Script -->
+    <script src="./public/js/config.js"></script>
+    
     <!-- Advanced Exam Data Loading -->
     <script type="module">
-        // Import the advanced exam loader
+        // Set global loading flag to prevent duplicate loading
+        window.appLoadingInProgress = true;
+        
+        // Import the advanced exam loader first
         import('./public/js/exam-loader.js').then(() => {
             // Initialize the exam loader
             if (window.examLoader) {
-                console.log('🚀 Initializing advanced exam loader...');
-                
                 // Start auto-loading all exam data
                 window.examLoader.autoLoadAllExams().then(() => {
-                    console.log('✅ Exam data loading completed');
-                    
-                    // Load main application files after exam data is loaded
+                    // Wait a bit more to ensure all scripts are fully loaded
+                    return new Promise(resolve => setTimeout(resolve, 500));
+                }).then(() => {
+                    // Load index.js after exam data is loaded
+                    return import('./public/data/index.js');
+                }).then(() => {
+                    // Load remaining application files
                     return Promise.all([
-                        import('./public/data/index.js'),
                         import('./public/js/classes.js'),
                         import('./public/js/desks.js'),
-                        import('./public/js/exam.js')
+                        import('./public/js/exam.js'),
+                        import('./public/js/database-client.js'),
+                        import('./public/js/results-dashboard.js')
                     ]);
                 }).then(() => {
-                    console.log('🎉 Application fully loaded and ready!');
+                    // Clear loading flag
+                    window.appLoadingInProgress = false;
                     
                     // Dispatch custom event for application ready
                     document.dispatchEvent(new CustomEvent('applicationReady', {
@@ -466,15 +495,19 @@
                     }));
                 }).catch(error => {
                     console.error('❌ Error during application loading:', error);
+                    // Clear loading flag
+                    window.appLoadingInProgress = false;
                     // Fallback to traditional loading
                     loadTraditionalScripts();
                 });
             } else {
                 console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
+                window.appLoadingInProgress = false;
                 loadTraditionalScripts();
             }
         }).catch(error => {
             console.error('❌ Error loading advanced exam loader:', error);
+            window.appLoadingInProgress = false;
             loadTraditionalScripts();
         });
         
@@ -483,7 +516,9 @@
                 './public/data/index.js',
                 './public/js/classes.js',
                 './public/js/desks.js',
-                './public/js/exam.js'
+                './public/js/exam.js',
+                './public/js/database-client.js',
+                './public/js/results-dashboard.js'
             ];
             
             scripts.forEach(src => {
@@ -498,33 +533,106 @@
     <!-- Fallback for browsers that don't support modules -->
     <script>
         if (!window.importScripts) {
-            // Dynamic folder-based loading system
-            const examFolders = {
-                'whizlabs': {
-                    'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest']
-                },
-                'examtopics': {
-                    'SAP-C01': ['exam_001_100', 'exam_101_200', 'exam_201_300', 'exam_301_400', 'exam_400_499', 'exam_500_599', 'exam_600_699', 'exam_700_799', 'exam_800_899', 'exam_900_1027'],
-                    'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
-                    'SOA-C02': ['soa_c02_exam_001_050', 'soa_c02_exam_051_099', 'soa_c02_exam_extra_1', 'soa_c02_part1', 'soa_c02_part2', 'soa_c02_part3'],
-                    'SAA-C03': ['saa_c03_exam_001_100', 'saa_c03_exam_101_200', 'saa_c03_exam_201_300', 'saa_c03_exam_301_400', 'saa_c03_exam_401_500', 'saa_c03_exam_501_600'],
-                    'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
-                    'DOP-C01': ['dop_c01_part1', 'dop_c01_part2', 'dop_c01_part3', 'dop_c01_part4', 'dop_c01_part5', 'dop_c01_part6'],
-                    'DVA-C01': ['dva_c01_part1', 'dva_c01_part2', 'dva_c01_part3', 'dva_c01_part4', 'dva_c01_part5', 'dva_c01_part6'],
-                    'DVA-C02': ['dva_c02_part1', 'dva_c02_part2', 'dva_c02_part3', 'dva_c02_part4', 'dva_c02_part5', 'dva_c02_part6'],
-                    'PMI-PMP': ['pmi_pmp_part1', 'pmi_pmp_part2', 'pmi_pmp_part3', 'pmi_pmp_part4', 'pmi_pmp_part5', 'pmi_pmp_part6', 'pmi_pmp_part7', 'pmi_pmp_part8'],
-                    'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all']
-                },
-                'pma': {
-                    'final_exam': ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
-                    'mock_test': ['mock_test1', 'mock_test2']
+            // Check if modern loading is already in progress
+            if (window.appLoadingInProgress || window.examLoader) {
+                // Remove the illegal return statement here
+                // Previously: return;
+            }
+            
+            // Load active exam data first
+            loadActiveExamData();
+            
+                            // Then load index.js after a delay to ensure exam data is loaded
+                setTimeout(() => {
+                    const indexScript = document.createElement('script');
+                    indexScript.src = './public/data/index.js';
+                    indexScript.onload = function() {
+                        // Configuration loaded
+                    };
+                    document.body.appendChild(indexScript);
+                }, 1000);
+            
+            // Function to load only active exam data
+            function loadActiveExamData() {
+                // Define active exams based on current configuration
+                const activeExams = ['PMI-PMP', 'final_exam', 'mock_test'];
+                
+                // Load only active exam data
+                activeExams.forEach(examName => {
+                    loadExamData(examName);
+                });
+            }
+            
+            // Function to load exam data based on exam name
+            function loadExamData(examName) {
+                const examFolders = {
+                    'whizlabs': {
+                        'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest']
+                    },
+                    'examtopics': {
+                        'SAP-C01': ['exam_001_100', 'exam_101_200', 'exam_201_300', 'exam_301_400', 'exam_400_499', 'exam_500_599', 'exam_600_699', 'exam_700_799', 'exam_800_899', 'exam_900_1027'],
+                        'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
+                        'SOA-C02': ['soa_c02_exam_001_050', 'soa_c02_exam_051_099', 'soa_c02_exam_extra_1', 'soa_c02_part1', 'soa_c02_part2', 'soa_c02_part3'],
+                        'SAA-C03': ['saa_c03_exam_001_100', 'saa_c03_exam_101_200', 'saa_c03_exam_201_300', 'saa_c03_exam_301_400', 'saa_c03_exam_401_500', 'saa_c03_exam_501_600'],
+                        'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
+                        'DOP-C01': ['dop_c01_part1', 'dop_c01_part2', 'dop_c01_part3', 'dop_c01_part4', 'dop_c01_part5', 'dop_c01_part6'],
+                        'DVA-C01': ['dva_c01_part1', 'dva_c01_part2', 'dva_c01_part3', 'dva_c01_part4', 'dva_c01_part5', 'dva_c01_part6'],
+                        'DVA-C02': ['dva_c02_part1', 'dva_c02_part2', 'dva_c02_part3', 'dva_c02_part4', 'dva_c02_part5', 'dva_c02_part6'],
+                        'PMI-PMP': ['pmi_pmp_part1', 'pmi_pmp_part2', 'pmi_pmp_part3', 'pmi_pmp_part4', 'pmi_pmp_part5', 'pmi_pmp_part6', 'pmi_pmp_part7', 'pmi_pmp_part8'],
+                        'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all']
+                    },
+                    'pma': {
+                        'final_exam': ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
+                        'mock_test': ['mock_test1', 'mock_test2']
+                    }
+                };
+
+                // Determine source type and load data
+                if (examFolders.examtopics[examName]) {
+                    loadFolderFiles('./public/data/examtopics', examName, examFolders.examtopics[examName]);
+                } else if (examFolders.pma[examName]) {
+                    loadFolderFiles('./public/data/pma', examName, examFolders.pma[examName]);
+                } else if (examFolders.whizlabs[examName]) {
+                    examFolders.whizlabs[examName].forEach(folder => {
+                        if (folder === 'PracticeTest') {
+                            ['03.PracticeTest1', '04.PracticeTest2', '05.PracticeTest3'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'FreeTest') {
+                            ['01.FreeTest'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'FinalTest') {
+                            ['12.FinalTest'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        } else if (folder === 'SectionTest') {
+                            ['07.Compute', '08.AWSOrganizations', '09.MigrationToAWSCloud', '10.SecurityAndIdentity', '11.AWSLambdaAndServerless'].forEach(file => {
+                                const script = document.createElement('script');
+                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                                script.async = true;
+                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                                document.body.appendChild(script);
+                            });
+                        }
+                    });
                 }
-            };
+            }
 
             // Function to load all files from a folder
             function loadFolderFiles(basePath, folderName, files) {
-                // console.log(`${basePath}/${folderName}/${files}.js`);
-                
                 files.forEach(file => {
                     const script = document.createElement('script');
                     script.src = `${basePath}/${folderName}/${file}.js`;
@@ -533,76 +641,6 @@
                     document.body.appendChild(script);
                 });
             }
-
-            // Function to load all exam data automatically
-            function loadAllExamData() {
-                console.log('Loading exam data automatically...');
-                
-                // Load whizlabs data
-                Object.keys(examFolders.whizlabs).forEach(examType => {
-                    examFolders.whizlabs[examType].forEach(folder => {                        
-                        // For whizlabs, we need to handle numbered files
-                        if (folder === 'PracticeTest') {
-                            ['03.PracticeTest1', '04.PracticeTest2', '05.PracticeTest3'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'FreeTest') {
-                            ['01.FreeTest'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'FinalTest') {
-                            ['12.FinalTest'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'SectionTest') {
-                            ['07.Compute', '08.AWSOrganizations', '09.MigrationToAWSCloud', '10.SecurityAndIdentity', '11.AWSLambdaAndServerless'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examType}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else {
-                            // Handle other whizlabs folders
-                            loadFolderFiles('./public/data/whizlabs', examType, [folder]);
-                        }
-                    });
-                });
-
-                // Load examtopics data
-                Object.keys(examFolders.examtopics).forEach(examType => {
-                    loadFolderFiles('./public/data/examtopics', examType, examFolders.examtopics[examType]);
-                });
-
-                // Load pma data
-                Object.keys(examFolders.pma).forEach(folder => {
-                    loadFolderFiles('./public/data/pma', folder, examFolders.pma[folder]);
-                });
-
-                console.log('Exam data loading initiated...');
-            }
-
-            // Auto-detect and load new exam folders
-            function autoDetectAndLoadNewExams() {
-                // This function can be extended to automatically scan for new exam folders
-                // For now, we'll use the predefined structure
-                loadAllExamData();
-            }
-
-            // Initialize automatic loading
-            autoDetectAndLoadNewExams();
         }
     </script>
 </body>
