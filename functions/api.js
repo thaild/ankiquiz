@@ -9,6 +9,29 @@ api.use(cors());
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
 
+// Add logging middleware to see what's happening
+api.use((req, res, next) => {
+  console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
+  console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
+  console.log(`[DEBUG] Path: ${req.path}`);
+  
+  // Fix the path by removing the function prefix
+  if (req.url && req.url.startsWith('/.netlify/functions/api/')) {
+    const newPath = req.url.replace('/.netlify/functions/api/', '/');
+    console.log(`[DEBUG] Fixed path: ${newPath}`);
+    req.url = newPath;
+    req.path = newPath;
+  }
+  
+  // Handle root path for SPA
+  if (req.url === '/.netlify/functions/api' || req.url === '/.netlify/functions/api/') {
+    req.url = '/';
+    req.path = '/';
+  }
+  
+  next();
+});
+
 const router = express.Router();
 
 // Health check endpoint
@@ -145,28 +168,5 @@ api.use("/api/*", (req, res) => {
 });
 
 api.use("/", router);
-
-// Add logging middleware to see what's happening
-api.use((req, res, next) => {
-  console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
-  console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
-  console.log(`[DEBUG] Path: ${req.path}`);
-  
-  // Fix the path by removing the function prefix
-  if (req.url && req.url.startsWith('/.netlify/functions/api/')) {
-    const newPath = req.url.replace('/.netlify/functions/api/', '/');
-    console.log(`[DEBUG] Fixed path: ${newPath}`);
-    req.url = newPath;
-    req.path = newPath;
-  }
-  
-  // Handle root path for SPA
-  if (req.url === '/.netlify/functions/api' || req.url === '/.netlify/functions/api/') {
-    req.url = '/';
-    req.path = '/';
-  }
-  
-  next();
-});
 
 export const handler = serverless(api); 
