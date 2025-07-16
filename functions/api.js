@@ -1,9 +1,49 @@
 import express from "express";
 import serverless from "serverless-http";
 import cors from "cors";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const { db } = require("../server/database.js");
+
+// Simple database wrapper for now - we'll implement the real DB later
+const db = {
+  async saveExamResult(resultData) {
+    console.log('Mock saveExamResult:', resultData);
+    return { id: Date.now().toString() };
+  },
+  async getExamResults(userId, limit = 50) {
+    console.log('Mock getExamResults:', userId, limit);
+    return [];
+  },
+  async getExamResultsByExamId(examId, limit = 50) {
+    console.log('Mock getExamResultsByExamId:', examId, limit);
+    return [];
+  },
+  async getExamResultForUser(userId, examId) {
+    console.log('Mock getExamResultForUser:', userId, examId);
+    return null;
+  },
+  async deleteUserExamResults(userId) {
+    console.log('Mock deleteUserExamResults:', userId);
+    return { message: 'Mock deleted', deletedCount: 0 };
+  },
+  async deleteExamResultForUser(userId, examId) {
+    console.log('Mock deleteExamResultForUser:', userId, examId);
+    return { message: 'Mock deleted', deletedCount: 0 };
+  },
+  async saveExamSession(sessionData) {
+    console.log('Mock saveExamSession:', sessionData);
+    return { id: sessionData.sessionId };
+  },
+  async getExamSession(sessionId) {
+    console.log('Mock getExamSession:', sessionId);
+    return null;
+  },
+  async completeExamSession(sessionId) {
+    console.log('Mock completeExamSession:', sessionId);
+  },
+  async getUserStats(userId) {
+    console.log('Mock getUserStats:', userId);
+    return { totalExams: 0, averageScore: 0 };
+  }
+};
 
 const api = express();
 
