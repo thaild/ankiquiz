@@ -20,15 +20,9 @@
   # Build environment variables
   NODE_ENV = "production"
 
-# Redirects for SPA (Single Page Application)
+# All requests go through the API function for unified handling
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
-
-# API redirects - only for API endpoints
-[[redirects]]
-  from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 

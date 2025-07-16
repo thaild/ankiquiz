@@ -1,6 +1,11 @@
 import express from "express";
 import serverless from "serverless-http";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const api = express();
 
@@ -8,6 +13,9 @@ const api = express();
 api.use(cors());
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
+
+// Serve static files
+api.use(express.static(path.join(__dirname, "..")));
 
 const router = express.Router();
 
@@ -98,23 +106,36 @@ api.use((err, req, res, next) => {
   });
 });
 
-// Catch-all route to see what's being received
-router.get("*", (req, res) => {
-  res.json({
-    message: "Catch-all route hit",
-    originalUrl: req.originalUrl,
-    url: req.url,
-    path: req.path,
-    method: req.method,
-    timestamp: new Date().toISOString()
-  });
+
+
+// Serve index.html for root and SPA routes
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
 });
 
-// 404 handler
-api.use((req, res) => {
+// Catch-all route for SPA - serve index.html for non-API routes
+router.get("*", (req, res) => {
+  // If it's not an API route, serve index.html for SPA
+  if (!req.path.startsWith("/api/")) {
+    res.sendFile(path.join(__dirname, "..", "index.html"));
+  } else {
+    res.status(404).json({
+      error: "Not found",
+      message: `Route ${req.method} ${req.path} not found`,
+      debug: {
+        originalUrl: req.originalUrl,
+        url: req.url,
+        path: req.path
+      }
+    });
+  }
+});
+
+// 404 handler for API routes only
+api.use("/api/*", (req, res) => {
   res.status(404).json({
     error: "Not found",
-    message: `Route ${req.method} ${req.path} not found`,
+    message: `API Route ${req.method} ${req.path} not found`,
     debug: {
       originalUrl: req.originalUrl,
       url: req.url,
@@ -137,6 +158,12 @@ api.use((req, res, next) => {
     console.log(`[DEBUG] Fixed path: ${newPath}`);
     req.url = newPath;
     req.path = newPath;
+  }
+  
+  // Handle root path for SPA
+  if (req.url === '/.netlify/functions/api' || req.url === '/.netlify/functions/api/') {
+    req.url = '/';
+    req.path = '/';
   }
   
   next();
