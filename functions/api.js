@@ -1,11 +1,6 @@
 import express from "express";
 import serverless from "serverless-http";
 import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const api = express();
 
@@ -13,9 +8,6 @@ const api = express();
 api.use(cors());
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
-
-// Serve static files
-api.use(express.static(path.join(__dirname, "..")));
 
 const router = express.Router();
 
@@ -110,14 +102,22 @@ api.use((err, req, res, next) => {
 
 // Serve index.html for root and SPA routes
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "index.html"));
+  res.json({
+    message: "API is working!",
+    timestamp: new Date().toISOString(),
+    note: "Static file serving is disabled for now"
+  });
 });
 
 // Catch-all route for SPA - serve index.html for non-API routes
 router.get("*", (req, res) => {
-  // If it's not an API route, serve index.html for SPA
+  // If it's not an API route, return a message
   if (!req.path.startsWith("/api/")) {
-    res.sendFile(path.join(__dirname, "..", "index.html"));
+    res.json({
+      message: "SPA route requested",
+      path: req.path,
+      note: "Static file serving is disabled for now"
+    });
   } else {
     res.status(404).json({
       error: "Not found",
