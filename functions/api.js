@@ -1,6 +1,8 @@
 import express from "express";
 import serverless from "serverless-http";
 import cors from "cors";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const { db } = require("../server/database.js");
 
 const api = express();
