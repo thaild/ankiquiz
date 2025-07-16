@@ -10,7 +10,7 @@ class ExamIndexGenerator {
     constructor() {
         this.baseDir = './public/data';
         this.examTypes = {
-            whizlabs: ['SAP-C01', 'SAP-C02', 'SOA-C02', 'SAA-C03'],
+            whizlabs: ['SAP-C02'],
             examtopics: ['SAP-C01', 'SAP-C02', 'SOA-C02', 'SAA-C03', 'DBS-C01', 'DOP-C01', 'DVA-C01', 'DVA-C02', 'PMI-PMP', 'SNC-CAD'],
             pma: ['final_exam', 'mock_test'],
             freecams: ['SAP-C01']
