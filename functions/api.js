@@ -94,6 +94,6 @@ api.use((req, res) => {
   });
 });
 
-api.use("/api/", router);
+api.use("/", router);
 
 export const handler = serverless(api); 
