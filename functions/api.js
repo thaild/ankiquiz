@@ -1,6 +1,7 @@
 import express from "express";
 import serverless from "serverless-http";
 import cors from "cors";
+const { db } = require("../server/database.js");
 
 const api = express();
 
@@ -155,20 +156,15 @@ router.get("/exam-results/*", (req, res) => {
   });
 });
 
-// ===== EXAM RESULTS API ROUTES =====
+// ===== EXAM RESULTS API ROUTES (REAL DB) =====
 
 // Save exam result
 router.post("/exam-results", async (req, res) => {
   try {
     const resultData = req.body;
-    
-    // Validate required fields
     if (!resultData.examId || !resultData.examName || resultData.score === undefined) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: examId, examName, score' 
-      });
+      return res.status(400).json({ error: 'Missing required fields: examId, examName, score' });
     }
-
     // Ensure numeric fields are integers
     const validatedData = {
       ...resultData,
@@ -179,10 +175,7 @@ router.post("/exam-results", async (req, res) => {
       unansweredQuestions: parseInt(resultData.unansweredQuestions) || 0,
       timeTaken: parseInt(resultData.timeTaken) || 0
     };
-
-    // Mock database save for now
-    const savedResult = { id: Date.now().toString() };
-    
+    const savedResult = await db.saveExamResult(validatedData);
     res.status(201).json({
       success: true,
       message: 'Exam result saved successfully',
@@ -190,10 +183,7 @@ router.post("/exam-results", async (req, res) => {
     });
   } catch (error) {
     console.error('Error saving exam result:', error);
-    res.status(500).json({ 
-      error: 'Failed to save exam result',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to save exam result', details: error.message });
   }
 });
 
@@ -202,32 +192,11 @@ router.get("/exam-results/user/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
     const { limit = 50 } = req.query;
-    
-    // Mock database query for now
-    const results = [
-      {
-        id: "1",
-        userId: userId,
-        examId: "PMA_PMP_FINAL_EXAM_Part1",
-        examName: "PMP Final Exam Part 1",
-        score: 85,
-        totalQuestions: 50,
-        correctAnswers: 42,
-        completedAt: new Date().toISOString()
-      }
-    ];
-    
-    res.json({
-      success: true,
-      results,
-      count: results.length
-    });
+    const results = await db.getExamResults(userId, parseInt(limit));
+    res.json({ success: true, results, count: results.length });
   } catch (error) {
     console.error('Error getting exam results:', error);
-    res.status(500).json({ 
-      error: 'Failed to get exam results',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to get exam results', details: error.message });
   }
 });
 
@@ -236,32 +205,11 @@ router.get("/exam-results/exam/:examId", async (req, res) => {
   try {
     const { examId } = req.params;
     const { limit = 50 } = req.query;
-    
-    // Mock database query for now
-    const results = [
-      {
-        id: "1",
-        userId: "user_1752627984691_ix60we73h",
-        examId: examId,
-        examName: "PMP Final Exam Part 1",
-        score: 85,
-        totalQuestions: 50,
-        correctAnswers: 42,
-        completedAt: new Date().toISOString()
-      }
-    ];
-    
-    res.json({
-      success: true,
-      results,
-      count: results.length
-    });
+    const results = await db.getExamResultsByExamId(examId, parseInt(limit));
+    res.json({ success: true, results, count: results.length });
   } catch (error) {
     console.error('Error getting exam results by exam ID:', error);
-    res.status(500).json({ 
-      error: 'Failed to get exam results',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to get exam results', details: error.message });
   }
 });
 
@@ -269,32 +217,11 @@ router.get("/exam-results/exam/:examId", async (req, res) => {
 router.get("/exam-results/user/:userId/exam/:examId", async (req, res) => {
   try {
     const { userId, examId } = req.params;
-    
-    // Mock database query for now
-    const result = {
-      id: "1",
-      userId: userId,
-      examId: examId,
-      examName: "PMP Final Exam Part 1",
-      score: 85,
-      totalQuestions: 50,
-      correctAnswers: 42,
-      incorrectAnswers: 5,
-      unansweredQuestions: 3,
-      timeTaken: 3600,
-      completedAt: new Date().toISOString()
-    };
-    
-    res.json({
-      success: true,
-      result
-    });
+    const result = await db.getExamResultForUser(userId, examId);
+    res.json({ success: true, result });
   } catch (error) {
     console.error('Error getting exam result for user:', error);
-    res.status(500).json({ 
-      error: 'Failed to get exam result for user',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to get exam result for user', details: error.message });
   }
 });
 
@@ -302,28 +229,14 @@ router.get("/exam-results/user/:userId/exam/:examId", async (req, res) => {
 router.delete("/exam-results/user/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    
-    // Validate user ID
     if (!userId) {
-      return res.status(400).json({ 
-        error: 'User ID is required' 
-      });
+      return res.status(400).json({ error: 'User ID is required' });
     }
-
-    // Mock database delete for now
-    const result = { message: 'User exam results deleted successfully', deletedCount: 5 };
-    
-    res.json({
-      success: true,
-      message: result.message,
-      deletedCount: result.deletedCount
-    });
+    const result = await db.deleteUserExamResults(userId);
+    res.json({ success: true, message: result.message, deletedCount: result.deletedCount });
   } catch (error) {
     console.error('Error deleting user exam results:', error);
-    res.status(500).json({ 
-      error: 'Failed to delete user exam results',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to delete user exam results', details: error.message });
   }
 });
 
@@ -331,59 +244,31 @@ router.delete("/exam-results/user/:userId", async (req, res) => {
 router.delete("/exam-results/user/:userId/exam/:examId", async (req, res) => {
   try {
     const { userId, examId } = req.params;
-    
-    // Validate parameters
     if (!userId || !examId) {
-      return res.status(400).json({ 
-        error: 'User ID and Exam ID are required' 
-      });
+      return res.status(400).json({ error: 'User ID and Exam ID are required' });
     }
-
-    // Mock database delete for now
-    const result = { message: 'Exam result deleted successfully', deletedCount: 1 };
-    
-    res.json({
-      success: true,
-      message: result.message,
-      deletedCount: result.deletedCount
-    });
+    const result = await db.deleteExamResultForUser(userId, examId);
+    res.json({ success: true, message: result.message, deletedCount: result.deletedCount });
   } catch (error) {
     console.error('Error deleting exam result for user:', error);
-    res.status(500).json({ 
-      error: 'Failed to delete exam result for user',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to delete exam result for user', details: error.message });
   }
 });
 
-// ===== EXAM SESSIONS API ROUTES =====
+// ===== EXAM SESSIONS API ROUTES (REAL DB) =====
 
 // Save exam session
 router.post("/exam-sessions", async (req, res) => {
   try {
     const sessionData = req.body;
-    
-    // Validate required fields
     if (!sessionData.sessionId || !sessionData.examId || !sessionData.examName) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: sessionId, examId, examName' 
-      });
+      return res.status(400).json({ error: 'Missing required fields: sessionId, examId, examName' });
     }
-
-    // Mock database save for now
-    const savedSession = { id: sessionData.sessionId };
-    
-    res.status(201).json({
-      success: true,
-      message: 'Exam session saved successfully',
-      sessionId: savedSession.id
-    });
+    const savedSession = await db.saveExamSession(sessionData);
+    res.status(201).json({ success: true, message: 'Exam session saved successfully', sessionId: savedSession.id });
   } catch (error) {
     console.error('Error saving exam session:', error);
-    res.status(500).json({ 
-      error: 'Failed to save exam session',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to save exam session', details: error.message });
   }
 });
 
@@ -391,27 +276,14 @@ router.post("/exam-sessions", async (req, res) => {
 router.get("/exam-sessions/:sessionId", async (req, res) => {
   try {
     const { sessionId } = req.params;
-    
-    // Mock database query for now
-    const session = {
-      id: sessionId,
-      examId: "PMA_PMP_FINAL_EXAM_Part1",
-      examName: "PMP Final Exam Part 1",
-      status: "in_progress",
-      startedAt: new Date().toISOString(),
-      questions: []
-    };
-    
-    res.json({
-      success: true,
-      session
-    });
+    const session = await db.getExamSession(sessionId);
+    if (!session) {
+      return res.status(404).json({ error: 'Exam session not found' });
+    }
+    res.json({ success: true, session });
   } catch (error) {
     console.error('Error getting exam session:', error);
-    res.status(500).json({ 
-      error: 'Failed to get exam session',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to get exam session', details: error.message });
   }
 });
 
@@ -419,50 +291,25 @@ router.get("/exam-sessions/:sessionId", async (req, res) => {
 router.put("/exam-sessions/:sessionId/complete", async (req, res) => {
   try {
     const { sessionId } = req.params;
-    
-    // Mock database update for now
-    
-    res.json({
-      success: true,
-      message: 'Exam session completed successfully'
-    });
+    await db.completeExamSession(sessionId);
+    res.json({ success: true, message: 'Exam session completed successfully' });
   } catch (error) {
     console.error('Error completing exam session:', error);
-    res.status(500).json({ 
-      error: 'Failed to complete exam session',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to complete exam session', details: error.message });
   }
 });
 
-// ===== USER STATISTICS API ROUTES =====
+// ===== USER STATISTICS API ROUTES (REAL DB) =====
 
 // Get user statistics
 router.get("/user-stats/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    
-    // Mock database query for now
-    const stats = {
-      totalExams: 5,
-      averageScore: 82.5,
-      totalQuestions: 250,
-      correctAnswers: 206,
-      totalTimeSpent: 18000,
-      bestExam: "PMA_PMP_FINAL_EXAM_Part1",
-      bestScore: 90
-    };
-    
-    res.json({
-      success: true,
-      stats
-    });
+    const stats = await db.getUserStats(userId);
+    res.json({ success: true, stats });
   } catch (error) {
     console.error('Error getting user stats:', error);
-    res.status(500).json({ 
-      error: 'Failed to get user statistics',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Failed to get user statistics', details: error.message });
   }
 });
 
