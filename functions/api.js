@@ -98,22 +98,39 @@ api.use((err, req, res, next) => {
   });
 });
 
+// Catch-all route to see what's being received
+router.get("*", (req, res) => {
+  res.json({
+    message: "Catch-all route hit",
+    originalUrl: req.originalUrl,
+    url: req.url,
+    path: req.path,
+    method: req.method,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // 404 handler
 api.use((req, res) => {
   res.status(404).json({
     error: "Not found",
-    message: `Route ${req.method} ${req.path} not found`
+    message: `Route ${req.method} ${req.path} not found`,
+    debug: {
+      originalUrl: req.originalUrl,
+      url: req.url,
+      path: req.path
+    }
   });
 });
 
 api.use("/", router);
 
-export const handler = serverless(api, {
-  request: (request, event, context) => {
-    // Handle the path correctly for serverless
-    if (request.url && request.url.startsWith('/.netlify/functions/api/')) {
-      request.url = request.url.replace('/.netlify/functions/api/', '/');
-    }
-    return request;
-  }
-}); 
+// Add logging middleware to see what's happening
+api.use((req, res, next) => {
+  console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
+  console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
+  console.log(`[DEBUG] Path: ${req.path}`);
+  next();
+});
+
+export const handler = serverless(api); 
