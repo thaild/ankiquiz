@@ -23,6 +23,14 @@ api.use((req, res, next) => {
     req.path = newPath;
   }
   
+  // Handle API routes - strip /api/ prefix
+  if (req.url && req.url.startsWith('/api/')) {
+    const newPath = req.url.replace('/api/', '/');
+    console.log(`[DEBUG] API path fixed: ${newPath}`);
+    req.url = newPath;
+    req.path = newPath;
+  }
+  
   // Handle root path for SPA
   if (req.url === '/.netlify/functions/api' || req.url === '/.netlify/functions/api/') {
     req.url = '/';
