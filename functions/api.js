@@ -20,6 +20,18 @@ router.get("/health", (req, res) => {
   });
 });
 
+// Debug endpoint to see request details
+router.get("/debug", (req, res) => {
+  res.json({
+    message: "Debug endpoint",
+    originalUrl: req.originalUrl,
+    url: req.url,
+    path: req.path,
+    method: req.method,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Hello world endpoint
 router.get("/hello", (req, res) => {
   res.json({
@@ -86,14 +98,48 @@ api.use((err, req, res, next) => {
   });
 });
 
+// Catch-all route to see what's being received
+router.get("*", (req, res) => {
+  res.json({
+    message: "Catch-all route hit",
+    originalUrl: req.originalUrl,
+    url: req.url,
+    path: req.path,
+    method: req.method,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // 404 handler
 api.use((req, res) => {
   res.status(404).json({
     error: "Not found",
-    message: `Route ${req.method} ${req.path} not found`
+    message: `Route ${req.method} ${req.path} not found`,
+    debug: {
+      originalUrl: req.originalUrl,
+      url: req.url,
+      path: req.path
+    }
   });
 });
 
-api.use("/api/", router);
+api.use("/", router);
+
+// Add logging middleware to see what's happening
+api.use((req, res, next) => {
+  console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
+  console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
+  console.log(`[DEBUG] Path: ${req.path}`);
+  
+  // Fix the path by removing the function prefix
+  if (req.url && req.url.startsWith('/.netlify/functions/api/')) {
+    const newPath = req.url.replace('/.netlify/functions/api/', '/');
+    console.log(`[DEBUG] Fixed path: ${newPath}`);
+    req.url = newPath;
+    req.path = newPath;
+  }
+  
+  next();
+});
 
 export const handler = serverless(api); 
