@@ -120,6 +120,33 @@ router.get("/questions", (req, res) => {
   });
 });
 
+// Exam results endpoint
+router.get("/exam-results/user/:userId/exam/:examId", (req, res) => {
+  const { userId, examId } = req.params;
+  
+  res.json({
+    message: "Exam results endpoint",
+    userId: userId,
+    examId: examId,
+    results: {
+      score: 85,
+      totalQuestions: 50,
+      correctAnswers: 42,
+      timeSpent: 3600,
+      completedAt: new Date().toISOString()
+    }
+  });
+});
+
+// Generic exam results endpoint
+router.get("/exam-results/*", (req, res) => {
+  res.json({
+    message: "Exam results endpoint (generic)",
+    path: req.path,
+    params: req.params
+  });
+});
+
 // Error handling middleware
 api.use((err, req, res, next) => {
   console.error(err.stack);
