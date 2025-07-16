@@ -3,8 +3,12 @@
  * Automatically generates index.json files for exam folders
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ExamIndexGenerator {
     constructor() {
@@ -151,41 +155,39 @@ class ExamIndexGenerator {
 }
 
 // CLI interface
-if (require.main === module) {
-    const generator = new ExamIndexGenerator();
-    const command = process.argv[2];
+const generator = new ExamIndexGenerator();
+const command = process.argv[2];
 
-    switch (command) {
-        case 'generate':
-            generator.generateAllIndexes().then(() => {
-                return generator.generateMasterIndex();
-            }).then(() => {
-                console.log('🎉 All indexes generated successfully!');
-                process.exit(0);
-            }).catch(error => {
-                console.error('❌ Error generating indexes:', error);
-                process.exit(1);
-            });
-            break;
-            
-        case 'watch':
-            generator.generateAllIndexes().then(() => {
-                return generator.generateMasterIndex();
-            }).then(() => {
-                console.log('✅ Initial indexes generated');
-                generator.watchForChanges();
-            }).catch(error => {
-                console.error('❌ Error in watch mode:', error);
-                process.exit(1);
-            });
-            break;
-            
-        default:
-            console.log('Usage: node generate-exam-index.js [generate|watch]');
-            console.log('  generate: Generate all index files once');
-            console.log('  watch: Generate indexes and watch for changes');
+switch (command) {
+    case 'generate':
+        generator.generateAllIndexes().then(() => {
+            return generator.generateMasterIndex();
+        }).then(() => {
+            console.log('🎉 All indexes generated successfully!');
+            process.exit(0);
+        }).catch(error => {
+            console.error('❌ Error generating indexes:', error);
             process.exit(1);
-    }
+        });
+        break;
+        
+    case 'watch':
+        generator.generateAllIndexes().then(() => {
+            return generator.generateMasterIndex();
+        }).then(() => {
+            console.log('✅ Initial indexes generated');
+            generator.watchForChanges();
+        }).catch(error => {
+            console.error('❌ Error in watch mode:', error);
+            process.exit(1);
+        });
+        break;
+        
+    default:
+        console.log('Usage: node generate-exam-index.js [generate|watch]');
+        console.log('  generate: Generate all index files once');
+        console.log('  watch: Generate indexes and watch for changes');
+        process.exit(1);
 }
 
-module.exports = ExamIndexGenerator; 
+export default ExamIndexGenerator; 

@@ -23,7 +23,7 @@
 # Redirects for SPA (Single Page Application)
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/static"
+  to = "/index.html"
   status = 200
 
 # API redirects - only for API endpoints
