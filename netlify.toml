@@ -8,6 +8,11 @@
   # Functions directory (if using serverless functions)
   functions = "functions"
 
+[functions]
+  external_node_modules = ["express", "cors"]
+  node_bundler = "esbuild"
+  included_files = ["functions/**"]
+
 [build.environment]
   # Node.js version
   NODE_VERSION = "18"
@@ -18,7 +23,13 @@
 # Redirects for SPA (Single Page Application)
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/static"
+  status = 200
+
+# API redirects - only for API endpoints
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
   status = 200
 
 # Headers for security and performance

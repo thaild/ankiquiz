@@ -17,11 +17,6 @@ NODE_ENV=development
 
 # Database Configuration
 NETLIFY_DATABASE_URL=postgresql://username:password@localhost:5432/ankiquiz
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=ankiquiz
-DB_USER=username
-DB_PASSWORD=password
 
 # API Configuration
 API_BASE_URL=http://localhost:3000/api
