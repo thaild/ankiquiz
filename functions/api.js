@@ -20,6 +20,18 @@ router.get("/health", (req, res) => {
   });
 });
 
+// Debug endpoint to see request details
+router.get("/debug", (req, res) => {
+  res.json({
+    message: "Debug endpoint",
+    originalUrl: req.originalUrl,
+    url: req.url,
+    path: req.path,
+    method: req.method,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Hello world endpoint
 router.get("/hello", (req, res) => {
   res.json({
@@ -96,4 +108,12 @@ api.use((req, res) => {
 
 api.use("/", router);
 
-export const handler = serverless(api); 
+export const handler = serverless(api, {
+  request: (request, event, context) => {
+    // Handle the path correctly for serverless
+    if (request.url && request.url.startsWith('/.netlify/functions/api/')) {
+      request.url = request.url.replace('/.netlify/functions/api/', '/');
+    }
+    return request;
+  }
+}); 
