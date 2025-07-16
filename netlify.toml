@@ -8,6 +8,11 @@
   # Functions directory (if using serverless functions)
   functions = "functions"
 
+[functions]
+  external_node_modules = ["express", "cors"]
+  node_bundler = "esbuild"
+  included_files = ["functions/**"]
+
 [build.environment]
   # Node.js version
   NODE_VERSION = "18"
@@ -21,6 +26,12 @@
   to = "/index.html"
   status = 200
 
+# API redirects - only for API endpoints
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
 # Headers for security and performance
 [[headers]]
   for = "/*"
@@ -29,7 +40,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:;"
 
 # Cache static assets
 [[headers]]
