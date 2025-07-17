@@ -6,11 +6,6 @@ const path = require('path');
 // Load environment variables - Netlify provides them directly
 require('dotenv').config();
 
-// Debug: Log environment variables (without sensitive data)
-console.log('[DEBUG] Environment check:');
-console.log('[DEBUG] NODE_ENV:', process.env.NODE_ENV);
-console.log('[DEBUG] NETLIFY_DATABASE_URL exists:', !!process.env.NETLIFY_DATABASE_URL);
-
 // Database connection pool
 const pool = new Pool({
   connectionString: process.env.NETLIFY_DATABASE_URL,

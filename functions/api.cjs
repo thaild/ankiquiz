@@ -1,14 +1,9 @@
 // Cache-busting: Force Netlify to rebuild this function
-// Version: 20247:00sing CommonJS with real database
+// Version: 2247sing CommonJS with real database
 const express = require("express");
 const serverless = require("serverless-http");
 const cors = require("cors");
 const { db } = require("./database.cjs");
-
-// Debug: Check if database object is imported correctly
-console.log('[DEBUG] Database object imported:', !!db);
-console.log('[DEBUG] Database methods available:', db ? Object.keys(db) : []);
-console.log('[DEBUG] getExamResultForUser method exists:', !!(db && db.getExamResultForUser));
 
 const api = express();
 
@@ -19,20 +14,15 @@ api.use(express.urlencoded({ extended: true }));
 
 // Add logging middleware to see what's happening
 api.use((req, res, next) => {
-  console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
-  console.log(`[DEBUG] Original URL: ${req.originalUrl}`);
-  console.log(`[DEBUG] Path: ${req.path}`);
   // Fix the path by removing the function prefix
   if (req.url && req.url.startsWith('/.netlify/functions/api/')) {
     const newPath = req.url.replace('/.netlify/functions/api/', '/');
-    console.log(`[DEBUG] Fixed path: ${newPath}`);
     req.url = newPath;
     req.path = newPath;
   }
   // Handle API routes - strip /api/ prefix
   if (req.url && req.url.startsWith('/api/')) {
     const newPath = req.url.replace('/api/', '/');
-    console.log(`[DEBUG] API path fixed: ${newPath}`);
     req.url = newPath;
     req.path = newPath;
   }
@@ -52,18 +42,6 @@ router.get("/health", (req, res) => {
     status: "ok",
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || "development"
-  });
-});
-
-// Debug endpoint to see request details
-router.get("/debug", (req, res) => {
-  res.json({
-    message: "Debug endpoint",
-    originalUrl: req.originalUrl,
-    url: req.url,
-    path: req.path,
-    method: req.method,
-    timestamp: new Date().toISOString()
   });
 });
 
