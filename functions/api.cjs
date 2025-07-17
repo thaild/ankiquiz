@@ -3,6 +3,11 @@ const serverless = require("serverless-http");
 const cors = require("cors");
 const { db } = require("./database.cjs");
 
+// Debug: Check if database object is imported correctly
+console.log('[DEBUG] Database object imported:', !!db);
+console.log('[DEBUG] Database methods available:', db ? Object.keys(db) : []);
+console.log('[DEBUG] getExamResultForUser method exists:', !!(db && db.getExamResultForUser));
+
 const api = express();
 
 // Middleware

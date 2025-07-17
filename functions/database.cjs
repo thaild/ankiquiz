@@ -1,7 +1,13 @@
 const { Pool } = require('pg');
 const path = require('path');
 
-require('dotenv').config({ path: path.join(__dirname, 'config.env') });
+// Load environment variables - Netlify provides them directly
+require('dotenv').config();
+
+// Debug: Log environment variables (without sensitive data)
+console.log('[DEBUG] Environment check:');
+console.log('[DEBUG] NODE_ENV:', process.env.NODE_ENV);
+console.log('[DEBUG] NETLIFY_DATABASE_URL exists:', !!process.env.NETLIFY_DATABASE_URL);
 
 // Database connection pool
 const pool = new Pool({
