@@ -1,3 +1,5 @@
+// Cache-busting: Force Netlify to rebuild this function
+// Version: 2247sing CommonJS with real database connection
 const { Pool } = require('pg');
 const path = require('path');
 

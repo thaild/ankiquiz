@@ -1,3 +1,5 @@
+// Cache-busting: Force Netlify to rebuild this function
+// Version: 20247:00sing CommonJS with real database
 const express = require("express");
 const serverless = require("serverless-http");
 const cors = require("cors");
