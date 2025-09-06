@@ -1,0 +1,6932 @@
+[
+  {
+    "question_id": "#1",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following statements is true for the Form Designer? a) To add a field to the form layout, drag the field from the Fields tab to the desired destination on the form. b) To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field. c) To remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button. d) To add a section to the form layout, drag it from the Field Types tab to the desired destination on the form.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#1",
+        "answers": [
+          {
+            "choice": "<p>A. a, b, c, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. b, c, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. a, b, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. a, b, and c</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#2",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following are configured in an Email Notification? a) Who will receive the notification. b) What content will be in the notification. c) When to send the notification. d) How to send the notification.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#2",
+        "answers": [
+          {
+            "choice": "<p>A. a, b and c</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. a, b, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. b, c and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. a, c and d</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#3",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>To see what scripts, reports, and other application artifacts will be in a published application:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#3",
+        "answers": [
+          {
+            "choice": "<p>A. Enter the name of the Application in the Global search field</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Open the list of Update Sets for the instance</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Examine the Application Files Related List in the application to be published</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Open the artifact records individually to verify the value in the Application field</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#4",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT a debugging strategy for client-side scripts?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#4",
+        "answers": [
+          {
+            "choice": "<p>A. g_form.addInfoMessage()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Field Watcher</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. jslog()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.log()</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#5",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which Application Access configuration field(s) are NOT available if the Can read configuration field is NOT selected?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#5",
+        "answers": [
+          {
+            "choice": "<p>A. All access to this table via web services</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Can create, Can update, and Can delete</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Can read does not affect the availability of other Application Access fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Allow configuration</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#6",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is NOT a trigger type in Flow Designer?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#6",
+        "answers": [
+          {
+            "choice": "<p>A. Outbound Email</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Application</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Record</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Schedule</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#7",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When creating new application files in a scoped application, cross scope access is turned on by default in which of the following?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#7",
+        "answers": [
+          {
+            "choice": "<p>A. REST messages</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Script Include</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Workflow</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#8",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>In an Email Notification, which one of the following is NOT true for the Weight field?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#8",
+        "answers": [
+          {
+            "choice": "<p>A. Only Notifications with the highest weight for the same record and recipients are sent</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. A Weight value of zero means that no email should be sent</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The Weight value defaults to zero</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A Weight value of zero means the Notification is always sent when the Notification's When to send criteria is met</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#9",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following objects does a Display Business Rule NOT have access to?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#9",
+        "answers": [
+          {
+            "choice": "<p>A. previous</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideSystem</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_scratchpad</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. current</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#10",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following features are available to Global applications? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#10",
+        "answers": [
+          {
+            "choice": "<p>A. Automated Test Framework</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Source Control</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Delegated Development</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Flow Designer</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#11",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT a UI Action type?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#11",
+        "answers": [
+          {
+            "choice": "<p>A. List choice</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Form button</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. List banner button</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Form choice</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#12",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is NOT supported by Flow Designer?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#12",
+        "answers": [
+          {
+            "choice": "<p>A. Call a subflow from a flow</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Test a flow with rollback</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Use Delegated Developer</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Run a flow from a MetricBase Trigger</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#13",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following are true for reports in ServiceNow? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#13",
+        "answers": [
+          {
+            "choice": "<p>A. Any user can see any report shared with them.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Can be a graphical representation of data.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. All users can generate reports on any table.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Can be run on demand by authorized users.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Can be scheduled to be run and distributed by email.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#14",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Modules must have a Link type. Which one of the following is a list of Link types?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#14",
+        "answers": [
+          {
+            "choice": "<p>A. List of Records, Separator, Catalog Type, Roles</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Assessment, List of Records, Separator, Timeline Page</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. List of Records, Content Page, Order, URL (from arguments:)</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Assessment, List of Records, Content Page, Roles</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#15",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for a table with the `Allow configuration` Application Access option selected?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#15",
+        "answers": [
+          {
+            "choice": "<p>A. Only the in scope application's scripts can create Business Rules for the table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Any user with the application's user role can modify the application's scripts</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Out of scope applications can create Business Rules for the table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Out of scope applications can add new tables to the scoped application</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#16",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When working in the Form Designer, configuring the label of a field in a child table changes the label on which table(s)?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#16",
+        "answers": [
+          {
+            "choice": "<p>A. base table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. child table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. parent table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. all tables</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#17",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#17",
+        "answers": [
+          {
+            "choice": "<p>A. A UI Policy's Actions execute before the UI Policy's Scripts</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The execution order for a UI Policy's Scripts and Actions is determined at runtime</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. A UI Policy's Scripts execute before the UI Policy's Actions</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A UI Policy's Actions and Scripts execute at the same time</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#18",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Here is the Business Rule script template:\n\nThis type of JavaScript function is known as:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#18",
+        "answers": [
+          {
+            "choice": "<p>A. Constructor</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Scoped</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Anonymous</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Self-invoking</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#19",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which method call returns true only if the currently logged in user has the catalog_admin role and in no other case?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#19",
+        "answers": [
+          {
+            "choice": "<p>A. g_user.hasRole('catalog_admin')</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. g_user.hasRoleExactly('catalog_admin')</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_user.hasRoleOnly('catalog_admin')</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. g_user.hasRoleFromList('catalog_admin')</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#20",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>There is a basic strategy when creating a Utils Script Include. Identify the step that does not belong.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#20",
+        "answers": [
+          {
+            "choice": "<p>A. Identify the table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Script the function(s)</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Create a class</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Create a prototype object from the new class</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#21",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which roles grant access to source control repository operations such as importing applications from source control, or linking an application to source control?\n(Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#21",
+        "answers": [
+          {
+            "choice": "<p>A. source_control</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. source_control_admin</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. admin</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. git_admin</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#22",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When configuring the content of an Email Notification, which syntax should be used to reference the properties of an event triggering the Notification?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#22",
+        "answers": [
+          {
+            "choice": "<p>A. ${event.<property name>}</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. ${current.<property name>}</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. ${<property name>.getDisplayValue()}</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. ${gs.<property name>}</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#23",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for a Script Include with a Protection Policy value of Protected?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#23",
+        "answers": [
+          {
+            "choice": "<p>A. Any user with the protected_edit role can see and edit the Script Include</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The Protection policy option can only be enabled by a user with the admin role</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The Protection Policy is applied only if the glide.app.apply_protection system property value is true</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The Protection Policy is applied only if the application is downloaded from the ServiceNow App Store</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#24",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for GlideUser (g_user) methods?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#24",
+        "answers": [
+          {
+            "choice": "<p>A. Can be used in Client Scripts and UI Policies only</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Can be used in Business Rules only</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Can be used in Client Scripts, UI Policies, and UI Actions</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Can be used in Business Rules, and Scripts Includes</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#25",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When configuring a module, what does the Override application menu roles configuration option do?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#25",
+        "answers": [
+          {
+            "choice": "<p>A. Users with the module role but without access to the application menu access the module</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Self-Service users can access the module even though they do not have roles</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Admin is given access to the module even if Access Controls would ordinarily prevent access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Users with access to the application menu can see the module even if they don't have the module role</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#26",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which platform feature can be used to determine the relationships between field in an Import Set table to field in an existing ServiceNow table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#26",
+        "answers": [
+          {
+            "choice": "<p>A. Business Service Management Map</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Data Sources</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Transform Map</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. CI Relationship Builder</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#27",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When configuring a REST Message, the Endpoint is:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#27",
+        "answers": [
+          {
+            "choice": "<p>A. The commands to the REST script to stop execution</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The URI of the data to be accessed, queried, or modified</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Information about the format of the returned data</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The response from the provider indicating there is no data to send back</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#28",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When evaluating Access Controls, ServiceNow searches and evaluates:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#28",
+        "answers": [
+          {
+            "choice": "<p>A. Only for matches on the current table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Only for matches on the current field</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. From the most specific match to the most generic match</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. From the most generic match to the most specific match</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#29",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>In a Business Rule, which one of the following returns true if the currently logged in user has the admin role?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#29",
+        "answers": [
+          {
+            "choice": "<p>A. g_form.hasRoleExactly('admin')</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. gs.hasRole('admin')</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_form.hasRole('admin')</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.hasRoleExactly('admin')</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#30",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>From the list below, identify one reason an application might NOT be a good fit with ServiceNow.\nThe application:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#30",
+        "answers": [
+          {
+            "choice": "<p>A. Needs workflow to manage processes</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Requires ג€as-isג€ use of low-level programming libraries</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Requires reporting capabilities</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Uses forms extensively to interact with data</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#31",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Identify the incorrect statement about Delegated Development in ServiceNow.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#31",
+        "answers": [
+          {
+            "choice": "<p>A. Administrators can grant non-admin users the ability to develop global applications.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Administrators can specify which application file types the developer can access.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Administrators can grant the developer access to script fields.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Administrators can grant the developer access to security records.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#32",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>One of the uses of the ServiceNow REST API Explorer is:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#32",
+        "answers": [
+          {
+            "choice": "<p>A. Practice using REST to interact with public data providers</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Find resources on the web for learning about REST</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Convert SOAP Message functions to REST methods</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Create sample code for sending REST requests to ServiceNow</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#33",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true regarding Application Scope?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#33",
+        "answers": [
+          {
+            "choice": "<p>A. All applications are automatically part of the Global scope</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Applications downloaded from 3 party ServiceNow application developers cannot have naming conflicts rd</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Any developer can edit any application</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Developers can choose the prefix for a scope's namespace</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#34",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is the baseline behavior of a table in a privately-scoped application?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#34",
+        "answers": [
+          {
+            "choice": "<p>A. The table and its data are not accessible using web services</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Any Business Rule can read, write, delete, and update from the table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Only artifacts in the table's application can read from the table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. All application scopes can read from the table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#35",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT a purpose of application scoping?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#35",
+        "answers": [
+          {
+            "choice": "<p>A. Provide a relationship between application artifacts</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Provide a way of tracking the user who developed an application</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Provide a namespace (prefix and scope name) to prevent cross application name collisions</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Provide controls for how scripts from another scope can alter tables in a scoped application</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#36",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>It is best practice to define the business requirements and the process(es) an application will manage as part of the application development plan. What are some of the considerations to document as part of the business process?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#36",
+        "answers": [
+          {
+            "choice": "<p>A. Business problem, data input/output, users/stakeholders, and process steps</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Business problem, data input/output, project schedule, and process steps</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Business problem, data input/output, users/stakeholders, and database capacity</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Business problem, users/stakeholders, available licenses, and database capacity</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#37",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following statements does NOT apply when extending an existing table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#37",
+        "answers": [
+          {
+            "choice": "<p>A. The parent table's Access Controls are evaluated when determining access to the new table's records and fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The new table inherits the functionality built into the parent table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The new table inherits all of the fields from the parent table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. You must script and configure all required behaviors</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#38",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following CANNOT be debugged using the Field Watcher?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#38",
+        "answers": [
+          {
+            "choice": "<p>A. Business Rules</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Script Includes</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Client Scripts</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Access Controls</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#39",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which objects can be used in Inbound Action scripts?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#39",
+        "answers": [
+          {
+            "choice": "<p>A. current and previous</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. current and email</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. current and event</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. current and producer</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#40",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is part of the client-side scripting API?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#40",
+        "answers": [
+          {
+            "choice": "<p>A. workflow.scratchpad</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideUser object (g_user)</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. current and previous objects</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. GlideSystem object (gs)</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#41",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Application developers configure ServiceNow using industry standard JavaScript to`¦</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#41",
+        "answers": [
+          {
+            "choice": "<p>A. Enable the right-click to edit the context menus on applications in the navigator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Extend and add functionality</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Customize the organization's company logo and banner text</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Configure the outgoing email display name</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#42",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>How many applications menus can an application have?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#42",
+        "answers": [
+          {
+            "choice": "<p>A. 3, one for an application's user modules, one for an application's administrator modules, and one for the ServiceNow administrator's modules</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. As many as the application design requires</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. 2, one for an application's user modules and one for an application's administrator modules</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. 1, which is used for all application modules</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#43",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>The source control operation used to store local changes on an instance for later application is called a(n) <blank>.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#43",
+        "answers": [
+          {
+            "choice": "<p>A. Branch</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Tag</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Stash</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Update set</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#44",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What syntax is used in a Record Producer script to access values from Record Producer form fields?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#44",
+        "answers": [
+          {
+            "choice": "<p>A. producer.field_name</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. producer.variablename</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. current.variable_name</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. current.field_name</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#45",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following methods prints a message on a blue background to the top of the current form by default?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#45",
+        "answers": [
+          {
+            "choice": "<p>A. g_form.addInfoMsg()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. g_form.addInfoMessage()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_form.showFieldMessage()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. g_form.showFieldMsg()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#46",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>A scoped application containing Flow Designer content dedicated to a particular application is called a(n):</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#46",
+        "answers": [
+          {
+            "choice": "<p>A. Spoke</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Bundle</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Action</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Flow</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#47",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is a Module?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#47",
+        "answers": [
+          {
+            "choice": "<p>A. The functionality within an application menu such as opening a page in the content frame or a separate tab or window</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. A group of menus, or pages, providing related information and functionality to end-users</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. A way of helping users quickly access information and services by filtering the items in the Application Navigator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A web-based way of providing software to end-users</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#48",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which source control operation is available from BOTH Studio and the Git Repository?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#48",
+        "answers": [
+          {
+            "choice": "<p>A. Create Branch</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Apply Remote Changes</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Stash Local Changes</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Edit Repository Configurations</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#49",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT required to link a ServiceNow application to a Git repository?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#49",
+        "answers": [
+          {
+            "choice": "<p>A. Password</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. URL</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Username</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Application name</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#50",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which Report Type(s) can be created by right-clicking on a column header in a table's list?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#50",
+        "answers": [
+          {
+            "choice": "<p>A. Bar Chart, Pie Chart, Histogram, and Line</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Bar Chart</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Bar Chart, Pie Chart, and Histogram</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Bar Chart and Pie Chart</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#51",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT a method used for logging messages in a server-side script for a privately-scoped application?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#51",
+        "answers": [
+          {
+            "choice": "<p>A. gs.log()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. gs.error()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. gs.warn()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.debug()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#52",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>If the Create module field is selected when creating a table, what is the new module's default behavior?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#52",
+        "answers": [
+          {
+            "choice": "<p>A. Open an empty form so new records can be created</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Open a link to a wiki article with instructions on how to customize the behavior of the new module</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Display an empty homepage for the application</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Display a list of all records from the table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#53",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>How must Application Access be configured to prevent all other private application scopes from creating configuration records on an application's data tables?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#53",
+        "answers": [
+          {
+            "choice": "<p>A. You must create Access Controls to prevent all other application scopes from creating configuration records on an application's data tables rather than using Application Access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Set the Accessible from field value to All application scopes and de-select the Can create option</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Set the Accessible from field value to This application scope only and de-select the Allow access to this table via web services option</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Set the Accessible from field value to This application scope only</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#54",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are some of the benefits of extending an existing table such as the Task table when creating a new application? a) You can repurpose existing fields by simply changing the label. b) Use existing fields with no modifications. c) Existing logic from the parent table will be automatically applied to the new table. d) All of the parent table records are copied to the new table.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#54",
+        "answers": [
+          {
+            "choice": "<p>A. a, b, c, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. a and b</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. b and c</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. a, b, and c Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#55",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When configuring an Access Control which has no condition or script, which one of the following statements is NOT true?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#55",
+        "answers": [
+          {
+            "choice": "<p>A. table.*will grant access to every field in a record</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. table.None will grant access to every record on the table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. table.field will grant access to a specific field in a record</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. table.id will grant access to a specific record on the table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#56",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following methods are useful in Access Control scripts?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#56",
+        "answers": [
+          {
+            "choice": "<p>A. g_user.hasRole() and current.isNewRecord()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. gs.hasRole() and current.isNewRecord()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_user.hasRole() and current.isNew()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.hasRole() and current.isNew()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#57",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following client-side scripts apply to Record Producers?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#57",
+        "answers": [
+          {
+            "choice": "<p>A. Catalog Client Scripts and Catalog UI Policies Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. UI Scripts and UI Actions</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. UI Scripts and Record Producer Scripts</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Client Scripts and UI Policies</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#58",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When a ServiceNow instance requests information from a web service, ServiceNow is the web service:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#58",
+        "answers": [
+          {
+            "choice": "<p>A. Publisher</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Specialist</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Provider</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Consumer</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#59",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is the fastest way to create and configure a Record Producer?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#59",
+        "answers": [
+          {
+            "choice": "<p>A. Create a Catalog Category, open the category, and select the Add New Record Producer button</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Use the Record Producer module then add and configure all variables manually</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Open the table in the Table records and select the Add to Service Catalog Related Link</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Open the table's form, right-click on the form header, and select the Create Record Producer menu item</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#60",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which objects can you use in a Scheduled Script Execution (Scheduled Job) script?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#60",
+        "answers": [
+          {
+            "choice": "<p>A. GlideRecord and current</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideUser and GlideRecord</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. GlideSystem and GlideRecord</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. GlideSystem and current</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#61",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Can inherited fields be deleted from a table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#61",
+        "answers": [
+          {
+            "choice": "<p>A. Yes, select the red X in the left-most column in the table definition</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Yes, but only if they are text fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Yes, but only if there has never been any saved field data</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. No, inherited fields cannot be deleted from a child table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#62",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>How do you make a list filter available to everyone?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#62",
+        "answers": [
+          {
+            "choice": "<p>A. Make active, assign a name, and save</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Assign a group, set visibility, and save</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Assign a name, set visibility, and save</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Make active, set visibility, and save</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#63",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are Application Files in a ServiceNow application?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#63",
+        "answers": [
+          {
+            "choice": "<p>A. An XML export of an application's table records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. CSV files containing data imported into an application</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. ServiceNow artifacts comprising an application</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. XML exports of an application's Update Set</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#64",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT true for Modules?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#64",
+        "answers": [
+          {
+            "choice": "<p>A. Modules open content pages</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Access to Modules is controlled with roles</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Every Module must be part of an Application Menu</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Every Module must be associated with a table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#65",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>A graphical view of relationships among tables is a <blank>.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#65",
+        "answers": [
+          {
+            "choice": "<p>A. Schema map</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Dependency view</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Graphical User Interface</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Map source report</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#66",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for the Application Picker?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#66",
+        "answers": [
+          {
+            "choice": "<p>A. All custom application scope and the Global scope appear in the Application Picker</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. All applications in ServiceNow, including baseline applications like Incident, appear in the Application Picker</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Only custom applications appear in the Application Picker</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Only downloaded applications appear in the Application Picker</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#67",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When creating an application through the Guided Application Creator, which of the following is a user experience option?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#67",
+        "answers": [
+          {
+            "choice": "<p>A. Portal</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Mobile</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Self-service</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Workspace</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#68",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When writing a Client Script to provide feedback targeted at a specific field, which method should be used?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#68",
+        "answers": [
+          {
+            "choice": "<p>A. g_form.showInfoMessage()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. g_form.showFieldMsg()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_form.addInfoMessage()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. g_form.addFieldMsg()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#69",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which actions can a Business Rule take without scripting?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#69",
+        "answers": [
+          {
+            "choice": "<p>A. Set field values and write to the system log</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Set field values and generate an event</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Set field values and add message</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Set field values and query the database</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#70",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which server-side object provides methods for working with dates when writing a script in a privately scoped application?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#70",
+        "answers": [
+          {
+            "choice": "<p>A. GlideDateTime Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideRecord</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. GlideSystem</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. current</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#71",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Application developers can specify which ServiceNow page a user sees after submitting a new record using the Record Producer UI. How is the page specified?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#71",
+        "answers": [
+          {
+            "choice": "<p>A. Create an application property to store the URL</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Configure the page in the Module that opens the Record Producer UI</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Write an after Business Rule script for the Record Producer's table: window.redirect = \"<URL>\";</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Write a script in the Record Producer's Script field: producer.redirect = \"<URL>\";</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#72",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which core table in the ServiceNow platform provides a series of standard fields used on each of the tables that extend it, such as the Incident [incident] and\nProblem [problem] tables?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#72",
+        "answers": [
+          {
+            "choice": "<p>A. Task [task]</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Assignment [assignment]</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Service [service]</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Workflow [workflow]</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#73",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which server-side API debug log method is available for scoped applications?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#73",
+        "answers": [
+          {
+            "choice": "<p>A. gs.log()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. gs.info()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. gs.debuglog()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.print()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#74",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which script types execute on the server? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#74",
+        "answers": [
+          {
+            "choice": "<p>A. Business Rule</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Client Scripts</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. UI Policies</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Script Actions Most Voted</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Scheduled Jobs</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#75",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the best UX format to use for lists and forms?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#75",
+        "answers": [
+          {
+            "choice": "<p>A. Forms</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Lists</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Standard</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Classic</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#76",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When creating a table in a privately-scoped application, which four Access Controls are created for the table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#76",
+        "answers": [
+          {
+            "choice": "<p>A. Insert, Delete, Query, Write</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Create, Delete, Read, Write</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Create, Delete, Read, Update</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Insert, Delete, Query, Update</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#77",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for this script fragment?\ng_user.hasRole('x_my_app_user');</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#77",
+        "answers": [
+          {
+            "choice": "<p>A. There is no g_user.hasRole() method</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The method returns false only if the currently logged in user has the x_my_app_user role</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The method returns true only if the currently logged in user has the x_my_app_user role</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The method returns true if the currently logged in user has the x_my_app_user role or the admin role</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#78",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following database operations cannot be controlled with Application Access?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#78",
+        "answers": [
+          {
+            "choice": "<p>A. Query</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Update</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Create</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Delete</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#79",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>For Application Access there is a configuration option called Allow access to this table via web services. Which one of the following statements is true when this option is selected?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#79",
+        "answers": [
+          {
+            "choice": "<p>A. This option restricts the ability to delete records via web services but records can always be read</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Even when not selected, users with the correct permissions can use web services to access the table's records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. This option restricts access only to SOAP web services but does not apply to REST</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The user performing the query via web services must have the correct permissions to access the table's records</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#80",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following statements must evaluate to true for a user to pass an Access Control? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,B,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#80",
+        "answers": [
+          {
+            "choice": "<p>A. The user has one of the roles specified in the Required roles related list.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Scripts configured in the Access Control must evaluate to true.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Other matching Access Controls for the records evaluate to true.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Conditions configured in the Access Control must evaluate to true.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. The user must be granted access through a business rule.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#81",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is a workflow context?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#81",
+        "answers": [
+          {
+            "choice": "<p>A. The table for which a workflow is defined plus any conditions such as \"Active is true\"</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. It is generated from a workflow version, executes activities, and follows transitions</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The business reason or process for which a workflow is designed</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. It is a checked out workflow which is being edited</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#82",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is a benefit of creating an Application Properties page for each application you develop?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#82",
+        "answers": [
+          {
+            "choice": "<p>A. Application Properties allow a developer to override the application properties inherited from ServiceNow</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. An Application Properties page is a good landing page for an application</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Application Properties allow a developer or admin to make changes to an application's behavior without modifying application artifacts</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Application users know to go to the Application Properties page to change the appearance of an application</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#83",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT an example of when an application might use a Scheduled Script Execution (Scheduled Job)?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#83",
+        "answers": [
+          {
+            "choice": "<p>A. The application needs to send weekly email reminders to requestors for all records on a table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The application needs to run a clean up script on the last day of every month</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The application needs to query the database every day to look for unassigned records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The application needs to run a client-side script at the same time every day</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#84",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following objects CANNOT be used in a Script Action script?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#84",
+        "answers": [
+          {
+            "choice": "<p>A. previous</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideRecord</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. event</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. current</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#85",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>How does ServiceNow match inbound email to existing records?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#85",
+        "answers": [
+          {
+            "choice": "<p>A. Watermark</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Record link</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Subject line</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. sys_id</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#86",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When debugging Email Notifications, what must you check on a user record? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,C,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#86",
+        "answers": [
+          {
+            "choice": "<p>A. Active must be true.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The First name and Last name fields must have values.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The value in the Notification field must be set to enabled.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The user must not be locked out.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. The Email field must have a value.</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#87",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are web services?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#87",
+        "answers": [
+          {
+            "choice": "<p>A. Methods used to create and maintain UI Pages</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Methods used to allow applications to connect to other software applications over a network</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Methods used to discover a wide variety of systems and applications</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. They provide a customer-facing view of available service and product offerings provided by departments within the organization</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#88",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following methods is NOT part of the ServiceNow REST API?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#88",
+        "answers": [
+          {
+            "choice": "<p>A. COPY</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GET</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. DELETE</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. POST</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#89",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>You are developing the MyApp application that has a table, Table A. When the MyApp application is installed on an instance, you want Table A's records to be installed as part of the application.\nTable A's records will be installed when:</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#89",
+        "answers": [
+          {
+            "choice": "<p>A. When the MyApp application is installed on an instance, you want Table A's records to be installed as part of the application.\nTable A's records will be installed when:</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>A. Table A is active and extends the Task table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Table A's records are added to the application record using the Create Application Files context menu item</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Table A has an automatic number counter for new records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Table A is not included in the System Clone > Exclude Tables list</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#90",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>How can an application link to a repository behind a firewall?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#90",
+        "answers": [
+          {
+            "choice": "<p>A. This option is not supported.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Link an application to source control through a MID Server.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Link an application to source control through an access token.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Link an application to source control with multi-factor authentication.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#91",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the ServiceNow store?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#91",
+        "answers": [
+          {
+            "choice": "<p>A. Downloadable content ServiceNow script archive</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Alternate name for the ServiceNow Developer Share site</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The source for ServiceNow Community created developer content</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Marketplace for free and paid certified ServiceNow applications and integrations</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#92",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Tables that extend a table do what?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#92",
+        "answers": [
+          {
+            "choice": "<p>A. Automatically update the application scope</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Do not inherit the parent’s fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Sometimes inherit the parent’s fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Inherit the parent’s fields</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#93",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When creating an application through the Guided Application Creator, which of the following is NOT an option for creating a table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#93",
+        "answers": [
+          {
+            "choice": "<p>A. Create table from template</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Create table from scratch</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Extend a table</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Upload spreadsheet</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#94",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Server-side scripts manage what?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#94",
+        "answers": [
+          {
+            "choice": "<p>A. Database and backend</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Playbook access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. User access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Forms and Fields</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#95",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What intuitive development interface guides users through the initial application development process?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#95",
+        "answers": [
+          {
+            "choice": "<p>A. Guided Tour Designer</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Guided Application Creator</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. ServiceNow Studio</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Flow Designer</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#96",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are some benefits of developing private, scoped applications? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#96",
+        "answers": [
+          {
+            "choice": "<p>A. To avoid using a code repository like GitHub or GitLab</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. To reduce risk at code collisions</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. To enable installation and uninstallation of an application</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. To replicate ServiceNow functions a private scope</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#97",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following statements is NOT true for the Form Designer?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#97",
+        "answers": [
+          {
+            "choice": "<p>A. To add a section to the form layout, drag it from the Field Types tab to the desired destination on the form.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. To add a field to the form layout, drag the field from the Fields tab to the desired destination on the form.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. To remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. To create a new field on a form’s table, drag the appropriate data type from the Field Types tab to the form and then configure the new field.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#98",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What records are used to track cross-scope applications or scripts that request access to an application, application resource, or event?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#98",
+        "answers": [
+          {
+            "choice": "<p>A. Restricted caller access records</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Caller tracking records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Access control level records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Cross-scope access records</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#99",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which ATF Test step allows you to create a user with speeded roles and groups for the test?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#99",
+        "answers": [
+          {
+            "choice": "<p>A. Create a group</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Impersonation</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Create a user</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Create a role</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#100",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What plugin enables the Guided Application Creator?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#100",
+        "answers": [
+          {
+            "choice": "<p>A. com.glide.sn-guided-app-creator</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. com.glide.service_creator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. com.glide.snc.apps_creator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. com.snc.apps_creator_template</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#101",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following can be an external data source for a ServiceNow application?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#101",
+        "answers": [
+          {
+            "choice": "<p>A. Microsoft Excel File</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Data provided by a public web service using SOAP or REST</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. CSV file</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. All of the above</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#102",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is true for the Application Picker and Application Scope?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#102",
+        "answers": [
+          {
+            "choice": "<p>A. Global is a reserved application which does not appear in the Application Picker</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Selecting an application from the Application Picker does not set the Application Scope</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Selecting an application from the Application Picker sets the Application Scope</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Selecting Global in the Application Picker sets the Application Scope to Incident</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#103",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is an available feature in Studio? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#103",
+        "answers": [
+          {
+            "choice": "<p>A. Push to update set</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Merge branches</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Search code</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Push to external source control</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#104",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>The Task table is an example of which of the following? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#104",
+        "answers": [
+          {
+            "choice": "<p>A. Parent class</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Legacy class</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Child class</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Base class</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#105",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is true about deleting fields from a table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#105",
+        "answers": [
+          {
+            "choice": "<p>A. Table records are deleted when a field is deleted</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. User-defined non-inherited fields can be deleted</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Any field on a table can be deleted</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Inherited fields can be deleted</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#106",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Why would you build a custom app? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#106",
+        "answers": [
+          {
+            "choice": "<p>A. To avoid using a code repository like GitHub or GitLab</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. To replace ServiceNow base tables</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. To fulfill a specific use case on internal processes</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. To create a custom integration for a 3rd party system</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#107",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are three ServiceNow table creation methods? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,E,F</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#107",
+        "answers": [
+          {
+            "choice": "<p>A. Using legacy Workflows</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Upload and turn a spreadsheet into a custom table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Using Flow Designer</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Use the Now Experience Table Creator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Extend a table</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Create a custom table</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#108",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When selecting a data type for a field that will be displayed on a form, which of the following statements is NOT correct?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#108",
+        "answers": [
+          {
+            "choice": "<p>A. Use the String data type tor a free-form text field</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Use the Phone Number data type to automate phone number data validation</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Use the Choice data type to limit options in a field</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Use the Date data type to enter the date and time of day</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#109",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which one of the following is NOT part of the Form Designer?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#109",
+        "answers": [
+          {
+            "choice": "<p>A. Page header</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Schema map</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Field navigator</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Form layout</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#110",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which class is NOT part of the Client side scoped APIs?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#110",
+        "answers": [
+          {
+            "choice": "<p>A. GlideDialogWindow</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. GlideAjax</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. GlideRecord</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. GlideForm</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#111",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When designing and creating a form what do you create to organize fields on a form?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#111",
+        "answers": [
+          {
+            "choice": "<p>A. Buttons</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Tabs</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Sections</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Related lists</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#112",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p></p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: W</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#112",
+        "answers": [
+          {
+            "choice": "<p>A. Related links to wiki pages</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. A Context Menu UI Action</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Annotations Most Voted</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A populated read-only field</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#113",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following GlideRecord methods run a query against a database table? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C,D,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#113",
+        "answers": [
+          {
+            "choice": "<p>A. _get()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. runQuery()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. query()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. _query()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. get()</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#114",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the GlideForm Client-side scripting object?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#114",
+        "answers": [
+          {
+            "choice": "<p>A. sn.form</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. g_form</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. gs.form</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs_form</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#115",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>In a Business Rule, which one of the following returns the sys_id of the currently logged in user?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#115",
+        "answers": [
+          {
+            "choice": "<p>A. g_form.getUserID()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. gs.getUserSysID()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. gs.getUserID()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. g_form.getUserSysID()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#116",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Access Control debug information identifies whether each element of an Access Control granted or denied access. The elements appear in the debug information in the order of evaluation. In which order are the elements of an Access Control evaluated?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#116",
+        "answers": [
+          {
+            "choice": "<p>A. Conditions, Roles, Script</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Conditions, Script, Roles</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Roles, Conditions, Script Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Script, Conditions, Roles</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#117",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Assume a table called table exists and contains 3 fields: field1, field2, field3. Examine the Access Control list for table:\ntable. None read Access Control for users with the admin and itil roles\ntable. read Access Control for users with the admin role\ntable.field3 read Access Control for users with the itil role\n\nWhich field or fields can a user with the itil role read?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#117",
+        "answers": [
+          {
+            "choice": "<p>A. All fields except field3</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. field1, field2, and field3</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. field1 and field3</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. field3 only</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#118",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Assume a table called table exists and contains 3 fields: field1, field2, field3. Examine the Access Control list for table:\ntable. None read Access Control for users with the admin and itil roles\ntable.field3 read Access Control for users with the admin role\n\nWhich field or fields can a user with the itil role read?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#118",
+        "answers": [
+          {
+            "choice": "<p>A. field3 only</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. filed1 and field3</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. All fields</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. All fields except field3</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#119",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is NOT a caller access field option?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#119",
+        "answers": [
+          {
+            "choice": "<p>A. Caller Tracking</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Caller Restriction</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. None</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Caller Permission Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#120",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which method is used to retrieve Application Property values in a script?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#120",
+        "answers": [
+          {
+            "choice": "<p>A. gs.getProperty()</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. g_form.getAppProperty()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. g_form.getProperty()</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. gs.getAppProperty()</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#121",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What Module Link type is used to access an Application Properties page?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#121",
+        "answers": [
+          {
+            "choice": "<p>A. Single Record</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. HTML (from Arguments)</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. URL (from Arguments)</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Script (from Arguments)</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#122",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Identify the way(s) an application can respond to an Event generated by the gs.eventQueue() method.\na. Script Action\nb. Scheduled Script Execution (Scheduled Job)\nc. UI Policy\nd. Email Notification</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#122",
+        "answers": [
+          {
+            "choice": "<p>A. b and c</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. c</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. a and d</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. a and c</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#123",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When troubleshooting and debugging notifications, where do you navigate to see if an email was sent m response to an event?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#123",
+        "answers": [
+          {
+            "choice": "<p>A. System Logs > Events</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. System Logs > Emails Most Voted</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. System Logs > Push Notifications</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. System Logs > ICE Logs</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#124",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are the benefits of storing the majority of an Application’s server-side script logic in a Script Include?\n\na. This makes execution faster.\nb. Only run when called from a script.\nc. The script logic can be hidden when the Application is installed from the ServiceNow Store. d. For some changes to application logic there is only one place to make edits.</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#124",
+        "answers": [
+          {
+            "choice": "<p>A. a, b, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. a, b, c, and d</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. b, c, and d</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. a, b, and c</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#125",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is NOT a Flow Designer feature?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#125",
+        "answers": [
+          {
+            "choice": "<p>A. Run a flow from a Catalog item</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Call a flow from another flow or subflow</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Add stages to a flow</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Test a flow using the “Run as” feature</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#126",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the purpose of the coalesce field when importing data?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#126",
+        "answers": [
+          {
+            "choice": "<p>A. If a match is not found, the existing record is updated</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. To determine if a record matches an existing record or is a new record</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. To identify and merge duplicate records</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. When a match is found, a new record is inserted</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#127",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>If you create a SOAP Message what syntax indicates a variable to pass when the function is called?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#127",
+        "answers": [
+          {
+            "choice": "<p>A. current.variable_name</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. ${variable_name}</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. < variable_name >.do?WSDL</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. < variable_name ></p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#128",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is NOT a way to install an application on a ServiceNow instance?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#128",
+        "answers": [
+          {
+            "choice": "<p>A. Install an application from the Application Repository</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Select the Copy button on the application record</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Download and install an application from the ServiceNow Share web site</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Download and install a third-party application from the ServiceNow Store</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#129",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Using Custom UI test step in Automated Test Framework, which of the following is NOT a testable page component?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#129",
+        "answers": [
+          {
+            "choice": "<p>A. Buttons</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. UI controls</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. UI pages</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Form field values</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#130",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which module is used to access the knowledge bases which are available to you?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#130",
+        "answers": [
+          {
+            "choice": "<p>A. Knowledge > Home</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Self Service > Knowledge</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Knowledge > All</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Knowledge > Knowledge Bases</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Knowledge > Overview</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#131",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Flow Designer supports variable data types to store record data and complex data. Which of the following are supported variable data types? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,C,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#131",
+        "answers": [
+          {
+            "choice": "<p>A. Choice data type</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Array.Reference data type</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Integer data type</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Freedom data type</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Array.Boolean data type</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Label data type</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#132",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following statements is true about Guided Application Creator?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#132",
+        "answers": [
+          {
+            "choice": "<p>A. The global scope option is turned on by default</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Default access controls are automatically created</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The welcome screen appears every time a new application is created</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A scoped application user role is automatically created</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#133",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are the ways to designate data tables when using Guided Application Creator (GAC)? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,D,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#133",
+        "answers": [
+          {
+            "choice": "<p>A. Upload an existing PDF</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Create a new table on the platform</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Use a freeform database</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Upload an existing spreadsheet</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Use an existing table on the platform</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Upload an existing word processing document</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#134",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the Event Registry?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#134",
+        "answers": [
+          {
+            "choice": "<p>A. A Workflow which is launched every time an Event is generated; used to debug Events</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The Event Log which lists all Events that have been generated</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The method used in server side scripts to generate Events and pass parameters</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. A table containing a record for every Event known to the ServiceNow system which allows ServiceNow to react when Events are generated</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#135",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Identify the ways an application can respond to an Event generated by the gs.eventQueue() method: (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#135",
+        "answers": [
+          {
+            "choice": "<p>A. Client Script</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Email Notification</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Scheduled Script Execution (Scheduled Job)</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Script Action</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. UI Policy</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#136",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Is it possible to change an application’s scope?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#136",
+        "answers": [
+          {
+            "choice": "<p>A. No, it’s not possible</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Yes, it’s possible</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Yes, but only from global scope to private scope</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Yes, but only from private scope to global scope</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#137",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which of the following is true about g_scratchpad? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#137",
+        "answers": [
+          {
+            "choice": "<p>A. Used to push information from the server to the client</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Does not exist on the mobile platform</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Has constructors and methods</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Has default properties passed by client-side scripts</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#138",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Client-side scripts manage what?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#138",
+        "answers": [
+          {
+            "choice": "<p>A. User access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Database and backend</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Playbook access</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Forms and Form Fields</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#139",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When debugging Email Notifications, what must you check on a user record? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#139",
+        "answers": [
+          {
+            "choice": "<p>A. Active must be true.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. The Email field must have a valid value.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. The user must not be locked out.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. The First name and Last name fields must have values.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Delegation must be enabled.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#140",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When crafting a scoped application that contains flow actions, what is the application called?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#140",
+        "answers": [
+          {
+            "choice": "<p>A. Action</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Spoke</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Bundle</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Flow</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#141",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which are reasons an application could be developed on the ServiceNow platform? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,B,C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#141",
+        "answers": [
+          {
+            "choice": "<p>A. It needs workflow to manage processes.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. It requires reporting capabilities.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. It uses forms extensively to interact with data.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. It requires low-level programming libraries.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. It uses multimedia features.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#142",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Once an application is ready to share, which of the following methods of publishing are supported by ServiceNow? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,C,D</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#142",
+        "answers": [
+          {
+            "choice": "<p>A. Publish to an application repository</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Publish to a local drive</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Publish to the ServiceNow Store</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Publish to an Update Set</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Publish to a spreadsheet</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Publish to a local USB device</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#143",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is required to link a ServiceNow application to a Git repository? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: D,E,F</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#143",
+        "answers": [
+          {
+            "choice": "<p>A. URI</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. ACL</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Application name</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Password</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. User name</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. URL</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#144",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which ServiceNow capability provides assistance to help users obtain information, make decisions, and perform common work tasks via a messaging interface?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#144",
+        "answers": [
+          {
+            "choice": "<p>A. Agent Workspace</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Chat bot</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Virtual Agent</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Knowledge Chat</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Now Support</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#145",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Which feature allows you to automate business logic for a particular application or process such as approvals, tasks notifications, and record operations?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#145",
+        "answers": [
+          {
+            "choice": "<p>A. Flows</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Action Sequences</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Action Sets</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Task Flows</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Flow Diagrams</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#146",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>From a form, what would you click to add additional fields to the form? (Choose two.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#146",
+        "answers": [
+          {
+            "choice": "<p>A. Context Menu > Form > Layout</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Context Menu > Configure > Form Layout</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Context Menu > Configure > Form Design</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Right click on header > Add > Field</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Context Menu > Form > Designer</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Right click on header > Configure > UX Dashboard</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#147",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What is the name of the table relationship, where two or more tables are related in a bi-directional relationship, so that the related records are visible from both tables in a related list?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#147",
+        "answers": [
+          {
+            "choice": "<p>A. Database View</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Many to Many</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. One to Many</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Extended</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#148",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>When creating application tables, a user role is automatically added to the table record. Which other role does an application typically have?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: C</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#148",
+        "answers": [
+          {
+            "choice": "<p>A. Application Super User</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Application Fulfiller</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Application Admin</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Application Manager</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#149",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>Group records are stored in which table?</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#149",
+        "answers": [
+          {
+            "choice": "<p>A. Group [sn_user_group]</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Group [sys_user_group]</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Group [s_sys_group]</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Group [u_sys_group]</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#150",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What data types of Flow Designer variables are supported to store record data and complex data? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: B,D,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#150",
+        "answers": [
+          {
+            "choice": "<p>A. Label data type</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Integer</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Array.Reference</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Choice</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. String</p>",
+            "correct": true,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  },
+  {
+    "question_id": "#151",
+    "topic_id": 1,
+    "course_id": 1,
+    "case_study_id": "null",
+    "lab_id": 0,
+    "question_text": "<p>What are the features of Flow Designer? (Choose three.)</p>",
+    "mark": 1,
+    "is_partially_correct": false,
+    "question_type": "1",
+    "difficulty_level": "0",
+    "general_feedback": [
+      "<p>Correct Answer: A,C,E</p>"
+    ],
+    "is_active": true,
+    "answer_list": [
+      {
+        "question_answer_id": "",
+        "question_id": "#151",
+        "answers": [
+          {
+            "choice": "<p>A. Add stages to a flow.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>B. Call a flow from another flow or subflow.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>C. Test a flow using the “Run as” feature.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>D. Support Java Scripting code to test conditions that trigger the flow.</p>",
+            "correct": false,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>E. Run a flow from a Catalog item.</p>",
+            "correct": true,
+            "feedback": ""
+          },
+          {
+            "choice": "<p>F. Perform form field data validation at client side.</p>",
+            "correct": false,
+            "feedback": ""
+          }
+        ]
+      }
+    ],
+    "topic_name": "Topic #1"
+  }
+]

@@ -1,7 +1,9 @@
 import json
 
+input_file = 'mock_14.json'
+
 # Đọc dữ liệu từ file JSON
-with open('mock_test_2.json', 'r') as infile:
+with open(input_file, 'r') as infile:
     input_data = json.load(infile)
 
 # Mảng để chứa các câu hỏi đã chuyển đổi
@@ -65,7 +67,7 @@ chunks = [output_data_list[i:i + chunk_size] for i in range(0, len(output_data_l
 
 # Ghi từng phần vào một file JSON riêng biệt
 for i, chunk in enumerate(chunks, start=1):
-    filename = f'output_mock_test_2{i}.json'
+    filename = f'output_mock_test{i}.json'
     with open(filename, 'w') as outfile:
         json.dump(chunk, outfile, indent=4)
     print(f"Output part {i} has been written to '{filename}'")
