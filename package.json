@@ -1,7 +1,7 @@
 {
   "name": "ankiquiz",
   "version": "1.0.0",
-  "description": "Advanced AWS Certification Exam Preparation Tool",
+  "description": "Advanced Certification Exam Preparation Tool",
   "main": "index.html",
   "type": "module",
   "scripts": {
@@ -45,10 +45,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/ankiquiz.git"
+    "url": "https://github.com/thaild/ankiquiz.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/ankiquiz/issues"
+    "url": "https://github.com/thaild/ankiquiz/issues"
   },
-  "homepage": "https://github.com/your-username/ankiquiz#readme"
+  "homepage": "https://github.com/thaild/ankiquiz#readme"
 }

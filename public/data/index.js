@@ -66,7 +66,57 @@ try {
           id: "Mock_test2",
           name: "[PMA-PMP] MOCK TEST 2",
           data: PMA_PMP_MOCK_TEST2.data,
-        }
+        },
+        {
+          id: "Mock_test3",
+          name: "[PMA-PMP] MOCK TEST 3",
+          data: PMA_PMP_MOCK_TEST3.data,
+        },
+        {
+          id: "Mock_test4",
+          name: "[PMA-PMP] MOCK TEST 4",
+          data: PMA_PMP_MOCK_TEST4.data,
+        },
+        {
+          id: "Mock_test5",
+          name: "[PMA-PMP] MOCK TEST 5",
+          data: PMA_PMP_MOCK_TEST5.data,
+        },
+        {
+          id: "Mock_test6",
+          name: "[PMA-PMP] MOCK TEST 6",
+          data: PMA_PMP_MOCK_TEST6.data,
+        },
+        {
+          id: "Mock_test7",
+          name: "[PMA-PMP] MOCK TEST 7",
+          data: PMA_PMP_MOCK_TEST7.data,
+        },
+        {
+          id: "Mock_test8",
+          name: "[PMA-PMP] MOCK TEST 8",
+          data: PMA_PMP_MOCK_TEST8.data,
+        },
+        {
+          id: "Mock_test11",
+          name: "[PMA-PMP] MOCK TEST 11",
+          data: PMA_PMP_MOCK_TEST11.data,
+        },
+        {
+          id: "Mock_test12",
+          name: "[PMA-PMP] MOCK TEST 12",
+          data: PMA_PMP_MOCK_TEST12.data,
+        },
+        {
+          id: "Mock_test13",
+          name: "[PMA-PMP] MOCK TEST 13",
+          data: PMA_PMP_MOCK_TEST13.data,
+        },
+        {
+          id: "Mock_test14",
+          name: "[PMA-PMP] MOCK TEST 14",
+          data: PMA_PMP_MOCK_TEST14.data,
+        },
       ],
     },
 
