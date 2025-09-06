@@ -6,7 +6,7 @@
   function getConfig() {
     const config = {
       // API Configuration
-      API_BASE_URL: 'http://localhost:3000/api',
+      API_BASE_URL: getMetaContent('api-base-url') || 'http://localhost:3000/api',
       
       // App Configuration
       APP_NAME: getMetaContent('app-name') || 'AnkiQuiz',
