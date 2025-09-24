@@ -1,0 +1,2561 @@
+var PMA_PMP_FULL_EXAM_1_Part3 = {
+    "msg": "Quiz Questions",
+    "data": [
+    {
+        "question_id": "#8dc372dc-f5bd-4129-8476-1b0ed4410e19",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "At the daily scrum meeting, a team member brings up a problem accessing a database that impedes his progress. Another team member offers a possible solution, which triggers a conversation between the two. After a few minutes, the scrum master cuts off their conversation, reminding them that the daily scrum is not the appropriate venue for their discussion. What should the scrum master do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#8dc372dc-f5bd-4129-8476-1b0ed4410e19",
+                "answers": [
+                    {
+                        "choice": "Submit a change request to the database team so that the problem gets resolved and impediment removed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Request that the team members swarm on the database problem and resolve it as soon as possible",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Suggest the two team members place the issue in the parking lot and discuss it once the meeting is over",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Allow the conversation between the two team members to continue until the issue is resolved",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0121"
+    },
+    {
+        "question_id": "#dd0dd8ed-a915-4e55-9e8f-497df228a287",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Four vendors have responded to a bid request on your project. Which of the following vendors should you select based on the expected monetary value (EMV)?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#dd0dd8ed-a915-4e55-9e8f-497df228a287",
+                "answers": [
+                    {
+                        "choice": "Vendor 1 with an 80% probability of success and profit of $20,000",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Vendor 2 with a 90% probability of success and profit of $19,000",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Vendor 3 with a 75% probability of success and profit of $18,000",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Vendor 4 with an 85% probability of success and profit of $20,000",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0122"
+    },
+    {
+        "question_id": "#573fd5b7-714f-4025-a053-81acad75d823",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You have been assigned to lead a drug development project for a small pharmaceutical company. The drug development aspect of the project is characterized by a high degree of uncertainty, complexity, and risk. The governmental approval process, on the other hand, is highly structured and well defined. What project management approach would you recommend for this project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#573fd5b7-714f-4025-a053-81acad75d823",
+                "answers": [
+                    {
+                        "choice": "Agile for the drug development phase, and predictive for the governmental approval process",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Predictive for the drug development phase, and agile for the governmental approval process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Kanban to maximize WIP for compliance activities related to the governmental approval process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Crystal clear for both the drug development phase and the governmental approval process",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0123"
+    },
+    {
+        "question_id": "#162abc8d-ccde-4a5b-bcb3-37a135cc9799",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager has been communicating with 10 stakeholders regularly. Last week 2 more stakeholders were identified and added to the communications management plan. What is the number of potential communication channels?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#162abc8d-ccde-4a5b-bcb3-37a135cc9799",
+                "answers": [
+                    {
+                        "choice": "66",
+                        "correct": false
+                    },
+                    {
+                        "choice": "78",
+                        "correct": true
+                    },
+                    {
+                        "choice": "55",
+                        "correct": false
+                    },
+                    {
+                        "choice": "12",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0124"
+    },
+    {
+        "question_id": "#486ea123-b852-40b8-af29-4ba8c0a284e4",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Customer requirements for the new application to be developed by an agile team limit the technology choices to only two approaches. The team members are not familiar with any of them and ask the scrum master for advice. Which of the following should the scrum master recommend to select the best approach?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#486ea123-b852-40b8-af29-4ba8c0a284e4",
+                "answers": [
+                    {
+                        "choice": "A risk-based spike",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Exploratory testing",
+                        "correct": false
+                    },
+                    {
+                        "choice": "An architectural spike",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Prototyping",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0125"
+    },
+    {
+        "question_id": "#82f80736-8e9a-4f94-b152-f2834c9f2e79",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project has short iterative planning and executing cycles where the requirements are progressively elaborated. The key stakeholders are continuously involved and provide frequent feedback allowing the team to respond to changes more quickly. What is the best way for the project manager to manage quality in this type of project environment?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#82f80736-8e9a-4f94-b152-f2834c9f2e79",
+                "answers": [
+                    {
+                        "choice": "By conducting periodic quality audits",
+                        "correct": false
+                    },
+                    {
+                        "choice": "By using the Validate Scope process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "By scheduling regular retrospectives",
+                        "correct": true
+                    },
+                    {
+                        "choice": "By using the quality control matrix",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0126"
+    },
+    {
+        "question_id": "#189fbfc4-29f0-40a9-be2f-64b4a8cf9efb",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is developing the communications management plan. She has determined which stakeholders need what information and how often she will distribute the various reports. What else should the project manager do as part of this process?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#189fbfc4-29f0-40a9-be2f-64b4a8cf9efb",
+                "answers": [
+                    {
+                        "choice": "Determine the information needs of the stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Determine how the information will be transmitted",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Measure the effectiveness of the communications",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Submit a change request to update the communications management plan",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0127"
+    },
+    {
+        "question_id": "#1abb617b-fac8-43fe-984e-63dc5e4dd5d2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A member of an agile project team gathered data about the project and discovered an opportunity for improvement. The team member thinks that a change to the process used by the team to develop the product of the project would improve team performance. The team member approaches the scrum master for advice on the best way to implement the change. What advice can the scrum master give to the team member?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#1abb617b-fac8-43fe-984e-63dc5e4dd5d2",
+                "answers": [
+                    {
+                        "choice": "Make the change, see what happens, then report the results during the upcoming retrospective meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Submit a change request, wait for the approval of the change control board, and implement the change",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Send an email to the functional manager to report the findings and ask for permission to make the change",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Inform the team of the opportunity for improvement and, if the team supports it, implement the change",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0128"
+    },
+    {
+        "question_id": "#988a545b-63f6-47fb-9495-01d8a4613b1a",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are a project manager conducting a meeting with your project team. The goal of the meeting is to improve the overall team environment to enhance project performance. The meeting becomes contentious with team members interrupting each other and being disrespectful to each other's suggestions. You attempt to return civility to the meeting by establishing ground rules for acceptable behavior, but working relationships may already be damaged. What might you have missed that could have prevented this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#988a545b-63f6-47fb-9495-01d8a4613b1a",
+                "answers": [
+                    {
+                        "choice": "Sharing the team management plan with the project team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Involving the project team in the creation of a team charter and gaining agreement with the content",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Allowing the team members to work independently and avoid interaction",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Making sure each team member has a copy of the project charter",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0129"
+    },
+    {
+        "question_id": "#b39e8914-f897-4bbf-b50f-1077cb42a1c2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are leading a project to replace an aging bridge spanning a river in a heavily populated area. The new bridge would include a pedestrian pathway, that is not a feature of the existing bridge. The bridge is well under construction when residents learn the pathway would allow strangers to enter their neighborhood at all times. The residents demand the elimination of the pathway. What would have been the best course of action to avoid this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b39e8914-f897-4bbf-b50f-1077cb42a1c2",
+                "answers": [
+                    {
+                        "choice": "Identify the pathway as a possible point of contention with stakeholders early in the project",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Nothing could have been done differently because the project was authorized per the project charter",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Engage a public relations company to handle community outreach once local residents voiced their disapproval",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Reroute the pathway entrance during construction to an old railway trail instead of the local street",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0130"
+    },
+    {
+        "question_id": "#8e53df41-21e9-43cd-8f3a-4afef2bd14d7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Your project team functions as a well-organized unit. The team members are interdependent and work through issues smoothly and effectively. What is your best course of action?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#8e53df41-21e9-43cd-8f3a-4afef2bd14d7",
+                "answers": [
+                    {
+                        "choice": "Provide clear direction on the project objectives and the behavior expected from the team members",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Help the team to get through their struggle by ensuring they listen to each other and understand their differences",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensure the team resolves conflicts quickly and continues to work collaboratively and step in only when needed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Serve as a gateway between the project team and the stakeholders and delegate decision making to the team members",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0131"
+    },
+    {
+        "question_id": "#2fb25b39-71fc-4689-939b-1952f23cc37b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is assigned to an agile software development project for a large banking corporation. With the project just getting underway, the project manager has learned about new hacking tactics that present a potential threat to regulatory compliance for the project. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#2fb25b39-71fc-4689-939b-1952f23cc37b",
+                "answers": [
+                    {
+                        "choice": "Review the risks during the project retrospective",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Analyze the consequences of non-compliance",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Submit a change request to update the risk management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Develop a cumulative flow diagram",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0132"
+    },
+    {
+        "question_id": "#c2909431-5a41-4817-b669-037ecc10aad9",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are preparing for an upcoming software development project. The project will be initiated and planned using a predictive approach, while the development team will use Kanban. A budget has been established for training, and you need to determine how to allocate those funds. What is your best course of action?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c2909431-5a41-4817-b669-037ecc10aad9",
+                "answers": [
+                    {
+                        "choice": "Send the development team to a seminar on maximizing WIP",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Provide training to transform T-shaped people into I-shaped people",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Deliver training to convert I-shaped people into T-shaped people",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Train the team on how to best prioritize the features to be developed",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0133"
+    },
+    {
+        "question_id": "#ea89c573-104c-4db8-93d2-fe11ed21558c",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are leading a software development project, which is utilizing an agile framework. While monitoring the progress of the project, it is apparent that velocity is trending down, and you are aware of some setbacks that have been encountered by the development team. You want to capture and analyze lessons learned so far during the project to improve the process going forward. What is the best way to achieve this goal?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#ea89c573-104c-4db8-93d2-fe11ed21558c",
+                "answers": [
+                    {
+                        "choice": "Perform a sprint review",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Schedule a sprint planning meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct an iteration retrospective",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Lessons learned are not utilized on agile projects",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0134"
+    },
+    {
+        "question_id": "#cd6e0620-a129-44e8-953b-d88fa3637b1e",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A senior executive suggests initiating a project to replace a significant portion of the company's labor force with an automated production line. Other company executives are skeptical that this approach is the best way to increase profit margins and wonder if they are ready to sponsor such an effort. What is the first thing that should be done in this scenario?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#cd6e0620-a129-44e8-953b-d88fa3637b1e",
+                "answers": [
+                    {
+                        "choice": "Performing a needs assessment",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Consulting with the project management office",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Appointing a project sponsor to create a project charter",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Providing a project manager with the authority to apply organizational resources",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0135"
+    },
+    {
+        "question_id": "#1ecc87ba-53ec-43ec-a72e-a7f4f796df2b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The project team reports that they have finished creating the requirements management plan, the requirements documentation, and the requirements traceability matrix. The team informs that they are going to start working on the project work breakdown structure (WBS) next. What has the project team forgotten to do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#1ecc87ba-53ec-43ec-a72e-a7f4f796df2b",
+                "answers": [
+                    {
+                        "choice": "Create the project scope statement",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Complete the project management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Update the lessons learned register",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform the Validate Scope process",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0136"
+    },
+    {
+        "question_id": "#0d542ba7-4f86-48f8-add3-97919683f3f0",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is drafting a charter for a software development project. In support of this process, the project manager has scheduled a brainstorming meeting to gather relevant information. Which of the following activities is the project manager least likely to conduct?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#0d542ba7-4f86-48f8-add3-97919683f3f0",
+                "answers": [
+                    {
+                        "choice": "Inviting relevant stakeholders to attend the meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensuring that a software engineer joins the meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Arranging for a facilitator to lead the meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Following the communications management plan to determine meeting attendees",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0137"
+    },
+    {
+        "question_id": "#894dd097-c448-4301-96f5-cf3ed5188b83",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "After reviewing proposals for a large-scale product development project, vendors X and Y are equally qualified to deliver both the hardware and software. The project manager believes the hardware should be developed with a traditional project management approach, but the software might be better suited to an agile framework. What is the best course of action?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#894dd097-c448-4301-96f5-cf3ed5188b83",
+                "answers": [
+                    {
+                        "choice": "Contract with vendor X for hardware, with vendor Y for software and use the appropriate methodology for each",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Contract with vendor X for both hardware and software and require an agile framework for the entire project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Contract with vendor Y for both hardware and software and require a waterfall approach for the entire project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Contract with either vendor X or vendor Y for both hardware and software and utilize a master services agreement",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0138"
+    },
+    {
+        "question_id": "#21c8f428-1169-4bb3-a1c4-bb2f766ac1fd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You and the project management team have been vigilant about observing different aspects of the project to ensure the project is progressing as planned. Currently, you are using performance data generated during project execution to determine if the status of overall project risk has changed, if the project assumptions are still valid, if contingency reserves for cost or schedule require modification, and if project strategy remains valid. What process are you performing?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#21c8f428-1169-4bb3-a1c4-bb2f766ac1fd",
+                "answers": [
+                    {
+                        "choice": "Plan Risk Responses",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Monitor Risks",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Plan Risk Management",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Identify Risks",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0139"
+    },
+    {
+        "question_id": "#5931d9e7-e565-45f9-8f87-1daa706b550f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "To better use existing knowledge and to create new knowledge for a project, the project manager is looking for ways to identify any knowledge gaps. Which of the following would help the project manager the most to complete this process?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#5931d9e7-e565-45f9-8f87-1daa706b550f",
+                "answers": [
+                    {
+                        "choice": "Bid documents",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Resource breakdown structure",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Quality metrics",
+                        "correct": false
+                    },
+                    {
+                        "choice": "To-complete performance index",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0140"
+    },
+    {
+        "question_id": "#b664f2e8-d475-4f84-b627-1b52bbca79ac",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A scrum master is conducting a daily standup. Each member of the development team states that their work has been stalled due to various blockers. As a result, the entire development team has been idled, and the schedule baseline is in jeopardy. What should the scrum master do first?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b664f2e8-d475-4f84-b627-1b52bbca79ac",
+                "answers": [
+                    {
+                        "choice": "Attempt to resolve the problems during the meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Analyze and prioritize the blockers",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Assign the team to work on another project in the meanwhile",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Escalate the issue to the project sponsor",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0141"
+    },
+    {
+        "question_id": "#dca09e13-3380-4edc-aa55-6664223e8e2e",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is facilitating a sprint retrospective meeting where the team members discuss customer dissatisfaction from the product increment they delivered during the sprint. The discussion reveals some issues with the remote team members who were primarily using email to communicate with the rest of the team. What was the most likely cause the product increment did not meet customer expectations?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#dca09e13-3380-4edc-aa55-6664223e8e2e",
+                "answers": [
+                    {
+                        "choice": "Failure to respond to changes in scope",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Non colocated team members",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Delivering working software in each sprint",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Demotivated team members",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0142"
+    },
+    {
+        "question_id": "#c849fc85-f434-4eff-992a-c0eeb22cc661",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You have been provided a list of concerns some stakeholders have with your project. You meet with them to address the concerns in hopes of gaining their support and cooperation. You pay close attention by actively and effectively listening. You focus on each person's input to ensure you are aware of and are taking all perspectives into consideration. You then clearly articulate your point and your position and ask for their support. Which tool or technique best describes the skills you are using?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c849fc85-f434-4eff-992a-c0eeb22cc661",
+                "answers": [
+                    {
+                        "choice": "Influencing",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Team performance assessments",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conflict management",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Emotional intelligence",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0143"
+    },
+    {
+        "question_id": "#46985dc6-b4eb-4d81-9325-7579626230e2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A scheduling error occurred on a construction project that you are managing. The painting contractors arrived as scheduled, but the drywall was not yet finished. As the project manager, you want to know who was responsible for scheduling the contractors and who should be held accountable. What tool or technique is most helpful in this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#46985dc6-b4eb-4d81-9325-7579626230e2",
+                "answers": [
+                    {
+                        "choice": "Project organization charts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Resource management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Hierarchical charts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Responsibility assignment matrix",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0144"
+    },
+    {
+        "question_id": "#9866d25b-d464-45e5-9544-b026a87a8ddf",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "An agile coach is leading an iteration planning meeting, which is being dominated by a highly respected senior developer. The agile coach is concerned that the senior developer might be exerting too much influence and overcommitting the team. What is the best course of action for the agile coach?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#9866d25b-d464-45e5-9544-b026a87a8ddf",
+                "answers": [
+                    {
+                        "choice": "Address the situation during the next project retrospective",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Suggest that the team holds a round of fist-of-five voting",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Reduce the story points to avoid over-commitment",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Do not interfere as the iteration plan is determined by the team",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0145"
+    },
+    {
+        "question_id": "#74bfd881-c2c8-440f-8ccf-c5a4a27e202b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A scrum master is working with stakeholders to develop the project vision for inclusion in the project charter and wants to ensure that regulatory compliance measures are incorporated into the project requirements. How might the scrum master analyze the consequences of non-compliance?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#74bfd881-c2c8-440f-8ccf-c5a4a27e202b",
+                "answers": [
+                    {
+                        "choice": "Facilitate a project post-mortem",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Play a session of \"remember the future\"",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Lead a round of planning poker",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct a t-shirt sizing exercise",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0146"
+    },
+    {
+        "question_id": "#07755001-f245-4cb2-a8dd-c1a3f8485434",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are acquiring the necessary resources for your project. The organization where you are employed is an international company with locations in several countries. With personnel located around the globe, you will be forming your project team as a virtual team, and the team members will be allowed to work from their home offices. What special considerations do you need to take into account while working with your team?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#07755001-f245-4cb2-a8dd-c1a3f8485434",
+                "answers": [
+                    {
+                        "choice": "Project expenses",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Communication planning",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Pre-assigned team members",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Team members with disabilities or mobility issues",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0147"
+    },
+    {
+        "question_id": "#2a77b84e-2e8b-40c2-933d-811f9e39d38f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You have joined a project in which requirements are elaborated at several intervals during delivery, and the delivery is divided into subsets of the overall product. Change is incorporated at periodic intervals, and risk and cost are controlled by progressively elaborating the plans with new information. Key stakeholders are regularly involved. What development approach is used on your project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#2a77b84e-2e8b-40c2-933d-811f9e39d38f",
+                "answers": [
+                    {
+                        "choice": "Agile",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Predictive",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Hybrid",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Periodic",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0148"
+    },
+    {
+        "question_id": "#7d48cc85-c09d-45bd-8350-2220a8251570",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The project team has just completed its fourth sprint. As part of the Control Costs process, you determine that the team's average velocity is 25 points per sprint, and the team has earned 1/3 of the total number of story points required to complete the entire project. The average cost per story point is $575. What is the estimate to complete the remaining work?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#7d48cc85-c09d-45bd-8350-2220a8251570",
+                "answers": [
+                    {
+                        "choice": "$57,500",
+                        "correct": false
+                    },
+                    {
+                        "choice": "$115,000",
+                        "correct": true
+                    },
+                    {
+                        "choice": "$14,375",
+                        "correct": false
+                    },
+                    {
+                        "choice": "$172,500",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0149"
+    },
+    {
+        "question_id": "#fbd663bf-53c8-4118-bf27-bbf541c5923d",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The latest software released to the customer in the first project phase is full of defects. The customer is angry and demands that the development of the new release, which is planned to be delivered in the second phase, is much more transparent. The customer wants to see the team's results more regularly and without very long development intervals in-between. Which of the following could the project team introduce in the second phase to better comply with the customer's demand? (Choose three)",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: ['A', 'B', 'D']</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#fbd663bf-53c8-4118-bf27-bbf541c5923d",
+                "answers": [
+                    {
+                        "choice": "A cadence with regular timeboxes",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Regular and frequent retrospectives",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Optimization at the level of each individual team member",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Test-driven development practices",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0150"
+    },
+    {
+        "question_id": "#5cc487d0-4d0f-4c2f-88a2-f8a118afa294",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are leading a meeting with the project sponsor and key stakeholders to review the recently completed project management plan. The goal of the meeting is to establish a common understanding of the plan, answer any questions or concerns, and gain formal approval of the project management plan. Which of the following interpersonal and team skills is the least beneficial to the project manager to use to achieve the meeting's goal?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#5cc487d0-4d0f-4c2f-88a2-f8a118afa294",
+                "answers": [
+                    {
+                        "choice": "Conflict management",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Facilitation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Meeting management",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Team building",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0151"
+    },
+    {
+        "question_id": "#82c5771e-cc55-4a3e-93ea-b8fb4edbeec7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Midway into an iteration, an agile team faces a minor technical issue. One of the team members recalls that the agile coach is an expert in the field from her past experience as a senior developer. The team requests that the coach help resolve the issue. What should the agile coach do first?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#82c5771e-cc55-4a3e-93ea-b8fb4edbeec7",
+                "answers": [
+                    {
+                        "choice": "Let the team resolve the issue",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Help the team resolve the issue",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Resolve the issue for the team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Consult with the product owner",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0152"
+    },
+    {
+        "question_id": "#09ec2e3b-b95c-415f-8bf1-6e02fe41f509",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is executing the quality management plan of a project to develop a prototype medical device. Given the nature of the project, the quality standards are very stringent. With no known cause, it becomes apparent that the product quality does not meet project requirements. What is the best course of action for the project manager to take in this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#09ec2e3b-b95c-415f-8bf1-6e02fe41f509",
+                "answers": [
+                    {
+                        "choice": "Direct the project team to improve the quality of their work",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the project sponsor what to do",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Create an affinity diagram",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Develop an Ishikawa diagram",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0153"
+    },
+    {
+        "question_id": "#cc4925e4-b1d6-485b-947e-8646561689bd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Two project team members are having a disagreement over how to approach a minor technical detail. The project manager has little experience working with them, and her technical knowledge is limited. What is the best action for the project manager to take?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#cc4925e4-b1d6-485b-947e-8646561689bd",
+                "answers": [
+                    {
+                        "choice": "Abide by the decision of the most senior team member",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Avoid being involved in the discussion and decision making",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Stop the discussion and direct the team members to get back to work",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Request the human resource department's representative to step in",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0154"
+    },
+    {
+        "question_id": "#3eecc716-1c67-4b48-97ea-0422a38ffcb4",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Up until now, your project team has allowed the use of flextime where project team members may take time off during regular business hours and make up the time during the evening hours or weekends. Recently, excessive use of flextime has become a roadblock as some team members are not available when needed. The team feels they should set a standard that flextime is only to be used for personal emergencies. How should you handle this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3eecc716-1c67-4b48-97ea-0422a38ffcb4",
+                "answers": [
+                    {
+                        "choice": "Contact the human resources department to update the corporate policies to prohibit flextime",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Submit a change request to update the team charter based on the team's inputs",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Discuss the issue with the team and update the team charter accordingly",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Do nothing as the team has already agreed to use flextime for personal emergencies only",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0155"
+    },
+    {
+        "question_id": "#371200e1-7ad0-480e-9ee9-83cb7878ef95",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You have been assigned to manage an agile project to develop various analytical tools for your company's executive team. Everyone involved in the project is new to agile methodologies. After the first few tools are released, the executives are frustrated that the tools they needed the most are still in the pipeline for future development. What might you have done differently to avoid this issue?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#371200e1-7ad0-480e-9ee9-83cb7878ef95",
+                "answers": [
+                    {
+                        "choice": "Provided the product owner with the training on how to prioritize the product backlog",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Trained the development team on pair-programming and code refactoring",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Explained that agile focuses on developing the highest-risk features last to avoid early failure",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Colocated the development team to take advantage of osmotic communication",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0156"
+    },
+    {
+        "question_id": "#3d2d46cd-4da0-41ef-99c1-b942fe2a4366",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "An agile team is trying to determine the ideal iteration length. The team members are having a long and intense argument about it, but no one is willing to compromise. The scrum master is called in to help resolve the conflict. What is the best course of action for a scrum master?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3d2d46cd-4da0-41ef-99c1-b942fe2a4366",
+                "answers": [
+                    {
+                        "choice": "Avoid being involved in the process and let the team work out toward a consensus",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Recommend evaluating the pros and cons of each one of the suggested iteration lengths",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Threaten the team with disciplinary actions if they are unable to come to an agreement",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Break the impasse by making the decision for the team before relationships are damaged",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0157"
+    },
+    {
+        "question_id": "#d6348bad-abeb-4022-a9d8-b79269a63fba",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project has to procure goods and services from a seller. Some aspects of the procurement are well-defined up-front while others will be known only after initial deliverables are validated and accepted. What contracting technique would work best for this procurement?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#d6348bad-abeb-4022-a9d8-b79269a63fba",
+                "answers": [
+                    {
+                        "choice": "Multi-tiered structure",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Cost plus award fee",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Procurement audit",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Request for quotation",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0158"
+    },
+    {
+        "question_id": "#c1dc4056-eb77-49f2-a6ee-63482e73a95f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project team will work in a noisy environment requiring hearing protection. To communicate in this type of environment, your employer has a mandatory proprietary instant messaging mobile phone application that will be installed on the phone of every project team member for the duration of the project. The requirement to install this messaging application is an example of which of the following?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c1dc4056-eb77-49f2-a6ee-63482e73a95f",
+                "answers": [
+                    {
+                        "choice": "Pull communication",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Push communication",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Enterprise environmental factors",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Communication model",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0159"
+    },
+    {
+        "question_id": "#e1980826-cf5d-4b53-a586-8c8270147feb",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Gold plating had been an issue with your current software development project. However, you found that ever since instituting daily stand-up meetings, no more features or functionalities that the customer did not request have been introduced into the project. What is your best course of action to prevent gold plating for the remainder of the current project and on future projects?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#e1980826-cf5d-4b53-a586-8c8270147feb",
+                "answers": [
+                    {
+                        "choice": "Bring up the topic during the project retrospective",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Capture the best practice in the lessons learned register",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Gold plating adds customer value and should not be prevented",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensure that the scope management plan includes daily stand-up meetings",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0160"
+    },
+    {
+        "question_id": "#6a1c1bf5-bc69-4b14-86d7-24223c275d05",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager has taken over a project that has been in execution for a few months. He ran into problems right away. He has had difficulty getting sign off on decisions; he doesn't have the authority to acquire the equipment necessary for the project; the stakeholders and the project team have differing opinions about the objectives and the outcome of the project. What is the most likely source of these problems?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#6a1c1bf5-bc69-4b14-86d7-24223c275d05",
+                "answers": [
+                    {
+                        "choice": "Weak leadership skills",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Lack of a project charter",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Lack of a project management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Lack of a procurement management plan",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0161"
+    },
+    {
+        "question_id": "#baddb2b6-7728-45e8-b6ec-20d19d0ef798",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are managing a project that is nearing its end. You have been reviewing the project management plan to ensure that all the project work is completed and that the project has met its objectives. The next thing you need to do before moving on to the next project is to complete the administrative closure of the project. Which of the following activities will not be performed as part of this process?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#baddb2b6-7728-45e8-b6ec-20d19d0ef798",
+                "answers": [
+                    {
+                        "choice": "Closing seller contracts",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Handing over the project deliverables to operations",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Transferring the knowledge gained to the lessons learned repository",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Measuring stakeholder satisfaction",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0162"
+    },
+    {
+        "question_id": "#99f5eb87-8952-44ac-b064-060dfed03d55",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager has compiled a list of key deliverables, which include the working software, employee training materials, user manuals, etc. When is the first time that these key deliverables would have been identified?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#99f5eb87-8952-44ac-b064-060dfed03d55",
+                "answers": [
+                    {
+                        "choice": "During the Define Scope process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "When processes of the Executing Process Group are performed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "During the Develop Project Charter process",
+                        "correct": true
+                    },
+                    {
+                        "choice": "When processes of the Planning Process Group are performed",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0163"
+    },
+    {
+        "question_id": "#3b645780-88ad-4c33-8207-0e00827cc898",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You are drafting a stakeholder engagement plan for a software development project. The product will be built using a scrum framework. You want to ensure that the stakeholders' level of influence on product development is analyzed and categorized. What is your best course of action?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3b645780-88ad-4c33-8207-0e00827cc898",
+                "answers": [
+                    {
+                        "choice": "Submit a change request to update the stakeholder register",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Wait until the stakeholders attend the first sprint review",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Suggest that the product owner use a power/influence grid",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Conduct the analysis yourself using hierarchical charts",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0164"
+    },
+    {
+        "question_id": "#6f8e29fd-6925-49d3-9514-bd0724e6adeb",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "To comply with the customer's contract, the project must use a certified agile practitioner to lead and coach the project team. However, the only certified agile practitioner employed by the company was just assigned to another project. The project manager must now hire an independent contractor to serve as the agile coach, which delays the start of project execution. Which of the following may have helped to avoid the delay in executing the project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#6f8e29fd-6925-49d3-9514-bd0724e6adeb",
+                "answers": [
+                    {
+                        "choice": "Documenting the potential unavailability of the agile coach in the project assumption log",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Using different verbiage in the resource management plan to remove the requirement for an agile coach",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Assigning a different team member from the company to serve as the agile coach",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Securing the internal agile certified practitioner with a pre-assignment when this requirement was first identified.",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0165"
+    },
+    {
+        "question_id": "#e6958415-54de-4ff5-a8fb-d20782221819",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "An agile team is tasked with the development of a robot. The project manager wants to ensure that before the actual robot is built, the team receives early feedback on requirements and adapts the design accordingly. Which of the following should the project manager use to achieve that goal?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#e6958415-54de-4ff5-a8fb-d20782221819",
+                "answers": [
+                    {
+                        "choice": "Prototyping",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Design review",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Checklists",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Business case",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0166"
+    },
+    {
+        "question_id": "#551d4985-a867-4998-b82c-c6df0f40dc13",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A software development project is in planning. The planning is done traditionally, but the product will be developed incrementally. The project manager creates a resource breakdown structure to identify staffing needs, work assignments, and training required for the team members. The project manager assigns hierarchical level 1 to individuals in a leading role.\n\nHow should the project manager map the resource breakdown structure's entries to the resource breakdown structure's categories?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#551d4985-a867-4998-b82c-c6df0f40dc13",
+                "answers": [
+                    {
+                        "choice": "Equipment",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Data Server",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Facilities",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Team space room",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Personnel (level 1)",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Product Owner",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Personnel (level 2)",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Team members",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Software",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Digital Scrum board",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0167"
+    },
+    {
+        "question_id": "#dbb12a74-91e7-4bb1-8707-065857ce47f2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "After completing an iteration, an agile team is planning to hold an iteration review meeting to demonstrate the new product increment developed during the iteration. To ensure that relevant stakeholders are invited, the team is classifying all project stakeholders according to the type of requirements the stakeholders are likely to be interested in during the demo.\n\nHow should the team classify the stakeholders with regard to their requirements?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#dbb12a74-91e7-4bb1-8707-065857ce47f2",
+                "answers": [
+                    {
+                        "choice": "Organizational Requirements",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Project Sponsors",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Functional Requirements",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Project Deliveriables",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Non-functional Requirements",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Data Security Experts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Technical Requirements",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Project Team Members",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Whole Picture",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Project Manager",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0168"
+    },
+    {
+        "question_id": "#3c5336a9-2464-41ac-b134-de82fb2da3ed",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project is plagued by various issues, such as a deteriorating team performance, cost and schedule overruns, defective deliverables, etc. The project manager is struggling to monitor and control the work and decides to use some of the data analysis techniques to identify the issues and determine the best course of action.\n\nHow can the project manager use the following techniques to identify the various issues impacting this project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3c5336a9-2464-41ac-b134-de82fb2da3ed",
+                "answers": [
+                    {
+                        "choice": "Corrective actions for better performance",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Alternatives analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Corrective actions regarding the cost",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Cost-benefit analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Integrated perspective on project performance",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Earn value analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Identify the main reason for problems",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Root cause analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Planned and actual performance",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Variance analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Monitor and Control project work process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Business analysis",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0169"
+    },
+    {
+        "question_id": "#87a4ccc7-a9ba-478e-a256-d66b1edeee17",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A change request has been approved and is currently being implemented by the project team.\n\nAccording to the project life cycle shown on the below chart , which of the following is true about project costs and risks associated with the process group described in this scenario?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/35.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0852e2b57e50ed5da5f941a22e7c3a317c0f5a9ae5603483488d6d9e42ccc6a1\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#87a4ccc7-a9ba-478e-a256-d66b1edeee17",
+                "answers": [
+                    {
+                        "choice": "Both the cost of changes and the project risk are zero.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The cost of changes is lowest while the project risk is highest.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The cost of changes is nearly equal to project risk.",
+                        "correct": true
+                    },
+                    {
+                        "choice": "The cost of changes is highest while project risk is lowest.",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0170"
+    },
+    {
+        "question_id": "#6ca9fb63-4fbc-4fb9-b042-846effa4c3dd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You and your team are currently developing the stakeholder engagement plan. A project team member has already created the stakeholder engagement assessment matrix.\n\nWhich answer choice represents the most important element to be included in the stakeholder engagement plan?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/43.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a67c26e1559eef7cf8705a1e7d2ec4d374f0a96323b4e992a92939d3ca0ef676\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#6ca9fb63-4fbc-4fb9-b042-846effa4c3dd",
+                "answers": [
+                    {
+                        "choice": "A plan to improve Marie Smith's engagement level",
+                        "correct": false
+                    },
+                    {
+                        "choice": "An engagement level improvement plan for Todd Young",
+                        "correct": false
+                    },
+                    {
+                        "choice": "A strategy to address the engagement level of John Snow",
+                        "correct": false
+                    },
+                    {
+                        "choice": "A strategy to improve the engagement level of Tonya Stewart",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0171"
+    },
+    {
+        "question_id": "#15ba6c71-7dd9-43ae-874d-d538a5795521",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Following is an illustration of a project network activity node that includes some information about activity B.\nAssuming that work starts on day one (not day zero) and given the information provided, what is the late start of activity B?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/47_1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cdf3ea3c891476c0d2e9ff8dad7d53d9dbb24ec390aa33d98f8617d01abc24de\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#15ba6c71-7dd9-43ae-874d-d538a5795521",
+                "answers": [
+                    {
+                        "choice": "35",
+                        "correct": false
+                    },
+                    {
+                        "choice": "36",
+                        "correct": false
+                    },
+                    {
+                        "choice": "37",
+                        "correct": true
+                    },
+                    {
+                        "choice": "39",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0172"
+    },
+    {
+        "question_id": "#9331d808-8b98-49a0-bb38-b9af8e7f76ae",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager has developed the following earned value analysis chart for a software development project. Based on the current trend, what action should the project manager take immediately?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/71_1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e32e16a36d07ea645705f54120ee6601e017e99015a3628a435f05942fe13746\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#9331d808-8b98-49a0-bb38-b9af8e7f76ae",
+                "answers": [
+                    {
+                        "choice": "Submit a change request to increase funding for the project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Look for options to reduce costs and improve schedule performance to meet project objectives",
+                        "correct": false
+                    },
+                    {
+                        "choice": "No immediate action is required in this case",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Crash the schedule to bring it back into alignment with project objectives",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0173"
+    },
+    {
+        "question_id": "#a44cfe22-9fc6-4f1b-8bb8-370d5cda4585",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project team is using the Stacey Complexity Model to evaluate the degree of uncertainty in the project and select the appropriate project life cycle. The team maps the technical degree of uncertainty on the horizontal axis and requirements' uncertainty on the vertical axis. The resulting mapping suggests that a predictive life cycle would work best for this project.\n\nWhere on the Stacey Complexity Model did the team most likely map the project?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/73.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=35360b8ea11e6bd5682f839b646cbe055e10146928a07c78374ab013b131ce02\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#a44cfe22-9fc6-4f1b-8bb8-370d5cda4585",
+                "answers": [
+                    {
+                        "choice": "A",
+                        "correct": true
+                    },
+                    {
+                        "choice": "B",
+                        "correct": false
+                    },
+                    {
+                        "choice": "C",
+                        "correct": false
+                    },
+                    {
+                        "choice": "D",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0174"
+    },
+    {
+        "question_id": "#a07a0cbf-144a-4004-8efa-527ecf24b1f3",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "As you execute the quality management plan for a project to develop a new autopilot feature for a vehicle, you have created the diagram below, which compares the vehicle speed with uncommanded lane departures.\n\nWhat can be said about this diagram?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/96.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0076d2619b14f71936597991bbe7fc98b7fdb47ecfc6c873713b82b58abc989d\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#a07a0cbf-144a-4004-8efa-527ecf24b1f3",
+                "answers": [
+                    {
+                        "choice": "Affinity diagram, which shows a weak correlation between the speed and lane departures",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Scatter diagram, which shows a strong correlation between the speed and lane departures",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Affinity diagram, which shows a strong correlation between the speed and lane departures",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Scatter diagram, which shows a weak correlation between the speed and lane departures",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0175"
+    },
+    {
+        "question_id": "#6c86ffb2-5e83-410d-a7c2-c133565568b1",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A conflict between the project manager and the team has been going for a while. The conflict negatively impacts the team's morale and jeopardizes the project's goals. To address the conflict, the project manager maps the desire to satisfy the parties' concerns on the chart below. Based on the map, the project manager decides to find a collaborative solution.\n\nWhere did the project manager most likely map the desire to satisfy the team members' concerns vs. the desire to satisfy his/her own concerns?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/110.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e70d6c79e4175f11d2de40c7e0f4ad4b2829c971db32d93a19d7e1dd4ae16efb\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#6c86ffb2-5e83-410d-a7c2-c133565568b1",
+                "answers": [
+                    {
+                        "choice": "A",
+                        "correct": false
+                    },
+                    {
+                        "choice": "B",
+                        "correct": true
+                    },
+                    {
+                        "choice": "C",
+                        "correct": false
+                    },
+                    {
+                        "choice": "D",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0176"
+    },
+    {
+        "question_id": "#fb560eef-afe9-41d6-955f-dc428c91e1e7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is in the process of creating the stakeholder register. He has just completed the stakeholder classifications and needs to update the project roles.\nAccording to the partial stakeholder register below, which individual is most likely to be the project sponsor?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/143.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fe74f8eb8dd6bce6cebc92ec87c04f27d9b102f4b3a21c80e44a3fc9c67ad890\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#fb560eef-afe9-41d6-955f-dc428c91e1e7",
+                "answers": [
+                    {
+                        "choice": "John Snow",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Todd Young",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Marie Smith",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Tonya Stewart",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0177"
+    },
+    {
+        "question_id": "#67fc8b35-bf82-4f05-9fb5-52e5b8c68827",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "You have been requested to fill in for a project manager who has called in sick. As you get yourself familiar with the project team, you notice that the team members do not collaborate well, and there are a lot of disagreements and conflicts going on. You feel that the overall environment is counterproductive.\n\nBased on your observations, where is the team on the Tuckman ladder?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/148.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d5e18de20939fb3932fac1c40226b29ee4a18d916e50f668ac8762d66370e83a\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#67fc8b35-bf82-4f05-9fb5-52e5b8c68827",
+                "answers": [
+                    {
+                        "choice": "A",
+                        "correct": false
+                    },
+                    {
+                        "choice": "B",
+                        "correct": true
+                    },
+                    {
+                        "choice": "C",
+                        "correct": false
+                    },
+                    {
+                        "choice": "D",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0178"
+    },
+    {
+        "question_id": "#3324571a-5b95-4256-88e0-c555de041d15",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The following Gantt chart displays the current schedule status for a construction project. At this point in the project, the first two activities, Select Site and Negotiate Lease, should have been completed along with 50% of the work associated with the third activity, Perform Civil Works. However, only the first two activities have been completed, and no work has been done on the third activity. The method used to determine the earned value is based on percent complete.\n\nWhat is the project's current SPI and what does this mean for the project?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/163.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250905%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250905T132056Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2a42b0223158527c11467b4f9717eb281bd83c4f0799c7b528380a409b638f4d\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3324571a-5b95-4256-88e0-c555de041d15",
+                "answers": [
+                    {
+                        "choice": "The project is currently behind schedule with an SPI of 0.5",
+                        "correct": true
+                    },
+                    {
+                        "choice": "The project is currently behind schedule with an SPI of 2.0",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The project is on schedule with an SPI of 1.0 due to the fast-tracking of activities",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The project is currently behind schedule with an SPI of -$10,000",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0179"
+    },
+    {
+        "question_id": "#c089e2e0-d50a-4239-adb7-579eb2660e5a",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Project stakeholders meet to discuss the threat of a severe staff shortage due to a potential union workers strike that might take place during project execution. With various response strategies on the table, the stakeholders want to make a decision as to how to address the issue should the threat occur.\n\nWhat response strategy will the stakeholders be using while deciding to implement one of the following decisions?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c089e2e0-d50a-4239-adb7-579eb2660e5a",
+                "answers": [
+                    {
+                        "choice": "Cancel the project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The level of overall project risk is significantly negative.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Automate processes",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Reduce the probability and/or impact of a risk",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Outsource staffing",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Transferring the risk involves shifting ownership of a threat to a third party",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Hire reserve workers",
+                        "correct": false
+                    },
+                    {
+                        "choice": "When a risk is actively accepted, its existence is acknowledged, but no immediate proactive action is taken",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Full Test 01 - 0180"
+    }
+]
+}

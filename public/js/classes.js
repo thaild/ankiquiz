@@ -178,7 +178,7 @@ class Question {
 
   loadQueTextHtml() {
     $(".ExamQuestionsBlock .que-text").html(this.question_text);
-    $("#queDomain").html(`<span class="fw-bold text-primary">${this.question_id}</span> ${this.topic_name}`);
+    $("#queDomain").html(`<span class="fw-bold text-primary">${this.topic_name}</span>`);
   }
 
   loadQueAnswerHtml(

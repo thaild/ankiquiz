@@ -414,6 +414,28 @@ function switchGroup(groupId) {
   switchDesk(groupId, examId);
 }
 
+var setSearchParam = function(key, value) {
+  if (!window.history.pushState) {
+      return;
+  }
+
+  if (!key) {
+      return;
+  }
+
+  var url = new URL(window.location.href);
+  var params = new window.URLSearchParams(window.location.search);
+  if (value === undefined || value === null) {
+      params.delete(key);
+  } else {
+      params.set(key, value);
+  }
+
+  url.search = params;
+  url = url.toString();
+  window.history.replaceState({url: url}, null, url);
+}
+
 function switchDesk(groupId, examId) {
   if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
     setTimeout(() => switchDesk(groupId, examId), 100);
