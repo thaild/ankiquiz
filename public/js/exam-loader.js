@@ -42,6 +42,7 @@ class ExamDataLoader {
                     'DBS_C01': 'DBS-C01',
                     'PMI_PMP': 'PMI-PMP',
                     'PMA_Mock_test': 'mock_test',
+                    'PMA_Full_exam_1': 'full_exam_1',
                     'PMA_PMP': 'final_exam'
                 };
 
@@ -87,6 +88,7 @@ class ExamDataLoader {
         const activeExams = [
             'examtopics/PMI-PMP',
             'pma/final_exam',
+            'pma/full_exam_1',
             'pma/mock_test'
         ];
         
@@ -165,7 +167,8 @@ class ExamDataLoader {
             },
             'pma': {
                 'final_exam': ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
-                'mock_test': ['mock_test1', 'mock_test2']
+                'mock_test': ['mock_test1', 'mock_test2', 'mock_test3', 'mock_test4', 'mock_test5', 'mock_test6', 'mock_test7', 'mock_test8', 'mock_test9', 'mock_test10', 'mock_test11', 'mock_test12', 'mock_test13', 'mock_test14'],
+                'full_exam_1': ['full_exam_part1', 'full_exam_part2', 'full_exam_part3']
             },
             'freecams': {
                 'SAP-C01': ['Amazon.SAP-C01.v2022-08-26.q100']

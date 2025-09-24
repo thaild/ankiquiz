@@ -1,5 +1,5 @@
 {
-  "generated": "2025-07-16T03:54:16.479Z",
+  "generated": "2025-09-24T14:06:31.502Z",
   "examTypes": {
     "whizlabs": {
       "SAP-C02": {
@@ -142,9 +142,27 @@
       "mock_test": {
         "files": [
           "mock_test1.js",
-          "mock_test2.js"
+          "mock_test11.js",
+          "mock_test12.js",
+          "mock_test13.js",
+          "mock_test14.js",
+          "mock_test2.js",
+          "mock_test3.js",
+          "mock_test4.js",
+          "mock_test5.js",
+          "mock_test6.js",
+          "mock_test7.js",
+          "mock_test8.js"
         ],
-        "totalFiles": 2
+        "totalFiles": 12
+      },
+      "full_exam_1": {
+        "files": [
+          "full_exam_part1.js",
+          "full_exam_part2.js",
+          "full_exam_part3.js"
+        ],
+        "totalFiles": 3
       }
     },
     "freecams": {
@@ -157,7 +175,7 @@
     }
   },
   "statistics": {
-    "totalExams": 14,
-    "totalFiles": 76
+    "totalExams": 15,
+    "totalFiles": 89
   }
 }

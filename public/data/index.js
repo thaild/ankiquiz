@@ -142,6 +142,28 @@ try {
         }
       ],
     },
+    {
+      id: "PMA_PMP_FULL_EXAM_1",
+      name: "[PMA-PMP] Full exam 1",
+      active: true,
+      list: [
+        {
+          id: "PMA_PMP_FULL_EXAM_1_Part1",
+          name: "[PMA-PMP] FULL EXAM 1 Part1",
+          data: PMA_PMP_FULL_EXAM_1_Part1.data,
+        },
+        {
+          id: "PMA_PMP_FULL_EXAM_1_Part2",
+          name: "[PMA-PMP] FULL EXAM 1 Part2",
+          data: PMA_PMP_FULL_EXAM_1_Part2.data,
+        },
+        {
+          id: "PMA_PMP_FULL_EXAM_1_Part3",
+          name: "[PMA-PMP] FULL EXAM 1 Part3",
+          data: PMA_PMP_FULL_EXAM_1_Part3.data,
+        }
+      ],
+    },
   ];
 
   // Explicitly assign to window object to ensure global accessibility

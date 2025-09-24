@@ -1,0 +1,11 @@
+{
+  "exam": "full_exam_1",
+  "source": "pma",
+  "files": [
+    "full_exam_part1.js",
+    "full_exam_part2.js",
+    "full_exam_part3.js"
+  ],
+  "generated": "2025-09-24T14:06:31.501Z",
+  "totalFiles": 3
+}
