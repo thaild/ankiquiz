@@ -6,11 +6,16 @@
   function getConfig() {
     const config = {
       // API Configuration
-      API_BASE_URL: getMetaContent('api-base-url') || 'http://localhost:3000/api',
+      API_BASE_URL: 'http://localhost:3000/api',
       
       // App Configuration
       APP_NAME: getMetaContent('app-name') || 'AnkiQuiz',
       APP_VERSION: getMetaContent('app-version') || '1.0.0',
+      
+      // Authentication Configuration
+      ENABLE_AUTH: getMetaContent('enable-auth') === 'true',
+      REQUIRE_AUTH: getMetaContent('require-auth') === 'true',
+      AUTH_PROVIDER: getMetaContent('auth-provider') || 'netlify',
       
       // Feature Flags
       ENABLE_ANALYTICS: getMetaContent('enable-analytics') === 'true',

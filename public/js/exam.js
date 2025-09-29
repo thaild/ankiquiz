@@ -436,6 +436,27 @@ var setSearchParam = function(key, value) {
   window.history.replaceState({url: url}, null, url);
 }
 
+// Function to clear all exam-related cache
+function clearAllExamCache() {
+  // Clear all sessionStorage cache keys
+  Object.keys(sessionStorage).forEach(key => {
+    if (key.startsWith('exam_loading_') || key.startsWith('exam_loaded_')) {
+      sessionStorage.removeItem(key);
+    }
+  });
+  
+  // Clear all localStorage cache keys for exams
+  Object.keys(localStorage).forEach(key => {
+    if (key.startsWith('cache') && key !== 'USER_STORAGE') {
+      localStorage.removeItem(key);
+    }
+  });
+  
+  // Reset global flags
+  window.globalDatabaseLoadInProgress = false;
+  window.examCreationInProgress = false;
+}
+
 function switchDesk(groupId, examId) {
   if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
     setTimeout(() => switchDesk(groupId, examId), 100);
@@ -458,6 +479,12 @@ function switchDesk(groupId, examId) {
       sessionStorage.removeItem(key);
     }
   });
+  
+  // Clear global database load lock to ensure fresh loading
+  window.globalDatabaseLoadInProgress = false;
+  
+  // Clear all exam-related cache comprehensively
+  clearAllExamCache();
 
   let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
   if(groupIndex < 0) return;
@@ -527,6 +554,9 @@ function switchDesk(groupId, examId) {
     
     // Reset database load time for new exam
     exam._lastDatabaseLoadTime = 0;
+    
+    // Clear any existing database loading state
+    exam._isLoadingFromDatabase = false;
 
     que = new window.Question();
     
@@ -540,6 +570,14 @@ function switchDesk(groupId, examId) {
       que.showQueListNumber(0);
     }
 
+    // Clear all cache flags to force fresh loading for new exam
+    sessionStorage.removeItem(`exam_loading_${exam.examId}`);
+    sessionStorage.removeItem(`exam_loaded_${exam.examId}`);
+    
+    // Clear localStorage cache for this specific exam to ensure fresh data
+    const cacheKey = `cache${exam.examId}`;
+    localStorage.removeItem(cacheKey);
+    
     //Load from cache synchronously to avoid multiple API calls
     exam.loadFromCacheSync();
     exam.loadQueListNumber();
