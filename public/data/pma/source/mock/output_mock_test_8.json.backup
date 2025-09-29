@@ -1,0 +1,2470 @@
+[
+    {
+        "question_id": "#b2a0101a-390a-4ed4-8b27-12264bad8acd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A stakeholder on a project has a reputation for being easily angered and unreasonably difficult on projects. The project manager would like to minimize the impact of the stakeholder's behavior on the development team. What training should the project manager choose for their team to help with this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b2a0101a-390a-4ed4-8b27-12264bad8acd",
+                "answers": [
+                    {
+                        "choice": "Communication training",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Negotiation training",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Emotional intelligence training",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Agile training",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0001"
+    },
+    {
+        "question_id": "#4903ac66-58fe-4a38-b0f6-f7b5e9e53ee4",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A company is using a predictive approach for the development of a particular component as defined in the scope management plan. Due to regularly changing regulatory requirements, the development team has requested to utilize agile approaches. What should the project manager do about the development team's request?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#4903ac66-58fe-4a38-b0f6-f7b5e9e53ee4",
+                "answers": [
+                    {
+                        "choice": "Escalate the request for additional financial resources",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Forward the request to the project management office (PMO) to amend the organizational process assets",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the project sponsor to obtain approval for implementation of the new approach",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Analyze the requirements that will need to be addressed under the requested method",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0002"
+    },
+    {
+        "question_id": "#e031607e-ba76-46f4-b1fe-ea5c46374d2f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During a daily standup meeting, a roadblock was raised that is preventing one of the team members from proceeding with work. The project manager figures out that it is due to a technical issue. What should the project manager do to prioritize this critical impediment?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#e031607e-ba76-46f4-b1fe-ea5c46374d2f",
+                "answers": [
+                    {
+                        "choice": "Solve the issue for the team member.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform a brainstorming session to address the issue and add the solution to the sprint.",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Escalate the issue to the software vendor for technical resolution.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Coach the team to come up with their own solution and add it to the next sprint.",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0003"
+    },
+    {
+        "question_id": "#b7d3a2a3-9e4b-40e7-958c-12e0c4135fd5",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project is being executed. The project's life cycle is defined as predictive; however, a major deliverable will be handed over incrementally to the customer. The assigned resources are experienced and reliable and are willing to make decisions that the project manager used to make after each incremental delivery on other projects. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b7d3a2a3-9e4b-40e7-958c-12e0c4135fd5",
+                "answers": [
+                    {
+                        "choice": "Schedule a steering committee meeting and obtain their approval on the request",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Support the decisions of the team and transfer the decision making responsibility to them",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Inform the team that although this is a hybrid environment, the project manager must still be responsible for making decisions",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Consult the product owner about letting the resources make decisions",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0004"
+    },
+    {
+        "question_id": "#0b6950d8-0fec-4695-8e66-5b2529ade0ea",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "After reviewing the project management plan with key stakeholders, the project manager was told that an 18-month release plan was unacceptable and the product should launch in six months. Based on the new timeline, what should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#0b6950d8-0fec-4695-8e66-5b2529ade0ea",
+                "answers": [
+                    {
+                        "choice": "Plan for overtime, apply crashing and fast tracking, and share the risk of failure with project stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the project backlog looking for high-priority items and come up with a minimum viable product (MVP) that fits the expected timeline",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Seek approval with the sponsor to triple the project budget, hiring more people to compensate for the compressed schedule",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Go over the critical path with stakeholders, explaining why it is not possible to deliver all the scope in the expected timeline",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0005"
+    },
+    {
+        "question_id": "#169de977-5d42-47e3-b0d6-66ee0367368c",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A research and development department is planning to develop a product that will introduce a new line of business for the organization. What should the project manager do to increase the project's chances of success?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#169de977-5d42-47e3-b0d6-66ee0367368c",
+                "answers": [
+                    {
+                        "choice": "Plan a working session focusing on the scope, vision, and mission of the initiative",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Start developing the project management plan based on a previous project template from the project management office (PMO)",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct benchmarking to determine the business viability of the initiative",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct an impact analysis of the new initiative to determine how the project should be rolled out",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0006"
+    },
+    {
+        "question_id": "#312953e7-8c8e-4d54-961e-f94bd470f363",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The product owner decides to launch a product after a couple of releases, knowing that the minimum viable product (MVP) lacks some features. One of the key stakeholders, the marketing vice president, is not happy with the results and questioned the release decision. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#312953e7-8c8e-4d54-961e-f94bd470f363",
+                "answers": [
+                    {
+                        "choice": "Support the product owner's decision and seek better alignment with this stakeholder in order to avoid this type of issue in the future",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Coach the team on the decision-making process, assuming a risk-averse strategy towards product releasing",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Assume the responsibility for product releases, making the final call on when something is ready for customer launch",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Escalate the issue to the sponsor, questioning the authority of the key stakeholder regarding the product launch decision",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0007"
+    },
+    {
+        "question_id": "#88ae9cca-45e3-4484-a71d-cdd2d63b43ac",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "In the beginning of project execution, the project manager finds out that a key resource will be unavailable for two weeks, which could cause a delay to the schedule. What should the project manager do first?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#88ae9cca-45e3-4484-a71d-cdd2d63b43ac",
+                "answers": [
+                    {
+                        "choice": "Assign the tasks to another resource, and ask the resource to work double shifts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Update the schedule to reflect the project's changes in duration",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask human resources (HR) for a replacement, and update the risk register",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Update the resource management plan and resource allocation chart accordingly",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0008"
+    },
+    {
+        "question_id": "#ad54f65c-ffb9-4860-9775-2d5deb798b8f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The change control board (CCB) rejects a change request submitted by a subject matter expert (SME). The SME refuses to accept this rejection and does not want to continue the project without the change. What should the project manager have done to avoid this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#ad54f65c-ffb9-4860-9775-2d5deb798b8f",
+                "answers": [
+                    {
+                        "choice": "Requested that the sponsor approved the change request first",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Assessed the change's overall impact to the project before submission",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Ensured that the change request was aligned with the project scope",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Submitted the change request directly to the CCB",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0009"
+    },
+    {
+        "question_id": "#1597de63-14ac-4d31-8188-5d5b469776b5",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A food company is developing a new product using a predictive approach, and the product is currently in the testing phase. Given the nature of the feedback of the tests, the project manager has decided to use an iterative approach. At the end of one of the iterations, a new regulation related to the product is enacted. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#1597de63-14ac-4d31-8188-5d5b469776b5",
+                "answers": [
+                    {
+                        "choice": "Make a change request regarding the project's scope to ensure compliance",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Include an assessment to verify compliance in the next iteration",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct an iteration review to address the new regulation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Start the tests over, adapting the trials to the new regulation",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0010"
+    },
+    {
+        "question_id": "#f311c70f-7bfd-4bfd-b765-efd87777920e",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is managing an innovation project for a big corporation. The project manager is planning to use email as the main communication channel; however, the product owner prefers to use another approved communication tool instead of email. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#f311c70f-7bfd-4bfd-b765-efd87777920e",
+                "answers": [
+                    {
+                        "choice": "Contact the sponsor to request direction regarding the communication tool to be used by the project team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Update the communications management plan based on the product owner's preferences and distribute to the team",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Suggest to the team to start using the communication tool suggested by the product owner",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Request the product owner to use email because using another tool will increase the workload",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0011"
+    },
+    {
+        "question_id": "#fd9c703e-029b-4ce5-bddf-178fe91f57d7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The customer's project manager changes during the final stage of a project. How can the project manager avoid a project closure delay?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#fd9c703e-029b-4ce5-bddf-178fe91f57d7",
+                "answers": [
+                    {
+                        "choice": "Update the stakeholder engagement plan",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Review the latest project status report and update the stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Escalate the case to the customer's management team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Issue the project payment invoice to the customer in advance",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0012"
+    },
+    {
+        "question_id": "#460b7458-4e14-4ec9-bef5-c54b503fe802",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "In an industrial plant, the owner has decided to add more capacity to the plant by installing a new machine and updating the software used in production. This capacity enlargement will occur while the plant is still functioning and producing. The software update will be accomplished using an agile approach in order to minimize risk. The machine procurement, installation, and integration will be accomplished using predictive approaches. What types of communications will the project manager have to design into the schedule management plan to ensure the project will be on schedule?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#460b7458-4e14-4ec9-bef5-c54b503fe802",
+                "answers": [
+                    {
+                        "choice": "Weekly colocated meetings with the relevant stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Biweekly conference calls with the relevant stakeholders",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Weekly one-on-one meetings with each of the relevant stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Biweekly written status reports from the relevant stakeholders",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0013"
+    },
+    {
+        "question_id": "#f1b4ae9e-1299-4daf-8122-3e3b32da68e9",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the review of a project's list of deliverables, one of the stakeholders expressed concern that one of the requirements will not be addressed. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#f1b4ae9e-1299-4daf-8122-3e3b32da68e9",
+                "answers": [
+                    {
+                        "choice": "Check the approved list of requirements to see if there are any missing items",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Work with the stakeholder to improve the requirements' acceptance criteria",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the requirements traceability matrix with the concerned stakeholder",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Discuss with the stakeholder which additional requirements should be added",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0014"
+    },
+    {
+        "question_id": "#331b73c3-1b18-4cdb-8a62-97ba2655a65c",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During project execution, a conflict occurs between the project manager and one of the team members at every project team meeting. The ongoing conflict is preventing tasks and deliverables from being completed. The project manager contemplates changing their leadership style. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#331b73c3-1b18-4cdb-8a62-97ba2655a65c",
+                "answers": [
+                    {
+                        "choice": "Review the set of responsibilities with the team member",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Avoid the team member to prevent further conflicts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Escalate the situation to the project sponsor",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the personnel skill documents",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0015"
+    },
+    {
+        "question_id": "#41e19d49-100e-4639-8829-6c8db233afed",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A newly formed team has become accustomed to agile practices. The project lead has noticed that while they are performing according to expectations, there is boredom with daily team practices among many of the team members. What should the project lead do in this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#41e19d49-100e-4639-8829-6c8db233afed",
+                "answers": [
+                    {
+                        "choice": "Challenge the team to find new ways to achieve higher levels of performance to improve the situation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Speak with individual team members to determine what they would like to do to improve the situation in the team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Have the team inform senior management of the situation and ask for recommendations",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Allow the team to self-organize and have them analyze the situation in their retrospective session and self correct",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0016"
+    },
+    {
+        "question_id": "#c25b843c-3db7-4bbd-a9c9-1c83bb79c0f0",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A company starts implementing Scrum. About halfway through the first sprint, communication issues develop. Some project team members are not in sync with other team members. What is the cause for this communication gap?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c25b843c-3db7-4bbd-a9c9-1c83bb79c0f0",
+                "answers": [
+                    {
+                        "choice": "The project sprint board has not been updated",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Daily standup meetings were not held or enforced",
+                        "correct": true
+                    },
+                    {
+                        "choice": "The project status dashboard has not been updated",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The communications management plan has not been developed",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0017"
+    },
+    {
+        "question_id": "#28f31376-8c75-4f7f-b1fe-3921975bc500",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the course of a project, the project manager's immediate director is communicating directly with the client to approve changes without the project manager's knowledge. This is causing confusion in the project team where the scope is changing in the background, but only being mentioned in project meetings. How should the project manager handle this?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#28f31376-8c75-4f7f-b1fe-3921975bc500",
+                "answers": [
+                    {
+                        "choice": "Communicate directly with the director and inform them of the communications management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Communicate directly with the client stating that any scope changes must go through the project manager",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the stakeholder engagement plan and put in place any existing actions accordingly",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Discuss the issues with the project team and let them know that the project manager will handle scope changes",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0018"
+    },
+    {
+        "question_id": "#27be1589-d139-45cf-8bb7-6bdd3bd4cc1d",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project sponsor commonly asks the project manager to skip project retrospectives due to time constraints. However, the project manager persists in running this critical ceremony by reducing the time for preparation and for discussion. What are two issues that these actions by the project manager could cause? (Choose two.)",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: ['A', 'C']</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#27be1589-d139-45cf-8bb7-6bdd3bd4cc1d",
+                "answers": [
+                    {
+                        "choice": "A lot of discussions that yield no results or possibly too many results",
+                        "correct": false
+                    },
+                    {
+                        "choice": "A lack of direction and motivation for the team in the workshop",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Lessons learned from other teams to not be considered",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Time management plan for the retrospective workshop to not be updated",
+                        "correct": false
+                    },
+                    {
+                        "choice": "A focus on the negative and a disinterest in further improvements",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0019"
+    },
+    {
+        "question_id": "#2ed54e1f-37ae-4b9e-bd54-778a2376ff6f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A client is structured as a matrix organization for an agile project. The project manager is working on-site with key stakeholders from different parts of the organization. How should the project manager handle the different stakeholders?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#2ed54e1f-37ae-4b9e-bd54-778a2376ff6f",
+                "answers": [
+                    {
+                        "choice": "All stakeholders are important, so the project manager should follow directions provided by management and key stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Because there are different perspectives, perform a stakeholder analysis and act based on the outcome",
+                        "correct": true
+                    },
+                    {
+                        "choice": "The project manager is working on the client's premises, so follow the directions of all the key stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "This is an agile project, so listen only to the directions of the project manager's supervisor and the functional managers of the organization",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0020"
+    },
+    {
+        "question_id": "#dcce4f49-351b-4d05-b80d-8e4c3c5ac4a5",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is leading an in-house company project in its very early stages. This current project is similar to another project that ended a year ago. What should the project manager do to analyze the involved stakeholders?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#dcce4f49-351b-4d05-b80d-8e4c3c5ac4a5",
+                "answers": [
+                    {
+                        "choice": "Lower the priority of stakeholder engagement as the stakeholders already have knowledge of this kind of project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Use lessons learned from the previous project as a guide for the current project's stakeholder register",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Refer to the stakeholder register from the previous project as it was similar to the current project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Document in the risk register that the current project may have different stakeholders than the previous project",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0021"
+    },
+    {
+        "question_id": "#5a6f3169-688d-4280-9e99-8451649951c8",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A product owner presented the backlog to the team, and the team raised concerns over implementing some of the features due to various impediments. What should the project manager suggest that the product owner do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#5a6f3169-688d-4280-9e99-8451649951c8",
+                "answers": [
+                    {
+                        "choice": "Ensure that the impediments are captured and prioritized based upon the highest valued features",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Estimate the financial impact of the impediments and request additional funding",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Begin to remove the impediments, starting with the easiest ones first, to foster team accomplishment",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Capture the impediments and inform management that their assistance is needed in resolving the impediments",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0022"
+    },
+    {
+        "question_id": "#0721a1c0-935a-459f-9e0d-25bec2d0e6a0",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A company was awarded a project in a dangerous location that poses several high-level risks for employees. Help is needed to train the employees on major safety and health factors. The project is ongoing and uses a hybrid approach. The project will be conducted in multiple sites, with several development iterations running in parallel. How should the project manager handle this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#0721a1c0-935a-459f-9e0d-25bec2d0e6a0",
+                "answers": [
+                    {
+                        "choice": "Allocate and use part of the project's contingency reserves for training purposes",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Negotiate a contract and form a partnership with a local authority for medical and security support services",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Perform a retrospective and update the risk register and resource management plan regarding the necessary budget for training",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Hire only local resources who are aware of the territory's hazards, providing employment to the local community",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0023"
+    },
+    {
+        "question_id": "#1e5446a2-2ee3-4d79-9a56-654ec038d90e",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A vendor informed the project manager that a critical resource will be on a long leave of absence. The project team reviewed the pending vendor deliverables and identified an alternative solution, but the solution will incur an additional cost. The project is currently on schedule and slightly under budget. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#1e5446a2-2ee3-4d79-9a56-654ec038d90e",
+                "answers": [
+                    {
+                        "choice": "Request a replacement resource",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform a cost-benefit analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Implement risk responses",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform Integrated Change Control",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0024"
+    },
+    {
+        "question_id": "#ace24f3a-841a-49d4-b421-ae7df6429841",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager just started managing agile projects. The project manager realizes that due to the lack of a clear definition of project objectives and definition of done (DoD), their colleague's projects have had many difficulties. Sponsors keep asking for more features and the projects have yet to be completed. What should the project manager do to avoid these issues?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#ace24f3a-841a-49d4-b421-ae7df6429841",
+                "answers": [
+                    {
+                        "choice": "Arrange meetings to ensure every necessary task to complete the project is included in the project management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Convince the project sponsor to incorporate quality experts so the product can be tested and accepted as completed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Convince the product owner to approach the team and look for options to find a solution to the problem",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Schedule meetings with key stakeholders to build the agile project charter and set clear expectations for the project",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0025"
+    },
+    {
+        "question_id": "#e81b6158-02ff-4c4f-b796-0fe072d080e9",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A member of the board of directors is the sponsor of a project that is important to the organization. This stakeholder has many other priorities and is not currently engaged in the project activities. How should the stakeholder be engaged in the project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#e81b6158-02ff-4c4f-b796-0fe072d080e9",
+                "answers": [
+                    {
+                        "choice": "Keep the stakeholder informed and consult with them based on their needs",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Involve the stakeholder in governance and decision making",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Consult with the stakeholder and increase their level of interest",
+                        "correct": false
+                    },
+                    {
+                        "choice": "The stakeholder needs to be made aware of the project progress",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0026"
+    },
+    {
+        "question_id": "#b7d9baff-be54-43ea-b4fd-236702df75a2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A marketing team is planning for a multiyear initiative that will include a lot of cross-functional stakeholders. The project manager has been assigned and is now in the project planning phase. What item(s) should the project manager develop first?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b7d9baff-be54-43ea-b4fd-236702df75a2",
+                "answers": [
+                    {
+                        "choice": "A product backlog and identification of the features to be delivered",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Business requirements and scope document",
+                        "correct": true
+                    },
+                    {
+                        "choice": "A communications management plan that addresses the team's needs",
+                        "correct": false
+                    },
+                    {
+                        "choice": "A risk management plan to incorporate known risks",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0027"
+    },
+    {
+        "question_id": "#ac059b76-11ff-4689-b859-260227bb277c",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A key project stakeholder showed interest in the beginning of a complex agile project, but has become less involved as the sprint has progressed due to additional responsibilities. A few sprints later, the key stakeholder rejected a feature deliverable. The team is reworking the rejected deliverable for the next sprint. What should the project manager have done to avoid this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#ac059b76-11ff-4689-b859-260227bb277c",
+                "answers": [
+                    {
+                        "choice": "Involved the key stakeholders in the decision-making process",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Customized stakeholder communications based on the stakeholders' needs",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Analyzed the changes in stakeholder attributes",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Documented the project vision and objectives",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0028"
+    },
+    {
+        "question_id": "#3e11fe97-a934-4ed4-8b9b-f5ee0b1a26f3",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "As a member of an organizational change management team, a project manager must pass on any changes to the project team. The project manager needs to avoid any misunderstandings or resistance to help ensure that the project team will support any organizational change. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3e11fe97-a934-4ed4-8b9b-f5ee0b1a26f3",
+                "answers": [
+                    {
+                        "choice": "Conduct meetings with resistant members to facilitate smooth project implementation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Meet with the team on a regular basis to ensure they are aware of changes",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Influence the team to communicate any changes",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Check with the team members on their willingness to change",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0029"
+    },
+    {
+        "question_id": "#27d436ad-0cc2-465c-b9b4-363ef45064d7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is working on a software development project. A team member complains that since the project tasks are very simple, there is no reason to perform quality control. The project manager understands that removing the quality management plan from the project will also help to save money, which is important to the customer. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#27d436ad-0cc2-465c-b9b4-363ef45064d7",
+                "answers": [
+                    {
+                        "choice": "Register starting the project without a quality management plan as a risk, and allocate the budget savings to the management reserve",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Develop the quality management plan, as quality is as equally important as cost and schedule management",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Get confirmation from management that the team member has enough experience to build software without quality control",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the customer to order an external quality audit after accepting the project deliverable, and decrease the budget of the project",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0030"
+    },
+    {
+        "question_id": "#2615b2d9-093d-4bc8-b675-2813e705fc79",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A marketing team is developing ideas in order to revamp an existing product. The marketing executive reaches out to the project manager to make sure that necessary measures are in place for a successful launch. On what should the project manager focus?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#2615b2d9-093d-4bc8-b675-2813e705fc79",
+                "answers": [
+                    {
+                        "choice": "Ensuring that the team is also focused on the overall change management plan",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Determining and aligning performance indicators that will help in assessing successful delivery",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Planning for regular project updates to cover the status of critical deliverables",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensuring that the scope management plan is in place to cover all related objectives",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0031"
+    },
+    {
+        "question_id": "#2eb9ad75-b9a6-432c-b66b-4daee65d81a2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the closing process, the project manager learns that one deliverable is not meeting customer expectations. How should the project manager proceed?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#2eb9ad75-b9a6-432c-b66b-4daee65d81a2",
+                "answers": [
+                    {
+                        "choice": "Ask the customer to issue a change request with the information to analyze and provide a solution",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the deliverable requirements, check the customer approval criteria, and proceed accordingly",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Meet with the customer to reach agreement on the scope of the deliverable that will satisfy both parties",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Contact the project sponsor and ask for help in negotiating the closing of the project with the customer",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0032"
+    },
+    {
+        "question_id": "#3235a897-489d-4024-98ed-d645580b2160",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A product company is transforming the way it develops and releases products in the market. Executives believe that this is a high-risk initiative, and this initiative must be successful. What should the project manager do in this scenario?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#3235a897-489d-4024-98ed-d645580b2160",
+                "answers": [
+                    {
+                        "choice": "Develop a business case with assumptions for the new model",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Develop a communications management plan to inform the employees about the new business model",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Adopt an iterative rollout approach that delivers the highest business value earlier",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Develop a detailed sprint plan with clear deliverables",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0033"
+    },
+    {
+        "question_id": "#6b7f3519-57c0-41c2-b9c3-792dd73be2dd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Two weeks after the approval of the project management plan for a global project, the project manager noticed that it was approved based on a different level of understanding by international stakeholders and is not what the project manager presented for approval. What should the project manager have done to prevent this from happening?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#6b7f3519-57c0-41c2-b9c3-792dd73be2dd",
+                "answers": [
+                    {
+                        "choice": "Sent the meeting minutes to the stakeholders after the kick-off meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Reviewed all the approvals immediately after the kick-off meeting was over",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ran separate kick-off meetings for each culture and time zone",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Validated each stakeholder's understanding during the kick-off meeting",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0034"
+    },
+    {
+        "question_id": "#8f79de86-ed27-4829-820d-752525d0c13b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The rollout of a new finance system is in the execution phase. A number of issues have surfaced in the last month that are slowing the project down. A new project sponsor has recently started with the company but has not had time to meet the project manager. The project is at the point where the issues are significantly impacting delivery of the project. How should the project manager alert the new project sponsor about these concerns?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#8f79de86-ed27-4829-820d-752525d0c13b",
+                "answers": [
+                    {
+                        "choice": "Send an email invitation to the project sponsor to attend all of the project team's weekly meetings, and hope the sponsor will find time to attend",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Send an email to the project sponsor summarizing the project status and key concerns, and request an immediate face-to-face meeting to discuss them",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Continue emailing updated project status reports highlighting the key risks and issues, and wait for the project sponsor to request a meeting",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Complete a risk analysis outlining the delays and impacts, and email a copy of the risk register, urging the project sponsor to respond",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0035"
+    },
+    {
+        "question_id": "#174a5241-d15c-4c7d-8402-37428080c955",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is acting as a scrum master in a hybrid project and is dealing with a conflict between team members. What strategy should be used to handle this conflict?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#174a5241-d15c-4c7d-8402-37428080c955",
+                "answers": [
+                    {
+                        "choice": "Sort conflicts into two groups: positive and negative",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Place conflicts into categories: structural and interpersonal",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Place conflicts on a shared conflict list and ensure it is visible",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Review conflicts during daily Scrum so they are handled in a timely manner",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0036"
+    },
+    {
+        "question_id": "#c708ffad-b5dc-4df4-9aa0-65e06cf9e97f",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A new agile team is forming and the project manager notices that the team is struggling in many areas. The team is experiencing both the inability to meet iteration commitments and team member conflicts. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#c708ffad-b5dc-4df4-9aa0-65e06cf9e97f",
+                "answers": [
+                    {
+                        "choice": "Raise the issues in the retrospective and propose solutions",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Inform management that commitments will not be met",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Involve management to help resolve the conflicts",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Coach the team both as a whole and individually",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0037"
+    },
+    {
+        "question_id": "#dd7a21b4-5d32-41f0-a249-9576c0c58adc",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The resource management plan is already done, and the team is located in different countries around the world. Team members are in multiple time zones, and they use different languages for communication. The project manager needs to keep the team organized and avoid misunderstandings and miscommunication that may produce a negative impact to the project. What should the project manager do to reduce negative impacts to the project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#dd7a21b4-5d32-41f0-a249-9576c0c58adc",
+                "answers": [
+                    {
+                        "choice": "Modify the communications management plan to account for regional differences",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Conduct cultural awareness seminars",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Hold a virtual meeting to discuss the political environment",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct a multigenerational management training session",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0038"
+    },
+    {
+        "question_id": "#b94d2b83-4c0e-4641-a7ed-60eee3fa911b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the design phase, a project manager realizes that the project will benefit from using adaptive tools. The effectiveness of this approach has been proven in past projects inside the organization. What should the project manager do first?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b94d2b83-4c0e-4641-a7ed-60eee3fa911b",
+                "answers": [
+                    {
+                        "choice": "Update project documents to include adaptive tools and artifacts and plan the first iterative session",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Contact the project sponsor and request new team members who are familiar with adaptive projects",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Confirm team capabilities before introducing adaptive tools and artifacts to the project",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Freeze the design stage and look for an external resource to run iterative design at extra cost",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0039"
+    },
+    {
+        "question_id": "#b4e2b6a1-0a5f-482c-8a74-0c8ad717ff9b",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is leading a project which shows a trend to exceed the cost baseline. What should the project manager do first to manage the budget?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#b4e2b6a1-0a5f-482c-8a74-0c8ad717ff9b",
+                "answers": [
+                    {
+                        "choice": "Ask the project sponsor for assistance in getting the budget back on track",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Meet with the project team to analyze the actual cost to determine deviations",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Inform the stakeholders that the project will be finished over budget",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Issue a change request including the analysis to increase the budget",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0040"
+    },
+    {
+        "question_id": "#254bcef6-5350-4d7c-b6a4-801b1c3fa952",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "Two functional managers disagree on key features of one deliverable during the planning of a project. The project manager discovers that each manager included requirements that contradict each other. The functional managers do not want to meet with each other to find a solution. This situation has been escalated to the sponsor who requests a meeting with them. What strategy should the project manager use to resolve this conflict in the meeting?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#254bcef6-5350-4d7c-b6a4-801b1c3fa952",
+                "answers": [
+                    {
+                        "choice": "Explain to the managers that the contradicting requirements are being considered for implementation in the project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Explain to the managers that only one of the two requirements can be implemented, and submit a change request",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensure that both managers understand the requirements and search for a solution that best satisfies this deliverable",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Request that the managers explain why each requirement must be implemented and decide by considering the cost and benefits",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0041"
+    },
+    {
+        "question_id": "#0753c003-c2c3-43ff-8191-e4c4761b3150",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is approaching the end of a project, and several tasks are now practically complete and ready for handover to the client. How should the project manager proceed?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#0753c003-c2c3-43ff-8191-e4c4761b3150",
+                "answers": [
+                    {
+                        "choice": "Update the quality management plan for the overall project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the client to verify and accept the tasks that have been completed",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Close out the project tasks that have been completed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Update the communications management plan for the overall project",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0042"
+    },
+    {
+        "question_id": "#7802dfc7-ebdf-4d09-8a41-b55eca1fd3af",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During a documentation audit of an international company, it was identified that the last version of the project schedule was from one month ago even though the project manager knew it was recently updated. How should the project manager have handled documentation for the project?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#7802dfc7-ebdf-4d09-8a41-b55eca1fd3af",
+                "answers": [
+                    {
+                        "choice": "Updated the project management plan regularly and had it securely shared with all stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Assigned a project team member to ensure all project documentation was updated",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Reviewed the risk register to identify a response plan for the audit",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Kept documentation in the project management information system (PMIS), and shared it with appropriate stakeholders",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0043"
+    },
+    {
+        "question_id": "#ab3d69f7-39c0-42cc-af4c-a16b342a0778",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A new regulation has been approved that will impact the deliverables in the fourth phase of the project. The delivery is following an iterative approach and is currently completing the second phase. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#ab3d69f7-39c0-42cc-af4c-a16b342a0778",
+                "answers": [
+                    {
+                        "choice": "Consult with the project sponsor to discuss a cost increase",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Acquire approval for an exception to the implementation of the new regulation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Get approval for the additional budget from the steering committee",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Meet with subject matter experts (SMEs) to access the impact to objectives",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0044"
+    },
+    {
+        "question_id": "#cf8e05e3-d939-4c14-a241-83a79eaf5221",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The tables show the requirements for an agile project with the anticipated return on investment (ROI) and identified project risks, along with the analysis details. What should be the priority order in the product backlog?<img src=\"https://epcg-production.s3.amazonaws.com/questions/images/469.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVYKPC2VKYUXC26H4%2F20250819%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250819T162614Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4ca10dbccaafe14a7e72beba66da6915f0457bd7382da33527dd1f63994e39ce\" alt=\"Image for the question\" />",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#cf8e05e3-d939-4c14-a241-83a79eaf5221",
+                "answers": [
+                    {
+                        "choice": "Risk 3, Risk 1, Risk 2, Requirement 3, Requirement 1, Requirement 2",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Requirement 3, Risk 3, Requirement 1, Requirement 2, Risk 2",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Requirement 3, Requirement 1, Requirement 2",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Requirement 3, Requirement 1, Risk 3, Requirement 2, Risk 1, Risk 2",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0045"
+    },
+    {
+        "question_id": "#a712b749-39ad-442f-887e-1580d98cd9e1",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "One of the main inputs required for a deliverable is missing due to a miscommunication between the vendor and project manager. Because of the missed deliverable, the critical path of the project is extended. What should the project manager do next?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#a712b749-39ad-442f-887e-1580d98cd9e1",
+                "answers": [
+                    {
+                        "choice": "Start an audit of the vendor's processes and procedures",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review lessons learned from previous projects with this vendor",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Make a detailed analysis on vendor issues during the project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Execute a contingency plan to address the issue with the vendor",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0046"
+    },
+    {
+        "question_id": "#0f045743-c365-4375-ab02-3dad4fd0d432",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the design phase of a project, the project manager notices that the schedule performance index (SPI) is 1,8 and the cost performance index (CPI) is 0,1. In a weekly meeting with top management, the project manager reports concerns about these indicators. However, the most concerned person was the project sponsor who said that if the trend continues, they will be forced to prematurely close the project. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#0f045743-c365-4375-ab02-3dad4fd0d432",
+                "answers": [
+                    {
+                        "choice": "Monitor the project sponsor, but understand that it is normal to spend more money in the design phase of a project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Stop crashing the schedule",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Manage the project sponsor closely and revise the project's resource management plan to improve indicators",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Use a resource-leveling technique",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0047"
+    },
+    {
+        "question_id": "#aaaf5824-2230-4cfa-a66f-fd205152bc0c",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A new project manager is planning an information security project for a company that resides in different countries. What is the first step the project manager should take to gather customer requirements?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: A</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#aaaf5824-2230-4cfa-a66f-fd205152bc0c",
+                "answers": [
+                    {
+                        "choice": "Conduct a stakeholder analysis to identify how regional policies may influence needs",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Request relevant stakeholders to conduct an analysis and reach consensus independently",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct a project scope review workshop with relevant stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct project planning meetings in one location with relevant stakeholders",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0048"
+    },
+    {
+        "question_id": "#4548a25a-faf0-4693-be95-8c5caa6289a7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A company's project management office (PMO) has been trying to implement an adaptive approach in the project management framework and a project manager has been asked to use adaptive tools in their next project. This is not the first time the request has been made and the previous project failed when adaptive tools were implemented. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#4548a25a-faf0-4693-be95-8c5caa6289a7",
+                "answers": [
+                    {
+                        "choice": "Prepare a change request and seek approval from the steering committee regarding the new project framework",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct individual interviews with key stakeholders in order to understand all concerns, then prepare a communications management plan",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Bring in a third party company to develop and implement a hybrid framework for this specific project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Recommend to the PMO that it is not the right time to start implementing adaptive tools in projects",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0049"
+    },
+    {
+        "question_id": "#704bf3d9-6190-43f1-b97d-adb0989e7db2",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "To estimate the costs of a new project that is similar to a project that was implemented last year, the project manager meets with a group of experts from the previous project. The group uses a three-point estimating technique. The project manager submits the estimated budget to the project sponsor for approval. The project sponsor, who is new to the company, is concerned because the budget exceeded their expectations. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#704bf3d9-6190-43f1-b97d-adb0989e7db2",
+                "answers": [
+                    {
+                        "choice": "Review the organizational process assessment to determine if a contingency reserve was considered in the budget estimate",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the historical information and lessons learned from last year's project to justify the new budget estimate",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Change the budgeting technique to a more accurate, bottom-up cost estimation",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Use soft skills to convince the project sponsor to approve the new budget estimate",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0050"
+    },
+    {
+        "question_id": "#8aab8da7-c937-4ef2-8d25-c7299daf054e",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The project manager is having difficulty obtaining approval of the project requirements because there is disagreement among the project stakeholders. This issue is putting the project schedule at risk. What should the project manager do first to facilitate the approval of project requirements'?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#8aab8da7-c937-4ef2-8d25-c7299daf054e",
+                "answers": [
+                    {
+                        "choice": "Review the project charter",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform a stakeholder analysis",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Identify the source of the disagreement",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Hold a team-building event",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0051"
+    },
+    {
+        "question_id": "#fa7dcdf5-cc1b-4343-9564-bad340845ae1",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager has been assigned to a project and receives the project charter from the project management office (PMO). The document is very clear about customer requests. During Project Scope Management some requirements seem to be different from the ones specified within the project charter. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#fa7dcdf5-cc1b-4343-9564-bad340845ae1",
+                "answers": [
+                    {
+                        "choice": "Modify the baseline of the project for minor impact changes to the project scope",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Use a focus group and brainstorming sessions to gather more details about the project scope",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Register the changes in the configuration management plan and send it to the change control board (CCB)",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Explain to the sponsor that these requests could endanger the schedule and cost of the project",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0052"
+    },
+    {
+        "question_id": "#a16ebd1c-2086-400d-b0ac-a661cefc6e03",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "An agile project manager would like to convert the requirements document into epics, capabilities, features and stories. In how many iterations should the project manager estimate the story duration?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: B</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#a16ebd1c-2086-400d-b0ac-a661cefc6e03",
+                "answers": [
+                    {
+                        "choice": "Four iterations",
+                        "correct": false
+                    },
+                    {
+                        "choice": "One iteration",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Two iterations",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Three iterations",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0053"
+    },
+    {
+        "question_id": "#8c5c7ad6-df29-495b-a9e1-0db17892a754",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "An agile project is running its fifth iteration out of eight. After the last iteration planning the team was informed that there is a new competitor in the market, and it is necessary to move faster to ensure market share is not missed. What should the project manager do?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#8c5c7ad6-df29-495b-a9e1-0db17892a754",
+                "answers": [
+                    {
+                        "choice": "Add the competitor's functionalities to the product backlog to improve the product",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the sponsor to add more people to the team",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Help the team to find a new approach to launch the product as soon as possible",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Ask the team to increase the velocity to launch the product as soon as possible",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0054"
+    },
+    {
+        "question_id": "#a01fbbf3-a900-4552-b675-54a640133da7",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the development of a product, the project manager observes conflicts between project stakeholders, resulting in deliverable and output approval delays. On which area should the project manager focus?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#a01fbbf3-a900-4552-b675-54a640133da7",
+                "answers": [
+                    {
+                        "choice": "Revisiting the project management plan to ensure deliverables are on time",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Increasing the frequency of project update meetings to keep stakeholders informed",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Revisiting the stakeholder engagement plan, focusing on specific overlooked stakeholders",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Reviewing the business case and identifying gaps within scope",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0055"
+    },
+    {
+        "question_id": "#34ea375d-d12f-45f0-bd6b-af6324942b05",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During the execution of a project within an operations function, the project manager encounters scope changes and a delay in the delivery of critical tasks. How should the project manager address this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#34ea375d-d12f-45f0-bd6b-af6324942b05",
+                "answers": [
+                    {
+                        "choice": "Communicate the concerns to the project management office (PMO) during the weekly project reports",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Call for a team meeting to decide if the changes should be included",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Initiate the change request to modify the scope and adjust the timelines",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Conduct an impact analysis and present the results to the steering committee for approval",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0056"
+    },
+    {
+        "question_id": "#f1334f3b-9608-43c8-8083-a556b8e4c2fd",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "The project velocity has recently slipped, and a decision was made to skip testing to increase the momentum and bong the project back on track. What will the project manager need to focus on as a result of this decision?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: C</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#f1334f3b-9608-43c8-8083-a556b8e4c2fd",
+                "answers": [
+                    {
+                        "choice": "Increased bum rate",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Increased cost",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Increased technical debt",
+                        "correct": true
+                    },
+                    {
+                        "choice": "Decreased efficiency",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0057"
+    },
+    {
+        "question_id": "#1c474dcd-f20c-4427-a8fe-1f768b937173",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During project execution, the project manager notices that the work performance reports have deteriorated drastically in less than two weeks. The project team in country A is complaining about delays resulting from holidays occurring in country B that have impacted their project team. How should the project manager handle this situation?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#1c474dcd-f20c-4427-a8fe-1f768b937173",
+                "answers": [
+                    {
+                        "choice": "Implement crashing to compress the schedule and improve the schedule performance index (SPI).",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Implement fast-tracking to compress the schedule and improve the SPI",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Perform conflict management using the project's resource management plan.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Review the risk management plan to evaluate the probability and impact of these delays",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0058"
+    },
+    {
+        "question_id": "#385eecd4-4672-4023-b7b0-ab7b820384ab",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "During daily calls team members share task progress. One team member does not usually communicate many details and has critical tasks to be completed. All team members are located in different countries and critical work is about to start. Which two options will help the project manager in this situation? (Choose two.)",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: ['C', 'A']</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#385eecd4-4672-4023-b7b0-ab7b820384ab",
+                "answers": [
+                    {
+                        "choice": "Encourage all team members to use a virtual workspace",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ask the team to send emails with detailed task progress",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Talk to the team member about their engagement and take appropriate action.",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Reassign the work to a resource who participates in the daily calls",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Report the team member's poor performance to the functional manager",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0059"
+    },
+    {
+        "question_id": "#d3c374a8-c68a-4b9b-8d77-750b847089b6",
+        "topic_id": 1,
+        "course_id": 1,
+        "case_study_id": "null",
+        "lab_id": 0,
+        "question_text": "A project manager is implementing a new software system. Some department staff members are questioning the necessity of the change and feel the new system will impede their current processes. What should the project manager have done at the start of the project to prevent this resistance'?",
+        "mark": 1,
+        "is_partially_correct": false,
+        "question_type": "1",
+        "difficulty_level": "0",
+        "general_feedback": [
+            "<p>Correct Answer: D</p>"
+        ],
+        "is_active": true,
+        "answer_list": [
+            {
+                "question_answer_id": "",
+                "question_id": "#d3c374a8-c68a-4b9b-8d77-750b847089b6",
+                "answers": [
+                    {
+                        "choice": "Created a communications management plan that outlined the method of communicating to stakeholders",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Ensured that the company culture encourages changes before accepting the project",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Encouraged leadership to discuss the change with departments that are typically resistant to change",
+                        "correct": false
+                    },
+                    {
+                        "choice": "Involved stakeholders from all levels of the company so everyone understands the change",
+                        "correct": true
+                    }
+                ]
+            }
+        ],
+        "topic_name": "PMP Mock Test 8 - 0060"
+    }
+]

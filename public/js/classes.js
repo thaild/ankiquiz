@@ -40,7 +40,7 @@ class Question {
 
     html += `
       <div>Question: ${this.queNo + 1} (${this.question_id})</div>
-      <div class="que-text">${this.question_text}</div>
+      <div class="que-text">${this.getCleanQuestionText()}</div>
       ${htmlStarIcon}
     `;
 
@@ -87,7 +87,7 @@ class Question {
 
     html += `
       <div class="que-title">Question:  ${options.index + 1} (${this.options.show_title ? this.question_id : '#____'})</div>
-      <div class="que-text">${this.question_text}</div>
+      <div class="que-text">${this.getCleanQuestionText()}</div>
       ${htmlStarIcon}
     `;
 
@@ -177,8 +177,53 @@ class Question {
   }
 
   loadQueTextHtml() {
-    $(".ExamQuestionsBlock .que-text").html(this.question_text);
+    $(".ExamQuestionsBlock .que-text").html(this.getCleanQuestionText());
     $("#queDomain").html(`<span class="fw-bold text-primary">${this.topic_name}</span>`);
+  }
+
+  // Get cleaned question text with image URLs cleaned
+  getCleanQuestionText() {
+    if (!this.question_text) {
+      return this.question_text;
+    }
+
+    // Check if ImageUrlUtils is available
+    if (typeof window.ImageUrlUtils !== 'undefined' && window.ImageUrlUtils.cleanImageUrlsInHtml) {
+      return window.ImageUrlUtils.cleanImageUrlsInHtml(this.question_text);
+    }
+
+    // Fallback: simple URL cleaning if ImageUrlUtils is not available
+    if (typeof this.question_text === 'string' && this.question_text.includes('<img')) {
+      return this.question_text.replace(/src=["']([^"']*)\?[^"']*["']/gi, 'src="$1"');
+    }
+
+    return this.question_text;
+  }
+
+  // Get cleaned question text preview (strips HTML and cleans URLs)
+  getCleanQuestionTextPreview(questionText, maxLength = null) {
+    if (!questionText) {
+      return questionText;
+    }
+
+    let cleanText = questionText;
+
+    // Clean image URLs first
+    if (typeof window.ImageUrlUtils !== 'undefined' && window.ImageUrlUtils.cleanImageUrlsInHtml) {
+      cleanText = window.ImageUrlUtils.cleanImageUrlsInHtml(cleanText);
+    } else if (typeof cleanText === 'string' && cleanText.includes('<img')) {
+      cleanText = cleanText.replace(/src=["']([^"']*)\?[^"']*["']/gi, 'src="$1"');
+    }
+
+    // Strip HTML tags for preview
+    cleanText = cleanText.replace(/<[^>]*>/g, '');
+
+    // Truncate if maxLength is specified
+    if (maxLength && cleanText.length > maxLength) {
+      cleanText = cleanText.substring(0, maxLength);
+    }
+
+    return cleanText;
   }
 
   loadQueAnswerHtml(
@@ -533,7 +578,7 @@ class Exam {
       resultBlock += `
       <tr>
         <td>${index + 1}</td>
-        <td>${question.question_text.substring(0, 36)}...</td>
+        <td>${this.getCleanQuestionTextPreview(question.question_text, 36)}...</td>
         <td><div class="multiline">${self.getComment(index)}</div></td>
         <td>${pointText}</td>
         <td>${correctAnswers.toString()}</td>
@@ -817,7 +862,7 @@ class Exam {
       htmlTableBody += `
       <tr>
         <td>${index + 1}</td>
-        <td class="text-start">${question.question_text.substring(0, 60)}...</td>
+        <td class="text-start">${this.getCleanQuestionTextPreview(question.question_text, 60)}...</td>
         <td><div class="px-2 text-start bg-secondary text-warning multiline">${self.getComment(question.queNo)}</div></td>
         <td>${checkStatus}</td>
         <td><a class="btn btn-sm btn-warning btnScrollToQuestion" data-index="${index}" href="javascript:void(0)">View</a></td>
@@ -1212,7 +1257,7 @@ class Exam {
     <div class="starQuestionBlock">
       ${htmlStarIcon}
       Question: ${markedQue["queNo"] + 1}.
-      ${question.question_text}
+      ${this.getCleanQuestionTextPreview(question.question_text)}
       ${answer_text}
     </div>
     <br>
