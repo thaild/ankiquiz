@@ -1,27 +1,81 @@
-// Database Client for Exam Results
+// Database Client for Exam Results with Authentication Support
 class DatabaseClient {
   constructor() {
     // Get API base URL from environment or use default
     this.baseUrl = window.API_BASE_URL || 'http://localhost:3000/api';
-    this.userId = this.getUserId();
+    this.userId = null;
+    this.isAuthenticated = false;
     this._apiCache = new Map(); // Initialize API cache
+    
+    // Initialize authentication state
+    this.initializeAuth();
   }
 
-  // Generate or get user ID from localStorage with 1 week expiration
+  // Initialize authentication state
+  initializeAuth() {
+    // Check if AuthManager is available
+    if (window.authManager) {
+      this.isAuthenticated = window.authManager.isAuthenticated();
+      this.userId = window.authManager.getUserId();
+      
+      // Listen for authentication changes
+      window.authManager.addEventListener('login', async (user) => {
+        this.isAuthenticated = true;
+        this.userId = window.authManager.getUserId();
+        console.log('DatabaseClient: User authenticated', this.userId);
+        
+        // Attempt to migrate fallback user data
+        try {
+          const migrated = await this.migrateFallbackUserData();
+          if (migrated) {
+            console.log('Successfully migrated fallback user data to authenticated user');
+            if (window.authManager) {
+              window.authManager.showNotification('Your previous exam data has been migrated to your account!', 'success');
+            }
+          }
+        } catch (error) {
+          console.error('Failed to migrate user data:', error);
+        }
+      });
+      
+      window.authManager.addEventListener('logout', () => {
+        this.isAuthenticated = false;
+        this.userId = null;
+        console.log('DatabaseClient: User logged out');
+      });
+    } else {
+      // Fallback to local user ID if AuthManager not available
+      this.userId = this.getFallbackUserId();
+      this.isAuthenticated = false;
+      console.log('DatabaseClient: Using fallback user ID', this.userId);
+    }
+  }
+
+  // Get authenticated user ID or fallback
   getUserId() {
-    let userId = localStorage.getItem('USER_ID');
-    let userIdTimestamp = localStorage.getItem('USER_ID_TIMESTAMP');
+    if (this.isAuthenticated && this.userId) {
+      return this.userId;
+    }
+    
+    // Return fallback user ID for unauthenticated users
+    return this.getFallbackUserId();
+  }
+
+  // Generate or get fallback user ID from localStorage with 1 week expiration
+  getFallbackUserId() {
+    let userId = localStorage.getItem('FALLBACK_USER_ID');
+    let userIdTimestamp = localStorage.getItem('FALLBACK_USER_ID_TIMESTAMP');
     
     // Check if user ID exists and is not expired (1 week = 7 * 24 * 60 * 60 * 1000 ms)
     const oneWeekInMs = 7 * 24 * 60 * 60 * 1000;
     const currentTime = Date.now();
     
     if (!userId || !userIdTimestamp || (currentTime - parseInt(userIdTimestamp)) > oneWeekInMs) {
-      // Generate new user ID
-      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-      localStorage.setItem('USER_ID', userId);
-      localStorage.setItem('USER_ID_TIMESTAMP', currentTime.toString());
-      console.log('Generated new user ID:', userId);
+      // Generate new fallback user ID
+      userId = 'fallback_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('FALLBACK_USER_ID', userId);
+      localStorage.setItem('FALLBACK_USER_ID_TIMESTAMP', currentTime.toString());
+      console.log('Generated new fallback user ID:', userId);
     }
     
     return userId;
@@ -32,7 +86,7 @@ class DatabaseClient {
     return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
   }
 
-  // Make API request
+  // Make API request with authentication support
   async makeRequest(endpoint, options = {}) {
     const url = `${this.baseUrl}${endpoint}`;
     const defaultOptions = {
@@ -40,6 +94,25 @@ class DatabaseClient {
         'Content-Type': 'application/json',
       },
     };
+
+    // Add authentication headers if user is authenticated
+    if (this.isAuthenticated && window.authManager) {
+      try {
+        const token = await window.authManager.getToken();
+        if (token) {
+          defaultOptions.headers['Authorization'] = `Bearer ${token}`;
+        }
+      } catch (error) {
+        console.warn('Failed to get authentication token:', error);
+      }
+    }
+
+    // Add user ID header for server-side user identification
+    const currentUserId = this.getUserId();
+    if (currentUserId) {
+      defaultOptions.headers['X-User-ID'] = currentUserId;
+      defaultOptions.headers['X-Auth-Status'] = this.isAuthenticated ? 'authenticated' : 'fallback';
+    }
 
     try {
       const response = await fetch(url, { ...defaultOptions, ...options });
@@ -59,7 +132,7 @@ class DatabaseClient {
   // Save exam result
   async saveExamResult(examData) {
     const resultData = {
-      userId: this.userId,
+      userId: this.getUserId(),
       examId: examData.examId,
       examName: examData.examName,
       groupId: examData.groupId,
@@ -72,7 +145,9 @@ class DatabaseClient {
       timeTaken: parseInt(examData.timeTaken) || 0,
       answersData: examData.answersData || {},
       reviewMarks: examData.reviewMarks || {},
-      comments: examData.comments || {}
+      comments: examData.comments || {},
+      // Add authentication metadata
+      authInfo: this.getUserAuthInfo()
     };
 
     try {
@@ -93,7 +168,7 @@ class DatabaseClient {
   async saveExamSession(examData) {
     const sessionData = {
       sessionId: examData.sessionId,
-      userId: this.userId,
+      userId: this.getUserId(),
       examId: examData.examId,
       examName: examData.examName,
       groupId: examData.groupId,
@@ -101,7 +176,9 @@ class DatabaseClient {
       currentQuestion: examData.currentQuestion || 1,
       answersData: examData.answersData || {},
       reviewMarks: examData.reviewMarks || {},
-      comments: examData.comments || {}
+      comments: examData.comments || {},
+      // Add authentication metadata
+      authInfo: this.getUserAuthInfo()
     };
 
     try {
@@ -147,7 +224,7 @@ class DatabaseClient {
   // Get user's exam results
   async getUserExamResults(limit = 50) {
     try {
-      const response = await this.makeRequest(`/exam-results/user/${this.userId}?limit=${limit}`);
+      const response = await this.makeRequest(`/exam-results/user/${this.getUserId()}?limit=${limit}`);
       return response.results;
     } catch (error) {
       console.error('Failed to get user exam results:', error);
@@ -169,7 +246,7 @@ class DatabaseClient {
   // Get specific exam result for current user
   async getExamResultForUser(examId) {
     try {
-      const response = await this.makeRequest(`/exam-results/user/${this.userId}/exam/${examId}`);
+      const response = await this.makeRequest(`/exam-results/user/${this.getUserId()}/exam/${examId}`);
       return response.result;
     } catch (error) {
       console.error('Failed to get exam result for user:', error);
@@ -179,12 +256,106 @@ class DatabaseClient {
 
   // Get current user ID
   getCurrentUserId() {
-    return this.userId;
+    return this.getUserId();
+  }
+
+  // Check if user is authenticated
+  isUserAuthenticated() {
+    return this.isAuthenticated;
+  }
+
+  // Get user authentication info
+  getUserAuthInfo() {
+    return {
+      userId: this.getUserId(),
+      isAuthenticated: this.isAuthenticated,
+      authProvider: this.isAuthenticated ? 'netlify' : 'fallback',
+      userEmail: this.isAuthenticated && window.authManager ? window.authManager.getUserEmail() : null,
+      userName: this.isAuthenticated && window.authManager ? window.authManager.getUserName() : null
+    };
+  }
+
+  // Require authentication for sensitive operations
+  requireAuthentication(operation = 'this operation') {
+    if (!this.isAuthenticated) {
+      const message = `Authentication required for ${operation}. Please log in to continue.`;
+      console.warn(message);
+      
+      // Show notification if AuthManager is available
+      if (window.authManager) {
+        window.authManager.showNotification(message, 'warning');
+        // Optionally trigger login
+        setTimeout(() => {
+          window.authManager.login();
+        }, 2000);
+      }
+      
+      throw new Error(message);
+    }
+    return true;
+  }
+
+  // Migrate fallback user data to authenticated user
+  async migrateFallbackUserData() {
+    if (!this.isAuthenticated) {
+      console.log('No authenticated user to migrate data to');
+      return false;
+    }
+
+    const fallbackUserId = this.getFallbackUserId();
+    const authenticatedUserId = this.getUserId();
+
+    if (fallbackUserId === authenticatedUserId) {
+      console.log('No migration needed - same user ID');
+      return false;
+    }
+
+    try {
+      console.log(`Migrating data from fallback user ${fallbackUserId} to authenticated user ${authenticatedUserId}`);
+      
+      // Get fallback user's exam results
+      const fallbackResults = await this.makeRequest(`/exam-results/user/${fallbackUserId}`);
+      
+      if (fallbackResults.results && fallbackResults.results.length > 0) {
+        // Migrate each result to the authenticated user
+        for (const result of fallbackResults.results) {
+          result.userId = authenticatedUserId;
+          result.migratedFrom = fallbackUserId;
+          result.migrationDate = new Date().toISOString();
+          
+          await this.makeRequest('/exam-results', {
+            method: 'POST',
+            body: JSON.stringify(result)
+          });
+        }
+        
+        console.log(`Successfully migrated ${fallbackResults.results.length} exam results`);
+        
+        // Clear fallback user data
+        await this.makeRequest(`/exam-results/user/${fallbackUserId}`, {
+          method: 'DELETE'
+        });
+        
+        // Clear fallback user ID from localStorage
+        localStorage.removeItem('FALLBACK_USER_ID');
+        localStorage.removeItem('FALLBACK_USER_ID_TIMESTAMP');
+        
+        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      console.error('Failed to migrate fallback user data:', error);
+      return false;
+    }
   }
 
   // Delete all exam results for current user
   async deleteUserExamResults(userId = null) {
-    const targetUserId = userId || this.userId;
+    // Require authentication for this sensitive operation
+    this.requireAuthentication('deleting exam results');
+    
+    const targetUserId = userId || this.getUserId();
     
     try {
       const response = await this.makeRequest(`/exam-results/user/${targetUserId}`, {
@@ -202,7 +373,7 @@ class DatabaseClient {
   // Get user statistics
   async getUserStats() {
     try {
-      const response = await this.makeRequest(`/user-stats/${this.userId}`);
+      const response = await this.makeRequest(`/user-stats/${this.getUserId()}`);
       return response.stats;
     } catch (error) {
       console.error('Failed to get user stats:', error);
@@ -236,7 +407,7 @@ class DatabaseClient {
   // Clear cache for specific exam
   clearExamCache(examId) {
     try {
-      const cacheKey = `exam_result_${this.userId}_${examId}`;
+      const cacheKey = `exam_result_${this.getUserId()}_${examId}`;
       if (this._apiCache && this._apiCache.delete) {
         this._apiCache.delete(cacheKey);
       }

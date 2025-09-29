@@ -16,6 +16,11 @@
     <meta name="default-exam-time" content="180">
     <meta name="max-questions-per-exam" content="100">
     
+    <!-- Authentication Configuration -->
+    <meta name="enable-auth" content="true">
+    <meta name="require-auth" content="false">
+    <meta name="auth-provider" content="netlify">
+    
     <title>Shared EXAM</title>
     
     <!-- Resource Hints for Performance -->
@@ -23,7 +28,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="dns-prefetch" href="https://code.jquery.com">
-    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Critical CSS Inline -->
     <style>
         :root {
@@ -96,7 +102,23 @@
     </div>
 
     <!-- BANNER -->
-    <div class="container-lg d-none d-xl-block">
+    <div class="container-lg d-xl-block">
+        <!-- Authentication Section -->
+        <div class="auth-section mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="auth-info">
+                    <span id="user" class="text-muted"></span>
+                </div>
+                <div class="auth-buttons">
+                    <button id="login" class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <button id="logout" class="btn btn-outline-danger btn-sm" style="display:none;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="settingBlock text-end">
             <span>Shared Anki Test</span>
             <span class="dropdown">
@@ -458,6 +480,9 @@
     <!-- Configuration Script -->
     <script src="./public/js/config.js"></script>
     
+    <!-- Authentication Script -->
+    <script src="./public/js/auth.js"></script>
+    
     <!-- Advanced Exam Data Loading -->
     <script type="module">
         // Set global loading flag to prevent duplicate loading
@@ -645,6 +670,97 @@
             }
         }
     </script>
+
+    
+  <script>
+    // Enhanced Authentication Integration
+    (function() {
+      'use strict';
+      
+      // Wait for AuthManager to be loaded
+      function initAuth() {
+        if (!window.authManager) {
+          console.error('AuthManager not loaded');
+          return;
+        }
+
+        const loginBtn = document.getElementById("login");
+        const logoutBtn = document.getElementById("logout");
+        const userDisplay = document.getElementById("user");
+        const mainContent = document.getElementById("main-content");
+
+        // Set up UI event handlers
+        if (loginBtn) {
+          loginBtn.addEventListener("click", () => {
+            window.authManager.login();
+          });
+        }
+
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", () => {
+            window.authManager.logout();
+          });
+        }
+
+        // Set up authentication event listeners
+        window.authManager.addEventListener('login', (user) => {
+          updateUI(user);
+          window.authManager.showNotification('Welcome! You are now logged in.', 'success');
+        });
+
+        window.authManager.addEventListener('logout', () => {
+          updateUI(null);
+          window.authManager.showNotification('You have been logged out.', 'info');
+        });
+
+        window.authManager.addEventListener('error', (error) => {
+          window.authManager.showNotification('Authentication error occurred. Please try again.', 'danger');
+        });
+
+        // Update UI based on authentication state
+        function updateUI(user) {
+          // Update user display
+          window.authManager.updateUI(userDisplay);
+          
+          // Update button visibility
+          if (loginBtn) loginBtn.style.display = user ? "none" : "inline-block";
+          if (logoutBtn) logoutBtn.style.display = user ? "inline-block" : "none";
+          
+          // Handle main content visibility based on configuration
+          if (mainContent && window.APP_CONFIG) {
+            if (window.APP_CONFIG.REQUIRE_AUTH && !user) {
+              mainContent.style.display = "none";
+            } else {
+              mainContent.style.display = "block";
+            }
+          }
+        }
+
+        // Initial UI update
+        updateUI(window.authManager.getUser());
+
+        // Make authentication functions globally available for backward compatibility
+        window.auth = {
+          login: () => window.authManager.login(),
+          logout: () => window.authManager.logout(),
+          getUser: () => window.authManager.getUser(),
+          isAuthenticated: () => window.authManager.isAuthenticated(),
+          getToken: () => window.authManager.getToken(),
+          authenticatedRequest: (url, options) => window.authManager.authenticatedRequest(url, options)
+        };
+
+        console.log('Authentication system initialized');
+      }
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAuth);
+      } else {
+        initAuth();
+      }
+
+    })();
+  </script>
 </body>
 
 </html>
