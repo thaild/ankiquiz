@@ -1,0 +1,32 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 100,
+  "useTabs": false,
+  "bracketSpacing": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "strict",
+  "insertPragma": false,
+  "jsxSingleQuote": true,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "vueIndentScriptAndStyle": false,
+  "spaceBeforeFunctionParen": false,
+  "overrides": [
+    {
+      "files": ["*"],
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.py", "*.json"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
