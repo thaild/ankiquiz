@@ -103,6 +103,11 @@ try {
           data: PMA_PMP_MOCK_TEST9.data,
         },
         {
+          id: 'PMA_PMP_MOCK_TEST_10',
+          name: '[PMA-PMP] MOCK TEST 10',
+          data: PMA_PMP_MOCK_TEST10.data,
+        },
+        {
           id: 'PMA_PMP_MOCK_TEST_11',
           name: '[PMA-PMP] MOCK TEST 11',
           data: PMA_PMP_MOCK_TEST11.data,
