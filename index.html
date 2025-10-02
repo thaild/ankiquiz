@@ -1,435 +1,644 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shared Anki Test - AWS Certification Exam Preparation Tool" />
+    <meta name="theme-color" content="#1f2430" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Shared Anki Test - AWS Certification Exam Preparation Tool">
-    <meta name="theme-color" content="#1f2430">
-    
     <!-- Environment Configuration -->
-    <meta name="api-base-url" content="/api">
-    <meta name="app-name" content="AnkiQuiz">
-    <meta name="app-version" content="1.0.0">
-    <meta name="enable-analytics" content="false">
-    <meta name="enable-debug" content="false">
-    <meta name="default-exam-time" content="180">
-    <meta name="max-questions-per-exam" content="100">
-    
+    <meta name="api-base-url" content="/api" />
+    <meta name="app-name" content="AnkiQuiz" />
+    <meta name="app-version" content="1.0.0" />
+    <meta name="enable-analytics" content="false" />
+    <meta name="enable-debug" content="false" />
+    <meta name="default-exam-time" content="180" />
+    <meta name="max-questions-per-exam" content="100" />
+
     <!-- Authentication Configuration -->
-    <meta name="enable-auth" content="true">
-    <meta name="require-auth" content="false">
-    <meta name="auth-provider" content="netlify">
-    
+    <meta name="enable-auth" content="true" />
+    <meta name="require-auth" content="true" />
+    <meta name="auth-provider" content="netlify" />
+
     <title>Shared EXAM</title>
-    
+
     <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="dns-prefetch" href="https://code.jquery.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="dns-prefetch" href="https://code.jquery.com" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Critical CSS Inline -->
     <style>
-        :root {
-            --primary-color: #1f2430;
-            --bg-primary-color: #f5f7fa;
-            --dark-primary-color: #c1c1c1;
-            --dark-bg-primary-color: #24262c;
-            --bs-body-color: #000000 !important;
-        }
-        
-        body {
-            color: var(--primary-color);
-            background: var(--bg-primary-color) !important;
-            font-size: 16px;
-            font-family: "Poppins", sans-serif !important;
-            font-weight: 400;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container, .container-small {
-            width: 100%;
-            padding: 0 15px;
-            margin: 0 auto;
-        }
-        
-        /* Loading state */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-size: 1.2rem;
-        }
-        
+      :root {
+        --primary-color: #1f2430;
+        --bg-primary-color: #f5f7fa;
+        --dark-primary-color: #c1c1c1;
+        --dark-bg-primary-color: #24262c;
+        --bs-body-color: #000000 !important;
+      }
+
+      body {
+        color: var(--primary-color);
+        background: var(--bg-primary-color) !important;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container,
+      .container-small {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+      }
+
+      /* Loading state */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 1.2rem;
+      }
     </style>
-    
+
     <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="preload" href="./public/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="./public/css/exam.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link
+      rel="preload"
+      href="./public/css/main.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="./public/css/exam.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <noscript>
-        <link rel="stylesheet" href="./public/css/main.css">
-        <link rel="stylesheet" href="./public/css/exam.css">
+      <link rel="stylesheet" href="./public/css/main.css" />
+      <link rel="stylesheet" href="./public/css/exam.css" />
     </noscript>
-    
+
     <!-- External CSS with integrity -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha256-ky6hUQiSiZG88MCkZBX8ZS3l/8AVjDUgU1e5DGXus4Y=" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha256-ky6hUQiSiZG88MCkZBX8ZS3l/8AVjDUgU1e5DGXus4Y="
+      crossorigin="anonymous"
+    />
 
     <!-- Font with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome with preload -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" as="style" 
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-            integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8="
-            crossorigin="anonymous" referrerpolicy="no-referrer">
-    </noscript>
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-<body class="white-mode">
+    <!-- Font Awesome with preload -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
+  </head>
+
+  <body class="white-mode">
     <!-- Loading indicator -->
     <div id="loading" class="loading">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span class="ms-2">Loading Exam Application...</span>
+    </div>
+
+    <!-- Authentication Gate -->
+    <div id="auth-gate" class="loading" style="display: none">
+      <div class="text-center">
+        <div class="mb-4">
+          <i class="fas fa-lock fa-3x text-primary"></i>
         </div>
-        <span class="ms-2">Loading Exam Application...</span>
+        <h3 class="mb-3">Authentication Required</h3>
+        <p class="text-muted mb-4">Please log in to access the exam application.</p>
+        <button id="auth-login-btn" class="btn btn-primary btn-lg">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        <div class="mt-3">
+          <small class="text-muted">Secure access to exam content</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="container-lg" id="main-content" style="display: none">
+      <div class="examBlock" style="user-select: auto">
+        <div class="notification" role="alert" aria-live="polite">
+          <!-- This is message!!! -->
+        </div>
+        <div class="exam-header row">
+          <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
+            <div class="input-group input-group mb-1">
+              <label class="input-group-text bg-secondary text-white" for="groupList">Group</label>
+              <select class="form-select text-black" id="groupList" aria-label="Select exam group">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-end">
+            <div class="input-group mb-1">
+              <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
+              <select class="form-select text-black" id="deskList" aria-label="Select exam">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
+            <button
+              type="button"
+              class="btn btn-common btn-createTest btn-warning"
+              aria-label="Create test"
+              >Random Test</button
+            >
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none">
+            <button type="button" class="btn btn-common btn-saveQuiz" aria-label="Save quiz">
+              Save
+            </button>
+            <button type="button" class="btn btn-common btn-clearQuiz" aria-label="Clear cache">
+              Clear Cache
+            </button>
+          </div>
+        </div>
+        <div class="ExamQuestionsBlock">
+          <!-- LEFT BLOCK -->
+          <div class="col-12 col-md-9 left">
+            <div class="content">
+              <div class="d-flex align-items-center justify-content-between fs-6 mb-2">
+                <div class="block-head fw-bold font-monospace text-uppercase">
+                  <div class="exam-nav top">
+                    <button
+                      type="button"
+                      class="btnPrevQue btn btn-success"
+                      aria-label="Previous question"
+                      >Prev</button
+                    >
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                  <div id="queDomain"></div>
+                  <div
+                    class="total-questions my-1 fw-bold font-monospace text-uppercase"
+                    aria-live="polite"
+                    >#1/15</div
+                  >
+                  <div
+                    id="starMarkToReview"
+                    class="starMarkToReview true"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Mark question for review"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+
+                <div class="block-head fw-bold font-monospace text-uppercase">
+                  <div class="exam-nav top">
+                    <button
+                      type="button"
+                      class="btnNextQue btn btn-success"
+                      aria-label="Next question"
+                      >Next</button
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Show Question -->
+              <div class="que-text mb-3" role="main" aria-live="polite"></div>
+
+              <!-- Show Answer Choices -->
+              <fieldset
+                id="ques-list"
+                class="que-list MuiFormControl-root Questions-list"
+                role="group"
+                aria-label="Answer choices"
+              >
+              </fieldset>
+
+              <div class="exam-nav">
+                <button
+                  type="button"
+                  class="btnPrevQue btn btn-success btn-saveQuiz"
+                  aria-label="Previous question"
+                  >Prev</button
+                >
+                <button
+                  type="button"
+                  class="btnNextQue btn btn-success btn-saveQuiz"
+                  aria-label="Next question"
+                  >Next</button
+                >
+              </div>
+
+              <div class="mt-3">
+                <!-- Show Answer -->
+                <button
+                  type="button"
+                  class="btn-showAnswer btn btn-warning px-1"
+                  aria-label="Show answer"
+                  >Show Answer</button
+                >
+                <!-- Discussion -->
+                <button
+                  type="button"
+                  class="btn-showDiscussion btn btn-info px-1"
+                  aria-label="Show discussion"
+                  >Show Discussion</button
+                >
+              </div>
+
+              <!-- Show Edit -->
+              <div class="edit-ques-block">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-warning d-none"
+                  id="btnEditQuestionModal"
+                  aria-label="Edit memo"
+                  >Edit Memo</button
+                >
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="editQuestionModal"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="editQuestionModalTitle"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background-color: #6c757d">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="editQuestionModalTitle" style="color: #fff"
+                          >Self Comment (E)</h5
+                        >
+                        <button
+                          type="button"
+                          class="btn-close btn-close-white"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <textarea
+                          class="txtContent form-control"
+                          style="background: #282620; color: #ffffff"
+                          aria-label="Enter comment"
+                          rows="5"
+                          placeholder="Enter your comment here..."
+                        ></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btnSave btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                          >Close</button
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-3 comment-block" aria-live="polite"></div>
+              <div class="my-3 explanation-block" aria-live="polite"></div>
+              <div class="discussion-container" aria-live="polite"></div>
+            </div>
+          </div>
+          <!-- ./LEFT BLOCK -->
+
+          <!-- RIGHT BLOCK -->
+          <div class="col-12 col-md-3 right">
+            <button
+              type="button"
+              class="btn btn-sm rounded-pill btn-review w-100"
+              aria-label="Review questions"
+              >Review</button
+            >
+            <button
+              type="button"
+              class="btn btn-sm btn-primary rounded-pill w-100 mb-2"
+              data-bs-toggle="collapse"
+              data-bs-target="#attempts-que"
+              aria-expanded="false"
+              aria-controls="attempts-que"
+            >
+              Hide/Show List Question
+            </button>
+            <div id="attempts-que" class="attempts-que collapse hide">
+              <ul role="list" aria-label="Question list"> </ul>
+              <button
+                type="button"
+                class="btnClearAllAnswer btn btn-sm btn-danger rounded-pill w-100 my-2"
+                aria-label="Clear all answers"
+              >
+                Clear All Answer
+              </button>
+            </div>
+
+            <div id="auto-submit-status" class="mt-2" style="display: none">
+              <small class="text-muted">
+                <i class="fas fa-save text-info"></i>
+                <span id="auto-submit-text">Auto-save enabled</span>
+              </small>
+            </div>
+            <div id="auto-feedback-status" class="mt-1" style="display: none">
+              <small class="text-muted">
+                <i class="fas fa-lightbulb text-warning"></i>
+                <span id="auto-feedback-text">Auto feedback enabled</span>
+              </small>
+            </div>
+            <div class="mt-2">
+              <button id="toggle-auto-feedback" class="btn btn-outline-success btn-sm">
+                <i class="fas fa-toggle-on"></i> Toggle Auto Feedback
+              </button>
+            </div>
+          </div>
+          <!-- ./RIGHT BLOCK -->
+        </div>
+      </div>
+
+      <div class="mt-3 resultBlock d-none" role="region" aria-label="Exam results">
+        <div id="resultBlockHeader" class="text-end">
+          <button type="button" class="btn btn-primary btn-md me-2" id="submitExamResult">
+            <i class="fas fa-save"></i> Submit Result to Database
+          </button>
+          <button type="button" class="btn btn-danger btn-md me-2" id="deleteOldResults">
+            <i class="fas fa-trash"></i> Delete Old Results
+          </button>
+          <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam"
+            >Return</button
+          >
+        </div>
+        <h3 class="text-center">Result</h3>
+        <div id="resultBlock"> This is result </div>
+      </div>
+
+      <div class="mt-3 starBlock d-none" role="region" aria-label="Star questions">
+        <div class="text-end">
+          <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam"
+            >Return</button
+          >
+        </div>
+        <h3 class="text-center">Re-test Star Question</h3>
+        <h4>Options:</h4>
+        <div class="row mb-3">
+          <div class="col-sm-9 col-md-3 col-lg-3">
+            <select id="filterOptionType" class="form-select" aria-label="Filter option type">
+              <option selected value="RETEST">RETEST</option>
+              <option value="STAR">STAR</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-9">
+            <div class="row">
+              <div class="col-3">
+                <input
+                  id="filterOptionFromQuestion"
+                  type="number"
+                  class="form-control"
+                  placeholder="From question"
+                  aria-label="From question"
+                  value="1"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  id="filterOptionToQuestion"
+                  type="number"
+                  class="form-control"
+                  placeholder="To question"
+                  aria-label="To question"
+                  value="100"
+                />
+              </div>
+              <div class="col-6">
+                <select
+                  id="filterOptionMaxQuestion"
+                  class="form-select"
+                  aria-label="Maximum questions"
+                >
+                  <option value="5">5</option>
+                  <option selected value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="starBlock"> This is Star Block </div>
+        <div class="text-center my-3">
+          <button
+            type="button"
+            class="btn btn-warning btnShowStarResult"
+            aria-label="Show star result"
+            >Show Result</button
+          >
+        </div>
+      </div>
+
+      <div id="testBlock" class="mt-2 testBlock d-none" role="region" aria-label="Test section">
+        <h3 class="text-center">=== TEST ===</h3>
+        <div class="row mb-3">
+          <div class="col-sm-9 col-md-3 col-lg-3">
+            <label for="filterOptionType2">Options:</label>
+            <select id="filterOptionType2" class="form-select" aria-label="Filter option type">
+              <option selected value="RETEST">RETEST</option>
+              <option value="STAR">STAR</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-9">
+            <div class="row">
+              <div class="col">
+                <label for="filterOptionFromQuestion2">From:</label>
+                <input
+                  id="filterOptionFromQuestion2"
+                  type="number"
+                  class="form-control"
+                  placeholder="From question"
+                  aria-label="From question"
+                  value="1"
+                />
+              </div>
+              <div class="col">
+                <label for="filterOptionToQuestion2">To:</label>
+                <input
+                  id="filterOptionToQuestion2"
+                  type="number"
+                  class="form-control"
+                  placeholder="To question"
+                  aria-label="To question"
+                  value="20"
+                />
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <label for="filterOptionRandom">Random:</label>
+                <select id="filterOptionRandom" class="form-select" aria-label="Random option">
+                  <option value="RANDOM" selected>YES</option>
+                  <option value="NOT_RANDOM">NO</option>
+                </select>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <label for="filterOptionMaxQuestion2">Max Question:</label>
+                <select
+                  id="filterOptionMaxQuestion2"
+                  class="form-select"
+                  aria-label="Maximum questions"
+                >
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="65">65</option>
+                  <option value="75">75</option>
+                  <option value="15">100</option>
+                  <option value="ALL" selected>All</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-1">
+            <div class="col-3">
+              <label for="show_question_title">Show Question ID:</label>
+              <select id="show_question_title" class="form-select" aria-label="Show question title">
+                <option value="1" selected>Show</option>
+                <option value="0">Hide</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <button
+              type="button"
+              class="btnCreateTest btn btn-success btn-common"
+              aria-label="Create test"
+              >Create Test</button
+            >
+            <button
+              type="button"
+              class="btn-return btn btn-danger btn-common"
+              aria-label="Exit test"
+              >Exit</button
+            >
+          </div>
+        </div>
+        <form id="test_form">
+          <div class="testContent pt-3"> This is test content </div>
+        </form>
+        <div class="row pb-3">
+          <div class="col-12 text-center">
+            <button
+              type="button"
+              class="btn btn-success btnShowAnswer d-none"
+              aria-label="Show all answers"
+              >Show All Answer</button
+            >
+          </div>
+        </div>
+
+        <div class="quick-review">
+          <div class="text-center">
+            <button
+              type="button"
+              class="btn btn-warning btnQuickReview text-center"
+              aria-label="Quick review"
+              >RV</button
+            >
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="quickReviewModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="quickReviewModalTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="quickReviewModalTitle">Quick Review (R)</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div id="quickReviewContent"></div>
+                  <hr />
+                  <div class="text-center">
+                    <button type="button" class="btnQuickReviewDetails" aria-label="Show details"
+                      >Show Details</button
+                    >
+                    <div id="tableQuickReviewDetails"></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    >Close</button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- BANNER -->
     <div class="container-lg d-xl-block">
-        <!-- Authentication Section -->
-        <div class="auth-section mb-3">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="auth-info">
-                    <span id="user" class="text-muted"></span>
-                </div>
-                <div class="auth-buttons">
-                    <button id="login" class="btn btn-outline-primary btn-sm">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </button>
-                    <button id="logout" class="btn btn-outline-danger btn-sm" style="display:none;">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </button>
-                </div>
-            </div>
+      <!-- Authentication Section -->
+      <div class="auth-section mb-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="auth-info">
+            <span id="user" class="text-muted"></span>
+          </div>
+          <div class="auth-buttons">
+            <button id="login" class="btn btn-outline-primary btn-sm" style="display: none">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <button id="logout" class="btn btn-outline-danger btn-sm" style="display: none">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+          </div>
         </div>
-        <div class="settingBlock text-end">
-            <span>Shared Anki Test</span>
-            <span class="dropdown">
-                <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings menu">
-                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)"
-                            class="dropdown-item btnToogleDarkMode btn btn-common btn-info btn-sm" role="button" tabindex="0">Toggle DarkMode</a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item text-dark" href="./convert-html-to-json.html" target="_blank" rel="noopener">Convert
-                            Html2Json</a></li>
-                </ul>
-            </span>
-        </div>
-    </div>
-    
-    <!-- MAIN -->
-    <div class="container-lg" id="main-content" style="display: none;">
-        <div class="examBlock" style="user-select: auto;">
-            <div class="notification" role="alert" aria-live="polite">
-                <!-- This is message!!! -->
-            </div>
-            <div class="exam-header row">
-                <div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-end">
-                    <div class="input-group input-group mb-1">
-                        <label class="input-group-text bg-secondary text-white" for="groupList">Group</label>
-                        <select class="form-select text-black" id="groupList" aria-label="Select exam group">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-end">
-                    <div class="input-group mb-1">
-                        <label class="input-group-text bg-primary text-white" for="deskList">Exam</label>
-                        <select class="form-select text-black" id="deskList" aria-label="Select exam">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 item2 d-none d-md-block">
-                    <button type="button" class="btn btn-common btn-createTest btn-warning" aria-label="Create test">Random Test</button>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 item3 d-none">
-                    <button type="button" class="btn btn-common btn-saveQuiz" aria-label="Save quiz">Save</button>
-                    <button type="button" class="btn btn-common btn-clearQuiz" aria-label="Clear cache">Clear Cache</button>
-                </div>
-            </div>
-            <div class="ExamQuestionsBlock">
-                <!-- LEFT BLOCK -->
-                <div class="col-12 col-md-9 left">
-                    <div class="content">
-                        <div class="d-flex align-items-center justify-content-between fs-6 mb-2">
-                            <div class="block-head fw-bold font-monospace text-uppercase">
-                                <div class="exam-nav top">
-                                    <button type="button" class="btnPrevQue btn btn-success" aria-label="Previous question">Prev</button>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between gap-3">
-                                <div id="queDomain"></div>
-                                <div class="total-questions my-1 fw-bold font-monospace text-uppercase" aria-live="polite">#1/15</div>
-                                <div id="starMarkToReview" class="starMarkToReview true" role="button" tabindex="0" aria-label="Mark question for review">
-                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="block-head fw-bold font-monospace text-uppercase">
-                                <div class="exam-nav top">
-                                    <button type="button" class="btnNextQue btn btn-success" aria-label="Next question">Next</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Show Question -->
-                        <div class="que-text mb-3" role="main" aria-live="polite"></div>
-
-                        <!-- Show Answer Choices -->
-                        <fieldset id="ques-list" class="que-list MuiFormControl-root Questions-list" role="group" aria-label="Answer choices">
-                        </fieldset>
-
-                        <div class="exam-nav">
-                            <button type="button" class="btnPrevQue btn btn-success btn-saveQuiz" aria-label="Previous question">Prev</button>
-                            <button type="button" class="btnNextQue btn btn-success btn-saveQuiz" aria-label="Next question">Next</button>
-                        </div>
-
-                        <div class="mt-3">
-                        <!-- Show Answer -->
-                            <button type="button" class="btn-showAnswer btn btn-warning px-1" aria-label="Show answer">Show Answer</button>
-                            <!-- Discussion -->
-                            <button type="button" class="btn-showDiscussion btn btn-info px-1" aria-label="Show discussion">Show Discussion</button>
-                        </div>
-
-                        <!-- Show Edit -->
-                        <div class="edit-ques-block">
-                            <button type="button" class="btn btn-sm btn-warning d-none" id="btnEditQuestionModal" aria-label="Edit memo">Edit Memo</button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="editQuestionModal" tabindex="-1" role="dialog"
-                                aria-labelledby="editQuestionModalTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content" style="background-color: #6c757d;">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="editQuestionModalTitle" style="color: #fff">Self Comment (E)</h5>
-                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <textarea class="txtContent form-control"
-                                                style="background: #282620; color: #ffffff;" aria-label="Enter comment"
-                                                rows="5" placeholder="Enter your comment here..."></textarea>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btnSave btn btn-success">Save</button>
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-3 comment-block" aria-live="polite"></div>
-                        <div class="my-3 explanation-block" aria-live="polite"></div>
-                        <div class="discussion-container" aria-live="polite"></div>
-                    </div>
-                </div>
-                <!-- ./LEFT BLOCK -->
-
-                <!-- RIGHT BLOCK -->
-                <div class="col-12 col-md-3 right">
-                    <button type="button" class="btn btn-sm rounded-pill btn-review w-100 " aria-label="Review questions">Review</button>
-                    <button type="button" class="btn btn-sm btn-primary rounded-pill w-100 mb-2" data-bs-toggle="collapse"
-                        data-bs-target="#attempts-que" aria-expanded="false" aria-controls="attempts-que">
-                        Hide/Show List Question
-                    </button>
-                    <div id="attempts-que" class="attempts-que collapse hide">
-                        <ul role="list" aria-label="Question list">
-                        </ul>
-                        <button type="button" class="btnClearAllAnswer btn btn-sm btn-danger rounded-pill w-100 my-2" aria-label="Clear all answers">
-                            Clear All Answer
-                        </button>
-                    </div>
-                </div>
-                <!-- ./RIGHT BLOCK -->
-            </div>
-        </div>
-        
-        <div class="mt-3 resultBlock d-none" role="region" aria-label="Exam results">
-            <div id="resultBlockHeader" class="text-end">
-                <button type="button" class="btn btn-primary btn-md me-2" id="submitExamResult">
-                    <i class="fas fa-save"></i> Submit Result to Database
-                </button>
-                <button type="button" class="btn btn-danger btn-md me-2" id="deleteOldResults">
-                    <i class="fas fa-trash"></i> Delete Old Results
-                </button>
-                <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam">Return</button>
-            </div>
-            <h3 class="text-center">Result</h3>
-            <div id="resultBlock">
-                This is result
-            </div>
-        </div>
-
-        <div class="mt-3 starBlock d-none" role="region" aria-label="Star questions">
-            <div class="text-end">
-                <button type="button" class="btn btn-danger btn-return" aria-label="Return to exam">Return</button>
-            </div>
-            <h3 class="text-center">Re-test Star Question</h3>
-            <h4>Options:</h4>
-            <div class="row mb-3">
-                <div class="col-sm-9 col-md-3 col-lg-3">
-                    <select id="filterOptionType" class="form-select" aria-label="Filter option type">
-                        <option selected value="RETEST">RETEST</option>
-                        <option value="STAR">STAR</option>
-                    </select>
-                </div>
-                <div class="col-sm-12 col-md-9">
-                    <div class="row">
-                        <div class="col-3">
-                            <input id="filterOptionFromQuestion" type="number" class="form-control"
-                                placeholder="From question" aria-label="From question" value="1">
-                        </div>
-                        <div class="col-3">
-                            <input id="filterOptionToQuestion" type="number" class="form-control"
-                                placeholder="To question" aria-label="To question" value="100">
-                        </div>
-                        <div class="col-6">
-                            <select id="filterOptionMaxQuestion" class="form-select" aria-label="Maximum questions">
-                                <option value="5">5</option>
-                                <option selected value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="starBlock">
-                This is Star Block
-            </div>
-            <div class="text-center my-3">
-                <button type="button" class="btn btn-warning btnShowStarResult" aria-label="Show star result">Show Result</button>
-            </div>
-        </div>
-
-        <div id="testBlock" class="mt-2 testBlock d-none" role="region" aria-label="Test section">
-            <h3 class="text-center">=== TEST ===</h3>
-            <div class="row mb-3">
-                <div class="col-sm-9 col-md-3 col-lg-3">
-                    <label for="filterOptionType2">Options:</label>
-                    <select id="filterOptionType2" class="form-select" aria-label="Filter option type">
-                        <option selected value="RETEST">RETEST</option>
-                        <option value="STAR">STAR</option>
-                    </select>
-                </div>
-                <div class="col-sm-12 col-md-9">
-                    <div class="row">
-                        <div class="col">
-                            <label for="filterOptionFromQuestion2">From:</label>
-                            <input id="filterOptionFromQuestion2" type="number" class="form-control"
-                                placeholder="From question" aria-label="From question" value="1">
-                        </div>
-                        <div class="col">
-                            <label for="filterOptionToQuestion2">To:</label>
-                            <input id="filterOptionToQuestion2" type="number" class="form-control"
-                                placeholder="To question" aria-label="To question" value="20">
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <label for="filterOptionRandom">Random:</label>
-                            <select id="filterOptionRandom" class="form-select" aria-label="Random option">
-                                <option value="RANDOM" selected>YES</option>
-                                <option value="NOT_RANDOM">NO</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <label for="filterOptionMaxQuestion2">Max Question:</label>
-                            <select id="filterOptionMaxQuestion2" class="form-select" aria-label="Maximum questions">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="65">65</option>
-                                <option value="75">75</option>
-                                <option value="15">100</option>
-                                <option value="ALL" selected>All</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-1">
-                    <div class="col-3">
-                        <label for="show_question_title">Show Question ID:</label>
-                        <select id="show_question_title" class="form-select" aria-label="Show question title">
-                            <option value="1" selected>Show</option>
-                            <option value="0">Hide</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button type="button" class="btnCreateTest btn btn-success btn-common" aria-label="Create test">Create Test</button>
-                    <button type="button" class="btn-return btn btn-danger btn-common" aria-label="Exit test">Exit</button>
-                </div>
-            </div>
-            <form id="test_form">
-                <div class="testContent pt-3">
-                    This is test content
-                </div>
-            </form>
-            <div class="row pb-3">
-                <div class="col-12 text-center">
-                    <button type="button" class="btn btn-success btnShowAnswer d-none" aria-label="Show all answers">Show All Answer</button>
-                </div>
-            </div>
-
-            <div class="quick-review">
-                <div class="text-center">
-                    <button type="button" class="btn btn-warning btnQuickReview text-center" aria-label="Quick review">RV</button>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="quickReviewModal" tabindex="-1" role="dialog"
-                    aria-labelledby="quickReviewModalTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="quickReviewModalTitle">Quick Review (R)</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="quickReviewContent"></div>
-                                <hr>
-                                <div class="text-center">
-                                    <button type="button" class="btnQuickReviewDetails" aria-label="Show details">Show Details</button>
-                                    <div id="tableQuickReviewDetails"></div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- MODALS -->
@@ -437,333 +646,410 @@
 
     <!-- Optimized Script Loading -->
     <!-- Critical scripts loaded first -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha256-Bh8LHqeebiyiT0YD5V0+kJ90cboLJ5zbbepAVUEGxqI="
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha256-Bh8LHqeebiyiT0YD5V0+kJ90cboLJ5zbbepAVUEGxqI="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Application initialization -->
     <script>
-        // Hide loading and show main content when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
+      // Hide loading and show main content when DOM is ready
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      });
+
+      // Preload critical data files
+      function preloadDataFiles() {
+        const criticalFiles = [
+          './public/data/index.js',
+          './public/js/classes.js',
+          './public/js/desks.js',
+          './public/js/exam.js',
+          './public/js/exam-loader.js',
+          './public/js/database-client.js',
+          './public/js/results-dashboard.js',
+        ];
+
+        criticalFiles.forEach(file => {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'script';
+          link.href = file;
+          document.head.appendChild(link);
         });
-        
-        // Preload critical data files
-        function preloadDataFiles() {
-            const criticalFiles = [
-                './public/data/index.js',
-                './public/js/classes.js',
-                './public/js/desks.js',
-                './public/js/exam.js',
-                './public/js/exam-loader.js',
-                './public/js/database-client.js',
-                './public/js/results-dashboard.js'
-            ];
-            
-            criticalFiles.forEach(file => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'script';
-                link.href = file;
-                document.head.appendChild(link);
-            });
-        }
-        
-        // Initialize preloading
-        preloadDataFiles();
+      }
+
+      // Initialize preloading
+      preloadDataFiles();
     </script>
 
     <!-- Configuration Script -->
     <script src="./public/js/config.js"></script>
-    
+
     <!-- Authentication Script -->
     <script src="./public/js/auth.js"></script>
-    
+
     <!-- Image URL Utilities Script -->
     <script src="./public/js/image-url-utils.js"></script>
-    
+
     <!-- Advanced Exam Data Loading -->
     <script type="module">
-        // Set global loading flag to prevent duplicate loading
-        window.appLoadingInProgress = true;
-        
-        // Import the advanced exam loader first
-        import('./public/js/exam-loader.js').then(() => {
-            // Initialize the exam loader
-            if (window.examLoader) {
-                // Start auto-loading all exam data
-                window.examLoader.autoLoadAllExams().then(() => {
-                    // Wait a bit more to ensure all scripts are fully loaded
-                    return new Promise(resolve => setTimeout(resolve, 500));
-                }).then(() => {
-                    // Load index.js after exam data is loaded
-                    return import('./public/data/index.js');
-                }).then(() => {
-                    // Load remaining application files
-                    return Promise.all([
-                        import('./public/js/classes.js'),
-                        import('./public/js/desks.js'),
-                        import('./public/js/exam.js'),
-                        import('./public/js/database-client.js'),
-                        import('./public/js/results-dashboard.js')
-                    ]);
-                }).then(() => {
-                    // Clear loading flag
-                    window.appLoadingInProgress = false;
-                    
-                    // Dispatch custom event for application ready
-                    document.dispatchEvent(new CustomEvent('applicationReady', {
-                        detail: {
-                            timestamp: new Date().toISOString(),
-                            loadedExams: window.examLoader.getLoadingProgress()
-                        }
-                    }));
-                }).catch(error => {
-                    console.error('❌ Error during application loading:', error);
-                    // Clear loading flag
-                    window.appLoadingInProgress = false;
-                    // Fallback to traditional loading
-                    loadTraditionalScripts();
-                });
-            } else {
-                console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
+      // Set global loading flag to prevent duplicate loading
+      window.appLoadingInProgress = true;
+
+      // Import the advanced exam loader first
+      import('./public/js/exam-loader.js')
+        .then(() => {
+          // Initialize the exam loader
+          if (window.examLoader) {
+            // Start auto-loading all exam data
+            window.examLoader
+              .autoLoadAllExams()
+              .then(() => {
+                // Wait a bit more to ensure all scripts are fully loaded
+                return new Promise(resolve => setTimeout(resolve, 500));
+              })
+              .then(() => {
+                // Load index.js after exam data is loaded
+                return import('./public/data/index.js');
+              })
+              .then(() => {
+                // Load remaining application files
+                return Promise.all([
+                  import('./public/js/classes.js'),
+                  import('./public/js/desks.js'),
+                  import('./public/js/exam.js'),
+                  import('./public/js/database-client.js'),
+                  import('./public/js/results-dashboard.js'),
+                ]);
+              })
+              .then(() => {
+                // Clear loading flag
                 window.appLoadingInProgress = false;
+
+                // Dispatch custom event for application ready
+                document.dispatchEvent(
+                  new CustomEvent('applicationReady', {
+                    detail: {
+                      timestamp: new Date().toISOString(),
+                      loadedExams: window.examLoader.getLoadingProgress(),
+                    },
+                  }),
+                );
+              })
+              .catch(error => {
+                console.error('❌ Error during application loading:', error);
+                // Clear loading flag
+                window.appLoadingInProgress = false;
+                // Fallback to traditional loading
                 loadTraditionalScripts();
-            }
-        }).catch(error => {
-            console.error('❌ Error loading advanced exam loader:', error);
+              });
+          } else {
+            console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
             window.appLoadingInProgress = false;
             loadTraditionalScripts();
+          }
+        })
+        .catch(error => {
+          console.error('❌ Error loading advanced exam loader:', error);
+          window.appLoadingInProgress = false;
+          loadTraditionalScripts();
         });
-        
-        function loadTraditionalScripts() {
-            const scripts = [
-                './public/data/index.js',
-                './public/js/classes.js',
-                './public/js/desks.js',
-                './public/js/exam.js',
-                './public/js/database-client.js',
-                './public/js/results-dashboard.js'
-            ];
-            
-            scripts.forEach(src => {
-                const script = document.createElement('script');
-                script.src = src;
-                script.async = true;
-                document.body.appendChild(script);
-            });
-        }
+
+      function loadTraditionalScripts() {
+        const scripts = [
+          './public/data/index.js',
+          './public/js/classes.js',
+          './public/js/desks.js',
+          './public/js/exam.js',
+          './public/js/database-client.js',
+          './public/js/results-dashboard.js',
+        ];
+
+        scripts.forEach(src => {
+          const script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          document.body.appendChild(script);
+        });
+      }
     </script>
 
     <!-- Fallback for browsers that don't support modules -->
     <script>
-        if (!window.importScripts) {
-            // Check if modern loading is already in progress
-            if (window.appLoadingInProgress || window.examLoader) {
-                // Remove the illegal return statement here
-                // Previously: return;
-            }
-            
-            // Load active exam data first
-            loadActiveExamData();
-            
-                            // Then load index.js after a delay to ensure exam data is loaded
-                setTimeout(() => {
-                    const indexScript = document.createElement('script');
-                    indexScript.src = './public/data/index.js';
-                    indexScript.onload = function() {
-                        // Configuration loaded
-                    };
-                    document.body.appendChild(indexScript);
-                }, 1000);
-            
-            // Function to load only active exam data
-            function loadActiveExamData() {
-                // Define active exams based on current configuration
-                const activeExams = ['PMI-PMP', 'final_exam', 'mock_test'];
-                
-                // Load only active exam data
-                activeExams.forEach(examName => {
-                    loadExamData(examName);
-                });
-            }
-            
-            // Function to load exam data based on exam name
-            function loadExamData(examName) {
-                const examFolders = {
-                    'whizlabs': {
-                        'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest']
-                    },
-                    'examtopics': {
-                        'SAP-C01': ['exam_001_100', 'exam_101_200', 'exam_201_300', 'exam_301_400', 'exam_400_499', 'exam_500_599', 'exam_600_699', 'exam_700_799', 'exam_800_899', 'exam_900_1027'],
-                        'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
-                        'SOA-C02': ['soa_c02_exam_001_050', 'soa_c02_exam_051_099', 'soa_c02_exam_extra_1', 'soa_c02_part1', 'soa_c02_part2', 'soa_c02_part3'],
-                        'SAA-C03': ['saa_c03_exam_001_100', 'saa_c03_exam_101_200', 'saa_c03_exam_201_300', 'saa_c03_exam_301_400', 'saa_c03_exam_401_500', 'saa_c03_exam_501_600'],
-                        'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
-                        'DOP-C01': ['dop_c01_part1', 'dop_c01_part2', 'dop_c01_part3', 'dop_c01_part4', 'dop_c01_part5', 'dop_c01_part6'],
-                        'DVA-C01': ['dva_c01_part1', 'dva_c01_part2', 'dva_c01_part3', 'dva_c01_part4', 'dva_c01_part5', 'dva_c01_part6'],
-                        'DVA-C02': ['dva_c02_part1', 'dva_c02_part2', 'dva_c02_part3', 'dva_c02_part4', 'dva_c02_part5', 'dva_c02_part6'],
-                        'PMI-PMP': ['pmi_pmp_part1', 'pmi_pmp_part2', 'pmi_pmp_part3', 'pmi_pmp_part4', 'pmi_pmp_part5', 'pmi_pmp_part6', 'pmi_pmp_part7', 'pmi_pmp_part8'],
-                        'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all']
-                    },
-                    'pma': {
-                        'final_exam': ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
-                        'full_exam_1': ['full_exam_part1', 'full_exam_part2', 'full_exam_part3'],
-                        'mock_test': ['mock_test1', 'mock_test2']
-                    }
-                };
-
-                // Determine source type and load data
-                if (examFolders.examtopics[examName]) {
-                    loadFolderFiles('./public/data/examtopics', examName, examFolders.examtopics[examName]);
-                } else if (examFolders.pma[examName]) {
-                    loadFolderFiles('./public/data/pma', examName, examFolders.pma[examName]);
-                } else if (examFolders.whizlabs[examName]) {
-                    examFolders.whizlabs[examName].forEach(folder => {
-                        if (folder === 'PracticeTest') {
-                            ['03.PracticeTest1', '04.PracticeTest2', '05.PracticeTest3'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'FreeTest') {
-                            ['01.FreeTest'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'FinalTest') {
-                            ['12.FinalTest'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        } else if (folder === 'SectionTest') {
-                            ['07.Compute', '08.AWSOrganizations', '09.MigrationToAWSCloud', '10.SecurityAndIdentity', '11.AWSLambdaAndServerless'].forEach(file => {
-                                const script = document.createElement('script');
-                                script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
-                                script.async = true;
-                                script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                                document.body.appendChild(script);
-                            });
-                        }
-                    });
-                }
-            }
-
-            // Function to load all files from a folder
-            function loadFolderFiles(basePath, folderName, files) {
-                files.forEach(file => {
-                    const script = document.createElement('script');
-                    script.src = `${basePath}/${folderName}/${file}.js`;
-                    script.async = true;
-                    script.onerror = () => console.warn(`Failed to load: ${script.src}`);
-                    document.body.appendChild(script);
-                });
-            }
-        }
-    </script>
-
-    
-  <script>
-    // Enhanced Authentication Integration
-    (function() {
-      'use strict';
-      
-      // Wait for AuthManager to be loaded
-      function initAuth() {
-        if (!window.authManager) {
-          console.error('AuthManager not loaded');
-          return;
+      if (!window.importScripts) {
+        // Check if modern loading is already in progress
+        if (window.appLoadingInProgress || window.examLoader) {
+          // Remove the illegal return statement here
+          // Previously: return;
         }
 
-        const loginBtn = document.getElementById("login");
-        const logoutBtn = document.getElementById("logout");
-        const userDisplay = document.getElementById("user");
-        const mainContent = document.getElementById("main-content");
+        // Load active exam data first
+        loadActiveExamData();
 
-        // Set up UI event handlers
-        if (loginBtn) {
-          loginBtn.addEventListener("click", () => {
-            window.authManager.login();
+        // Then load index.js after a delay to ensure exam data is loaded
+        setTimeout(() => {
+          const indexScript = document.createElement('script');
+          indexScript.src = './public/data/index.js';
+          indexScript.onload = function () {
+            // Configuration loaded
+          };
+          document.body.appendChild(indexScript);
+        }, 1000);
+
+        // Function to load only active exam data
+        function loadActiveExamData() {
+          // Define active exams based on current configuration
+          const activeExams = ['PMI-PMP', 'final_exam', 'mock_test'];
+
+          // Load only active exam data
+          activeExams.forEach(examName => {
+            loadExamData(examName);
           });
         }
 
-        if (logoutBtn) {
-          logoutBtn.addEventListener("click", () => {
-            window.authManager.logout();
-          });
-        }
+        // Function to load exam data based on exam name
+        function loadExamData(examName) {
+          const examFolders = {
+            whizlabs: {
+              'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest'],
+            },
+            examtopics: {
+              'SAP-C01': [
+                'exam_001_100',
+                'exam_101_200',
+                'exam_201_300',
+                'exam_301_400',
+                'exam_400_499',
+                'exam_500_599',
+                'exam_600_699',
+                'exam_700_799',
+                'exam_800_899',
+                'exam_900_1027',
+              ],
+              'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
+              'SOA-C02': [
+                'soa_c02_exam_001_050',
+                'soa_c02_exam_051_099',
+                'soa_c02_exam_extra_1',
+                'soa_c02_part1',
+                'soa_c02_part2',
+                'soa_c02_part3',
+              ],
+              'SAA-C03': [
+                'saa_c03_exam_001_100',
+                'saa_c03_exam_101_200',
+                'saa_c03_exam_201_300',
+                'saa_c03_exam_301_400',
+                'saa_c03_exam_401_500',
+                'saa_c03_exam_501_600',
+              ],
+              'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
+              'DOP-C01': [
+                'dop_c01_part1',
+                'dop_c01_part2',
+                'dop_c01_part3',
+                'dop_c01_part4',
+                'dop_c01_part5',
+                'dop_c01_part6',
+              ],
+              'DVA-C01': [
+                'dva_c01_part1',
+                'dva_c01_part2',
+                'dva_c01_part3',
+                'dva_c01_part4',
+                'dva_c01_part5',
+                'dva_c01_part6',
+              ],
+              'DVA-C02': [
+                'dva_c02_part1',
+                'dva_c02_part2',
+                'dva_c02_part3',
+                'dva_c02_part4',
+                'dva_c02_part5',
+                'dva_c02_part6',
+              ],
+              'PMI-PMP': [
+                'pmi_pmp_part1',
+                'pmi_pmp_part2',
+                'pmi_pmp_part3',
+                'pmi_pmp_part4',
+                'pmi_pmp_part5',
+                'pmi_pmp_part6',
+                'pmi_pmp_part7',
+                'pmi_pmp_part8',
+              ],
+              'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all'],
+            },
+            pma: {
+              final_exam: ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
+              full_exam_1: ['full_exam_part1', 'full_exam_part2', 'full_exam_part3'],
+              mock_test: ['mock_test1', 'mock_test2'],
+            },
+          };
 
-        // Set up authentication event listeners
-        window.authManager.addEventListener('login', (user) => {
-          updateUI(user);
-          window.authManager.showNotification('Welcome! You are now logged in.', 'success');
-        });
-
-        window.authManager.addEventListener('logout', () => {
-          updateUI(null);
-          window.authManager.showNotification('You have been logged out.', 'info');
-        });
-
-        window.authManager.addEventListener('error', (error) => {
-          window.authManager.showNotification('Authentication error occurred. Please try again.', 'danger');
-        });
-
-        // Update UI based on authentication state
-        function updateUI(user) {
-          // Update user display
-          window.authManager.updateUI(userDisplay);
-          
-          // Update button visibility
-          if (loginBtn) loginBtn.style.display = user ? "none" : "inline-block";
-          if (logoutBtn) logoutBtn.style.display = user ? "inline-block" : "none";
-          
-          // Handle main content visibility based on configuration
-          if (mainContent && window.APP_CONFIG) {
-            if (window.APP_CONFIG.REQUIRE_AUTH && !user) {
-              mainContent.style.display = "none";
-            } else {
-              mainContent.style.display = "block";
-            }
+          // Determine source type and load data
+          if (examFolders.examtopics[examName]) {
+            loadFolderFiles('./public/data/examtopics', examName, examFolders.examtopics[examName]);
+          } else if (examFolders.pma[examName]) {
+            loadFolderFiles('./public/data/pma', examName, examFolders.pma[examName]);
+          } else if (examFolders.whizlabs[examName]) {
+            examFolders.whizlabs[examName].forEach(folder => {
+              if (folder === 'PracticeTest') {
+                ['03.PracticeTest1', '04.PracticeTest2', '05.PracticeTest3'].forEach(file => {
+                  const script = document.createElement('script');
+                  script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                  script.async = true;
+                  script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                  document.body.appendChild(script);
+                });
+              } else if (folder === 'FreeTest') {
+                ['01.FreeTest'].forEach(file => {
+                  const script = document.createElement('script');
+                  script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                  script.async = true;
+                  script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                  document.body.appendChild(script);
+                });
+              } else if (folder === 'FinalTest') {
+                ['12.FinalTest'].forEach(file => {
+                  const script = document.createElement('script');
+                  script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                  script.async = true;
+                  script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                  document.body.appendChild(script);
+                });
+              } else if (folder === 'SectionTest') {
+                [
+                  '07.Compute',
+                  '08.AWSOrganizations',
+                  '09.MigrationToAWSCloud',
+                  '10.SecurityAndIdentity',
+                  '11.AWSLambdaAndServerless',
+                ].forEach(file => {
+                  const script = document.createElement('script');
+                  script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
+                  script.async = true;
+                  script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+                  document.body.appendChild(script);
+                });
+              }
+            });
           }
         }
 
-        // Initial UI update
-        updateUI(window.authManager.getUser());
-
-        // Make authentication functions globally available for backward compatibility
-        window.auth = {
-          login: () => window.authManager.login(),
-          logout: () => window.authManager.logout(),
-          getUser: () => window.authManager.getUser(),
-          isAuthenticated: () => window.authManager.isAuthenticated(),
-          getToken: () => window.authManager.getToken(),
-          authenticatedRequest: (url, options) => window.authManager.authenticatedRequest(url, options)
-        };
-
-        console.log('Authentication system initialized');
+        // Function to load all files from a folder
+        function loadFolderFiles(basePath, folderName, files) {
+          files.forEach(file => {
+            const script = document.createElement('script');
+            script.src = `${basePath}/${folderName}/${file}.js`;
+            script.async = true;
+            script.onerror = () => console.warn(`Failed to load: ${script.src}`);
+            document.body.appendChild(script);
+          });
+        }
       }
+    </script>
 
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAuth);
-      } else {
-        initAuth();
-      }
+    <script>
+      // Enhanced Authentication Integration
+      (function () {
+        'use strict';
 
-    })();
-  </script>
-</body>
+        // Wait for AuthManager to be loaded
+        function initAuth() {
+          if (!window.authManager) {
+            console.error('AuthManager not loaded');
+            return;
+          }
 
+          const loginBtn = document.getElementById('login');
+          const logoutBtn = document.getElementById('logout');
+          const userDisplay = document.getElementById('user');
+          const mainContent = document.getElementById('main-content');
+
+          // Set up UI event handlers
+          if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+              window.authManager.login();
+            });
+          }
+
+          if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+              window.authManager.logout();
+            });
+          }
+
+          // Set up authentication event listeners
+          window.authManager.addEventListener('login', user => {
+            updateUI(user);
+            window.authManager.showNotification('Welcome! You are now logged in.', 'success');
+          });
+
+          window.authManager.addEventListener('logout', () => {
+            updateUI(null);
+            window.authManager.showNotification('You have been logged out.', 'info');
+          });
+
+          window.authManager.addEventListener('error', error => {
+            window.authManager.showNotification(
+              'Authentication error occurred. Please try again.',
+              'danger',
+            );
+          });
+
+          // Update UI based on authentication state
+          function updateUI(user) {
+            // Update user display
+            window.authManager.updateUI(userDisplay);
+
+            // Update button visibility
+            if (loginBtn) loginBtn.style.display = user ? 'none' : 'inline-block';
+            if (logoutBtn) logoutBtn.style.display = user ? 'inline-block' : 'none';
+
+            // Handle main content visibility based on configuration
+            if (mainContent && window.APP_CONFIG) {
+              if (window.APP_CONFIG.REQUIRE_AUTH && !user) {
+                mainContent.style.display = 'none';
+              } else {
+                mainContent.style.display = 'block';
+              }
+            }
+          }
+
+          // Initial UI update
+          updateUI(window.authManager.getUser());
+
+          // Make authentication functions globally available for backward compatibility
+          window.auth = {
+            login: () => window.authManager.login(),
+            logout: () => window.authManager.logout(),
+            getUser: () => window.authManager.getUser(),
+            isAuthenticated: () => window.authManager.isAuthenticated(),
+            getToken: () => window.authManager.getToken(),
+            authenticatedRequest: (url, options) =>
+              window.authManager.authenticatedRequest(url, options),
+          };
+
+          console.log('Authentication system initialized');
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAuth);
+        } else {
+          initAuth();
+        }
+      })();
+    </script>
+  </body>
 </html>

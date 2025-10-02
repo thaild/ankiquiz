@@ -23,13 +23,13 @@ class AuthManager {
     try {
       netlifyIdentity.init();
       this.isInitialized = true;
-      
+
       // Set up event listeners
       this.setupEventListeners();
-      
+
       // Check for existing user
       this.currentUser = netlifyIdentity.currentUser();
-      
+
       console.log('AuthManager initialized successfully');
       return true;
     } catch (error) {
@@ -42,7 +42,7 @@ class AuthManager {
    * Set up Netlify Identity event listeners
    */
   setupEventListeners() {
-    netlifyIdentity.on('login', (user) => {
+    netlifyIdentity.on('login', user => {
       console.log('User logged in:', user);
       this.currentUser = user;
       this.notifyListeners('login', user);
@@ -54,7 +54,7 @@ class AuthManager {
       this.notifyListeners('logout', null);
     });
 
-    netlifyIdentity.on('error', (error) => {
+    netlifyIdentity.on('error', error => {
       console.error('Netlify Identity error:', error);
       this.notifyListeners('error', error);
     });
@@ -181,9 +181,7 @@ class AuthManager {
    * @returns {string|null} User's full name or null
    */
   getUserName() {
-    return this.currentUser?.user_metadata?.full_name || 
-           this.currentUser?.email || 
-           'User';
+    return this.currentUser?.user_metadata?.full_name || this.currentUser?.email || 'User';
   }
 
   /**
@@ -220,10 +218,10 @@ class AuthManager {
    */
   async authenticatedRequest(url, options = {}) {
     const token = await this.getToken();
-    
+
     const headers = {
       'Content-Type': 'application/json',
-      ...options.headers
+      ...options.headers,
     };
 
     if (token) {
@@ -232,7 +230,7 @@ class AuthManager {
 
     return fetch(url, {
       ...options,
-      headers
+      headers,
     });
   }
 
@@ -271,9 +269,21 @@ class AuthManager {
         Welcome, <strong>${userName}</strong>
       `;
       element.className = 'text-success';
+
+      // Show logout button, hide login button
+      const loginBtn = document.getElementById('login');
+      const logoutBtn = document.getElementById('logout');
+      if (loginBtn) loginBtn.style.display = 'none';
+      if (logoutBtn) logoutBtn.style.display = 'inline-block';
     } else {
       element.innerHTML = '<i class="fas fa-user-slash"></i> Not logged in';
       element.className = 'text-muted';
+
+      // Show login button, hide logout button
+      const loginBtn = document.getElementById('login');
+      const logoutBtn = document.getElementById('logout');
+      if (loginBtn) loginBtn.style.display = 'inline-block';
+      if (logoutBtn) logoutBtn.style.display = 'none';
     }
   }
 
@@ -290,9 +300,9 @@ class AuthManager {
       ${message}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
       if (notification.parentNode) {

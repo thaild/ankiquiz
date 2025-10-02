@@ -1,23 +1,23 @@
 class Question {
   constructor() {
-    this.queNo = "";
-    this.question_id = "";
-    this.question_text = "";
+    this.queNo = '';
+    this.question_id = '';
+    this.question_text = '';
     this.question_type = 1;
-    this.general_feedback = "";
-    this.answer_list = "";
-    this.topic_name = "";
+    this.general_feedback = '';
+    this.answer_list = '';
+    this.topic_name = '';
     this.is_partially_correct = false;
     this.options = {
       show_title: true,
     };
-    this.discusstion = "";
+    this.discusstion = '';
   }
 
   loadData(queData, queNo) {
     this.queNo = queNo;
     this.question_id = queData.question_id;
-    this.question_text =  queData.question_text;
+    this.question_text = queData.question_text;
     this.question_type = queData.question_type;
     this.general_feedback = queData.general_feedback;
     this.answer_list = queData.answer_list[0].answers;
@@ -30,7 +30,7 @@ class Question {
   }
 
   renderQuestionHtml() {
-    let html = "";
+    let html = '';
 
     let htmlStarIcon = `
       <div data-queno="${this.queNo}" class="starMarkToReview ${this.options.userMarked ? 'true' : 'false'}">
@@ -55,28 +55,27 @@ class Question {
     `;
 
     return html;
-    
   }
 
   renderQuestionHtml_v2(
-    options={
+    options = {
       index: -1,
       showAnswer: false,
       showComment: false,
       isStar: false,
-      userChoice: "",
+      userChoice: '',
       showAnswerBtn: true,
       showCommentBtn: true,
-    }
+    },
   ) {
-    let html = "";
+    let html = '';
     let answerBtn = `
-      <button type="button" class="btnShowAnswerQuestion btn btn-warning btn-sm" data-index=${options.index} data-hideshow=${options.showAnswer ? "Hide" : "Show" }>${options.showAnswer ? "Hide Answer" : "Show Answer" }</button>
+      <button type="button" class="btnShowAnswerQuestion btn btn-warning btn-sm" data-index=${options.index} data-hideshow=${options.showAnswer ? 'Hide' : 'Show'}>${options.showAnswer ? 'Hide Answer' : 'Show Answer'}</button>
     `;
-    
+
     let discusstion_count = this.discusstion ? this.discusstion.length : 0;
     let commentBtn = `
-      <button type="button" class="btnShowDisscussionQuestion btn btn-info btn-sm" data-index=${options.index} data-hideshow=${options.showComment ? "Hide" : "Show" }>${options.showComment ? `Hide Disscussion (${discusstion_count})` : `Show Disscussion (${discusstion_count})` }</button>
+      <button type="button" class="btnShowDisscussionQuestion btn btn-info btn-sm" data-index=${options.index} data-hideshow=${options.showComment ? 'Hide' : 'Show'}>${options.showComment ? `Hide Disscussion (${discusstion_count})` : `Show Disscussion (${discusstion_count})`}</button>
     `;
 
     let htmlStarIcon = `
@@ -91,17 +90,17 @@ class Question {
       ${htmlStarIcon}
     `;
 
-    let html_discusstion = "";
-    if(options.showComment) {
+    let html_discusstion = '';
+    if (options.showComment) {
       let discusstion = this.discusstion;
-      if(discusstion) {
+      if (discusstion) {
         //Sort by voted count
         discusstion.sort((a, b) => b.upvote_count - a.upvote_count);
-              
+
         discusstion.forEach(function (comment, index) {
           let selected_answers = comment.selected_answers;
-          let html_selected_answers = "";
-          if(selected_answers !== undefined && selected_answers != "") {
+          let html_selected_answers = '';
+          if (selected_answers !== undefined && selected_answers != '') {
             html_selected_answers = `<span class="comment-selected-answers">${comment.selected_answers}</span>`;
           }
           html_discusstion += `
@@ -122,9 +121,8 @@ class Question {
           </ul>
         `;
       } else {
-        html_discusstion = "Have not comments!"
+        html_discusstion = 'Have not comments!';
       }
-      
     }
 
     html += `
@@ -150,9 +148,9 @@ class Question {
 
     // Load Quesion
     this.loadQueTextHtml();
-    
+
     // Load Answer
-    $("fieldset.que-list").html(this.loadQueAnswerHtml(false, choiceAnswer));
+    $('fieldset.que-list').html(this.loadQueAnswerHtml(false, choiceAnswer));
 
     //Mark Current Question
     this.markQuestion();
@@ -161,24 +159,24 @@ class Question {
     this.showMarkToReview(isMarked);
 
     // Clean
-    $(".explanation-block").html("");
-    $(".comment-block").html("");
-    $(".btn-showAnswer").removeClass("show");
-    $(".btn-showAnswer").text("Show Answer");
-    $(".btn-showDiscussion").removeClass("show");
-    $(".discussion-container").text("");
-    if(this.discusstion !== undefined) {
-      $(".btn-showDiscussion").text(`Show Discussion (${this.discusstion.length})`);
+    $('.explanation-block').html('');
+    $('.comment-block').html('');
+    $('.btn-showAnswer').removeClass('show');
+    $('.btn-showAnswer').text('Show Answer');
+    $('.btn-showDiscussion').removeClass('show');
+    $('.discussion-container').text('');
+    if (this.discusstion !== undefined) {
+      $('.btn-showDiscussion').text(`Show Discussion (${this.discusstion.length})`);
     } else {
-      $(".btn-showDiscussion").text(`Show Discussion (0)`);
+      $('.btn-showDiscussion').text(`Show Discussion (0)`);
     }
 
-    return "Load Question Successfully!";
+    return 'Load Question Successfully!';
   }
 
   loadQueTextHtml() {
-    $(".ExamQuestionsBlock .que-text").html(this.getCleanQuestionText());
-    $("#queDomain").html(`<span class="fw-bold text-primary">${this.topic_name}</span>`);
+    $('.ExamQuestionsBlock .que-text').html(this.getCleanQuestionText());
+    $('#queDomain').html(`<span class="fw-bold text-primary">${this.topic_name}</span>`);
   }
 
   // Get cleaned question text with image URLs cleaned
@@ -226,29 +224,23 @@ class Question {
     return cleanText;
   }
 
-  loadQueAnswerHtml(
-    isShowAnswer = false,
-    choiceAwswer
-  ) {
+  loadQueAnswerHtml(isShowAnswer = false, choiceAwswer) {
     let self = this;
-    var htmlText = "";
-    var SYMBOL_ANSWERS = ["A", "B", "C", "D", "E", "F", "G", "H"];
-    
+    var htmlText = '';
+    var SYMBOL_ANSWERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
     self.answer_list.forEach(function (answer, index) {
-      let queContentAwnswer = "";
+      let queContentAwnswer = '';
       if (isShowAnswer) {
-        queContentAwnswer = answer.correct ? "true" : "false";
+        queContentAwnswer = answer.correct ? 'true' : 'false';
       }
 
-      let checked = "";
-      if (
-        choiceAwswer != "" &&
-        choiceAwswer.indexOf(SYMBOL_ANSWERS[index]) >= 0
-      ) {
-        checked = "checked";
+      let checked = '';
+      if (choiceAwswer != '' && choiceAwswer.indexOf(SYMBOL_ANSWERS[index]) >= 0) {
+        checked = 'checked';
       }
 
-      let htmlRadioCheckbox = "";
+      let htmlRadioCheckbox = '';
       if (!self.is_partially_correct) {
         // One Choice: radio input
         htmlRadioCheckbox = `<input class="ip-radio" type="radio" name="input_select_${self.queNo}" ${checked} value="${SYMBOL_ANSWERS[index]}">`;
@@ -272,23 +264,23 @@ class Question {
   }
 
   markQuestion() {
-    $("#attempts-que li").removeClass("current");
-    $(`#attempts-que li[data-queno="${this.queNo}"]`).addClass("current");
+    $('#attempts-que li').removeClass('current');
+    $(`#attempts-que li[data-queno="${this.queNo}"]`).addClass('current');
   }
 
   markChoice(queNo, isChoice = true) {
     if (isChoice) {
-      $(`#attempts-que li[data-queno="${queNo}"]`).addClass("choice");
+      $(`#attempts-que li[data-queno="${queNo}"]`).addClass('choice');
     } else {
-      $(`#attempts-que li[data-queno="${queNo}"]`).removeClass("choice");
+      $(`#attempts-que li[data-queno="${queNo}"]`).removeClass('choice');
     }
   }
 
   markToReview(queNo, isMarked = false) {
     if (isMarked) {
-      $(`#attempts-que li[data-queno="${queNo}"]`).addClass("review");
+      $(`#attempts-que li[data-queno="${queNo}"]`).addClass('review');
     } else {
-      $(`#attempts-que li[data-queno="${queNo}"]`).removeClass("review");
+      $(`#attempts-que li[data-queno="${queNo}"]`).removeClass('review');
     }
   }
 
@@ -299,58 +291,58 @@ class Question {
     }
     // If still no totalCount, use a default value
     if (totalCount === null || totalCount === 0) {
-      totalCount = "?";
+      totalCount = '?';
     }
-    
-    $(".total-questions").text(`#${queNo + 1}/${totalCount}`);
+
+    $('.total-questions').text(`#${queNo + 1}/${totalCount}`);
   }
 
   showQueAnswerHtml(choiceAnswer, isShowAnswer = false) {
     if (isShowAnswer) {
-      $(".explanation-block").html(`
+      $('.explanation-block').html(`
         <h6>Explanation: </h6>
         ${this.general_feedback}
       `);
     } else {
-      $(".explanation-block").html("");
+      $('.explanation-block').html('');
     }
 
-    $("fieldset.que-list").html(this.loadQueAnswerHtml(isShowAnswer, choiceAnswer));
+    $('fieldset.que-list').html(this.loadQueAnswerHtml(isShowAnswer, choiceAnswer));
   }
 
-  showCommentHtml(myComment = "", isShowAnswer = false) {
-    let htmlMyComment = `<h6>My Comment <a class="btnEditComment btn btn-sm btn-warning">Edit</a></h6>`
-    if(myComment != "" && isShowAnswer == true) {
+  showCommentHtml(myComment = '', isShowAnswer = false) {
+    let htmlMyComment = `<h6>My Comment <a class="btnEditComment btn btn-sm btn-warning">Edit</a></h6>`;
+    if (myComment != '' && isShowAnswer == true) {
       htmlMyComment += `
         <div class="textComment p-3 mb-2 bg-success text-white">
-          ${myComment.replaceAll("\n", "<br>")}
+          ${myComment.replaceAll('\n', '<br>')}
         </div>
       `;
     }
 
     htmlMyComment += `
       <div class="edit-comment-block"></div>
-    `
+    `;
 
-    $(".comment-block").html(htmlMyComment);
+    $('.comment-block').html(htmlMyComment);
   }
 
   showMarkToReview(isMarked) {
-    if(isMarked) {
-      $("#starMarkToReview").addClass("true");
+    if (isMarked) {
+      $('#starMarkToReview').addClass('true');
     } else {
-      $("#starMarkToReview").removeClass("true");
+      $('#starMarkToReview').removeClass('true');
     }
   }
 
   showQueListNumber(count = 0) {
-    var liQuestHtml = "";
+    var liQuestHtml = '';
     for (let i = 0; i < count; i++) {
       liQuestHtml += `
       <li data-queno="${i}" class="">${i + 1}</li>
       `;
     }
-    $("#attempts-que ul").html(liQuestHtml);
+    $('#attempts-que ul').html(liQuestHtml);
   }
 
   editQuestionHtml() {
@@ -362,15 +354,14 @@ class Question {
 }
 
 class Exam {
-  constructor(listQuestions = [], cacheItemId = "default") {
+  constructor(listQuestions = [], cacheItemId = 'default') {
     // Clear any existing creation lock to prevent stuck locks
     window.examCreationInProgress = false;
-    
+
     this.initializeExam(listQuestions, cacheItemId);
   }
-  
+
   initializeExam(listQuestions, cacheItemId) {
-    
     this.listQuestions = this.loadQuestions(listQuestions);
     // this.listQuestions = listQuestions;
     this.count = listQuestions.length;
@@ -379,33 +370,49 @@ class Exam {
     this.markedQuestion = [];
     this.cacheItemId = cacheItemId;
     this.comments = [];
+
+    // Auto-submit functionality
+    this.autoSubmitTimer = null;
+    this.lastSubmittedChoices = null;
+    this.autoSubmitInterval = 5 * 60 * 1000; // 5 minutes in milliseconds
+    this.hasNewChoices = false;
+    this.autoSubmitEnabled = true;
+
+    // Auto feedback functionality
+    this.autoFeedbackEnabled = true;
     this.childExam = [];
     this.childExamChoice = [];
     this._isLoadingFromDatabase = false; // Flag to prevent multiple database loads
     this._lastDatabaseLoadTime = 0; // Track last database load time
     this._databaseLoadDebounceMs = 2000; // Debounce database loads by 2 seconds
+
+    // Initialize auto-submit and auto-feedback status indicators
+    setTimeout(() => {
+      this.updateAutoSubmitStatus();
+      this.updateAutoFeedbackStatus();
+    }, 100);
     this._instanceId = Date.now() + Math.random(); // Unique instance ID
-    
+
     // Database integration properties
     this.examId = null;
     this.examName = null;
     this.groupId = null;
     this.groupName = null;
     this.pendingResult = null;
-    
+
     // Track this instance globally
     if (!window.examInstances) {
       window.examInstances = new Map();
     }
-    
+
     // Cleanup old instances to prevent memory leaks
     if (window.examInstances.size > 5) {
       const firstKey = window.examInstances.keys().next().value;
       window.examInstances.delete(firstKey);
     }
-    
+
     window.examInstances.set(this._instanceId, this);
-    
+
     // Set this as the current active instance
     window.currentExamInstance = this;
   }
@@ -444,7 +451,7 @@ class Exam {
     return this.current;
   }
 
-  getQuestion(queNo = 0) {   
+  getQuestion(queNo = 0) {
     return this.listQuestions[queNo];
   }
 
@@ -453,7 +460,7 @@ class Exam {
   // }
 
   saveChoice(queNo, aws) {
-    let elementIndex = this.choices.findIndex((obj) => obj.queNo == queNo);
+    let elementIndex = this.choices.findIndex(obj => obj.queNo == queNo);
     let newElement = {
       queNo: queNo,
       choice: aws,
@@ -463,43 +470,50 @@ class Exam {
     } else {
       this.choices[elementIndex] = newElement;
     }
-    
+
+    // Mark that there are new choices for auto-submit
+    this.hasNewChoices = true;
+
+    // Start auto-submit timer if not already running
+    this.startAutoSubmitTimer();
+
+    // Update auto-submit status indicator
+    this.updateAutoSubmitStatus();
+
     // Update visual feedback in attempts-que
     this.updateAnswerVisualFeedback(queNo, aws);
   }
-  
+
   // Update visual feedback for answer correctness
   updateAnswerVisualFeedback(queNo, userChoice) {
     // Remove existing correct/incorrect classes
-    $(`#attempts-que li[data-queno="${queNo}"]`).removeClass("correct incorrect");
-    
+    $(`#attempts-que li[data-queno="${queNo}"]`).removeClass('correct incorrect');
+
     // Add choice class
-    $(`#attempts-que li[data-queno="${queNo}"]`).addClass("choice");
-    
-    // Check if answer is correct
-    if (userChoice) {
+    $(`#attempts-que li[data-queno="${queNo}"]`).addClass('choice');
+
+    // Only show correct/incorrect feedback if auto feedback is enabled
+    if (this.autoFeedbackEnabled && userChoice) {
       const isCorrect = this.checkAnswerCorrectness(queNo, userChoice);
       if (isCorrect) {
-        $(`#attempts-que li[data-queno="${queNo}"]`).addClass("correct");
+        $(`#attempts-que li[data-queno="${queNo}"]`).addClass('correct');
       } else {
-        $(`#attempts-que li[data-queno="${queNo}"]`).addClass("incorrect");
+        $(`#attempts-que li[data-queno="${queNo}"]`).addClass('incorrect');
       }
     }
   }
 
   getChoice(queNo = this.current) {
-    let elementIndex = this.choices.findIndex((obj) => obj.queNo == queNo);
+    let elementIndex = this.choices.findIndex(obj => obj.queNo == queNo);
     if (elementIndex == -1) {
-      return "";
+      return '';
     } else {
       return this.choices[elementIndex].choice;
     }
   }
 
   saveMarkToReview(queNo, isMarked) {
-    let elementIndex = this.markedQuestion.findIndex(
-      (obj) => obj.queNo == queNo
-    );
+    let elementIndex = this.markedQuestion.findIndex(obj => obj.queNo == queNo);
 
     let newElement = {
       queNo: queNo,
@@ -507,7 +521,7 @@ class Exam {
     };
 
     if (elementIndex > -1) {
-      if(isMarked) {
+      if (isMarked) {
         this.markedQuestion[elementIndex] = newElement;
       } else {
         this.markedQuestion.splice(elementIndex, 1);
@@ -517,16 +531,14 @@ class Exam {
     }
 
     //Sort
-    this.markedQuestion.sort((a,b) => a.queNo - b.queNo)
+    this.markedQuestion.sort((a, b) => a.queNo - b.queNo);
 
     // Save to LocalCache
-    this.saveToLocalCache("ONLY_STAR");
+    this.saveToLocalCache('ONLY_STAR');
   }
 
   getMarkToReview(queNo = this.current) {
-    let elementIndex = this.markedQuestion.findIndex(
-      (obj) => obj.queNo == queNo
-    );
+    let elementIndex = this.markedQuestion.findIndex(obj => obj.queNo == queNo);
     if (elementIndex == -1) {
       return false;
     } else {
@@ -535,7 +547,7 @@ class Exam {
   }
 
   showResult() {
-    var resultBlock = "";
+    var resultBlock = '';
     let total_point = 0;
     resultBlock += `
     <table class="table table-sm">
@@ -553,40 +565,44 @@ class Exam {
     <tbody>
     `;
 
+    let quesObj = new Question();
     var self = this;
     this.listQuestions.forEach(function (question, index) {
       let correctAnswers = self.getAnswer(question.answer_list);
       let choiceAnswerText = self.getChoice(index);
-      let choiceAnswers = choiceAnswerText.split("").sort();
+      let choiceAnswers =
+        choiceAnswerText &&
+        choiceAnswerText
+          .split('')
+          .filter(item => item !== '' && item !== ',')
+          .sort();
       let isMarkToReview = self.getMarkToReview(index);
       let point = 0;
       if (correctAnswers.toString() == choiceAnswers.toString()) {
         point = 1;
       }
 
-      let pointText = "";
-      if(choiceAnswerText != "") {
-        if(point == 1) {
+      let pointText = '';
+      if (choiceAnswerText != '') {
+        if (point == 1) {
           pointText = `<span class="badge badge-pill bg-success">Correct</span>`;
         } else {
           pointText = `<span class="badge badge-pill bg-danger">InCorrect</span>`;
         }
       } else {
-        pointText = "-";
+        pointText = '-';
       }
 
       resultBlock += `
       <tr>
         <td>${index + 1}</td>
-        <td>${this.getCleanQuestionTextPreview(question.question_text, 36)}...</td>
+        <td>${quesObj.getCleanQuestionTextPreview(question.question_text, 36)}...</td>
         <td><div class="multiline">${self.getComment(index)}</div></td>
         <td>${pointText}</td>
         <td>${correctAnswers.toString()}</td>
-        <td>${
-          choiceAnswerText != "" ? choiceAnswers.toString() : "-"
-        }</td>
+        <td>${choiceAnswerText != '' ? choiceAnswers.toString() : '-'}</td>
         <td>
-          <a class="btn btn-sm btnViewQue ${isMarkToReview ? "mark" : ""}" data-queno="${index}" href="javascript:void(0)">View</a>
+          <a class="btn btn-sm btnViewQue ${isMarkToReview ? 'mark' : ''}" data-queno="${index}" href="javascript:void(0)">View</a>
         </td>
       </tr>
       `;
@@ -600,30 +616,30 @@ class Exam {
     `;
 
     let percentPoint = Math.round((total_point / self.count) * 1000) / 10;
-    let pointBlock = "";
+    let pointBlock = '';
     if (percentPoint >= 75) {
       pointBlock = `<h2 class="pointBlock text-center pass">${total_point}/${self.count} (${percentPoint})</h2>`;
     } else {
       pointBlock = `<h2 class="pointBlock text-center not-pass">${total_point}/${self.count} (${percentPoint}%)</h2>`;
     }
-    
+
     // Set the result content without the buttons
     resultBlock = `${pointBlock} ${resultBlock}`;
-    $("#resultBlock").html(resultBlock);
+    $('#resultBlock').html(resultBlock);
 
     // Store result data for later submission
     this.pendingResult = {
       totalPoints: total_point,
-      percentScore: percentPoint
+      percentScore: percentPoint,
     };
 
     // Bind submit button event
-    $("#submitExamResult").on("click", () => {
+    $('#submitExamResult').on('click', () => {
       this.saveResultToDatabase(total_point, percentPoint);
     });
 
     // Bind delete button event
-    $("#deleteOldResults").on("click", () => {
+    $('#deleteOldResults').on('click', () => {
       this.deleteOldResults();
     });
   }
@@ -635,6 +651,9 @@ class Exam {
         console.warn('Database client not available');
         return;
       }
+
+      // Stop auto-submit timer when manually submitting
+      this.stopAutoSubmitTimer();
 
       const examData = {
         examId: this.examId || 'unknown',
@@ -649,7 +668,8 @@ class Exam {
         timeTaken: 0,
         answersData: this.getAllChoices(),
         reviewMarks: this.getAllReviewMarks(),
-        comments: this.getAllComments()
+        comments: this.getAllComments(),
+        isAutoSubmitted: false, // Flag to indicate this was manually submitted
       };
 
       const result = await window.databaseClient.saveExamResult(examData);
@@ -657,7 +677,7 @@ class Exam {
 
       // Clear cache for this exam to ensure fresh data
       window.databaseClient.clearExamCache(this.examId);
-      
+
       // Clear session storage to allow reloading from database
       if (this.examId) {
         sessionStorage.removeItem(`exam_loaded_${this.examId}`);
@@ -679,7 +699,7 @@ class Exam {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     `;
-    $("#resultBlock").prepend(message);
+    $('#resultBlock').prepend(message);
   }
 
   // Show save error message
@@ -690,7 +710,7 @@ class Exam {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     `;
-    $("#resultBlock").prepend(message);
+    $('#resultBlock').prepend(message);
   }
 
   // Delete old exam results
@@ -702,7 +722,11 @@ class Exam {
       }
 
       // Show confirmation dialog
-      if (!confirm('Are you sure you want to delete all exam results? This will permanently delete your results from the database and clear all cached data. This action cannot be undone.')) {
+      if (
+        !confirm(
+          'Are you sure you want to delete all exam results? This will permanently delete your results from the database and clear all cached data. This action cannot be undone.',
+        )
+      ) {
         return;
       }
 
@@ -724,8 +748,8 @@ class Exam {
       }
 
       // Clear all local cache and session storage
-      this.clearLocalCache("ALL");
-      
+      this.clearLocalCache('ALL');
+
       // Clear all session storage for exam loading
       try {
         if (window.databaseClient && window.databaseClient.clearAllSessionStorage) {
@@ -771,7 +795,7 @@ class Exam {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     `;
-    $("#resultBlock").prepend(message);
+    $('#resultBlock').prepend(message);
   }
 
   // Show delete error message
@@ -782,7 +806,7 @@ class Exam {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     `;
-    $("#resultBlock").prepend(message);
+    $('#resultBlock').prepend(message);
   }
 
   calculateScore(listQuestion) {
@@ -790,34 +814,39 @@ class Exam {
     let correctCount = 0;
     let inCorrectCount = 0;
     let notSelected = 0;
-    listQuestion.forEach(function(question, index) {
+    listQuestion.forEach(function (question, index) {
       let userChoice = [];
       $(`#QuestionBlockItem_${index} .ip-radio:checked`).each((key, item) => {
         userChoice = [...userChoice, $(item).val()];
       });
 
-      if (userChoice.sort().toString() != "") {
-        if(userChoice.sort().toString() == self.getAnswer(question.answer_list).sort().toString()) {
+      if (userChoice.sort().toString() != '') {
+        if (
+          userChoice.sort().toString() == self.getAnswer(question.answer_list).sort().toString()
+        ) {
           correctCount += 1;
         } else {
-          inCorrectCount +=1;
+          inCorrectCount += 1;
         }
       } else {
-         notSelected += 1;
+        notSelected += 1;
       }
     });
 
     return {
-      "correctCount": correctCount, 
-      "inCorrectCount": inCorrectCount, 
-      "notSelected": notSelected, 
-      "total": listQuestion.length
-    }
+      correctCount: correctCount,
+      inCorrectCount: inCorrectCount,
+      notSelected: notSelected,
+      total: listQuestion.length,
+    };
   }
 
-  renderTestQuickView(scoreInfo, targetId = "#quickReviewContent") {
-    let html = "";
-    let xRate = (scoreInfo.notSelected != scoreInfo.total) ? (scoreInfo.correctCount + scoreInfo.inCorrectCount) : 1;
+  renderTestQuickView(scoreInfo, targetId = '#quickReviewContent') {
+    let html = '';
+    let xRate =
+      scoreInfo.notSelected != scoreInfo.total
+        ? scoreInfo.correctCount + scoreInfo.inCorrectCount
+        : 1;
     let rateCorrect = Math.round((scoreInfo.correctCount / xRate) * 1000) / 10;
     let rateInCorrect = Math.round((scoreInfo.inCorrectCount / xRate) * 1000) / 10;
     html += `
@@ -833,24 +862,26 @@ class Exam {
       <div>NotAnswer (NotAnswer/Total): <span class="badge badge-pill badge-warning">${scoreInfo.notSelected} (${Math.round((scoreInfo.notSelected / scoreInfo.total) * 1000) / 10}%)</span></div>
       <div>Total: <span class="badge badge-pill badge-info"> ${scoreInfo.total} (100%)</span></div>
      </div>
-    `
+    `;
     // let percentPoint = Math.round((total_point / self.count) * 1000) / 10;
     $(targetId).html(html);
   }
 
-  renderTestQuickViewTable(listQuestion, targetId = "#tableQuickReviewDetails") {
+  renderTestQuickViewTable(listQuestion, targetId = '#tableQuickReviewDetails') {
     let self = this;
-    let htmlTableBody = "";
-    $(targetId).html("");
-    listQuestion.forEach(function(question, index) {
+    let htmlTableBody = '';
+    $(targetId).html('');
+    listQuestion.forEach(function (question, index) {
       let userChoice = [];
       $(`#QuestionBlockItem_${index} .ip-radio:checked`).each((key, item) => {
         userChoice = [...userChoice, $(item).val()];
       });
 
-      let checkStatus = "";
-      if (userChoice.sort().toString() != "") {
-        if(userChoice.sort().toString() == self.getAnswer(question.answer_list).sort().toString()) {
+      let checkStatus = '';
+      if (userChoice.sort().toString() != '') {
+        if (
+          userChoice.sort().toString() == self.getAnswer(question.answer_list).sort().toString()
+        ) {
           checkStatus = `<span class="badge badge-pill bg-success">Correct (${userChoice.sort().toString()})</span>`;
         } else {
           checkStatus = `<span class="badge badge-pill bg-danger">InCorrect (${userChoice.sort().toString()} <> ${self.getAnswer(question.answer_list).sort().toString()})</span>`;
@@ -859,10 +890,11 @@ class Exam {
         checkStatus = `<span class="badge badge-pill bg-secondary">No Choice</span>`;
       }
 
+      let quesObj = new Question();
       htmlTableBody += `
       <tr>
         <td>${index + 1}</td>
-        <td class="text-start">${this.getCleanQuestionTextPreview(question.question_text, 60)}...</td>
+        <td class="text-start">${quesObj.getCleanQuestionTextPreview(question.question_text, 60)}...</td>
         <td><div class="px-2 text-start bg-secondary text-warning multiline">${self.getComment(question.queNo)}</div></td>
         <td>${checkStatus}</td>
         <td><a class="btn btn-sm btn-warning btnScrollToQuestion" data-index="${index}" href="javascript:void(0)">View</a></td>
@@ -891,7 +923,7 @@ class Exam {
   }
 
   getAnswer(queAnswers) {
-    let SYMBOL_ANSWERS = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    let SYMBOL_ANSWERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     var correctAnswer = [];
     queAnswers.forEach(function (answer, index) {
       if (answer.correct) {
@@ -905,51 +937,53 @@ class Exam {
   setUserChoice(userChoice) {
     let choices = [];
     userChoice.forEach(function (item, index) {
-      choices = [...choices, {
-        "queNo": parseInt(item.name.replaceAll("input_select_", "")),
-        "answer": item.value
-      }];
+      choices = [
+        ...choices,
+        {
+          queNo: parseInt(item.name.replaceAll('input_select_', '')),
+          answer: item.value,
+        },
+      ];
     });
 
     this.childExamChoice = choices;
     return this.choices;
   }
 
-  saveToLocalCache(type = "ALL") {
+  saveToLocalCache(type = 'ALL') {
     let exam;
     let tmp_exam = localStorage.getItem(this.cacheItemId);
-    if(!tmp_exam) {
+    if (!tmp_exam) {
       exam = {
         currentQuestion: 0,
         choices: [],
         markedQuestion: [],
-        comments: []
-      }
+        comments: [],
+      };
     } else {
-      exam =  JSON.parse(tmp_exam);
+      exam = JSON.parse(tmp_exam);
     }
 
     // SAVE OPTIONS
     switch (type) {
-      case "ONLY_STAR":
+      case 'ONLY_STAR':
         exam.markedQuestion = this.markedQuestion;
         break;
-      case "CURRENT_QUESTION":
-          exam.currentQuestion = this.current;
-          break;
+      case 'CURRENT_QUESTION':
+        exam.currentQuestion = this.current;
+        break;
       // ALL && default
-      case "ALL":
+      case 'ALL':
       default:
         exam = {
           currentQuestion: this.current,
           choices: this.choices,
           markedQuestion: this.markedQuestion,
-          comments: this.comments
+          comments: this.comments,
         };
     }
 
     localStorage.setItem(this.cacheItemId, JSON.stringify(exam));
-
   }
 
   // Load from database first, then local cache as fallback
@@ -977,50 +1011,56 @@ class Exam {
     if (window.currentExamInstance && window.currentExamInstance._instanceId !== this._instanceId) {
       return;
     }
-    
+
     // Check global database load lock
     if (window.globalDatabaseLoadInProgress) {
       return;
     }
-    
+
     // Try local storage first for immediate loading
     this.loadFromLocalCache();
-    
+
     // Then try database in background (only if not already loading for this exam)
-    if (window.databaseClient && this.examId && !this._isLoadingFromDatabase && this.examId !== 'undefined') {
+    if (
+      window.databaseClient &&
+      this.examId &&
+      !this._isLoadingFromDatabase &&
+      this.examId !== 'undefined'
+    ) {
       // Check if we've already loaded this exam from database
       const cacheKey = `exam_loaded_${this.examId}`;
       const loadingKey = `exam_loading_${this.examId}`;
-      
+
       if (sessionStorage.getItem(cacheKey)) {
         return;
       }
-      
+
       // Check if we're already in the process of loading this exam
       if (sessionStorage.getItem(loadingKey)) {
         return;
       }
-      
+
       // Check debounce time to prevent rapid successive calls
       const now = Date.now();
       if (now - this._lastDatabaseLoadTime < this._databaseLoadDebounceMs) {
         return;
       }
-      
+
       // Ensure exam is properly initialized
       if (!this.examId || this.examId === 'undefined' || this.examId === 'null') {
         return;
       }
-      
+
       // Set global database load lock
       window.globalDatabaseLoadInProgress = true;
-      
+
       // Mark as loading
       sessionStorage.setItem(loadingKey, 'true');
       this._isLoadingFromDatabase = true;
       this._lastDatabaseLoadTime = now;
-      
-      window.databaseClient.getExamResultForUser(this.examId)
+
+      window.databaseClient
+        .getExamResultForUser(this.examId)
         .then(dbResult => {
           if (dbResult) {
             this.loadFromDatabaseResult(dbResult);
@@ -1050,7 +1090,7 @@ class Exam {
       Object.keys(dbResult.answers_data).forEach(questionIndex => {
         this.choices.push({
           queNo: parseInt(questionIndex),
-          choice: dbResult.answers_data[questionIndex]
+          choice: dbResult.answers_data[questionIndex],
         });
       });
     }
@@ -1060,7 +1100,7 @@ class Exam {
       Object.keys(dbResult.review_marks).forEach(questionIndex => {
         this.markedQuestion.push({
           queNo: parseInt(questionIndex),
-          isMarked: dbResult.review_marks[questionIndex]
+          isMarked: dbResult.review_marks[questionIndex],
         });
       });
     }
@@ -1070,18 +1110,18 @@ class Exam {
       Object.keys(dbResult.comments).forEach(questionIndex => {
         this.comments.push({
           queNo: parseInt(questionIndex),
-          content: dbResult.comments[questionIndex]
+          content: dbResult.comments[questionIndex],
         });
       });
     }
 
     // Set current question to first question
     this.current = 0;
-    
+
     // Update visual feedback for loaded answers
     this.updateVisualFeedbackForAllAnswers();
   }
-  
+
   // Update visual feedback for all loaded answers
   updateVisualFeedbackForAllAnswers() {
     this.choices.forEach(choiceItem => {
@@ -1095,19 +1135,17 @@ class Exam {
       const currentQuestion = this.currentQuestion();
       const currentChoice = this.getChoice(this.current);
       const currentMarked = this.getMarkToReview(this.current);
-      
+
       // Update question display
       currentQuestion.getQuestion(currentChoice, currentMarked);
-      
+
       // Update question list display
       this.loadQueListNumber();
-      
+
       // Auto-select answers based on loaded data (only if enabled)
       if (enableAutoSelect) {
         this.autoSelectAnswers();
       }
-      
-
     }
   }
 
@@ -1116,16 +1154,16 @@ class Exam {
     this.choices.forEach(choiceItem => {
       const questionIndex = choiceItem.queNo;
       const selectedAnswers = choiceItem.choice;
-      
-      if (selectedAnswers && selectedAnswers !== "") {
+
+      if (selectedAnswers && selectedAnswers !== '') {
         // Split multiple answers (e.g., "A,B" -> ["A", "B"])
-        const answers = selectedAnswers.split(",").map(a => a.trim());
-        
+        const answers = selectedAnswers.split(',').map(a => a.trim());
+
         answers.forEach(answer => {
           // Find and check the corresponding radio/checkbox
           const selector = `input[name="que-${questionIndex}"][value="${answer}"]`;
           const element = $(selector);
-          
+
           if (element.length > 0) {
             element.prop('checked', true);
           }
@@ -1137,21 +1175,21 @@ class Exam {
   // Load from local cache (original method)
   loadFromLocalCache() {
     let exam = localStorage.getItem(this.cacheItemId);
-    if(!exam) return;
-    
+    if (!exam) return;
+
     exam = JSON.parse(exam);
 
     this.current = exam.currentQuestion ?? 0;
     this.choices = exam.choices;
     this.markedQuestion = exam.markedQuestion;
     this.comments = exam.comments ?? [];
-    
+
     // Auto-select answers after loading from local storage
     setTimeout(() => {
       this.autoSelectAnswers();
     }, 100); // Small delay to ensure DOM is ready
   }
-  
+
   // Cleanup method to remove this instance from tracking
   destroy() {
     if (window.examInstances) {
@@ -1160,74 +1198,76 @@ class Exam {
     if (window.currentExamInstance && window.currentExamInstance._instanceId === this._instanceId) {
       window.currentExamInstance = null;
     }
-    
+
     // Clear any stuck creation locks
     window.examCreationInProgress = false;
   }
 
-  clearLocalCache(type="ALL") {
-    
-    if(type == "ONLY_ANSWER") {
-      this.choices=[];
+  clearLocalCache(type = 'ALL') {
+    if (type == 'ONLY_ANSWER') {
+      this.choices = [];
       this.saveToLocalCache();
-      
+
       // Clear visual feedback classes
-      $("#attempts-que li").removeClass("choice correct incorrect");
+      $('#attempts-que li').removeClass('choice correct incorrect');
     } else {
       localStorage.removeItem(this.cacheItemId, exam);
-      
+
       // Clear all visual feedback classes
-      $("#attempts-que li").removeClass("choice correct incorrect review");
+      $('#attempts-que li').removeClass('choice correct incorrect review');
     }
   }
 
   loadQueListNumber() {
     let self = this;
     self.choices.forEach(function (choiceItem) {
-      $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("choice");
-      
+      $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass('choice');
+
       // Check if answer is correct or incorrect
       const question = self.listQuestions[choiceItem.queNo];
       if (question && choiceItem.choice) {
         const isCorrect = self.checkAnswerCorrectness(choiceItem.queNo, choiceItem.choice);
         if (!isCorrect) {
-          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("incorrect");
+          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass('incorrect');
         } else {
-          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass("correct");
+          $(`#attempts-que li[data-queno="${choiceItem.queNo}"]`).addClass('correct');
         }
       }
     });
     self.markedQuestion.forEach(function (markedItem) {
-      if(markedItem.isMarked) {
-        $(`#attempts-que li[data-queno="${markedItem.queNo}"]`).addClass("review");
+      if (markedItem.isMarked) {
+        $(`#attempts-que li[data-queno="${markedItem.queNo}"]`).addClass('review');
       } else {
-        $(`#attempts-que li[data-queno="${markedItem.queNo}"]`).removeClass("review");
+        $(`#attempts-que li[data-queno="${markedItem.queNo}"]`).removeClass('review');
       }
     });
   }
-  
+
   // Check if user's answer is correct
   checkAnswerCorrectness(queNo, userChoice) {
     const question = this.listQuestions[queNo];
     if (!question || !userChoice) return false;
-    
+
     // Get correct answers
     const correctAnswers = this.getAnswer(question.answer_list);
-    const userAnswers = userChoice.split(",").map(a => a.trim()).sort();
-    
+    const userAnswers = userChoice
+      .split(',')
+      .map(a => a.trim())
+      .sort();
+
     // Compare answers
     return JSON.stringify(correctAnswers) === JSON.stringify(userAnswers);
   }
 
   renderQuestion(markedQue, index) {
-    var SYMBOL_ANSWERS = ["A", "B", "C", "D", "E", "F", "G", "H"];
-    let question = this.listQuestions[markedQue["queNo"]];
+    var SYMBOL_ANSWERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    let question = this.listQuestions[markedQue['queNo']];
 
-    let queAnswers = question["answer_list"][0]["answers"];
-    let answer_text = "";
-    
-    let htmlRadioCheckbox = "";
-    if (!question["is_partially_correct"]) {
+    let queAnswers = question['answer_list'][0]['answers'];
+    let answer_text = '';
+
+    let htmlRadioCheckbox = '';
+    if (!question['is_partially_correct']) {
       // One Choice: radio input
       htmlRadioCheckbox = `<input class="ip-radio" type="radio" name="que-${markedQue['queNo']}" value="${SYMBOL_ANSWERS[index]}">`;
     } else {
@@ -1242,22 +1282,23 @@ class Exam {
     `;
 
     queAnswers.forEach(function (answer, index) {
-      answer_text +=`
+      answer_text += `
       <label class="my-2 custom_label">
         ${htmlRadioCheckbox}
-        <span class="que-content hiddenColor ${answer["correct"] == true ? 'true' : 'false'}">
+        <span class="que-content hiddenColor ${answer['correct'] == true ? 'true' : 'false'}">
             <span class="symbolAnswer">${SYMBOL_ANSWERS[index]}.</span>
-            ${answer["choice"]}
+            ${answer['choice']}
         </span>
       </label>
       `;
     });
-    
+
+    let quesObj = new Question();
     let html_starBlock = `
     <div class="starQuestionBlock">
       ${htmlStarIcon}
-      Question: ${markedQue["queNo"] + 1}.
-      ${this.getCleanQuestionTextPreview(question.question_text)}
+      Question: ${markedQue['queNo'] + 1}.
+      ${quesObj.getCleanQuestionTextPreview(question.question_text)}
       ${answer_text}
     </div>
     <br>
@@ -1267,11 +1308,11 @@ class Exam {
   }
 
   renderQuestion2(queData, index, isShowAnswer) {
-    let html=`This question ${index} <br>`;
+    let html = `This question ${index} <br>`;
     let question = new Question();
     question.loadData(queData, index);
-    
-    //Set show answer or not 
+
+    //Set show answer or not
     question.options.isShowAnswer = isShowAnswer;
 
     html = question.renderQuestionHtml();
@@ -1279,38 +1320,41 @@ class Exam {
     return html;
   }
 
-  renderContent(listQuestion, htmlSelection = "#starBlock", isShowAnswer) {
+  renderContent(listQuestion, htmlSelection = '#starBlock', isShowAnswer) {
     var self = this;
-    var htmlText = "";
+    var htmlText = '';
     listQuestion.forEach(function (markedQue, index) {
-      let question = self.listQuestions[markedQue["queNo"]];
-      let userChoice = self.childExamChoice.filter(item => item.queNo == markedQue["queNo"]).map(item => item.answer).toString();
-      question.options.userMarked = markedQue["isMarked"];
+      let question = self.listQuestions[markedQue['queNo']];
+      let userChoice = self.childExamChoice
+        .filter(item => item.queNo == markedQue['queNo'])
+        .map(item => item.answer)
+        .toString();
+      question.options.userMarked = markedQue['isMarked'];
       question.options.isShowAnswer = isShowAnswer;
-      if(isShowAnswer) {
+      if (isShowAnswer) {
         question.options.userChoice = userChoice;
       } else {
-        question.options.userChoice = "";
+        question.options.userChoice = '';
       }
-      
+
       htmlText += question.renderQuestionHtml();
     });
 
     $(`${htmlSelection}`).html(htmlText);
   }
 
-  renderContent_v2(listQuestion, htmlSelection = "#starBlock") {
-    var htmlText = "";
+  renderContent_v2(listQuestion, htmlSelection = '#starBlock') {
+    var htmlText = '';
     //Get list star questions
     let star_ques = this.markedQuestion.map(item => item.queNo);
 
-    listQuestion.forEach(function (question, index) {      
+    listQuestion.forEach(function (question, index) {
       let questionText = question.renderQuestionHtml_v2({
         index: index,
         showAnswer: false,
         showComment: false,
         isStar: star_ques.includes(question.queNo),
-        userChoice: "",
+        userChoice: '',
         showAnswerBtn: true,
         showCommentBtn: true,
       });
@@ -1333,16 +1377,16 @@ class Exam {
     let TO_QUESTION = options.to_question;
     let MAX_QUESTION = options.max_question;
     let RAMDOM = options.random;
-    
+
     let from = FROM_QUESTION < 1 ? parseInt(1) : parseInt(FROM_QUESTION);
-    let to = (self.count < TO_QUESTION) ? self.count : parseInt(TO_QUESTION);
+    let to = self.count < TO_QUESTION ? self.count : parseInt(TO_QUESTION);
     for (let i = from; i <= to; i++) {
-      list = [...list, {queNo: (i - 1), isMarked: false}];
+      list = [...list, {queNo: i - 1, isMarked: false}];
     }
 
     // Set STAR if have
     for (let i = 0; i < self.markedQuestion.length; i++) {
-      let elementIndex = list.findIndex((obj) => obj.queNo == self.markedQuestion[i].queNo);
+      let elementIndex = list.findIndex(obj => obj.queNo == self.markedQuestion[i].queNo);
       if (elementIndex == -1) {
       } else {
         list[elementIndex].isMarked = self.markedQuestion[i].isMarked;
@@ -1350,17 +1394,17 @@ class Exam {
     }
 
     // STAR
-    if(EXAM_TYPE == "STAR") {
-      list = list.filter(item => (item.isMarked == true));
+    if (EXAM_TYPE == 'STAR') {
+      list = list.filter(item => item.isMarked == true);
     }
 
     // MAX_QUESTION
-    if (MAX_QUESTION != "ALL") {
+    if (MAX_QUESTION != 'ALL') {
       list = list.splice(0, MAX_QUESTION);
     }
 
     // RAMDOM
-    if(RAMDOM == "RANDOM") {
+    if (RAMDOM == 'RANDOM') {
       this.shuffleArray(list);
     }
 
@@ -1376,41 +1420,41 @@ class Exam {
     let MAX_QUESTION = options.max_question;
     let RAMDOM = options.random;
     let QUESTION_OPTIONS = options.question_options;
-    
+
     let from = FROM_QUESTION < 1 ? parseInt(1) : parseInt(FROM_QUESTION);
-    let to = (self.count < TO_QUESTION) ? self.count : parseInt(TO_QUESTION);
+    let to = self.count < TO_QUESTION ? self.count : parseInt(TO_QUESTION);
     let que = null;
     // let star_ques = self.markedQuestion.map(item => item.queNo);
-    switch(EXAM_TYPE){
-      case "STAR":
+    switch (EXAM_TYPE) {
+      case 'STAR':
         self.markedQuestion.forEach(item => {
           que = self.listQuestions[item.queNo];
           que.options = QUESTION_OPTIONS;
           // if(star_ques.includes(item.queNo)) {
           //   que.options.userMarked = true;
           // }
-          list2 = [...list2, que]
+          list2 = [...list2, que];
         });
         break;
       default:
         //Normal
         for (let i = from; i <= to; i++) {
-          que = self.listQuestions[i-1];
+          que = self.listQuestions[i - 1];
           que.options = QUESTION_OPTIONS;
           // if(star_ques.includes(i-1)) {
           //   que.options.userMarked = true;
           // }
-          list2 = [...list2, que]
+          list2 = [...list2, que];
         }
     }
 
     // RAMDOM
-    if(RAMDOM == "RANDOM") {
+    if (RAMDOM == 'RANDOM') {
       this.shuffleArray(list2);
     }
 
     // MAX_QUESTION
-    if (MAX_QUESTION != "ALL") {
+    if (MAX_QUESTION != 'ALL') {
       list2 = list2.splice(0, MAX_QUESTION);
     }
 
@@ -1419,19 +1463,19 @@ class Exam {
 
   shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
   }
 
-  getFilterQuestion(type = "STAR", from = 0, to = 20, random = "RANDOM", max = 100) {
+  getFilterQuestion(type = 'STAR', from = 0, to = 20, random = 'RANDOM', max = 100) {
     //FILTER OPTIONS
     let listQuestion = this.filterQuestion({
-      "exam_type": type,
-      "from_question": from,
-      "to_question": to,
-      "max_question": max,
-      "random": random
+      exam_type: type,
+      from_question: from,
+      to_question: to,
+      max_question: max,
+      random: random,
     });
 
     this.renderContent(listQuestion);
@@ -1448,9 +1492,9 @@ class Exam {
       random: random,
       max: max,
       question_options: {
-        show_title: true
-      }
-    }
+        show_title: true,
+      },
+    },
   ) {
     return this.filterQuestion_v2({
       exam_type: options.type,
@@ -1458,7 +1502,7 @@ class Exam {
       to_question: options.to,
       random: options.random,
       max_question: options.max,
-      question_options: options.question_options
+      question_options: options.question_options,
     });
   }
 
@@ -1480,26 +1524,26 @@ class Exam {
       </div>
     `;
 
-    $("#modals").html(html);
+    $('#modals').html(html);
     $('#exportModal').modal('show');
   }
 
-  copyText(eleIndex="#exportContent pre") {
+  copyText(eleIndex = '#exportContent pre') {
     let copyText = JSON.stringify(this.listQuestions, null, 2);
     navigator.clipboard.writeText(copyText);
   }
 
   getComment(queNo = this.current) {
-    let elementIndex = this.comments.findIndex((obj) => obj.queNo == queNo);
+    let elementIndex = this.comments.findIndex(obj => obj.queNo == queNo);
     if (elementIndex == -1) {
-      return "";
+      return '';
     } else {
       return this.comments[elementIndex].content;
     }
   }
-  
+
   setComment(queNo, content) {
-    let elementIndex = this.comments.findIndex((obj) => obj.queNo == queNo);
+    let elementIndex = this.comments.findIndex(obj => obj.queNo == queNo);
     let newElement = {
       queNo: queNo,
       content: content,
@@ -1509,10 +1553,10 @@ class Exam {
     } else {
       this.comments[elementIndex] = newElement;
     }
-    
+
     this.saveToLocalCache();
-    
-    return "Success"
+
+    return 'Success';
   }
 
   // Get all choices for all questions
@@ -1520,11 +1564,217 @@ class Exam {
     const allChoices = {};
     for (let i = 0; i < this.count; i++) {
       const choice = this.getChoice(i);
-      if (choice && choice !== "") {
+      if (choice && choice !== '') {
         allChoices[i] = choice;
       }
     }
     return allChoices;
+  }
+
+  // Auto-submit functionality
+  startAutoSubmitTimer() {
+    if (!this.autoSubmitEnabled || this.autoSubmitTimer) {
+      return; // Timer already running or disabled
+    }
+
+    console.log('🔄 Starting auto-submit timer (5 minutes)');
+    this.autoSubmitTimer = setTimeout(() => {
+      this.handleAutoSubmit();
+    }, this.autoSubmitInterval);
+
+    this.updateAutoSubmitStatus();
+  }
+
+  stopAutoSubmitTimer() {
+    if (this.autoSubmitTimer) {
+      clearTimeout(this.autoSubmitTimer);
+      this.autoSubmitTimer = null;
+      console.log('⏹️ Auto-submit timer stopped');
+      this.updateAutoSubmitStatus();
+    }
+  }
+
+  async handleAutoSubmit() {
+    if (!this.hasNewChoices) {
+      console.log('📝 No new choices detected, skipping auto-submit');
+      this.startAutoSubmitTimer(); // Restart timer
+      return;
+    }
+
+    console.log('💾 Auto-submitting exam progress...');
+
+    try {
+      // Calculate current score
+      const totalPoints = this.calculateScore();
+      const percentPoint = (totalPoints / this.count) * 100;
+
+      // Save progress to database
+      await this.saveProgressToDatabase(totalPoints, percentPoint);
+
+      // Update last submitted choices
+      this.lastSubmittedChoices = JSON.stringify(this.getAllChoices());
+      this.hasNewChoices = false;
+
+      console.log('✅ Auto-submit completed successfully');
+
+      // Update status indicator
+      this.updateAutoSubmitStatus();
+
+      // Show notification to user
+      this.showAutoSubmitNotification();
+    } catch (error) {
+      console.error('❌ Auto-submit failed:', error);
+      this.showAutoSubmitNotification('error');
+    }
+
+    // Restart timer for next cycle
+    this.startAutoSubmitTimer();
+  }
+
+  async saveProgressToDatabase(totalPoints, percentScore) {
+    if (!window.databaseClient) {
+      throw new Error('Database client not available');
+    }
+
+    const examData = {
+      examId: this.examId || 'unknown',
+      examName: this.examName || 'Unknown Exam',
+      groupId: this.groupId || '',
+      groupName: this.groupName || '',
+      score: Math.round(percentScore),
+      totalQuestions: this.count,
+      correctAnswers: totalPoints,
+      incorrectAnswers: this.count - totalPoints,
+      unansweredQuestions: 0,
+      timeTaken: 0,
+      answersData: this.getAllChoices(),
+      reviewMarks: this.getAllReviewMarks(),
+      comments: this.getAllComments(),
+      isAutoSubmitted: true, // Flag to indicate this was auto-submitted
+    };
+
+    return await window.databaseClient.saveExamResult(examData);
+  }
+
+  showAutoSubmitNotification(type = 'success') {
+    const message =
+      type === 'success'
+        ? '📝 Progress auto-saved successfully'
+        : '❌ Auto-save failed - please save manually';
+
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type === 'success' ? 'info' : 'warning'} alert-dismissible fade show position-fixed`;
+    notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+    notification.innerHTML = `
+      <i class="fas fa-${type === 'success' ? 'save' : 'exclamation-triangle'}"></i>
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+
+    document.body.appendChild(notification);
+
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
+      }
+    }, 3000);
+  }
+
+  // Enable/disable auto-submit
+  setAutoSubmitEnabled(enabled) {
+    this.autoSubmitEnabled = enabled;
+    if (!enabled) {
+      this.stopAutoSubmitTimer();
+    } else if (this.hasNewChoices) {
+      this.startAutoSubmitTimer();
+    }
+    this.updateAutoSubmitStatus();
+    console.log(`🔄 Auto-submit ${enabled ? 'enabled' : 'disabled'}`);
+  }
+
+  // Enable/disable auto feedback for correct/incorrect answers
+  setAutoFeedbackEnabled(enabled) {
+    this.autoFeedbackEnabled = enabled;
+    this.updateAutoFeedbackStatus();
+
+    // Refresh visual feedback for all current answers
+    this.updateVisualFeedbackForAllAnswers();
+
+    console.log(`🎯 Auto feedback ${enabled ? 'enabled' : 'disabled'}`);
+  }
+
+  // Get current auto feedback status
+  isAutoFeedbackEnabled() {
+    return this.autoFeedbackEnabled;
+  }
+
+  // Show correct/incorrect feedback for all answers (useful when auto feedback is disabled)
+  showAllAnswerFeedback() {
+    this.choices.forEach(choiceItem => {
+      const queNo = choiceItem.queNo;
+      const userChoice = choiceItem.choice;
+
+      if (userChoice) {
+        const isCorrect = this.checkAnswerCorrectness(queNo, userChoice);
+        $(`#attempts-que li[data-queno="${queNo}"]`).removeClass('correct incorrect');
+        if (isCorrect) {
+          $(`#attempts-que li[data-queno="${queNo}"]`).addClass('correct');
+        } else {
+          $(`#attempts-que li[data-queno="${queNo}"]`).addClass('incorrect');
+        }
+      }
+    });
+  }
+
+  // Hide correct/incorrect feedback for all answers
+  hideAllAnswerFeedback() {
+    this.choices.forEach(choiceItem => {
+      const queNo = choiceItem.queNo;
+      $(`#attempts-que li[data-queno="${queNo}"]`).removeClass('correct incorrect');
+    });
+  }
+
+  // Update auto-submit status indicator in UI
+  updateAutoSubmitStatus() {
+    const statusElement = document.getElementById('auto-submit-status');
+    const textElement = document.getElementById('auto-submit-text');
+
+    if (!statusElement || !textElement) return;
+
+    if (this.autoSubmitEnabled) {
+      statusElement.style.display = 'block';
+      if (this.autoSubmitTimer) {
+        textElement.textContent = 'Auto-save active (5min)';
+        textElement.className = 'text-success';
+      } else if (this.hasNewChoices) {
+        textElement.textContent = 'Auto-save pending...';
+        textElement.className = 'text-warning';
+      } else {
+        textElement.textContent = 'Auto-save enabled';
+        textElement.className = 'text-info';
+      }
+    } else {
+      statusElement.style.display = 'none';
+    }
+  }
+
+  // Update auto feedback status indicator in UI
+  updateAutoFeedbackStatus() {
+    const feedbackStatusElement = document.getElementById('auto-feedback-status');
+    const feedbackTextElement = document.getElementById('auto-feedback-text');
+
+    if (!feedbackStatusElement || !feedbackTextElement) return;
+
+    if (this.autoFeedbackEnabled) {
+      feedbackStatusElement.style.display = 'block';
+      feedbackTextElement.textContent = 'Auto feedback enabled';
+      feedbackTextElement.className = 'text-success';
+    } else {
+      feedbackStatusElement.style.display = 'block';
+      feedbackTextElement.textContent = 'Auto feedback disabled';
+      feedbackTextElement.className = 'text-muted';
+    }
   }
 
   // Get all review marks for all questions
@@ -1544,16 +1794,14 @@ class Exam {
     const allComments = {};
     for (let i = 0; i < this.count; i++) {
       const comment = this.getComment(i);
-      if (comment && comment !== "") {
+      if (comment && comment !== '') {
         allComments[i] = comment;
       }
     }
     return allComments;
   }
 
-  createTestHtml() {
-
-  }
+  createTestHtml() {}
 }
 
 // Make classes available globally
@@ -1561,8 +1809,10 @@ window.Question = Question;
 window.Exam = Exam;
 
 // Notify that classes are loaded and ready
-document.dispatchEvent(new CustomEvent('classesReady', {
-  detail: {
-    timestamp: new Date().toISOString()
-  }
-}));
+document.dispatchEvent(
+  new CustomEvent('classesReady', {
+    detail: {
+      timestamp: new Date().toISOString(),
+    },
+  }),
+);
