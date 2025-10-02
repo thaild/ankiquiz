@@ -1,29 +1,29 @@
 // INIT, GLOBAL VARIABLES
 var groupId, examId, exam, queDataCount, que;
 var USER_STORAGE = {
-  screen_mode: "white-mode",
-  group_id: "",
-  exam_id: "",
+  screen_mode: 'white-mode',
+  group_id: '',
+  exam_id: '',
 };
 
 function getUserStorage(id) {
-  let currentLocalStorage = localStorage.getItem("USER_STORAGE");
+  let currentLocalStorage = localStorage.getItem('USER_STORAGE');
   if (currentLocalStorage) {
     USER_STORAGE = JSON.parse(currentLocalStorage);
   }
 
-  let output = "";
+  let output = '';
   switch (id) {
-    case "screen_mode":
+    case 'screen_mode':
       output = USER_STORAGE.screen_mode;
       break;
-    case "group_id":
+    case 'group_id':
       output = USER_STORAGE.group_id;
       break;
-    case "exam_id":
+    case 'exam_id':
       output = USER_STORAGE.exam_id;
       break;
-    case "all":
+    case 'all':
       output = USER_STORAGE;
       break;
     default:
@@ -34,20 +34,80 @@ function getUserStorage(id) {
 }
 
 function setUserStorage(id, value) {
-  switch(id) {
-    case "screen_mode":
-      USER_STORAGE["screen_mode"] = value;
+  switch (id) {
+    case 'screen_mode':
+      USER_STORAGE['screen_mode'] = value;
       break;
-    case "group_id":
-      USER_STORAGE["group_id"] = value;
+    case 'group_id':
+      USER_STORAGE['group_id'] = value;
       break;
-    case "exam_id":
-      USER_STORAGE["exam_id"] = value;
+    case 'exam_id':
+      USER_STORAGE['exam_id'] = value;
       break;
   }
-  localStorage.setItem("USER_STORAGE", JSON.stringify(USER_STORAGE));
+  localStorage.setItem('USER_STORAGE', JSON.stringify(USER_STORAGE));
 
   return USER_STORAGE;
+}
+
+/**
+ * Show authentication gate
+ */
+function showAuthGate() {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('auth-gate').style.display = 'flex';
+  document.getElementById('main-content').style.display = 'none';
+
+  // Set up auth gate button
+  const authBtn = document.getElementById('auth-login-btn');
+  if (authBtn) {
+    authBtn.onclick = function () {
+      if (window.authManager) {
+        window.authManager.login();
+      } else {
+        console.error('AuthManager not available');
+      }
+    };
+  }
+}
+
+/**
+ * Hide authentication gate and show main content
+ */
+function hideAuthGate() {
+  document.getElementById('auth-gate').style.display = 'none';
+  document.getElementById('main-content').style.display = 'block';
+
+  // Update authentication UI
+  if (window.authManager) {
+    const userElement = document.getElementById('user');
+    if (userElement) {
+      window.authManager.updateUI(userElement);
+    }
+  }
+
+  // Re-initialize the app
+  if (!window.appInitialized) {
+    setTimeout(init, 100);
+  }
+}
+
+/**
+ * Set up authentication event listeners
+ */
+function setupAuthListeners() {
+  if (window.authManager) {
+    window.authManager.addEventListener('login', function (user) {
+      console.log('✅ User logged in, hiding auth gate');
+      hideAuthGate();
+    });
+
+    window.authManager.addEventListener('logout', function () {
+      console.log('🔒 User logged out, showing auth gate');
+      showAuthGate();
+      window.appInitialized = false; // Reset initialization flag
+    });
+  }
 }
 
 function init() {
@@ -56,62 +116,80 @@ function init() {
     console.log('🚫 App already initialized, skipping');
     return;
   }
-  
+
+  // Check authentication requirement
+  const requireAuth = document.querySelector('meta[name="require-auth"]')?.content === 'true';
+  const enableAuth = document.querySelector('meta[name="enable-auth"]')?.content === 'true';
+
+  if (requireAuth && enableAuth) {
+    // Check if user is authenticated
+    if (!window.authManager || !window.authManager.isAuthenticated()) {
+      console.log('🔒 Authentication required - showing login gate');
+      showAuthGate();
+      return;
+    }
+    console.log('✅ User authenticated - proceeding with initialization');
+  }
+
   loadDarkMode();
-  
+
   // Check if listExamGroup is available before initializing
-  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+  if (
+    typeof window.listExamGroup === 'undefined' ||
+    !window.listExamGroup ||
+    window.listExamGroup.length === 0
+  ) {
     setTimeout(init, 200); // Increased delay to ensure index.js is fully processed
     return;
   }
-  
+
   // Check if Exam class is available
   if (typeof window.Exam === 'undefined') {
     setTimeout(init, 200);
     return;
   }
-  
+
   // Mark as initialized to prevent duplicate calls
   window.appInitialized = true;
-  
+
   // Clear any existing locks
   window.examCreationInProgress = false;
   window.globalDatabaseLoadInProgress = false;
-  
+
   console.log('🚀 Initializing application...');
-  
-  groupId = getUserStorage("group_id");
-  $("#groupList").val(groupId);
+
+  groupId = getUserStorage('group_id');
+  $('#groupList').val(groupId);
   switchGroup(groupId);
 
-  examId = getUserStorage("exam_id");
-  $("#deskList").val(examId);
+  examId = getUserStorage('exam_id');
+  $('#deskList').val(examId);
   switchDesk(groupId, examId);
 }
 
 // Listen for classes ready event
-document.addEventListener('classesReady', function(event) {
+document.addEventListener('classesReady', function (event) {
   if (!window.appInitialized) {
     setTimeout(init, 100);
   }
 });
 
 // Listen for listExamGroup ready event
-document.addEventListener('listExamGroupReady', function(event) {
+document.addEventListener('listExamGroupReady', function (event) {
   if (!window.appInitialized) {
     setTimeout(init, 100); // Small delay to ensure everything is ready
   }
 });
 
 // Listen for exam data loaded event
-document.addEventListener('examDataLoaded', function(event) {
+document.addEventListener('examDataLoaded', function (event) {
   if (!window.appInitialized) {
     setTimeout(init, 150); // Longer delay to ensure index.js is processed
   }
 });
 
 // Listen for application ready event
-document.addEventListener('applicationReady', function(event) {
+document.addEventListener('applicationReady', function (event) {
   if (!window.appInitialized) {
     setTimeout(init, 200); // Even longer delay for this event
   }
@@ -125,45 +203,42 @@ setTimeout(() => {
 }, 500);
 
 // LOAD QUESTION
-$("#attempts-que").on("click", "ul > li", function () {
-  exam.current = $(this).data("queno");
+$('#attempts-que').on('click', 'ul > li', function () {
+  exam.current = $(this).data('queno');
   let question = exam.currentQuestion();
-  question.getQuestion(
-    exam.getChoice(),
-    exam.getMarkToReview()
-  );
-  exam.saveToLocalCache("CURRENT_QUESTION");
-  $(".explanation-block").html("");
+  question.getQuestion(exam.getChoice(), exam.getMarkToReview());
+  exam.saveToLocalCache('CURRENT_QUESTION');
+  $('.explanation-block').html('');
 });
 
 // Update visual feedback when user changes answer
-$("#ques-list").on("change", "input[type='radio'], input[type='checkbox']", function() {
+$('#ques-list').on('change', "input[type='radio'], input[type='checkbox']", function () {
   const queNo = exam.current;
   const selectedAnswers = [];
-  
+
   // Get all selected answers for current question
-  $(`input[name="input_select_${queNo}"]:checked`).each(function() {
+  $(`input[name="input_select_${queNo}"]:checked`).each(function () {
     selectedAnswers.push($(this).val());
   });
-  
-  const userChoice = selectedAnswers.join(",");
-  
+
+  const userChoice = selectedAnswers.join(',');
+
   // Save choice and update visual feedback
   exam.saveChoice(queNo, userChoice);
-  exam.saveToLocalCache("CURRENT_QUESTION");
+  exam.saveToLocalCache('CURRENT_QUESTION');
 });
 
 // SHOW FEEDBACK
-$(".btn-showAnswer").on("click", function () {
+$('.btn-showAnswer').on('click', function () {
   let isShowAnswer = false;
-  if ($(".btn-showAnswer").hasClass("show")) {
+  if ($('.btn-showAnswer').hasClass('show')) {
     isShowAnswer = false;
-    $(".btn-showAnswer").removeClass("show");
-    $(".btn-showAnswer").text("Show Answer");
+    $('.btn-showAnswer').removeClass('show');
+    $('.btn-showAnswer').text('Show Answer');
   } else {
     isShowAnswer = true;
-    $(".btn-showAnswer").addClass("show");
-    $(".btn-showAnswer").text("Hide Answer");
+    $('.btn-showAnswer').addClass('show');
+    $('.btn-showAnswer').text('Hide Answer');
   }
 
   let question = exam.currentQuestion();
@@ -172,8 +247,8 @@ $(".btn-showAnswer").on("click", function () {
 });
 
 // EDIT QUESION
-$("#btnEditQuestionModal").on("click", function() {
-  if($("#editQuestionModal").hasClass("show")) {
+$('#btnEditQuestionModal').on('click', function () {
+  if ($('#editQuestionModal').hasClass('show')) {
     $('#editQuestionModal').modal('hide');
   } else {
     $('#editQuestionModal').modal('show');
@@ -181,46 +256,46 @@ $("#btnEditQuestionModal").on("click", function() {
   }
 });
 
-$("#editQuestionModal").on("click", ".btnSave", function() {
+$('#editQuestionModal').on('click', '.btnSave', function () {
   let content = $('#editQuestionModal .txtContent').val();
   exam.setComment(exam.current, content);
   $('#editQuestionModal').modal('hide');
 });
 
-$("#editQuestionModal").on("click", ".btn-secondary", function() {
+$('#editQuestionModal').on('click', '.btn-secondary', function () {
   $('#editQuestionModal').modal('hide');
 });
 
-$(".btn-editQuestion").on("click", function () {
+$('.btn-editQuestion').on('click', function () {
   // Edit question functionality
 });
 
 // SHOW DISSUSTION
-$(".btn-showDiscussion").on("click", function () {
+$('.btn-showDiscussion').on('click', function () {
   let isShowDiscussion = false;
-  let discusstion = exam.currentQuestion()["discusstion"];
+  let discusstion = exam.currentQuestion()['discusstion'];
   let discusstion_count = discusstion ? discusstion.length : 0;
-  if ($(".btn-showDiscussion").hasClass("show")) {
+  if ($('.btn-showDiscussion').hasClass('show')) {
     isShowDiscussion = false;
-    $(".btn-showDiscussion").removeClass("show");
-    $(".discussion-container").addClass("d-none");
-    $(".btn-showDiscussion").text(`Show Discussion (${discusstion_count})`);
+    $('.btn-showDiscussion').removeClass('show');
+    $('.discussion-container').addClass('d-none');
+    $('.btn-showDiscussion').text(`Show Discussion (${discusstion_count})`);
   } else {
     isShowDiscussion = true;
-    $(".btn-showDiscussion").addClass("show");
-    $(".discussion-container").removeClass("d-none");
-    $(".btn-showDiscussion").text(`Hide Discussion (${discusstion_count})`);
+    $('.btn-showDiscussion').addClass('show');
+    $('.discussion-container').removeClass('d-none');
+    $('.btn-showDiscussion').text(`Hide Discussion (${discusstion_count})`);
   }
-  
-  if(discusstion) {
-    let html_discusstion = "";
+
+  if (discusstion) {
+    let html_discusstion = '';
     //Sort by voted count
     discusstion.sort((a, b) => b.upvote_count - a.upvote_count);
-    
+
     discusstion.forEach(function (comment, index) {
       let selected_answers = comment.selected_answers;
-      let html_selected_answers = "";
-      if(selected_answers !== undefined && selected_answers != "") {
+      let html_selected_answers = '';
+      if (selected_answers !== undefined && selected_answers != '') {
         html_selected_answers = `<span class="comment-selected-answers">${comment.selected_answers}</span>`;
       }
       html_discusstion += `
@@ -241,44 +316,38 @@ $(".btn-showDiscussion").on("click", function () {
         ${html_discusstion}
       </ul>
     `;
-    $(".discussion-container").html(html_discusstion);
+    $('.discussion-container').html(html_discusstion);
   } else {
-    $(".discussion-container").html("Have not comments!");
+    $('.discussion-container').html('Have not comments!');
   }
 });
 
 // NEXT QUESTION
-$(".btnNextQue").on("click", function () {
+$('.btnNextQue').on('click', function () {
   exam.nextQuestion();
   let question = exam.currentQuestion();
-  question.getQuestion(
-    exam.getChoice(),
-    exam.getMarkToReview()
-  );
-  exam.saveToLocalCache("CURRENT_QUESTION");
+  question.getQuestion(exam.getChoice(), exam.getMarkToReview());
+  exam.saveToLocalCache('CURRENT_QUESTION');
 });
 
 // PREVIOUS QUESTION
-$(".btnPrevQue").on("click", function () {
+$('.btnPrevQue').on('click', function () {
   exam.prevQuestion();
   let question = exam.currentQuestion();
-  question.getQuestion(
-    exam.getChoice(),
-    exam.getMarkToReview()
-  );
-  exam.saveToLocalCache("CURRENT_QUESTION");
+  question.getQuestion(exam.getChoice(), exam.getMarkToReview());
+  exam.saveToLocalCache('CURRENT_QUESTION');
 });
 
 // SHORTKEYS
 $(document).keydown(function (e) {
-  if (["textarea"].includes(e.target.nodeName.toLowerCase())) return;
-  
-  switch(e.keyCode) {
+  if (['textarea'].includes(e.target.nodeName.toLowerCase())) return;
+
+  switch (e.keyCode) {
     case 37: //LEFT
-      $(".btnPrevQue")[0].click();
+      $('.btnPrevQue')[0].click();
       break;
     case 39: //RIGHT
-      $(".btnNextQue")[0].click();
+      $('.btnNextQue')[0].click();
       break;
     // case 38: //DOWN
     //   $(".btn-showAnswer")[0].click();
@@ -288,36 +357,36 @@ $(document).keydown(function (e) {
     //   break;
     case 13: //ENTER
       e.preventDefault();
-      $(".btn-showAnswer")[0].click();
-      $(".btn-showDiscussion")[0].click();
+      $('.btn-showAnswer')[0].click();
+      $('.btn-showDiscussion')[0].click();
       break;
     case 32: //SPACE
       e.preventDefault();
-      $("#starMarkToReview").click();
+      $('#starMarkToReview').click();
       break;
     case 82: //R = Review
       e.preventDefault();
-      $("#testBlock .btnQuickReview").click();
+      $('#testBlock .btnQuickReview').click();
       break;
-      // case 67: //C = Edit self comment
+    // case 67: //C = Edit self comment
     case 69: //E = Edit self comment
       e.preventDefault();
-      $("#btnEditQuestionModal").click();
+      $('#btnEditQuestionModal').click();
       break;
     default:
-      break
+      break;
   }
 });
 
 // USERS CHOICE
-$("#ques-list").on("click", ".ip-radio", function () {
-  let aws = "";
-  $("#ques-list .ip-radio:checked").each(function () {
+$('#ques-list').on('click', '.ip-radio', function () {
+  let aws = '';
+  $('#ques-list .ip-radio:checked').each(function () {
     aws += $(this).val();
   });
 
   exam.saveChoice(exam.current, aws);
-  if (aws != "") {
+  if (aws != '') {
     que.markChoice(exam.current, true);
   } else {
     que.markChoice(exam.current, false);
@@ -325,116 +394,117 @@ $("#ques-list").on("click", ".ip-radio", function () {
 });
 
 // MARK TO REVIEW
-$("#starMarkToReview").on("click", function () {
-  let isMarked = $("#starMarkToReview").hasClass("true");
+$('#starMarkToReview').on('click', function () {
+  let isMarked = $('#starMarkToReview').hasClass('true');
   exam.saveMarkToReview(exam.current, !isMarked);
   que.markToReview(exam.current, !isMarked);
   que.showMarkToReview(!isMarked);
 });
 
 // REVIEW RESULT
-$(".btn-review").on("click", function () {
-  $(".ExamQuestionsBlock").addClass("d-none");
-  $(".resultBlock").removeClass("d-none");
+$('.btn-review').on('click', function () {
+  $('.ExamQuestionsBlock').addClass('d-none');
+  $('.resultBlock').removeClass('d-none');
   exam.showResult();
 });
 
 // GO TO QUESTION IN REVIEW RESULT SCREEN
-$("#resultBlock").on("click", ".btnViewQue", function () {
-  exam.current = $(this).data("queno");
+$('#resultBlock').on('click', '.btnViewQue', function () {
+  exam.current = $(this).data('queno');
   let question = exam.currentQuestion();
-  question.getQuestion(
-    exam.getChoice(),
-    exam.getMarkToReview()
-  );
-  $(".btn-return").click();
+  question.getQuestion(exam.getChoice(), exam.getMarkToReview());
+  $('.btn-return').click();
 });
 
-$(".btn-return").on("click", function () {
-  $(".ExamQuestionsBlock").removeClass("d-none");
-  $(".settingBlock").removeClass("d-none");
-  $(".examBlock").removeClass("d-none");
-  $(".examBlock").removeClass("d-none");
-  $(".resultBlock").addClass("d-none");
-  $(".starBlock").addClass("d-none");
-  $(".testBlock").addClass("d-none");
-  $(".testContent ").html("No Contents");
-  $(".btnShowAnswer").addClass("d-none");
+$('.btn-return').on('click', function () {
+  $('.ExamQuestionsBlock').removeClass('d-none');
+  $('.settingBlock').removeClass('d-none');
+  $('.examBlock').removeClass('d-none');
+  $('.examBlock').removeClass('d-none');
+  $('.resultBlock').addClass('d-none');
+  $('.starBlock').addClass('d-none');
+  $('.testBlock').addClass('d-none');
+  $('.testContent ').html('No Contents');
+  $('.btnShowAnswer').addClass('d-none');
 });
 
 //SAVE QUIZ TO CACHE
-$(".btn-saveQuiz").on("click", function () {
+$('.btn-saveQuiz').on('click', function () {
   exam.saveToLocalCache();
   // $(".notification").text("Save to local successfully!!");
-  console.info("Save to local successfully!!")
+  console.info('Save to local successfully!!');
   // $(".notification").removeClass("dange").addClass("success");
 });
 
 //CLEAR CACHE
-$(".btn-clearQuiz").on("click", function () {
+$('.btn-clearQuiz').on('click', function () {
   exam.clearLocalCache();
   setTimeout(() => {
-    $(".notification").text("Clear local storage successfully!!");
-    $(".notification").removeClass("success").addClass("danger");
+    $('.notification').text('Clear local storage successfully!!');
+    $('.notification').removeClass('success').addClass('danger');
   }, 100);
 });
 
 //CHOICE GROUP
-$("#groupList").on("change", function () {
-  switchGroup($("#groupList").val());
+$('#groupList').on('change', function () {
+  switchGroup($('#groupList').val());
 });
 
 //CHOICE DESK
-$("#deskList").on("change", function () {
-  groupId = $("#groupList").val();
-  examId = $("#deskList").val();
+$('#deskList').on('change', function () {
+  groupId = $('#groupList').val();
+  examId = $('#deskList').val();
   switchDesk(groupId, examId);
-  setUserStorage("exam_id", examId);
+  setUserStorage('exam_id', examId);
 });
 
 function switchGroup(groupId) {
-  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+  if (
+    typeof window.listExamGroup === 'undefined' ||
+    !window.listExamGroup ||
+    window.listExamGroup.length === 0
+  ) {
     setTimeout(() => switchGroup(groupId), 100);
     return;
   }
 
-  let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
-  if(groupIndex < 0) { 
+  let groupIndex = window.listExamGroup.findIndex(group => group.id == groupId);
+  if (groupIndex < 0) {
     groupIndex = 0;
   }
 
   let listItem = window.listExamGroup[groupIndex].list;
-  let itemHtml = "";
+  let itemHtml = '';
   listItem.forEach(function (item) {
-    itemHtml += `<option value="${item.id}">${item.name}</option>`
+    itemHtml += `<option value="${item.id}">${item.name}</option>`;
   });
-  $("#deskList").html(itemHtml);
+  $('#deskList').html(itemHtml);
 
-  setUserStorage("group_id", groupId);
+  setUserStorage('group_id', groupId);
   switchDesk(groupId, examId);
 }
 
-var setSearchParam = function(key, value) {
+var setSearchParam = function (key, value) {
   if (!window.history.pushState) {
-      return;
+    return;
   }
 
   if (!key) {
-      return;
+    return;
   }
 
   var url = new URL(window.location.href);
   var params = new window.URLSearchParams(window.location.search);
   if (value === undefined || value === null) {
-      params.delete(key);
+    params.delete(key);
   } else {
-      params.set(key, value);
+    params.set(key, value);
   }
 
   url.search = params;
   url = url.toString();
   window.history.replaceState({url: url}, null, url);
-}
+};
 
 // Function to clear all exam-related cache
 function clearAllExamCache() {
@@ -444,21 +514,25 @@ function clearAllExamCache() {
       sessionStorage.removeItem(key);
     }
   });
-  
+
   // Clear all localStorage cache keys for exams
   Object.keys(localStorage).forEach(key => {
     if (key.startsWith('cache') && key !== 'USER_STORAGE') {
       localStorage.removeItem(key);
     }
   });
-  
+
   // Reset global flags
   window.globalDatabaseLoadInProgress = false;
   window.examCreationInProgress = false;
 }
 
 function switchDesk(groupId, examId) {
-  if (typeof window.listExamGroup === 'undefined' || !window.listExamGroup || window.listExamGroup.length === 0) {
+  if (
+    typeof window.listExamGroup === 'undefined' ||
+    !window.listExamGroup ||
+    window.listExamGroup.length === 0
+  ) {
     setTimeout(() => switchDesk(groupId, examId), 100);
     return;
   }
@@ -468,50 +542,50 @@ function switchDesk(groupId, examId) {
     setTimeout(() => switchDesk(groupId, examId), 100);
     return;
   }
-  
+
   // Clear any existing loading flags for the new exam
   sessionStorage.removeItem(`exam_loading_${examId}`);
   sessionStorage.removeItem(`exam_loaded_${examId}`);
-  
+
   // Clear all exam-related cache to prevent loading old data
   Object.keys(sessionStorage).forEach(key => {
     if (key.startsWith('exam_loading_') || key.startsWith('exam_loaded_')) {
       sessionStorage.removeItem(key);
     }
   });
-  
+
   // Clear global database load lock to ensure fresh loading
   window.globalDatabaseLoadInProgress = false;
-  
+
   // Clear all exam-related cache comprehensively
   clearAllExamCache();
 
-  let groupIndex = window.listExamGroup.findIndex((group) => group.id == groupId);
-  if(groupIndex < 0) return;
+  let groupIndex = window.listExamGroup.findIndex(group => group.id == groupId);
+  if (groupIndex < 0) return;
 
   let listExam = window.listExamGroup[groupIndex].list;
-  let examIndex = listExam.findIndex((exam) => exam.id == examId);
-  if(examIndex < 0) {
+  let examIndex = listExam.findIndex(exam => exam.id == examId);
+  if (examIndex < 0) {
     examIndex = 0;
-    examId = listExam[examIndex].id
+    examId = listExam[examIndex].id;
   }
   //Set dropdown status
-  $("#deskList .deskItem").removeClass("active");
-  $(`#deskList .deskItem[data-examid="${examId}"]`).addClass("active");
-  $("#selectExam").text(listExam[examIndex].name);
+  $('#deskList .deskItem').removeClass('active');
+  $(`#deskList .deskItem[data-examid="${examId}"]`).addClass('active');
+  $('#selectExam').text(listExam[examIndex].name);
   // $("#examName").text(listExam[examIndex].name);
 
   //Set URL - check if setSearchParam is available
   if (typeof setSearchParam === 'function') {
-    setSearchParam("group", groupId);
-    setSearchParam("exam", examId);
+    setSearchParam('group', groupId);
+    setSearchParam('exam', examId);
   }
 
   // Check if exam data is available
   if (!listExam[examIndex].data || listExam[examIndex].data.length === 0) {
     console.warn('⚠️ Exam data not available for:', listExam[examIndex].id);
     console.log('📋 Available exam data:', listExam[examIndex]);
-    
+
     // Try to validate if the data variable exists
     const examDataVar = listExam[examIndex].id.replace(/[^a-zA-Z0-9]/g, '_');
     if (typeof window[examDataVar] === 'undefined') {
@@ -521,25 +595,25 @@ function switchDesk(groupId, examId) {
     }
     return;
   }
-  
+
   try {
     // Cleanup old exam instance if exists
     if (window.exam && typeof window.exam.destroy === 'function') {
       window.exam.destroy();
     }
-    
+
     // Clear any stuck creation locks
     window.examCreationInProgress = false;
-    
+
     exam = new window.Exam(listExam[examIndex].data, `cache${listExam[examIndex].id}`);
     window.exam = exam; // Make exam instance globally available
-    
+
     // Ensure exam was created properly
     if (!exam || !exam.count) {
       console.error('❌ Failed to create exam instance properly');
       return;
     }
-    
+
     queDataCount = exam.count;
 
     // Set exam metadata for database storage
@@ -547,41 +621,41 @@ function switchDesk(groupId, examId) {
     exam.examName = listExam[examIndex].name;
     exam.groupId = groupId;
     exam.groupName = window.listExamGroup[groupIndex].name;
-    
+
     // Clear any existing loading flags for this exam
     sessionStorage.removeItem(`exam_loading_${exam.examId}`);
     sessionStorage.removeItem(`exam_loaded_${exam.examId}`);
-    
+
     // Reset database load time for new exam
     exam._lastDatabaseLoadTime = 0;
-    
+
     // Clear any existing database loading state
     exam._isLoadingFromDatabase = false;
 
     que = new window.Question();
-    
+
     // Ensure exam.count is properly set
     if (exam && exam.count && exam.count > 0) {
       que.showQueNumber(exam.current, exam.count);
       que.showQueListNumber(exam.count);
     } else {
       console.warn('⚠️ Exam count not properly set, using fallback');
-      que.showQueNumber(exam.current, "?");
+      que.showQueNumber(exam.current, '?');
       que.showQueListNumber(0);
     }
 
     // Clear all cache flags to force fresh loading for new exam
     sessionStorage.removeItem(`exam_loading_${exam.examId}`);
     sessionStorage.removeItem(`exam_loaded_${exam.examId}`);
-    
+
     // Clear localStorage cache for this specific exam to ensure fresh data
     const cacheKey = `cache${exam.examId}`;
     localStorage.removeItem(cacheKey);
-    
+
     //Load from cache synchronously to avoid multiple API calls
     exam.loadFromCacheSync();
     exam.loadQueListNumber();
-    
+
     // Clear loading flags after initialization to prevent multiple calls
     if (exam.examId) {
       sessionStorage.removeItem(`exam_loading_${exam.examId}`);
@@ -590,10 +664,7 @@ function switchDesk(groupId, examId) {
     //Show first question or question is saved from local
     let firstQuestion = exam.currentQuestion();
     if (firstQuestion && typeof firstQuestion.getQuestion === 'function') {
-      firstQuestion.getQuestion(
-        exam.getChoice(),
-        exam.getMarkToReview()
-      );
+      firstQuestion.getQuestion(exam.getChoice(), exam.getMarkToReview());
     } else {
       console.warn('⚠️ Question object not properly initialized');
     }
@@ -605,220 +676,269 @@ function switchDesk(groupId, examId) {
 // CREATE TEST
 let testQuestion = [];
 let showDetail = false;
-$(".btn-createTest").on("click", function () {
-  $(".ExamQuestionsBlock").addClass("d-none");
-  $(".examBlock").addClass("d-none");
-  $(".settingBlock").addClass("d-none");
-  $(".testBlock").removeClass("d-none");
+$('.btn-createTest').on('click', function () {
+  $('.ExamQuestionsBlock').addClass('d-none');
+  $('.examBlock').addClass('d-none');
+  $('.settingBlock').addClass('d-none');
+  $('.testBlock').removeClass('d-none');
 });
 
-$("#testBlock").on("click", ".btnCreateTest", function () {
-  let type = $("#filterOptionType2").val();
-  let max = $("#filterOptionMaxQuestion2").val();
-  let from = $("#filterOptionFromQuestion2").val();
-  let to = $("#filterOptionToQuestion2").val();
-  let random = $("#filterOptionRandom").val();
-  let show_question_title = $("#show_question_title").val() == "1";
-  
+$('#testBlock').on('click', '.btnCreateTest', function () {
+  let type = $('#filterOptionType2').val();
+  let max = $('#filterOptionMaxQuestion2').val();
+  let from = $('#filterOptionFromQuestion2').val();
+  let to = $('#filterOptionToQuestion2').val();
+  let random = $('#filterOptionRandom').val();
+  let show_question_title = $('#show_question_title').val() == '1';
+
   testQuestion = exam.createExam({
-    "type": type,
-    "from": from,
-    "to": to,
-    "random": random,
-    "max": max,
-    "question_options": {
-      "show_title": show_question_title,
-    }
+    type: type,
+    from: from,
+    to: to,
+    random: random,
+    max: max,
+    question_options: {
+      show_title: show_question_title,
+    },
   });
 
-  exam.renderContent_v2(testQuestion, "#testBlock .testContent");
-  $(".btnShowAnswer").removeClass("d-none");
+  exam.renderContent_v2(testQuestion, '#testBlock .testContent');
+  $('.btnShowAnswer').removeClass('d-none');
 });
 
 // MARK STAR
-$("#testBlock").on("click", ".starMarkToReview", function () {
-  let queNo = $(this).data("queno");
-  let isMarked = $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).hasClass("true");
-  
+$('#testBlock').on('click', '.starMarkToReview', function () {
+  let queNo = $(this).data('queno');
+  let isMarked = $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).hasClass('true');
+
   exam.saveMarkToReview(queNo, !isMarked);
   que.markToReview(queNo, !isMarked);
-  if(isMarked) {
-    $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).removeClass("true").addClass("false");
+  if (isMarked) {
+    $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).removeClass('true').addClass('false');
   } else {
-    $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).removeClass("false").addClass("true");
+    $(`#testBlock .starMarkToReview[data-queno="${queNo}"]`).removeClass('false').addClass('true');
   }
 });
 
 // SHOW ANSWER
-$("#testBlock").on("click", ".btnShowAnswerQuestion", function (event) {
-  let index = $(this).data("index");
-  let hideshow = $(this).data("hideshow") == "Hide" ? false : true;
+$('#testBlock').on('click', '.btnShowAnswerQuestion', function (event) {
+  let index = $(this).data('index');
+  let hideshow = $(this).data('hideshow') == 'Hide' ? false : true;
   let question = testQuestion[index];
 
-  let userChoice = "";
+  let userChoice = '';
   $(`#QuestionBlockItem_${index} .ip-radio:checked`).each((key, item) => {
-    userChoice += $(item).val() + " "
-  })
+    userChoice += $(item).val() + ' ';
+  });
 
-  $(`#QuestionBlockItem_${index}`).html(question.renderQuestionHtml_v2({
-    index: index,
-    showAnswer: hideshow,
-    showComment: false,
-    isStar: false,
-    userChoice: userChoice,
-    showAnswerBtn: true,
-    showCommentBtn: true,
-  }));
-
+  $(`#QuestionBlockItem_${index}`).html(
+    question.renderQuestionHtml_v2({
+      index: index,
+      showAnswer: hideshow,
+      showComment: false,
+      isStar: false,
+      userChoice: userChoice,
+      showAnswerBtn: true,
+      showCommentBtn: true,
+    }),
+  );
 });
 
 // SHOW DISCUSSTION
-$("#testBlock").on("click", ".btnShowDisscussionQuestion", function () {
-  let index = $(this).data("index");
-  let hideshow = $(this).data("hideshow") == "Hide" ? false : true;
+$('#testBlock').on('click', '.btnShowDisscussionQuestion', function () {
+  let index = $(this).data('index');
+  let hideshow = $(this).data('hideshow') == 'Hide' ? false : true;
   let question = testQuestion[index];
 
-  let userChoice = "";
+  let userChoice = '';
   $(`#QuestionBlockItem_${index} .ip-radio:checked`).each((key, item) => {
-    userChoice += $(item).val() + " "
-  })
+    userChoice += $(item).val() + ' ';
+  });
 
-  $(`#QuestionBlockItem_${index}`).html(question.renderQuestionHtml_v2({
-    index: index,
-    showAnswer: true,
-    showComment: hideshow,
-    isStar: false,
-    userChoice: userChoice,
-    showAnswerBtn: true,
-    showCommentBtn: true,
-  }));
-
+  $(`#QuestionBlockItem_${index}`).html(
+    question.renderQuestionHtml_v2({
+      index: index,
+      showAnswer: true,
+      showComment: hideshow,
+      isStar: false,
+      userChoice: userChoice,
+      showAnswerBtn: true,
+      showCommentBtn: true,
+    }),
+  );
 });
 
 // QUICK REVIEW
-$("#testBlock").on("click", ".btnQuickReview", function () {
-  if($("#quickReviewModal").hasClass("show")) {
+$('#testBlock').on('click', '.btnQuickReview', function () {
+  if ($('#quickReviewModal').hasClass('show')) {
     $('#quickReviewModal').modal('hide');
   } else {
     $('#quickReviewModal').modal('show');
     let score = exam.calculateScore(testQuestion);
-    exam.renderTestQuickView(score, "#quickReviewContent");
-    $("#tableQuickReviewDetails").html("");
-    if(showDetail) {
-      exam.renderTestQuickViewTable(testQuestion, "#tableQuickReviewDetails");
+    exam.renderTestQuickView(score, '#quickReviewContent');
+    $('#tableQuickReviewDetails').html('');
+    if (showDetail) {
+      exam.renderTestQuickViewTable(testQuestion, '#tableQuickReviewDetails');
     }
   }
 });
 
-$("#testBlock").on("click", ".btnQuickReviewDetails", function () {
-  if(!showDetail) {
-    exam.renderTestQuickViewTable(testQuestion, "#tableQuickReviewDetails");
-    $("#testBlock .btnQuickReviewDetails").text("Hide Details");
+$('#testBlock').on('click', '.btnQuickReviewDetails', function () {
+  if (!showDetail) {
+    exam.renderTestQuickViewTable(testQuestion, '#tableQuickReviewDetails');
+    $('#testBlock .btnQuickReviewDetails').text('Hide Details');
   } else {
-    $("#testBlock .btnQuickReviewDetails").text("Show Details");
-    $("#tableQuickReviewDetails").html("");
+    $('#testBlock .btnQuickReviewDetails').text('Show Details');
+    $('#tableQuickReviewDetails').html('');
   }
   showDetail = !showDetail;
 });
 
-$("#testBlock").on("click", ".btnScrollToQuestion", function () {
-  let id = "QuestionBlockItem_" + $(this).data("index")
+$('#testBlock').on('click', '.btnScrollToQuestion', function () {
+  let id = 'QuestionBlockItem_' + $(this).data('index');
   document.getElementById(id).scrollIntoView();
   $('#quickReviewModal').modal('hide');
   // exam.renderTestQuickViewTable(testQuestion, "#tableQuickReviewDetails");
 });
 
-
-$("#quickReviewModal").on("click", ".btn-secondary", function () {
+$('#quickReviewModal').on('click', '.btn-secondary', function () {
   $('#quickReviewModal').modal('hide');
 });
 
 // SHOW ALL ANSWER
-$("#testBlock").on("click", ".btnShowAnswer", function () {
-  $("#testBlock .btnShowAnswerQuestion").click();
+$('#testBlock').on('click', '.btnShowAnswer', function () {
+  $('#testBlock .btnShowAnswerQuestion').click();
 });
 
 //EXPORT
-$(".btn-exportQuiz").on("click", function () {
+$('.btn-exportQuiz').on('click', function () {
   exam.export();
 });
 
-$("#modals").on("click", "#btnCopyExportContent", function () {
-  exam.copyText("exportContent");
-  $("#modals #btnCopyExportContent").text("Copied")
+$('#modals').on('click', '#btnCopyExportContent', function () {
+  exam.copyText('exportContent');
+  $('#modals #btnCopyExportContent').text('Copied');
 });
 
 //EDIT COMMENT
-$(".comment-block").on("click", ".btnEditComment", function () {
-  if($(this).hasClass("nextCancelWhenClick")) {
+$('.comment-block').on('click', '.btnEditComment', function () {
+  if ($(this).hasClass('nextCancelWhenClick')) {
     // Cancel when click 2 times
-    $(this).removeClass("nextCancelWhenClick");
-    $(".comment-block .textComment").show();
-    $(".edit-comment-block").html("");
-    return "Cancel";
+    $(this).removeClass('nextCancelWhenClick');
+    $('.comment-block .textComment').show();
+    $('.edit-comment-block').html('');
+    return 'Cancel';
   } else {
-    $(this).addClass("nextCancelWhenClick");
+    $(this).addClass('nextCancelWhenClick');
   }
-  
+
   let content = exam.getComment(exam.current);
   let htmlEditComment = `
     <textarea class="txtContent form-control" aria-label="Enter comment" rows="5">${content}</textarea>
     <a class="btnSave btn btn-sm btn-success mt-1">Save</a>
   `;
 
-  $(".comment-block .textComment").hide();
-  $(".edit-comment-block").html(htmlEditComment);
+  $('.comment-block .textComment').hide();
+  $('.edit-comment-block').html(htmlEditComment);
 });
 
-$(".comment-block").on("click", ".btnSave", function () {
-  let content = $(".comment-block .txtContent").val();
+$('.comment-block').on('click', '.btnSave', function () {
+  let content = $('.comment-block .txtContent').val();
   exam.setComment(exam.current, content);
 
-  $(".edit-comment-block").html("");
+  $('.edit-comment-block').html('');
   que.showCommentHtml(content, true);
-  $(".comment-block .textComment").show();
+  $('.comment-block .textComment').show();
 });
 
 // DARK MODE
 function toogleDarkMode() {
-  let screen_mode = getUserStorage("screen_mode");
-  if(screen_mode == "dark-mode") {
-    screen_mode = "white-mode";
-    $("body").addClass(screen_mode);
-    $("body").removeClass("dark-mode");
+  let screen_mode = getUserStorage('screen_mode');
+  if (screen_mode == 'dark-mode') {
+    screen_mode = 'white-mode';
+    $('body').addClass(screen_mode);
+    $('body').removeClass('dark-mode');
   } else {
-    screen_mode = "dark-mode";
-    $("body").addClass(screen_mode);
-    $("body").removeClass("white-mode");
+    screen_mode = 'dark-mode';
+    $('body').addClass(screen_mode);
+    $('body').removeClass('white-mode');
   }
 
-  setUserStorage("screen_mode", screen_mode);
+  setUserStorage('screen_mode', screen_mode);
 
   return screen_mode;
 }
 
 function loadDarkMode() {
-  let screen_mode = getUserStorage("screen_mode");
+  let screen_mode = getUserStorage('screen_mode');
 
-  if(screen_mode == "dark-mode") {
-    $("body").addClass(screen_mode);
-    $("body").removeClass("white-mode");
+  if (screen_mode == 'dark-mode') {
+    $('body').addClass(screen_mode);
+    $('body').removeClass('white-mode');
   } else {
-    $("body").addClass(screen_mode);
-    $("body").removeClass("dark-mode");
+    $('body').addClass(screen_mode);
+    $('body').removeClass('dark-mode');
   }
 
-  return "Load Dark Mode Successfull"
+  return 'Load Dark Mode Successfull';
 }
 
-$(".btnToogleDarkMode").on("click", function () {
+$('.btnToogleDarkMode').on('click', function () {
   toogleDarkMode();
 });
 
 // Clear All Answer
-$(".btnClearAllAnswer").on("click", function () {
-  exam.clearLocalCache("ONLY_ANSWER");
+$('.btnClearAllAnswer').on('click', function () {
+  exam.clearLocalCache('ONLY_ANSWER');
   // Re-show list question number
   que.showQueListNumber(exam.count);
   exam.loadQueListNumber();
+});
+
+// Initialize authentication listeners when DOM is ready
+$(document).ready(function () {
+  // Set up authentication listeners
+  setupAuthListeners();
+
+  // Set up login/logout button handlers
+  $('#login').on('click', function () {
+    if (window.authManager) {
+      window.authManager.login();
+    }
+  });
+
+  $('#logout').on('click', function () {
+    if (window.authManager) {
+      window.authManager.logout();
+    }
+  });
+
+  // Auto feedback toggle button
+  $('#toggle-auto-feedback').on('click', function () {
+    if (window.exam && typeof window.exam.setAutoFeedbackEnabled === 'function') {
+      const currentStatus = window.exam.isAutoFeedbackEnabled();
+      window.exam.setAutoFeedbackEnabled(!currentStatus);
+
+      // Update button appearance
+      const icon = $(this).find('i');
+      const button = $(this);
+
+      if (!currentStatus) {
+        icon.removeClass('fa-toggle-off').addClass('fa-toggle-on');
+        button.removeClass('btn-outline-secondary').addClass('btn-outline-success');
+      } else {
+        icon.removeClass('fa-toggle-on').addClass('fa-toggle-off');
+        button.removeClass('btn-outline-success').addClass('btn-outline-secondary');
+      }
+    }
+  });
+
+  // Check if auth is required and user is not authenticated
+  const requireAuth = document.querySelector('meta[name="require-auth"]')?.content === 'true';
+  const enableAuth = document.querySelector('meta[name="enable-auth"]')?.content === 'true';
+
+  if (requireAuth && enableAuth && window.authManager && !window.authManager.isAuthenticated()) {
+    console.log('🔒 Authentication required on page load');
+    showAuthGate();
+  }
 });
