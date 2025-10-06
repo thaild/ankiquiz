@@ -1,6 +1,6 @@
 import json
 
-input_file = 'mock/mock_10.json'
+input_file = 'mock/mock_17.json'
 
 # Đọc dữ liệu từ file JSON
 with open(input_file, 'r') as infile:

@@ -127,6 +127,11 @@ try {
           name: '[PMA-PMP] MOCK TEST 14',
           data: PMA_PMP_MOCK_TEST14.data,
         },
+        {
+          id: 'PMA_PMP_MOCK_TEST_17',
+          name: '[PMA-PMP] MOCK TEST 17',
+          data: PMA_PMP_MOCK_TEST17.data,
+        },
       ],
     },
 
