@@ -65,6 +65,7 @@ router.get("/info", (req, res) => {
       "/api/info",
       "/api/exams",
       "/api/questions",
+      "/api/fake-api",
       "/api/exam-results",
       "/api/exam-results/user/:userId",
       "/api/exam-results/exam/:examId",
@@ -107,6 +108,32 @@ router.get("/questions", (req, res) => {
     offset: parseInt(offset),
     total: 1401
   });
+});
+
+// Fake API endpoint with 5-second timeout
+router.get("/fake-api", async (req, res) => {
+  try {
+    console.log("Fake API called - starting 5 second delay...");
+    
+    // Sleep for 5 seconds
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    
+    console.log("Fake API delay completed - sending response");
+    
+    res.json({
+      message: "Fake API response after 5 second delay",
+      timestamp: new Date().toISOString(),
+      delay: "5000ms",
+      status: "success"
+    });
+  } catch (error) {
+    console.error('Error in fake API:', error);
+    res.status(500).json({ 
+      error: 'Fake API failed', 
+      details: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
 });
 
 // ===== EXAM RESULTS API ROUTES (REAL DB) =====
