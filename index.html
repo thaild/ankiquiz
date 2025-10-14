@@ -711,47 +711,44 @@
           // Initialize the exam loader
           if (window.examLoader) {
             // Start auto-loading all exam data
-            window.examLoader
-              .autoLoadAllExams()
-              .then(() => {
-                // Wait a bit more to ensure all scripts are fully loaded
-                return new Promise(resolve => setTimeout(resolve, 500));
-              })
-              .then(() => {
-                // Load index.js after exam data is loaded
-                return import('./public/data/index.js');
-              })
-              .then(() => {
-                // Load remaining application files
-                return Promise.all([
-                  import('./public/js/classes.js'),
-                  import('./public/js/desks.js'),
-                  import('./public/js/exam.js'),
-                  import('./public/js/database-client.js'),
-                  import('./public/js/results-dashboard.js')
-                ]);
-              })
-              .then(() => {
-                // Clear loading flag
-                window.appLoadingInProgress = false;
+            window.examLoader.autoLoadAllExams();
 
-                // Dispatch custom event for application ready
-                document.dispatchEvent(
-                  new CustomEvent('applicationReady', {
-                    detail: {
-                      timestamp: new Date().toISOString(),
-                      loadedExams: window.examLoader.getLoadingProgress()
-                    }
-                  })
-                );
-              })
-              .catch(error => {
-                console.error('❌ Error during application loading:', error);
-                // Clear loading flag
-                window.appLoadingInProgress = false;
-                // Fallback to traditional loading
-                loadTraditionalScripts();
-              });
+            // Wait a bit more to ensure all scripts are fully loaded
+            setTimeout(() => {
+              // Load index.js after exam data is loaded
+              import('./public/data/index.js')
+                .then(() => {
+                  // Load remaining application files
+                  return Promise.all([
+                    import('./public/js/classes.js'),
+                    import('./public/js/desks.js'),
+                    import('./public/js/exam.js'),
+                    import('./public/js/database-client.js'),
+                    import('./public/js/results-dashboard.js')
+                  ]);
+                })
+                .then(() => {
+                  // Clear loading flag
+                  window.appLoadingInProgress = false;
+
+                  // Dispatch custom event for application ready
+                  document.dispatchEvent(
+                    new CustomEvent('applicationReady', {
+                      detail: {
+                        timestamp: new Date().toISOString(),
+                        loadedExams: window.examLoader.getLoadingProgress()
+                      }
+                    })
+                  );
+                })
+                .catch(error => {
+                  console.error('❌ Error during application loading:', error);
+                  // Clear loading flag
+                  window.appLoadingInProgress = false;
+                  // Fallback to traditional loading
+                  loadTraditionalScripts();
+                });
+            }, 500);
           } else {
             console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
             window.appLoadingInProgress = false;

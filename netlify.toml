@@ -42,9 +42,9 @@
 [identity]
   external = false
 
-# All requests go through the API function for unified handling
+# API requests go through the API function
 [[redirects]]
-  from = "/*"
+  from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 
@@ -81,12 +81,12 @@
 # Environment variables for different contexts
 [context.production.environment]
   NODE_ENV = "production"
-  API_BASE_URL = "https://your-api-domain.com/api"
+  API_BASE_URL = "https://ankiquiz.netlify.app/api"
 
 [context.deploy-preview.environment]
   NODE_ENV = "preview"
-  API_BASE_URL = "https://your-staging-api.com/api"
+  API_BASE_URL = "https://ankiquiz.netlify.app/api"
 
 [context.branch-deploy.environment]
   NODE_ENV = "development"
-  API_BASE_URL = "https://your-dev-api.com/api" 
+  API_BASE_URL = "https://ankiquiz.netlify.app/api" 
