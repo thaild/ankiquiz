@@ -8,9 +8,6 @@
   # Functions directory (if using serverless functions)
   functions = "functions"
   
-  # Ignore files that don't need to trigger rebuilds
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- package-lock.json yarn.lock"
-
 [functions]
   external_node_modules = ["express", "cors"]
   node_bundler = "esbuild"
