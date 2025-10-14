@@ -113,16 +113,6 @@ class BuildAndGenerate {
       // Step 1: Generate index.json files
       this.generateIndexFiles();
 
-      // Step 2: Run npm build if package.json exists
-      const packageJsonPath = path.join(__dirname, '../package.json');
-      if (fs.existsSync(packageJsonPath)) {
-        console.log('📦 Running npm build...');
-        execSync('npm run build', {
-          stdio: 'inherit',
-          cwd: path.join(__dirname, '..')
-        });
-      }
-
       console.log('✅ Build and generate process completed!');
     } catch (error) {
       console.error('❌ Build process failed:', error.message);
