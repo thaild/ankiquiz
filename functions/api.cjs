@@ -113,12 +113,15 @@ router.get("/questions", (req, res) => {
 // Fake API endpoint with 5-second timeout
 router.get("/fake-api", async (req, res) => {
   try {
-    console.log("Fake API called - starting 5 second delay...");
+    const startTime = new Date();
+    console.log(`[${startTime.toISOString()}] Fake API called - starting 5 second delay...`);
     
     // Sleep for 5 seconds
     await new Promise(resolve => setTimeout(resolve, 5000));
     
-    console.log("Fake API delay completed - sending response");
+    const endTime = new Date();
+    const duration = endTime.getTime() - startTime.getTime();
+    console.log(`[${endTime.toISOString()}] Fake API delay completed - sending response (duration: ${duration}ms)`);
     
     res.json({
       message: "Fake API response after 5 second delay",
@@ -127,7 +130,8 @@ router.get("/fake-api", async (req, res) => {
       status: "success"
     });
   } catch (error) {
-    console.error('Error in fake API:', error);
+    const errorTime = new Date();
+    console.error(`[${errorTime.toISOString()}] Error in fake API:`, error);
     res.status(500).json({ 
       error: 'Fake API failed', 
       details: error.message,
