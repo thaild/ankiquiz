@@ -65,7 +65,14 @@ router.get("/info", (req, res) => {
       "/api/info",
       "/api/exams",
       "/api/questions",
-      "/api/fake-api",
+      "/api/fake-api-1",
+      "/api/fake-api-2",
+      "/api/fake-api-3",
+      "/api/fake-api-4",
+      "/api/fake-api-5",
+      "/api/fake-api-6",
+      "/api/fake-api-7",
+      "/api/fake-api-8",
       "/api/exam-results",
       "/api/exam-results/user/:userId",
       "/api/exam-results/exam/:examId",
@@ -110,35 +117,39 @@ router.get("/questions", (req, res) => {
   });
 });
 
-// Fake API endpoint with 5-second timeout
-router.get("/fake-api", async (req, res) => {
-  try {
-    const startTime = new Date();
-    console.log(`[${startTime.toISOString()}] Fake API called - starting 5 second delay...`);
-    
-    // Sleep for 5 seconds
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    
-    const endTime = new Date();
-    const duration = endTime.getTime() - startTime.getTime();
-    console.log(`[${endTime.toISOString()}] Fake API delay completed - sending response (duration: ${duration}ms)`);
-    
-    res.json({
-      message: "Fake API response after 5 second delay",
-      timestamp: new Date().toISOString(),
-      delay: "5000ms",
-      status: "success"
-    });
-  } catch (error) {
-    const errorTime = new Date();
-    console.error(`[${errorTime.toISOString()}] Error in fake API:`, error);
-    res.status(500).json({ 
-      error: 'Fake API failed', 
-      details: error.message,
-      timestamp: new Date().toISOString()
-    });
-  }
-});
+// Fake API endpoints with 5-second timeout
+for (let i = 1; i <= 8; i++) {
+  router.get(`/fake-api-${i}`, async (req, res) => {
+    try {
+      const startTime = new Date();
+      console.log(`[${startTime.toISOString()}] Fake API ${i} called - starting 5 second delay...`);
+      
+      // Sleep for 5 seconds
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      
+      const endTime = new Date();
+      const duration = endTime.getTime() - startTime.getTime();
+      console.log(`[${endTime.toISOString()}] Fake API ${i} delay completed - sending response (duration: ${duration}ms)`);
+      
+      res.json({
+        message: `Fake API ${i} response after 5 second delay`,
+        timestamp: new Date().toISOString(),
+        delay: "5000ms",
+        status: "success",
+        apiNumber: i
+      });
+    } catch (error) {
+      const errorTime = new Date();
+      console.error(`[${errorTime.toISOString()}] Error in fake API ${i}:`, error);
+      res.status(500).json({ 
+        error: `Fake API ${i} failed`, 
+        details: error.message,
+        timestamp: new Date().toISOString(),
+        apiNumber: i
+      });
+    }
+  });
+}
 
 // ===== EXAM RESULTS API ROUTES (REAL DB) =====
 
