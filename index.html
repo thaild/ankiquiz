@@ -675,7 +675,7 @@
           './public/js/exam.js',
           './public/js/exam-loader.js',
           './public/js/database-client.js',
-          './public/js/results-dashboard.js',
+          './public/js/results-dashboard.js'
         ];
 
         criticalFiles.forEach(file => {
@@ -711,47 +711,44 @@
           // Initialize the exam loader
           if (window.examLoader) {
             // Start auto-loading all exam data
-            window.examLoader
-              .autoLoadAllExams()
-              .then(() => {
-                // Wait a bit more to ensure all scripts are fully loaded
-                return new Promise(resolve => setTimeout(resolve, 500));
-              })
-              .then(() => {
-                // Load index.js after exam data is loaded
-                return import('./public/data/index.js');
-              })
-              .then(() => {
-                // Load remaining application files
-                return Promise.all([
-                  import('./public/js/classes.js'),
-                  import('./public/js/desks.js'),
-                  import('./public/js/exam.js'),
-                  import('./public/js/database-client.js'),
-                  import('./public/js/results-dashboard.js'),
-                ]);
-              })
-              .then(() => {
-                // Clear loading flag
-                window.appLoadingInProgress = false;
+            window.examLoader.autoLoadAllExams();
 
-                // Dispatch custom event for application ready
-                document.dispatchEvent(
-                  new CustomEvent('applicationReady', {
-                    detail: {
-                      timestamp: new Date().toISOString(),
-                      loadedExams: window.examLoader.getLoadingProgress(),
-                    },
-                  }),
-                );
-              })
-              .catch(error => {
-                console.error('❌ Error during application loading:', error);
-                // Clear loading flag
-                window.appLoadingInProgress = false;
-                // Fallback to traditional loading
-                loadTraditionalScripts();
-              });
+            // Wait a bit more to ensure all scripts are fully loaded
+            setTimeout(() => {
+              // Load index.js after exam data is loaded
+              import('./public/data/index.js')
+                .then(() => {
+                  // Load remaining application files
+                  return Promise.all([
+                    import('./public/js/classes.js'),
+                    import('./public/js/desks.js'),
+                    import('./public/js/exam.js'),
+                    import('./public/js/database-client.js'),
+                    import('./public/js/results-dashboard.js')
+                  ]);
+                })
+                .then(() => {
+                  // Clear loading flag
+                  window.appLoadingInProgress = false;
+
+                  // Dispatch custom event for application ready
+                  document.dispatchEvent(
+                    new CustomEvent('applicationReady', {
+                      detail: {
+                        timestamp: new Date().toISOString(),
+                        loadedExams: window.examLoader.getLoadingProgress()
+                      }
+                    })
+                  );
+                })
+                .catch(error => {
+                  console.error('❌ Error during application loading:', error);
+                  // Clear loading flag
+                  window.appLoadingInProgress = false;
+                  // Fallback to traditional loading
+                  loadTraditionalScripts();
+                });
+            }, 500);
           } else {
             console.warn('⚠️ Advanced loader not available, falling back to traditional loading');
             window.appLoadingInProgress = false;
@@ -771,7 +768,7 @@
           './public/js/desks.js',
           './public/js/exam.js',
           './public/js/database-client.js',
-          './public/js/results-dashboard.js',
+          './public/js/results-dashboard.js'
         ];
 
         scripts.forEach(src => {
@@ -820,7 +817,7 @@
         function loadExamData(examName) {
           const examFolders = {
             whizlabs: {
-              'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest'],
+              'SAP-C02': ['FreeTest', 'PracticeTest', 'SectionTest', 'FinalTest']
             },
             examtopics: {
               'SAP-C01': [
@@ -833,7 +830,7 @@
                 'exam_600_699',
                 'exam_700_799',
                 'exam_800_899',
-                'exam_900_1027',
+                'exam_900_1027'
               ],
               'SAP-C02': ['sap_c02_part1', 'sap_c02_part2', 'sap_c02_all'],
               'SOA-C02': [
@@ -842,7 +839,7 @@
                 'soa_c02_exam_extra_1',
                 'soa_c02_part1',
                 'soa_c02_part2',
-                'soa_c02_part3',
+                'soa_c02_part3'
               ],
               'SAA-C03': [
                 'saa_c03_exam_001_100',
@@ -850,7 +847,7 @@
                 'saa_c03_exam_201_300',
                 'saa_c03_exam_301_400',
                 'saa_c03_exam_401_500',
-                'saa_c03_exam_501_600',
+                'saa_c03_exam_501_600'
               ],
               'DBS-C01': ['dbs_c01_part1', 'dbs_c01_part2', 'dbs_c01_part3'],
               'DOP-C01': [
@@ -859,7 +856,7 @@
                 'dop_c01_part3',
                 'dop_c01_part4',
                 'dop_c01_part5',
-                'dop_c01_part6',
+                'dop_c01_part6'
               ],
               'DVA-C01': [
                 'dva_c01_part1',
@@ -867,7 +864,7 @@
                 'dva_c01_part3',
                 'dva_c01_part4',
                 'dva_c01_part5',
-                'dva_c01_part6',
+                'dva_c01_part6'
               ],
               'DVA-C02': [
                 'dva_c02_part1',
@@ -875,7 +872,7 @@
                 'dva_c02_part3',
                 'dva_c02_part4',
                 'dva_c02_part5',
-                'dva_c02_part6',
+                'dva_c02_part6'
               ],
               'PMI-PMP': [
                 'pmi_pmp_part1',
@@ -885,15 +882,15 @@
                 'pmi_pmp_part5',
                 'pmi_pmp_part6',
                 'pmi_pmp_part7',
-                'pmi_pmp_part8',
+                'pmi_pmp_part8'
               ],
-              'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all'],
+              'SNC-CAD': ['snc_cad_part1', 'snc_cad_part2', 'snc_cad_part3', 'snc_cad_part_all']
             },
             pma: {
               final_exam: ['final_exam_part1', 'final_exam_part2', 'final_exam_part3'],
               full_exam_1: ['full_exam_part1', 'full_exam_part2', 'full_exam_part3'],
-              mock_test: ['mock_test1', 'mock_test2'],
-            },
+              mock_test: ['mock_test1', 'mock_test2']
+            }
           };
 
           // Determine source type and load data
@@ -933,7 +930,7 @@
                   '08.AWSOrganizations',
                   '09.MigrationToAWSCloud',
                   '10.SecurityAndIdentity',
-                  '11.AWSLambdaAndServerless',
+                  '11.AWSLambdaAndServerless'
                 ].forEach(file => {
                   const script = document.createElement('script');
                   script.src = `./public/data/whizlabs/${examName}/${folder}/${file}.js`;
@@ -1003,7 +1000,7 @@
           window.authManager.addEventListener('error', error => {
             window.authManager.showNotification(
               'Authentication error occurred. Please try again.',
-              'danger',
+              'danger'
             );
           });
 
@@ -1037,7 +1034,7 @@
             isAuthenticated: () => window.authManager.isAuthenticated(),
             getToken: () => window.authManager.getToken(),
             authenticatedRequest: (url, options) =>
-              window.authManager.authenticatedRequest(url, options),
+              window.authManager.authenticatedRequest(url, options)
           };
 
           console.log('Authentication system initialized');

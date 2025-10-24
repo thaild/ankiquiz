@@ -6,7 +6,9 @@ class DatabaseClient {
     this.userId = null;
     this.isAuthenticated = false;
     this._apiCache = new Map(); // Initialize API cache
-    
+    this._databaseAvailable = true; // Track database availability
+    this._lastDatabaseCheck = 0; // Last time we checked database
+
     // Initialize authentication state
     this.initializeAuth();
   }
@@ -17,27 +19,30 @@ class DatabaseClient {
     if (window.authManager) {
       this.isAuthenticated = window.authManager.isAuthenticated();
       this.userId = window.authManager.getUserId();
-      
+
       // Listen for authentication changes
-      window.authManager.addEventListener('login', async (user) => {
+      window.authManager.addEventListener('login', async () => {
         this.isAuthenticated = true;
         this.userId = window.authManager.getUserId();
         console.log('DatabaseClient: User authenticated', this.userId);
-        
+
         // Attempt to migrate fallback user data
         try {
           const migrated = await this.migrateFallbackUserData();
           if (migrated) {
             console.log('Successfully migrated fallback user data to authenticated user');
             if (window.authManager) {
-              window.authManager.showNotification('Your previous exam data has been migrated to your account!', 'success');
+              window.authManager.showNotification(
+                'Your previous exam data has been migrated to your account!',
+                'success'
+              );
             }
           }
         } catch (error) {
           console.error('Failed to migrate user data:', error);
         }
       });
-      
+
       window.authManager.addEventListener('logout', () => {
         this.isAuthenticated = false;
         this.userId = null;
@@ -56,7 +61,7 @@ class DatabaseClient {
     if (this.isAuthenticated && this.userId) {
       return this.userId;
     }
-    
+
     // Return fallback user ID for unauthenticated users
     return this.getFallbackUserId();
   }
@@ -65,19 +70,19 @@ class DatabaseClient {
   getFallbackUserId() {
     let userId = localStorage.getItem('FALLBACK_USER_ID');
     let userIdTimestamp = localStorage.getItem('FALLBACK_USER_ID_TIMESTAMP');
-    
+
     // Check if user ID exists and is not expired (1 week = 7 * 24 * 60 * 60 * 1000 ms)
     const oneWeekInMs = 7 * 24 * 60 * 60 * 1000;
     const currentTime = Date.now();
-    
-    if (!userId || !userIdTimestamp || (currentTime - parseInt(userIdTimestamp)) > oneWeekInMs) {
+
+    if (!userId || !userIdTimestamp || currentTime - parseInt(userIdTimestamp) > oneWeekInMs) {
       // Generate new fallback user ID
       userId = 'fallback_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       localStorage.setItem('FALLBACK_USER_ID', userId);
       localStorage.setItem('FALLBACK_USER_ID_TIMESTAMP', currentTime.toString());
       console.log('Generated new fallback user ID:', userId);
     }
-    
+
     return userId;
   }
 
@@ -91,8 +96,8 @@ class DatabaseClient {
     const url = `${this.baseUrl}${endpoint}`;
     const defaultOptions = {
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     };
 
     // Add authentication headers if user is authenticated
@@ -115,8 +120,8 @@ class DatabaseClient {
     }
 
     try {
-      const response = await fetch(url, { ...defaultOptions, ...options });
-      
+      const response = await fetch(url, {...defaultOptions, ...options});
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
@@ -151,6 +156,12 @@ class DatabaseClient {
     };
 
     try {
+      // Check if database is available
+      if (!this.isDatabaseAvailable()) {
+        console.warn('Database not available, skipping save operation');
+        return {success: false, message: 'Database unavailable'};
+      }
+
       const response = await this.makeRequest('/exam-results', {
         method: 'POST',
         body: JSON.stringify(resultData)
@@ -160,6 +171,8 @@ class DatabaseClient {
       return response;
     } catch (error) {
       console.error('Failed to save exam result:', error);
+      // Mark database as unavailable for future requests
+      this.markDatabaseUnavailable();
       throw error;
     }
   }
@@ -224,7 +237,9 @@ class DatabaseClient {
   // Get user's exam results
   async getUserExamResults(limit = 50) {
     try {
-      const response = await this.makeRequest(`/exam-results/user/${this.getUserId()}?limit=${limit}`);
+      const response = await this.makeRequest(
+        `/exam-results/user/${this.getUserId()}?limit=${limit}`
+      );
       return response.results;
     } catch (error) {
       console.error('Failed to get user exam results:', error);
@@ -246,10 +261,20 @@ class DatabaseClient {
   // Get specific exam result for current user
   async getExamResultForUser(examId) {
     try {
-      const response = await this.makeRequest(`/exam-results/user/${this.getUserId()}/exam/${examId}`);
+      // Check if database is available
+      if (!this.isDatabaseAvailable()) {
+        console.warn('Database not available, skipping database request');
+        return null;
+      }
+
+      const response = await this.makeRequest(
+        `/exam-results/user/${this.getUserId()}/exam/${examId}`
+      );
       return response.result;
     } catch (error) {
       console.error('Failed to get exam result for user:', error);
+      // Mark database as unavailable for future requests
+      this.markDatabaseUnavailable();
       return null;
     }
   }
@@ -270,7 +295,8 @@ class DatabaseClient {
       userId: this.getUserId(),
       isAuthenticated: this.isAuthenticated,
       authProvider: this.isAuthenticated ? 'netlify' : 'fallback',
-      userEmail: this.isAuthenticated && window.authManager ? window.authManager.getUserEmail() : null,
+      userEmail:
+        this.isAuthenticated && window.authManager ? window.authManager.getUserEmail() : null,
       userName: this.isAuthenticated && window.authManager ? window.authManager.getUserName() : null
     };
   }
@@ -280,7 +306,7 @@ class DatabaseClient {
     if (!this.isAuthenticated) {
       const message = `Authentication required for ${operation}. Please log in to continue.`;
       console.warn(message);
-      
+
       // Show notification if AuthManager is available
       if (window.authManager) {
         window.authManager.showNotification(message, 'warning');
@@ -289,7 +315,7 @@ class DatabaseClient {
           window.authManager.login();
         }, 2000);
       }
-      
+
       throw new Error(message);
     }
     return true;
@@ -311,38 +337,40 @@ class DatabaseClient {
     }
 
     try {
-      console.log(`Migrating data from fallback user ${fallbackUserId} to authenticated user ${authenticatedUserId}`);
-      
+      console.log(
+        `Migrating data from fallback user ${fallbackUserId} to authenticated user ${authenticatedUserId}`
+      );
+
       // Get fallback user's exam results
       const fallbackResults = await this.makeRequest(`/exam-results/user/${fallbackUserId}`);
-      
+
       if (fallbackResults.results && fallbackResults.results.length > 0) {
         // Migrate each result to the authenticated user
         for (const result of fallbackResults.results) {
           result.userId = authenticatedUserId;
           result.migratedFrom = fallbackUserId;
           result.migrationDate = new Date().toISOString();
-          
+
           await this.makeRequest('/exam-results', {
             method: 'POST',
             body: JSON.stringify(result)
           });
         }
-        
+
         console.log(`Successfully migrated ${fallbackResults.results.length} exam results`);
-        
+
         // Clear fallback user data
         await this.makeRequest(`/exam-results/user/${fallbackUserId}`, {
           method: 'DELETE'
         });
-        
+
         // Clear fallback user ID from localStorage
         localStorage.removeItem('FALLBACK_USER_ID');
         localStorage.removeItem('FALLBACK_USER_ID_TIMESTAMP');
-        
+
         return true;
       }
-      
+
       return false;
     } catch (error) {
       console.error('Failed to migrate fallback user data:', error);
@@ -354,9 +382,9 @@ class DatabaseClient {
   async deleteUserExamResults(userId = null) {
     // Require authentication for this sensitive operation
     this.requireAuthentication('deleting exam results');
-    
+
     const targetUserId = userId || this.getUserId();
-    
+
     try {
       const response = await this.makeRequest(`/exam-results/user/${targetUserId}`, {
         method: 'DELETE'
@@ -388,7 +416,7 @@ class DatabaseClient {
       return response;
     } catch (error) {
       console.error('Server health check failed:', error);
-      return { status: 'ERROR', error: error.message };
+      return {status: 'ERROR', error: error.message};
     }
   }
 
@@ -455,12 +483,12 @@ class DatabaseClient {
 
     try {
       await this.saveExamSession(sessionData);
-      
+
       // Store session ID in exam object if not already set
       if (!exam.sessionId) {
         exam.sessionId = sessionData.sessionId;
       }
-      
+
       console.log('Exam progress auto-saved');
     } catch (error) {
       console.error('Failed to auto-save exam progress:', error);
@@ -471,38 +499,80 @@ class DatabaseClient {
   async loadExamSession(sessionId, exam) {
     try {
       const session = await this.getExamSession(sessionId);
-      
+
       if (session) {
         // Restore exam state from session
         exam.current = session.current_question;
         exam.sessionId = session.session_id;
-        
+
         // Restore answers, review marks, and comments
         if (session.answers_data) {
           Object.keys(session.answers_data).forEach(questionIndex => {
             exam.saveChoice(parseInt(questionIndex), session.answers_data[questionIndex]);
           });
         }
-        
+
         if (session.review_marks) {
           Object.keys(session.review_marks).forEach(questionIndex => {
             exam.saveMarkToReview(parseInt(questionIndex), session.review_marks[questionIndex]);
           });
         }
-        
+
         if (session.comments) {
           Object.keys(session.comments).forEach(questionIndex => {
             exam.setComment(parseInt(questionIndex), session.comments[questionIndex]);
           });
         }
-        
+
         console.log('Exam session loaded successfully');
         return true;
       }
-      
+
       return false;
     } catch (error) {
       console.error('Failed to load exam session:', error);
+      return false;
+    }
+  }
+
+  // Database availability management
+  isDatabaseAvailable() {
+    // If we marked it as unavailable, check if enough time has passed to retry
+    if (!this._databaseAvailable) {
+      const now = Date.now();
+      const timeSinceLastCheck = now - this._lastDatabaseCheck;
+      const retryInterval = 5 * 60 * 1000; // 5 minutes
+
+      if (timeSinceLastCheck > retryInterval) {
+        this._databaseAvailable = true; // Reset availability for retry
+        console.log('Retrying database connection after timeout');
+      }
+    }
+
+    return this._databaseAvailable;
+  }
+
+  markDatabaseUnavailable() {
+    this._databaseAvailable = false;
+    this._lastDatabaseCheck = Date.now();
+    console.warn('Database marked as unavailable, will retry in 5 minutes');
+  }
+
+  // Force database availability check
+  async checkDatabaseHealth() {
+    try {
+      const response = await fetch(`${this.baseUrl}/health`);
+      if (response.ok) {
+        this._databaseAvailable = true;
+        console.log('Database health check passed');
+        return true;
+      } else {
+        this.markDatabaseUnavailable();
+        return false;
+      }
+    } catch (error) {
+      this.markDatabaseUnavailable();
+      console.warn('Database health check failed:', error);
       return false;
     }
   }
@@ -514,4 +584,4 @@ window.databaseClient = new DatabaseClient();
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = DatabaseClient;
-} 
+}

@@ -7,7 +7,7 @@
   
   # Functions directory (if using serverless functions)
   functions = "functions"
-
+  
 [functions]
   external_node_modules = ["express", "cors"]
   node_bundler = "esbuild"
@@ -39,9 +39,9 @@
 [identity]
   external = false
 
-# All requests go through the API function for unified handling
+# API requests go through the API function
 [[redirects]]
-  from = "/*"
+  from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 
@@ -61,6 +61,14 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# No cache for index.json files to ensure fresh data
+[[headers]]
+  for = "/public/data/**/index.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
 # Cache HTML files
 [[headers]]
   for = "/*.html"
@@ -70,12 +78,12 @@
 # Environment variables for different contexts
 [context.production.environment]
   NODE_ENV = "production"
-  API_BASE_URL = "https://your-api-domain.com/api"
+  API_BASE_URL = "https://ankiquiz.netlify.app/api"
 
 [context.deploy-preview.environment]
   NODE_ENV = "preview"
-  API_BASE_URL = "https://your-staging-api.com/api"
+  API_BASE_URL = "https://ankiquiz.netlify.app/api"
 
 [context.branch-deploy.environment]
   NODE_ENV = "development"
-  API_BASE_URL = "https://your-dev-api.com/api" 
+  API_BASE_URL = "https://ankiquiz.netlify.app/api" 

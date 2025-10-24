@@ -9,7 +9,7 @@ class Question {
     this.topic_name = '';
     this.is_partially_correct = false;
     this.options = {
-      show_title: true,
+      show_title: true
     };
     this.discusstion = '';
   }
@@ -24,7 +24,7 @@ class Question {
     this.topic_name = queData.topic_name;
     this.is_partially_correct = queData.is_partially_correct;
     this.options = {
-      show_title: true,
+      show_title: true
     };
     this.discusstion = queData.discusstion;
   }
@@ -65,8 +65,8 @@ class Question {
       isStar: false,
       userChoice: '',
       showAnswerBtn: true,
-      showCommentBtn: true,
-    },
+      showCommentBtn: true
+    }
   ) {
     let html = '';
     let answerBtn = `
@@ -374,7 +374,7 @@ class Exam {
     // Auto-submit functionality
     this.autoSubmitTimer = null;
     this.lastSubmittedChoices = null;
-    this.autoSubmitInterval = 5 * 60 * 1000; // 5 minutes in milliseconds
+    this.autoSubmitInterval = 30 * 1000; // 30 seconds in milliseconds (for testing)
     this.hasNewChoices = false;
     this.autoSubmitEnabled = true;
 
@@ -463,7 +463,7 @@ class Exam {
     let elementIndex = this.choices.findIndex(obj => obj.queNo == queNo);
     let newElement = {
       queNo: queNo,
-      choice: aws,
+      choice: aws
     };
     if (elementIndex == -1) {
       this.choices = [...this.choices, newElement];
@@ -517,7 +517,7 @@ class Exam {
 
     let newElement = {
       queNo: queNo,
-      isMarked: isMarked,
+      isMarked: isMarked
     };
 
     if (elementIndex > -1) {
@@ -630,7 +630,7 @@ class Exam {
     // Store result data for later submission
     this.pendingResult = {
       totalPoints: total_point,
-      percentScore: percentPoint,
+      percentScore: percentPoint
     };
 
     // Bind submit button event
@@ -669,7 +669,7 @@ class Exam {
         answersData: this.getAllChoices(),
         reviewMarks: this.getAllReviewMarks(),
         comments: this.getAllComments(),
-        isAutoSubmitted: false, // Flag to indicate this was manually submitted
+        isAutoSubmitted: false // Flag to indicate this was manually submitted
       };
 
       const result = await window.databaseClient.saveExamResult(examData);
@@ -724,7 +724,7 @@ class Exam {
       // Show confirmation dialog
       if (
         !confirm(
-          'Are you sure you want to delete all exam results? This will permanently delete your results from the database and clear all cached data. This action cannot be undone.',
+          'Are you sure you want to delete all exam results? This will permanently delete your results from the database and clear all cached data. This action cannot be undone.'
         )
       ) {
         return;
@@ -814,6 +814,18 @@ class Exam {
     let correctCount = 0;
     let inCorrectCount = 0;
     let notSelected = 0;
+
+    // Safety check for listQuestion
+    if (!listQuestion || !Array.isArray(listQuestion)) {
+      console.warn('⚠️ calculateScore: listQuestion is not a valid array', listQuestion);
+      return {
+        correctCount: 0,
+        inCorrectCount: 0,
+        notSelected: 0,
+        total: 0
+      };
+    }
+
     listQuestion.forEach(function (question, index) {
       let userChoice = [];
       $(`#QuestionBlockItem_${index} .ip-radio:checked`).each((key, item) => {
@@ -837,7 +849,7 @@ class Exam {
       correctCount: correctCount,
       inCorrectCount: inCorrectCount,
       notSelected: notSelected,
-      total: listQuestion.length,
+      total: listQuestion.length
     };
   }
 
@@ -941,8 +953,8 @@ class Exam {
         ...choices,
         {
           queNo: parseInt(item.name.replaceAll('input_select_', '')),
-          answer: item.value,
-        },
+          answer: item.value
+        }
       ];
     });
 
@@ -958,7 +970,7 @@ class Exam {
         currentQuestion: 0,
         choices: [],
         markedQuestion: [],
-        comments: [],
+        comments: []
       };
     } else {
       exam = JSON.parse(tmp_exam);
@@ -979,7 +991,7 @@ class Exam {
           currentQuestion: this.current,
           choices: this.choices,
           markedQuestion: this.markedQuestion,
-          comments: this.comments,
+          comments: this.comments
         };
     }
 
@@ -1090,7 +1102,7 @@ class Exam {
       Object.keys(dbResult.answers_data).forEach(questionIndex => {
         this.choices.push({
           queNo: parseInt(questionIndex),
-          choice: dbResult.answers_data[questionIndex],
+          choice: dbResult.answers_data[questionIndex]
         });
       });
     }
@@ -1100,7 +1112,7 @@ class Exam {
       Object.keys(dbResult.review_marks).forEach(questionIndex => {
         this.markedQuestion.push({
           queNo: parseInt(questionIndex),
-          isMarked: dbResult.review_marks[questionIndex],
+          isMarked: dbResult.review_marks[questionIndex]
         });
       });
     }
@@ -1110,7 +1122,7 @@ class Exam {
       Object.keys(dbResult.comments).forEach(questionIndex => {
         this.comments.push({
           queNo: parseInt(questionIndex),
-          content: dbResult.comments[questionIndex],
+          content: dbResult.comments[questionIndex]
         });
       });
     }
@@ -1356,7 +1368,7 @@ class Exam {
         isStar: star_ques.includes(question.queNo),
         userChoice: '',
         showAnswerBtn: true,
-        showCommentBtn: true,
+        showCommentBtn: true
       });
 
       htmlText += `
@@ -1475,7 +1487,7 @@ class Exam {
       from_question: from,
       to_question: to,
       max_question: max,
-      random: random,
+      random: random
     });
 
     this.renderContent(listQuestion);
@@ -1492,9 +1504,9 @@ class Exam {
       random: random,
       max: max,
       question_options: {
-        show_title: true,
-      },
-    },
+        show_title: true
+      }
+    }
   ) {
     return this.filterQuestion_v2({
       exam_type: options.type,
@@ -1502,7 +1514,7 @@ class Exam {
       to_question: options.to,
       random: options.random,
       max_question: options.max,
-      question_options: options.question_options,
+      question_options: options.question_options
     });
   }
 
@@ -1546,7 +1558,7 @@ class Exam {
     let elementIndex = this.comments.findIndex(obj => obj.queNo == queNo);
     let newElement = {
       queNo: queNo,
-      content: content,
+      content: content
     };
     if (elementIndex == -1) {
       this.comments = [...this.comments, newElement];
@@ -1577,7 +1589,7 @@ class Exam {
       return; // Timer already running or disabled
     }
 
-    console.log('🔄 Starting auto-submit timer (5 minutes)');
+    console.log('🔄 Starting auto-submit timer (30 seconds)');
     this.autoSubmitTimer = setTimeout(() => {
       this.handleAutoSubmit();
     }, this.autoSubmitInterval);
@@ -1604,8 +1616,15 @@ class Exam {
     console.log('💾 Auto-submitting exam progress...');
 
     try {
+      // Safety check for listQuestions
+      if (!this.listQuestions || !Array.isArray(this.listQuestions)) {
+        console.warn('⚠️ handleAutoSubmit: listQuestions is not available', this.listQuestions);
+        this.startAutoSubmitTimer(); // Restart timer
+        return;
+      }
+
       // Calculate current score
-      const totalPoints = this.calculateScore();
+      const totalPoints = this.calculateScore(this.listQuestions);
       const percentPoint = (totalPoints / this.count) * 100;
 
       // Save progress to database
@@ -1650,7 +1669,7 @@ class Exam {
       answersData: this.getAllChoices(),
       reviewMarks: this.getAllReviewMarks(),
       comments: this.getAllComments(),
-      isAutoSubmitted: true, // Flag to indicate this was auto-submitted
+      isAutoSubmitted: true // Flag to indicate this was auto-submitted
     };
 
     return await window.databaseClient.saveExamResult(examData);
@@ -1745,7 +1764,7 @@ class Exam {
     if (this.autoSubmitEnabled) {
       statusElement.style.display = 'block';
       if (this.autoSubmitTimer) {
-        textElement.textContent = 'Auto-save active (5min)';
+        textElement.textContent = 'Auto-save active (30s)';
         textElement.className = 'text-success';
       } else if (this.hasNewChoices) {
         textElement.textContent = 'Auto-save pending...';
@@ -1812,7 +1831,7 @@ window.Exam = Exam;
 document.dispatchEvent(
   new CustomEvent('classesReady', {
     detail: {
-      timestamp: new Date().toISOString(),
-    },
-  }),
+      timestamp: new Date().toISOString()
+    }
+  })
 );

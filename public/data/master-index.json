@@ -1,5 +1,5 @@
 {
-  "generated": "2025-09-24T14:06:31.502Z",
+  "generated": "2025-10-14T16:05:34.166Z",
   "examTypes": {
     "whizlabs": {
       "SAP-C02": {
@@ -35,7 +35,11 @@
         "totalFiles": 10
       },
       "SAP-C02": {
-        "files": ["sap_c02_all.js", "sap_c02_part1.js", "sap_c02_part2.js"],
+        "files": [
+          "sap_c02_all.js",
+          "sap_c02_part1.js",
+          "sap_c02_part2.js"
+        ],
         "totalFiles": 3
       },
       "SOA-C02": {
@@ -61,7 +65,11 @@
         "totalFiles": 6
       },
       "DBS-C01": {
-        "files": ["dbs_c01_part1.js", "dbs_c01_part2.js", "dbs_c01_part3.js"],
+        "files": [
+          "dbs_c01_part1.js",
+          "dbs_c01_part2.js",
+          "dbs_c01_part3.js"
+        ],
         "totalFiles": 3
       },
       "DOP-C01": {
@@ -124,16 +132,24 @@
     },
     "pma": {
       "final_exam": {
-        "files": ["final_exam_part1.js", "final_exam_part2.js", "final_exam_part3.js"],
+        "files": [
+          "final_exam_part1.js",
+          "final_exam_part2.js",
+          "final_exam_part3.js"
+        ],
         "totalFiles": 3
       },
       "mock_test": {
         "files": [
           "mock_test1.js",
+          "mock_test10.js",
           "mock_test11.js",
           "mock_test12.js",
           "mock_test13.js",
           "mock_test14.js",
+          "mock_test17.js",
+          "mock_test18.js",
+          "mock_test19.js",
           "mock_test2.js",
           "mock_test3.js",
           "mock_test4.js",
@@ -143,22 +159,28 @@
           "mock_test8.js",
           "mock_test9.js"
         ],
-        "totalFiles": 12
+        "totalFiles": 17
       },
       "full_exam_1": {
-        "files": ["full_exam_part1.js", "full_exam_part2.js", "full_exam_part3.js"],
+        "files": [
+          "full_exam_part1.js",
+          "full_exam_part2.js",
+          "full_exam_part3.js"
+        ],
         "totalFiles": 3
       }
     },
     "freecams": {
       "SAP-C01": {
-        "files": ["Amazon.SAP-C01.v2022-08-26.q100.js"],
+        "files": [
+          "Amazon.SAP-C01.v2022-08-26.q100.js"
+        ],
         "totalFiles": 1
       }
     }
   },
   "statistics": {
     "totalExams": 15,
-    "totalFiles": 89
+    "totalFiles": 94
   }
 }

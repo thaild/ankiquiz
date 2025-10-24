@@ -1,31 +1,49 @@
-
 import dotenv from 'dotenv';
 dotenv.config();
-import { Pool } from 'pg';
+import {Pool} from 'pg';
 
-// Database connection pool
-const pool = new Pool({
-  connectionString: process.env.NETLIFY_DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
+// Database connection pool - only create if DATABASE_URL is available
+let pool = null;
+
+function createPool() {
+  if (!process.env.NETLIFY_DATABASE_URL) {
+    console.log('No database URL provided, running in offline mode');
+    return null;
   }
-});
 
-// Test database connection
-pool.on('connect', () => {
-  console.log('Connected to PostgreSQL database');
-});
+  if (!pool) {
+    pool = new Pool({
+      connectionString: process.env.NETLIFY_DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    });
 
-pool.on('error', (err) => {
-  console.error('Unexpected error on idle client', err);
-  process.exit(-1);
-});
+    // Test database connection
+    pool.on('connect', () => {
+      console.log('Connected to PostgreSQL database');
+    });
+
+    pool.on('error', err => {
+      console.error('Unexpected error on idle client', err);
+      // Don't exit process, just mark pool as invalid
+      pool = null;
+    });
+  }
+
+  return pool;
+}
 
 // Initialize database tables
 async function initializeDatabase() {
   try {
-    const client = await pool.connect();
-    
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('No database connection available');
+    }
+
+    const client = await currentPool.connect();
+
     // Create exam_results table
     await client.query(`
       CREATE TABLE IF NOT EXISTS exam_results (
@@ -93,6 +111,10 @@ async function initializeDatabase() {
 const db = {
   // Save exam result (upsert - update if exists, insert if not)
   async saveExamResult(resultData) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
     const {
       userId,
       examId,
@@ -137,16 +159,24 @@ const db = {
     `;
 
     const values = [
-      userId, examId, examName, groupId, groupName,
-      score, totalQuestions, correctAnswers, incorrectAnswers,
-      unansweredQuestions, timeTaken, 
-      JSON.stringify(answersData), 
-      JSON.stringify(reviewMarks), 
+      userId,
+      examId,
+      examName,
+      groupId,
+      groupName,
+      score,
+      totalQuestions,
+      correctAnswers,
+      incorrectAnswers,
+      unansweredQuestions,
+      timeTaken,
+      JSON.stringify(answersData),
+      JSON.stringify(reviewMarks),
       JSON.stringify(comments)
     ];
 
     try {
-      const result = await pool.query(query, values);
+      const result = await currentPool.query(query, values);
       return result.rows[0];
     } catch (error) {
       console.error('Error saving exam result:', error);
@@ -156,6 +186,11 @@ const db = {
 
   // Get exam results for a user
   async getExamResults(userId, limit = 50) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       SELECT * FROM exam_results 
       WHERE user_id = $1 
@@ -164,7 +199,7 @@ const db = {
     `;
 
     try {
-      const result = await pool.query(query, [userId, limit]);
+      const result = await currentPool.query(query, [userId, limit]);
       return result.rows;
     } catch (error) {
       console.error('Error getting exam results:', error);
@@ -174,6 +209,11 @@ const db = {
 
   // Get exam results by exam ID
   async getExamResultsByExamId(examId, limit = 50) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       SELECT * FROM exam_results 
       WHERE exam_id = $1 
@@ -182,7 +222,7 @@ const db = {
     `;
 
     try {
-      const result = await pool.query(query, [examId, limit]);
+      const result = await currentPool.query(query, [examId, limit]);
       return result.rows;
     } catch (error) {
       console.error('Error getting exam results by exam ID:', error);
@@ -192,6 +232,11 @@ const db = {
 
   // Get specific exam result for user
   async getExamResultForUser(userId, examId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       SELECT * FROM exam_results 
       WHERE user_id = $1 AND exam_id = $2
@@ -200,7 +245,7 @@ const db = {
     `;
 
     try {
-      const result = await pool.query(query, [userId, examId]);
+      const result = await currentPool.query(query, [userId, examId]);
       return result.rows[0] || null;
     } catch (error) {
       console.error('Error getting exam result for user:', error);
@@ -210,6 +255,11 @@ const db = {
 
   // Save or update exam session
   async saveExamSession(sessionData) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const {
       sessionId,
       userId,
@@ -239,12 +289,20 @@ const db = {
     `;
 
     const values = [
-      sessionId, userId, examId, examName, groupId, groupName,
-      currentQuestion, answersData, reviewMarks, comments
+      sessionId,
+      userId,
+      examId,
+      examName,
+      groupId,
+      groupName,
+      currentQuestion,
+      answersData,
+      reviewMarks,
+      comments
     ];
 
     try {
-      const result = await pool.query(query, values);
+      const result = await currentPool.query(query, values);
       return result.rows[0];
     } catch (error) {
       console.error('Error saving exam session:', error);
@@ -254,13 +312,18 @@ const db = {
 
   // Get exam session
   async getExamSession(sessionId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       SELECT * FROM exam_sessions 
       WHERE session_id = $1
     `;
 
     try {
-      const result = await pool.query(query, [sessionId]);
+      const result = await currentPool.query(query, [sessionId]);
       return result.rows[0];
     } catch (error) {
       console.error('Error getting exam session:', error);
@@ -270,6 +333,11 @@ const db = {
 
   // Complete exam session
   async completeExamSession(sessionId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       UPDATE exam_sessions 
       SET is_completed = TRUE, last_activity = CURRENT_TIMESTAMP
@@ -277,7 +345,7 @@ const db = {
     `;
 
     try {
-      await pool.query(query, [sessionId]);
+      await currentPool.query(query, [sessionId]);
     } catch (error) {
       console.error('Error completing exam session:', error);
       throw error;
@@ -286,6 +354,11 @@ const db = {
 
   // Get user statistics
   async getUserStats(userId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       SELECT 
         COUNT(*) as total_exams,
@@ -299,7 +372,7 @@ const db = {
     `;
 
     try {
-      const result = await pool.query(query, [userId]);
+      const result = await currentPool.query(query, [userId]);
       return result.rows[0];
     } catch (error) {
       console.error('Error getting user stats:', error);
@@ -309,13 +382,18 @@ const db = {
 
   // Delete all exam results for a user
   async deleteUserExamResults(userId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       DELETE FROM exam_results 
       WHERE user_id = $1
     `;
 
     try {
-      const result = await pool.query(query, [userId]);
+      const result = await currentPool.query(query, [userId]);
       return {
         deletedCount: result.rowCount,
         message: `Deleted ${result.rowCount} exam results for user ${userId}`
@@ -328,13 +406,18 @@ const db = {
 
   // Delete specific exam result for user
   async deleteExamResultForUser(userId, examId) {
+    const currentPool = createPool();
+    if (!currentPool) {
+      throw new Error('Database not available');
+    }
+
     const query = `
       DELETE FROM exam_results 
       WHERE user_id = $1 AND exam_id = $2
     `;
 
     try {
-      const result = await pool.query(query, [userId, examId]);
+      const result = await currentPool.query(query, [userId, examId]);
       return {
         deletedCount: result.rowCount,
         message: `Deleted ${result.rowCount} exam result for user ${userId} and exam ${examId}`
@@ -347,8 +430,10 @@ const db = {
 
   // Close database connection
   async close() {
-    await pool.end();
+    if (pool) {
+      await pool.end();
+    }
   }
 };
 
-export { db, initializeDatabase };
+export {db, initializeDatabase};

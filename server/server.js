@@ -1,9 +1,9 @@
-import express, { json, urlencoded } from 'express';
+import express, {json, urlencoded} from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import { db, initializeDatabase } from './database.js';
-import { port, rateLimit as _rateLimit, api, nodeEnv } from './config.js';
+import {db, initializeDatabase} from './database.js';
+import {port, rateLimit as _rateLimit, api, nodeEnv} from './config.js';
 
 const app = express();
 const PORT = port;
@@ -28,16 +28,36 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Body parsing middleware
-app.use(json({ limit: '10mb' }));
-app.use(urlencoded({ extended: true, limit: '10mb' }));
+app.use(json({limit: '10mb'}));
+app.use(urlencoded({extended: true, limit: '10mb'}));
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
-    timestamp: new Date().toISOString(),
-    database: 'Connected'
-  });
+app.get('/api/health', async (req, res) => {
+  try {
+    // Try to check database connection
+    let dbStatus = 'Disconnected';
+    try {
+      // Simple database test
+      await db.getExamResults('test', 1);
+      dbStatus = 'Connected';
+    } catch (error) {
+      dbStatus = 'Disconnected';
+    }
+
+    res.json({
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+      database: dbStatus,
+      mode: dbStatus === 'Connected' ? 'online' : 'offline'
+    });
+  } catch (error) {
+    res.json({
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+      database: 'Disconnected',
+      mode: 'offline'
+    });
+  }
 });
 
 // API Routes
@@ -46,11 +66,19 @@ app.get('/api/health', (req, res) => {
 app.post('/api/exam-results', async (req, res) => {
   try {
     const resultData = req.body;
-    
+
+    // Check if database is available
+    if (!process.env.NETLIFY_DATABASE_URL) {
+      return res.status(503).json({
+        error: 'Database not available',
+        message: 'Server is running in offline mode'
+      });
+    }
+
     // Validate required fields
     if (!resultData.examId || !resultData.examName || resultData.score === undefined) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: examId, examName, score' 
+      return res.status(400).json({
+        error: 'Missing required fields: examId, examName, score'
       });
     }
 
@@ -73,9 +101,9 @@ app.post('/api/exam-results', async (req, res) => {
     });
   } catch (error) {
     console.error('Error saving exam result:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to save exam result',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -83,9 +111,9 @@ app.post('/api/exam-results', async (req, res) => {
 // Get exam results for a user
 app.get('/api/exam-results/user/:userId', async (req, res) => {
   try {
-    const { userId } = req.params;
-    const { limit = 50 } = req.query;
-    
+    const {userId} = req.params;
+    const {limit = 50} = req.query;
+
     const results = await db.getExamResults(userId, parseInt(limit));
     res.json({
       success: true,
@@ -94,9 +122,9 @@ app.get('/api/exam-results/user/:userId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error getting exam results:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to get exam results',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -104,9 +132,9 @@ app.get('/api/exam-results/user/:userId', async (req, res) => {
 // Get exam results by exam ID
 app.get('/api/exam-results/exam/:examId', async (req, res) => {
   try {
-    const { examId } = req.params;
-    const { limit = 50 } = req.query;
-    
+    const {examId} = req.params;
+    const {limit = 50} = req.query;
+
     const results = await db.getExamResultsByExamId(examId, parseInt(limit));
     res.json({
       success: true,
@@ -115,9 +143,9 @@ app.get('/api/exam-results/exam/:examId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error getting exam results by exam ID:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to get exam results',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -125,8 +153,8 @@ app.get('/api/exam-results/exam/:examId', async (req, res) => {
 // Get specific exam result for user
 app.get('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
   try {
-    const { userId, examId } = req.params;
-    
+    const {userId, examId} = req.params;
+
     const result = await db.getExamResultForUser(userId, examId);
     res.json({
       success: true,
@@ -134,9 +162,9 @@ app.get('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error getting exam result for user:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to get exam result for user',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -144,12 +172,12 @@ app.get('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
 // Delete all exam results for a user
 app.delete('/api/exam-results/user/:userId', async (req, res) => {
   try {
-    const { userId } = req.params;
-    
+    const {userId} = req.params;
+
     // Validate user ID
     if (!userId) {
-      return res.status(400).json({ 
-        error: 'User ID is required' 
+      return res.status(400).json({
+        error: 'User ID is required'
       });
     }
 
@@ -161,9 +189,9 @@ app.delete('/api/exam-results/user/:userId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error deleting user exam results:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to delete user exam results',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -171,12 +199,12 @@ app.delete('/api/exam-results/user/:userId', async (req, res) => {
 // Delete specific exam result for user
 app.delete('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
   try {
-    const { userId, examId } = req.params;
-    
+    const {userId, examId} = req.params;
+
     // Validate parameters
     if (!userId || !examId) {
-      return res.status(400).json({ 
-        error: 'User ID and Exam ID are required' 
+      return res.status(400).json({
+        error: 'User ID and Exam ID are required'
       });
     }
 
@@ -188,9 +216,9 @@ app.delete('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error deleting exam result for user:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to delete exam result for user',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -199,11 +227,11 @@ app.delete('/api/exam-results/user/:userId/exam/:examId', async (req, res) => {
 app.post('/api/exam-sessions', async (req, res) => {
   try {
     const sessionData = req.body;
-    
+
     // Validate required fields
     if (!sessionData.sessionId || !sessionData.examId || !sessionData.examName) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: sessionId, examId, examName' 
+      return res.status(400).json({
+        error: 'Missing required fields: sessionId, examId, examName'
       });
     }
 
@@ -215,9 +243,9 @@ app.post('/api/exam-sessions', async (req, res) => {
     });
   } catch (error) {
     console.error('Error saving exam session:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to save exam session',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -225,12 +253,12 @@ app.post('/api/exam-sessions', async (req, res) => {
 // Get exam session
 app.get('/api/exam-sessions/:sessionId', async (req, res) => {
   try {
-    const { sessionId } = req.params;
-    
+    const {sessionId} = req.params;
+
     const session = await db.getExamSession(sessionId);
     if (!session) {
-      return res.status(404).json({ 
-        error: 'Exam session not found' 
+      return res.status(404).json({
+        error: 'Exam session not found'
       });
     }
 
@@ -240,9 +268,9 @@ app.get('/api/exam-sessions/:sessionId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error getting exam session:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to get exam session',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -250,8 +278,8 @@ app.get('/api/exam-sessions/:sessionId', async (req, res) => {
 // Complete exam session
 app.put('/api/exam-sessions/:sessionId/complete', async (req, res) => {
   try {
-    const { sessionId } = req.params;
-    
+    const {sessionId} = req.params;
+
     await db.completeExamSession(sessionId);
     res.json({
       success: true,
@@ -259,9 +287,9 @@ app.put('/api/exam-sessions/:sessionId/complete', async (req, res) => {
     });
   } catch (error) {
     console.error('Error completing exam session:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to complete exam session',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -269,8 +297,8 @@ app.put('/api/exam-sessions/:sessionId/complete', async (req, res) => {
 // Get user statistics
 app.get('/api/user-stats/:userId', async (req, res) => {
   try {
-    const { userId } = req.params;
-    
+    const {userId} = req.params;
+
     const stats = await db.getUserStats(userId);
     res.json({
       success: true,
@@ -278,9 +306,9 @@ app.get('/api/user-stats/:userId', async (req, res) => {
     });
   } catch (error) {
     console.error('Error getting user stats:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to get user statistics',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -288,7 +316,7 @@ app.get('/api/user-stats/:userId', async (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ 
+  res.status(500).json({
     error: 'Something went wrong!',
     details: nodeEnv === 'development' ? err.message : 'Internal server error'
   });
@@ -296,22 +324,30 @@ app.use((err, req, res, next) => {
 
 // 404 handler
 app.use('*', (req, res) => {
-  res.status(404).json({ 
-    error: 'Endpoint not found' 
+  res.status(404).json({
+    error: 'Endpoint not found'
   });
 });
 
 // Initialize database and start server
 async function startServer() {
   try {
-    await initializeDatabase();
-    
+    // Try to initialize database, but don't fail if it's not available
+    try {
+      await initializeDatabase();
+      console.log('✅ Database connected successfully');
+    } catch (dbError) {
+      console.warn('⚠️ Database not available, running in offline mode:', dbError.message);
+      console.log('📝 Server will run without database functionality');
+    }
+
     app.listen(PORT, '0.0.0.0', () => {
-      console.log(`Server running on port ${PORT}`);
-      console.log(`Health check: http://localhost:${PORT}/api/health`);
+      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`🔍 Health check: http://localhost:${PORT}/api/health`);
+      console.log(`📊 API endpoints: http://localhost:${PORT}/api/`);
     });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error('❌ Failed to start server:', error);
     process.exit(1);
   }
 }
@@ -329,4 +365,4 @@ process.on('SIGINT', async () => {
   process.exit(0);
 });
 
-startServer(); 
+startServer();

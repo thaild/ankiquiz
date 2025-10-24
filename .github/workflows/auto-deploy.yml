@@ -1,0 +1,52 @@
+name: Auto Deploy on Data Changes
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'public/data/**'
+      - 'public/data/**/index.json'
+      - 'scripts/**'
+      - 'tools/**'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'public/data/**'
+      - 'public/data/**/index.json'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate index files
+        run: npm run generate-indexes
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '.'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Auto deploy: Data files updated'
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
