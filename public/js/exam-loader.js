@@ -42,6 +42,7 @@ class ExamDataLoader {
           DBS_C01: 'DBS-C01',
           PMI_PMP: 'PMI-PMP',
           PMA_Mock_test: 'mock_test',
+          PMA_MINI_TEST: 'mini_test',
           PMA_Full_exam_1: 'full_exam_1',
           PMA_PMP: 'final_exam'
         };
@@ -86,7 +87,8 @@ class ExamDataLoader {
       'examtopics/PMI-PMP',
       'pma/final_exam',
       'pma/full_exam_1',
-      'pma/mock_test'
+      'pma/mock_test',
+      'pma/mini_test'
     ];
 
     for (const examPath of activeExams) {
