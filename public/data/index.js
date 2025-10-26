@@ -144,7 +144,38 @@ try {
         }
       ]
     },
-
+    {
+      id: 'PMA_mini_test',
+      name: '[PMA-PMP] mini test',
+      active: true,
+      list: [
+        {
+          id: 'PMA_PMP_MINI_TEST_1',
+          name: '[PMA-PMP] MINI TEST 1',
+          data: PMA_PMP_MINI_TEST1.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_2',
+          name: '[PMA-PMP] MINI TEST 2',
+          data: PMA_PMP_MINI_TEST2.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_3',
+          name: '[PMA-PMP] MINI TEST 3',
+          data: PMA_PMP_MINI_TEST3.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_4',
+          name: '[PMA-PMP] MINI TEST 4',
+          data: PMA_PMP_MINI_TEST4.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_5',
+          name: '[PMA-PMP] MINI TEST 5',
+          data: PMA_PMP_MINI_TEST5.data
+        }
+      ]
+    },
     {
       id: 'PMA_PMP',
       name: '[PMA-PMP]',

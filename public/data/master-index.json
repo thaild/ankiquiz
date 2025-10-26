@@ -1,5 +1,5 @@
 {
-  "generated": "2025-10-14T16:05:34.166Z",
+  "generated": "2025-10-26T07:04:02.838Z",
   "examTypes": {
     "whizlabs": {
       "SAP-C02": {
@@ -168,6 +168,16 @@
           "full_exam_part3.js"
         ],
         "totalFiles": 3
+      },
+      "mini_test": {
+        "files": [
+          "1.js",
+          "2.js",
+          "3.js",
+          "4.js",
+          "5.js"
+        ],
+        "totalFiles": 5
       }
     },
     "freecams": {
@@ -180,7 +190,7 @@
     }
   },
   "statistics": {
-    "totalExams": 15,
-    "totalFiles": 94
+    "totalExams": 16,
+    "totalFiles": 99
   }
 }

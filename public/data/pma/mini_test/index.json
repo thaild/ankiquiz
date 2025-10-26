@@ -1,0 +1,13 @@
+{
+  "exam": "mini_test",
+  "source": "pma",
+  "files": [
+    "1.js",
+    "2.js",
+    "3.js",
+    "4.js",
+    "5.js"
+  ],
+  "generated": "2025-10-26T07:04:02.838Z",
+  "totalFiles": 5
+}
