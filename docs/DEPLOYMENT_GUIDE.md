@@ -94,28 +94,41 @@ MAX_QUESTIONS_PER_EXAM=100
 2. **Add custom domain** (if you have one)
 3. **Configure SSL certificate** (Netlify provides free SSL)
 
-## API Backend Deployment
+## API Configuration
 
-Since Netlify is for static sites, you'll need to deploy your API separately:
+This application uses **Netlify Functions** for the API, so no separate server deployment is required.
 
-### Option 1: Heroku
-```bash
-# Install Heroku CLI
-heroku create your-ankiquiz-api
-heroku config:set NODE_ENV=production
-heroku config:set NETLIFY_DATABASE_URL=your-postgres-url
-git push heroku main
-```
+### Netlify Functions Setup
 
-### Option 2: Railway
-1. Connect your repository to Railway
-2. Set environment variables
-3. Deploy automatically
+The API runs on Netlify's serverless functions located in the `functions/` directory:
 
-### Option 3: DigitalOcean App Platform
-1. Create new app from Git repository
-2. Configure environment variables
-3. Deploy
+1. **`functions/api.cjs`**: Handles all API endpoints (exam results, sessions, statistics)
+2. **`functions/database.cjs`**: Database connection and operations
+
+### Database Setup
+
+You can use any PostgreSQL database:
+
+**Option 1: Netlify Postgres (Recommended)**
+1. Go to Netlify dashboard → Plugins
+2. Add "Postgres" plugin
+3. Get connection string automatically
+
+**Option 2: Supabase (Free tier available)**
+1. Sign up at [Supabase](https://supabase.com)
+2. Create new project
+3. Get PostgreSQL connection string
+4. Set as `NETLIFY_DATABASE_URL` environment variable
+
+**Option 3: Railway**
+1. Create new PostgreSQL database on [Railway](https://railway.app)
+2. Get connection string
+3. Set as `NETLIFY_DATABASE_URL` environment variable
+
+**Option 4: AWS RDS or other PostgreSQL provider**
+- Create PostgreSQL instance
+- Get connection string
+- Set as `NETLIFY_DATABASE_URL` environment variable
 
 ## Post-Deployment Configuration
 
