@@ -1,6 +1,6 @@
 import json
 
-input_file = 'mock/mock_19.json'
+input_file = 'plus/1.json'
 
 # Đọc dữ liệu từ file JSON
 with open(input_file, 'r') as infile:
@@ -71,19 +71,18 @@ for question_data in input_data:
     # Thêm câu hỏi đã chuyển đổi vào danh sách
     output_data_list.append(output_data)
 
-# Ghi dữ liệu vào file JSON mới
-# with open('output_data.json', 'w') as outfile:
-#     json.dump(output_data_list, outfile, indent=4)
-
-# print("Output has been written to 'output_data.json'")
-
 # Chia danh sách thành 3 phần, mỗi phần chứa 60 câu hỏi
-chunk_size = 60
+chunk_size = 30
 chunks = [output_data_list[i:i + chunk_size] for i in range(0, len(output_data_list), chunk_size)]
 
 # Ghi từng phần vào một file JSON riêng biệt
 for i, chunk in enumerate(chunks, start=1):
-    filename = f'mock_19_output_{i}.json'
+    filename = f'plus_1_o_{i}.js'
     with open(filename, 'w') as outfile:
-        json.dump(chunk, outfile, indent=4)
+        data = f"""var PMA_PMP_PLUS_TEST{i} = {{
+    msg: "Quiz Questions",
+    data: {json.dumps(chunk, indent=4, ensure_ascii=False)}
+    }}
+"""
+        outfile.write(data)
     print(f"Output part {i} has been written to '{filename}'")

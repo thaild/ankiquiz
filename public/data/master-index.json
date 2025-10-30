@@ -1,5 +1,5 @@
 {
-  "generated": "2025-10-26T07:04:02.838Z",
+  "generated": "2025-10-30T02:50:15.040Z",
   "examTypes": {
     "whizlabs": {
       "SAP-C02": {
@@ -172,12 +172,28 @@
       "mini_test": {
         "files": [
           "1.js",
+          "10.js",
           "2.js",
           "3.js",
           "4.js",
-          "5.js"
+          "5.js",
+          "6.js",
+          "7.js",
+          "8.js",
+          "9.js"
         ],
-        "totalFiles": 5
+        "totalFiles": 10
+      },
+      "plus_exam_1": {
+        "files": [
+          "plus_1_o_1.js",
+          "plus_1_o_2.js",
+          "plus_1_o_3.js",
+          "plus_1_o_4.js",
+          "plus_1_o_5.js",
+          "plus_1_o_6.js"
+        ],
+        "totalFiles": 6
       }
     },
     "freecams": {
@@ -190,7 +206,7 @@
     }
   },
   "statistics": {
-    "totalExams": 16,
-    "totalFiles": 99
+    "totalExams": 17,
+    "totalFiles": 110
   }
 }

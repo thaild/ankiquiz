@@ -633,15 +633,36 @@ class Exam {
       percentScore: percentPoint
     };
 
-    // Bind submit button event
-    $('#submitExamResult').on('click', () => {
-      this.saveResultToDatabase(total_point, percentPoint);
-    });
+    // Bind submit button event (prevent duplicate bindings and double-click submits)
+    $('#submitExamResult')
+      .off('click.saveResult')
+      .on('click.saveResult', async e => {
+        e.preventDefault();
+        if (this.isSubmittingResult) {
+          return; // Guard against double clicks/parallel calls
+        }
+        this.isSubmittingResult = true;
+        const $btn = $('#submitExamResult');
+        const originalHtml = $btn.html();
+        $btn
+          .prop('disabled', true)
+          .html(
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...'
+          );
+        try {
+          await this.saveResultToDatabase(total_point, percentPoint);
+        } finally {
+          this.isSubmittingResult = false;
+          $btn.prop('disabled', false).html(originalHtml);
+        }
+      });
 
-    // Bind delete button event
-    $('#deleteOldResults').on('click', () => {
-      this.deleteOldResults();
-    });
+    // Bind delete button event (prevent duplicate bindings)
+    $('#deleteOldResults')
+      .off('click.deleteOld')
+      .on('click.deleteOld', () => {
+        this.deleteOldResults();
+      });
   }
 
   // Save exam result to database
@@ -1607,6 +1628,10 @@ class Exam {
   }
 
   async handleAutoSubmit() {
+    // The previous timeout has just fired; clear the handle so we can schedule the next one
+    // without being blocked by the guard in startAutoSubmitTimer
+    this.autoSubmitTimer = null;
+    this.updateAutoSubmitStatus && this.updateAutoSubmitStatus();
     if (!this.hasNewChoices) {
       console.log('📝 No new choices detected, skipping auto-submit');
       this.startAutoSubmitTimer(); // Restart timer

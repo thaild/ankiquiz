@@ -219,6 +219,43 @@ try {
           data: PMA_PMP_FULL_EXAM_1_Part3.data
         }
       ]
+    },
+    {
+      id: 'PMA_PMP_PLUS_EXAM_1',
+      name: '[PMA-PMP] Plus exam 1',
+      active: true,
+      list: [
+        {
+          id: 'PMA_PMP_PLUS_TEST_1',
+          name: '[PMA-PMP] PLUS TEST 1',
+          data: PMA_PMP_PLUS_TEST1.data
+        },
+        {
+          id: 'PMA_PMP_PLUS_TEST_2',
+          name: '[PMA-PMP] PLUS TEST 2',
+          data: PMA_PMP_PLUS_TEST2.data
+        },
+        {
+          id: 'PMA_PMP_PLUS_TEST_3',
+          name: '[PMA-PMP] PLUS TEST 3',
+          data: PMA_PMP_PLUS_TEST3.data
+        },
+        {
+          id: 'PMA_PMP_PLUS_TEST_4',
+          name: '[PMA-PMP] PLUS TEST 4',
+          data: PMA_PMP_PLUS_TEST4.data
+        },
+        {
+          id: 'PMA_PMP_PLUS_TEST_5',
+          name: '[PMA-PMP] PLUS TEST 5',
+          data: PMA_PMP_PLUS_TEST5.data
+        },
+        {
+          id: 'PMA_PMP_PLUS_TEST_6',
+          name: '[PMA-PMP] PLUS TEST 6',
+          data: PMA_PMP_PLUS_TEST6.data
+        }
+      ]
     }
   ];
 

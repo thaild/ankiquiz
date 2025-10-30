@@ -1,0 +1,14 @@
+{
+  "exam": "plus_exam_1",
+  "source": "pma",
+  "files": [
+    "plus_1_o_1.js",
+    "plus_1_o_2.js",
+    "plus_1_o_3.js",
+    "plus_1_o_4.js",
+    "plus_1_o_5.js",
+    "plus_1_o_6.js"
+  ],
+  "generated": "2025-10-30T02:50:15.039Z",
+  "totalFiles": 6
+}
