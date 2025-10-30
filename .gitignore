@@ -32,3 +32,4 @@ Temporary Items
 # Local Netlify folder
 .netlify
 node_modules
+.vercel
