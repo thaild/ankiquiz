@@ -173,6 +173,31 @@ try {
           id: 'PMA_PMP_MINI_TEST_5',
           name: '[PMA-PMP] MINI TEST 5',
           data: PMA_PMP_MINI_TEST5.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_6',
+          name: '[PMA-PMP] MINI TEST 6',
+          data: PMA_PMP_MINI_TEST6.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_7',
+          name: '[PMA-PMP] MINI TEST 7',
+          data: PMA_PMP_MINI_TEST7.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_8',
+          name: '[PMA-PMP] MINI TEST 8',
+          data: PMA_PMP_MINI_TEST8.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_9',
+          name: '[PMA-PMP] MINI TEST 9',
+          data: PMA_PMP_MINI_TEST9.data
+        },
+        {
+          id: 'PMA_PMP_MINI_TEST_10',
+          name: '[PMA-PMP] MINI TEST 10',
+          data: PMA_PMP_MINI_TEST10.data
         }
       ]
     },
